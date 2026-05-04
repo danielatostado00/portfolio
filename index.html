@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daniela Tostado — Marketing & Web Strategist</title>
+<meta name="description" content="Portfolio of Daniela Tostado — Marketing, Web & Content Strategist specializing in B2B SaaS, fintech, and conversion optimization.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --c-bg: #0a0a0a;
+    --c-surface: #111111;
+    --c-surface2: #1a1a1a;
+    --c-border: rgba(255,255,255,0.08);
+    --c-text: #f0ede8;
+    --c-muted: rgba(240,237,232,0.5);
+    --c-faint: rgba(240,237,232,0.2);
+    --c-lime: #c8f135;
+    --c-coral: #ff6b4a;
+    --c-violet: #b48bff;
+    --c-sky: #5bc8ff;
+    --c-amber: #ffb830;
+    --c-green: #32DD84;
+    --f-display: 'Syne', sans-serif;
+    --f-body: 'DM Sans', sans-serif;
+    --f-mono: 'DM Mono', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--c-bg);
+    color: var(--c-text);
+    font-family: var(--f-body);
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.25rem 3rem;
+    background: rgba(10,10,10,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--c-border);
+  }
+  .nav-logo {
+    font-family: var(--f-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--c-text);
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--c-lime); }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    color: var(--c-muted); text-decoration: none;
+    font-size: 0.85rem; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--c-text); }
+  .lang-toggle {
+    display: flex; gap: 0; border: 1px solid var(--c-border); border-radius: 6px; overflow: hidden;
+  }
+  .lang-btn {
+    background: none; border: none; color: var(--c-muted); cursor: pointer;
+    font-family: var(--f-body); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.08em;
+    text-transform: uppercase; padding: 0.35rem 0.75rem; transition: all 0.2s;
+  }
+  .lang-btn.active { background: var(--c-lime); color: #0a0a0a; }
+
+  /* ─── HERO ─── */
+  #hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 8rem 3rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-bg-grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(200,241,53,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(200,241,53,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+  }
+  .hero-blob {
+    position: absolute; top: -200px; right: -100px;
+    width: 700px; height: 700px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(200,241,53,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-left { position: relative; z-index: 1; }
+  .hero-tag {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: rgba(200,241,53,0.1); border: 1px solid rgba(200,241,53,0.2);
+    border-radius: 100px; padding: 0.35rem 1rem;
+    font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--c-lime); margin-bottom: 2rem;
+    animation: fadeUp 0.8s ease both;
+  }
+  .hero-tag::before { content: '●'; font-size: 0.5rem; animation: pulse 2s ease infinite; }
+  @keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:0.3; } }
+  .hero-h1 {
+    font-family: var(--f-display);
+    font-size: clamp(3.5rem, 6vw, 5.5rem);
+    font-weight: 800;
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.5rem;
+    animation: fadeUp 0.8s 0.1s ease both;
+  }
+  .hero-h1 .line-accent { color: var(--c-lime); display: block; }
+  .hero-h1 .line-stroke {
+    -webkit-text-stroke: 1.5px var(--c-text);
+    color: transparent;
+    display: block;
+  }
+  .hero-sub {
+    font-size: 1.1rem; font-weight: 300; color: var(--c-muted); max-width: 480px;
+    line-height: 1.7; margin-bottom: 2.5rem;
+    animation: fadeUp 0.8s 0.2s ease both;
+  }
+  .hero-ctas {
+    display: flex; gap: 1rem; flex-wrap: wrap;
+    animation: fadeUp 0.8s 0.3s ease both;
+  }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: var(--c-lime); color: #0a0a0a;
+    font-family: var(--f-body); font-weight: 500; font-size: 0.9rem;
+    padding: 0.85rem 1.75rem; border-radius: 8px; text-decoration: none;
+    border: none; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(200,241,53,0.3); }
+  .btn-outline {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: transparent; color: var(--c-text);
+    font-family: var(--f-body); font-weight: 500; font-size: 0.9rem;
+    padding: 0.85rem 1.75rem; border-radius: 8px; text-decoration: none;
+    border: 1px solid var(--c-border); cursor: pointer; transition: all 0.2s;
+  }
+  .btn-outline:hover { border-color: var(--c-text); background: rgba(255,255,255,0.05); }
+
+  .hero-right {
+    position: relative; z-index: 1;
+    display: flex; justify-content: center; align-items: center;
+  }
+  .hero-photo-frame {
+    position: relative; width: 340px; height: 420px;
+    animation: fadeUp 0.8s 0.2s ease both;
+  }
+  .hero-photo-frame::before {
+    content: '';
+    position: absolute; inset: -2px;
+    border-radius: 24px;
+    background: linear-gradient(135deg, var(--c-lime), var(--c-violet), var(--c-coral));
+    z-index: -1;
+  }
+  .hero-photo-inner {
+    width: 100%; height: 100%; border-radius: 22px; overflow: hidden;
+    background: var(--c-surface2);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .hero-photo-placeholder {
+    display: flex; flex-direction: column; align-items: center; gap: 1rem;
+    color: var(--c-muted);
+  }
+  .hero-photo-placeholder svg { opacity: 0.4; }
+  .hero-photo-placeholder span { font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; }
+  .hero-chips {
+    position: absolute;
+    display: flex; flex-direction: column; gap: 0.75rem;
+  }
+  .hero-chips.left { left: -80px; top: 50%; transform: translateY(-50%); }
+  .hero-chips.right { right: -80px; top: 30%; }
+  .chip {
+    background: var(--c-surface2);
+    border: 1px solid var(--c-border);
+    border-radius: 10px; padding: 0.6rem 1rem;
+    font-size: 0.75rem; font-weight: 500; white-space: nowrap;
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+  .chip .dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+
+  /* ─── SECTION COMMONS ─── */
+  section { padding: 6rem 3rem; }
+  .section-label {
+    font-family: var(--f-mono);
+    font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--c-lime); margin-bottom: 1rem;
+    display: flex; align-items: center; gap: 0.75rem;
+  }
+  .section-label::before { content: '//'; color: var(--c-faint); }
+  .section-title {
+    font-family: var(--f-display);
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 800; letter-spacing: -0.03em;
+    line-height: 1; margin-bottom: 1.5rem;
+  }
+
+  /* ─── ABOUT ─── */
+  #about {
+    background: var(--c-surface);
+    display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center;
+  }
+  .about-text p { color: var(--c-muted); line-height: 1.8; margin-bottom: 1.25rem; font-weight: 300; font-size: 1.05rem; }
+  .about-text p strong { color: var(--c-text); font-weight: 500; }
+  .about-traits { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 2rem; }
+  .trait {
+    font-size: 0.8rem; font-weight: 500; letter-spacing: 0.05em;
+    padding: 0.4rem 1rem; border-radius: 100px;
+    border: 1px solid var(--c-border); color: var(--c-muted);
+    transition: all 0.2s;
+  }
+  .trait:hover { border-color: var(--c-lime); color: var(--c-lime); }
+  .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .stat-card {
+    background: var(--c-bg); border: 1px solid var(--c-border);
+    border-radius: 16px; padding: 1.5rem;
+    position: relative; overflow: hidden;
+  }
+  .stat-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  }
+  .stat-card.lime::before { background: var(--c-lime); }
+  .stat-card.coral::before { background: var(--c-coral); }
+  .stat-card.violet::before { background: var(--c-violet); }
+  .stat-card.sky::before { background: var(--c-sky); }
+  .stat-num {
+    font-family: var(--f-display); font-size: 2.5rem; font-weight: 800;
+    letter-spacing: -0.04em; line-height: 1;
+    margin-bottom: 0.25rem;
+  }
+  .stat-card.lime .stat-num { color: var(--c-lime); }
+  .stat-card.coral .stat-num { color: var(--c-coral); }
+  .stat-card.violet .stat-num { color: var(--c-violet); }
+  .stat-card.sky .stat-num { color: var(--c-sky); }
+  .stat-label { font-size: 0.8rem; color: var(--c-muted); font-weight: 400; line-height: 1.4; }
+
+  /* ─── EXPERIENCE (timeline) ─── */
+  #experience { background: var(--c-bg); }
+  .exp-grid { display: grid; gap: 0; position: relative; margin-top: 3rem; }
+  .exp-grid::before {
+    content: ''; position: absolute; left: 180px; top: 0; bottom: 0; width: 1px;
+    background: linear-gradient(to bottom, transparent, var(--c-border) 10%, var(--c-border) 90%, transparent);
+  }
+  .exp-item {
+    display: grid; grid-template-columns: 180px 1fr;
+    gap: 0 3rem; padding: 2.5rem 0;
+    border-bottom: 1px solid var(--c-border);
+  }
+  .exp-item:last-child { border-bottom: none; }
+  .exp-meta { text-align: right; padding-right: 3rem; position: relative; }
+  .exp-meta::after {
+    content: '';
+    position: absolute; right: -4px; top: 0.35rem;
+    width: 8px; height: 8px; border-radius: 50%;
+    border: 2px solid var(--c-bg);
+    background: var(--c-lime);
+    box-shadow: 0 0 0 4px rgba(200,241,53,0.15);
+  }
+  .exp-company {
+    font-family: var(--f-display); font-size: 1rem; font-weight: 700; color: var(--c-text);
+  }
+  .exp-period { font-size: 0.75rem; color: var(--c-muted); margin-top: 0.25rem; font-family: var(--f-mono); }
+  .exp-role { font-size: 0.75rem; color: var(--c-lime); margin-top: 0.35rem; font-weight: 500; letter-spacing: 0.05em; }
+  .exp-body { }
+  .exp-title {
+    font-family: var(--f-display); font-size: 1.4rem; font-weight: 700; letter-spacing: -0.02em;
+    margin-bottom: 0.75rem; color: var(--c-text);
+  }
+  .exp-desc { color: var(--c-muted); font-weight: 300; font-size: 0.95rem; line-height: 1.8; margin-bottom: 1rem; }
+  .exp-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .exp-tag {
+    font-size: 0.7rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 0.25rem 0.7rem; border-radius: 4px;
+    background: rgba(255,255,255,0.05); color: var(--c-muted);
+  }
+
+  /* ─── PROJECTS ─── */
+  #projects { background: var(--c-surface); }
+  .projects-intro { max-width: 600px; color: var(--c-muted); font-size: 1.05rem; font-weight: 300; line-height: 1.8; margin-bottom: 4rem; }
+  .projects-grid { display: grid; gap: 2px; }
+
+  /* Project 1 — Paystand Messaging Audit — Editorial magazine */
+  .proj-card {
+    border-radius: 0; overflow: hidden;
+    position: relative; cursor: pointer;
+    transition: transform 0.3s;
+  }
+  .proj-card:first-child { border-radius: 16px 16px 0 0; }
+  .proj-card:last-child { border-radius: 0 0 16px 16px; }
+
+  .proj-1 {
+    background: #f5f0e8;
+    color: #1a1a1a;
+    display: grid; grid-template-columns: 1fr 1fr;
+    min-height: 420px;
+  }
+  .proj-1-left {
+    padding: 3.5rem;
+    border-right: 1px solid rgba(0,0,0,0.1);
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .proj-1-tag {
+    font-family: var(--f-mono); font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: rgba(0,0,0,0.4); margin-bottom: 1rem;
+  }
+  .proj-1-title {
+    font-family: var(--f-display); font-size: 2.8rem; font-weight: 800; letter-spacing: -0.04em;
+    line-height: 0.95; color: #1a1a1a;
+  }
+  .proj-1-title em { font-style: italic; color: #b47c30; }
+  .proj-1-meta { display: flex; gap: 1.5rem; font-size: 0.75rem; color: rgba(0,0,0,0.45); }
+  .proj-1-right {
+    padding: 3.5rem;
+    background: #1a1a1a;
+    display: flex; flex-direction: column; justify-content: center; gap: 1.5rem;
+  }
+  .proj-1-right p { color: rgba(240,237,232,0.7); font-size: 0.9rem; line-height: 1.8; font-weight: 300; }
+  .proj-outcomes { display: flex; flex-direction: column; gap: 0.6rem; }
+  .proj-outcome {
+    display: flex; align-items: center; gap: 0.75rem;
+    color: rgba(240,237,232,0.85); font-size: 0.85rem;
+  }
+  .proj-outcome::before { content: '→'; color: var(--c-lime); flex-shrink: 0; }
+
+  /* Project 2 — Q2 OKR Tracker — Data dashboard dark */
+  .proj-2 {
+    background: #050d1a;
+    min-height: 380px;
+    display: grid; grid-template-columns: 1.2fr 1fr; align-items: stretch;
+  }
+  .proj-2-left { padding: 3.5rem; display: flex; flex-direction: column; justify-content: space-between; }
+  .proj-2-eyebrow {
+    display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem;
+  }
+  .proj-2-dot { width: 8px; height: 8px; border-radius: 50%; background: #5bc8ff; animation: pulse 2s ease infinite; }
+  .proj-2-eyebrow span { font-family: var(--f-mono); font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: #5bc8ff; }
+  .proj-2-title {
+    font-family: var(--f-display); font-size: 2.4rem; font-weight: 800;
+    letter-spacing: -0.03em; line-height: 1; color: #f0ede8; margin-bottom: 1rem;
+  }
+  .proj-2-desc { color: rgba(240,237,232,0.5); font-size: 0.9rem; line-height: 1.8; font-weight: 300; }
+  .proj-2-metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .proj-2-metric {
+    background: rgba(91,200,255,0.07); border: 1px solid rgba(91,200,255,0.15);
+    border-radius: 10px; padding: 1rem;
+  }
+  .proj-2-metric .val {
+    font-family: var(--f-display); font-size: 1.8rem; font-weight: 800;
+    color: #5bc8ff; letter-spacing: -0.03em;
+  }
+  .proj-2-metric .lbl { font-size: 0.7rem; color: rgba(240,237,232,0.4); margin-top: 0.15rem; }
+  .proj-2-right {
+    background: rgba(91,200,255,0.03); border-left: 1px solid rgba(91,200,255,0.1);
+    padding: 3rem 2.5rem; display: flex; flex-direction: column; justify-content: center; gap: 1rem;
+  }
+  .proj-2-bar-label { font-size: 0.75rem; color: rgba(240,237,232,0.5); margin-bottom: 0.25rem; display: flex; justify-content: space-between; }
+  .proj-2-bar-track { height: 6px; background: rgba(255,255,255,0.08); border-radius: 3px; overflow: hidden; margin-bottom: 1rem; }
+  .proj-2-bar-fill { height: 100%; border-radius: 3px; background: linear-gradient(90deg, #5bc8ff, #b48bff); transition: width 1s ease; }
+
+  /* Project 3 — Allterra Case Study — Bold magazine spread */
+  .proj-3 {
+    background: #0f1a0a;
+    min-height: 400px;
+    display: grid; grid-template-columns: 1fr 1.5fr;
+  }
+  .proj-3-left {
+    background: var(--c-lime); padding: 3.5rem;
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .proj-3-number {
+    font-family: var(--f-display); font-size: 7rem; font-weight: 800;
+    letter-spacing: -0.05em; color: rgba(0,0,0,0.12); line-height: 1;
+  }
+  .proj-3-label {
+    font-family: var(--f-display); font-size: 1.8rem; font-weight: 800; color: #0a0a0a;
+    letter-spacing: -0.03em; line-height: 1.1;
+  }
+  .proj-3-sub { font-size: 0.85rem; color: rgba(0,0,0,0.6); margin-top: 0.5rem; }
+  .proj-3-right { padding: 3.5rem; display: flex; flex-direction: column; justify-content: center; gap: 2rem; }
+  .proj-3-title {
+    font-family: var(--f-display); font-size: 2.2rem; font-weight: 800;
+    color: var(--c-lime); letter-spacing: -0.03em; line-height: 1;
+  }
+  .proj-3-body { color: rgba(240,237,232,0.6); font-size: 0.9rem; line-height: 1.8; font-weight: 300; }
+  .proj-3-stats { display: flex; gap: 2rem; }
+  .proj-3-stat .n {
+    font-family: var(--f-display); font-size: 2rem; font-weight: 800;
+    color: var(--c-lime); letter-spacing: -0.03em;
+  }
+  .proj-3-stat .l { font-size: 0.72rem; color: rgba(240,237,232,0.4); text-transform: uppercase; letter-spacing: 0.08em; }
+
+  /* Project 4 — Waypoint — Colorful playful */
+  .proj-4 {
+    background: #120820;
+    min-height: 400px;
+    display: grid; grid-template-columns: 1fr 1fr;
+  }
+  .proj-4-left { padding: 3.5rem; display: flex; flex-direction: column; justify-content: space-between; }
+  .proj-4-badge {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: rgba(180,139,255,0.15); border: 1px solid rgba(180,139,255,0.3);
+    border-radius: 6px; padding: 0.4rem 0.85rem;
+    font-family: var(--f-mono); font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--c-violet); width: fit-content; margin-bottom: 1.5rem;
+  }
+  .proj-4-title {
+    font-family: var(--f-display); font-size: 3.5rem; font-weight: 800;
+    letter-spacing: -0.04em; line-height: 0.9;
+    background: linear-gradient(135deg, #b48bff, #ff6b4a, #ffb830);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .proj-4-desc { color: rgba(240,237,232,0.55); font-size: 0.9rem; line-height: 1.8; font-weight: 300; }
+  .proj-4-tech { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .proj-4-tech-pill {
+    font-size: 0.7rem; font-weight: 500; padding: 0.3rem 0.75rem; border-radius: 100px;
+    background: rgba(180,139,255,0.1); border: 1px solid rgba(180,139,255,0.2); color: var(--c-violet);
+  }
+  .proj-4-right {
+    padding: 3.5rem;
+    display: flex; flex-direction: column; justify-content: center; gap: 1.25rem;
+  }
+  .proj-4-feature {
+    display: flex; gap: 1rem; align-items: flex-start;
+    padding: 1rem; border-radius: 12px;
+    background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06);
+  }
+  .proj-4-feat-icon {
+    width: 32px; height: 32px; border-radius: 8px; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center; font-size: 0.9rem;
+  }
+  .proj-4-feat-title { font-weight: 500; font-size: 0.85rem; color: var(--c-text); }
+  .proj-4-feat-sub { font-size: 0.78rem; color: var(--c-muted); margin-top: 0.1rem; }
+
+  /* Project 5 — HubSpot Modules — Brutalist code */
+  .proj-5 {
+    background: #f0ede8; color: #1a1a1a;
+    min-height: 380px;
+    display: grid; grid-template-columns: 1fr 1fr;
+  }
+  .proj-5-left { padding: 3.5rem; display: flex; flex-direction: column; justify-content: space-between; }
+  .proj-5-title {
+    font-family: var(--f-display); font-size: 2.4rem; font-weight: 800;
+    letter-spacing: -0.04em; line-height: 1; color: #1a1a1a;
+  }
+  .proj-5-title span { color: #ff6b4a; }
+  .proj-5-desc { color: rgba(0,0,0,0.55); font-size: 0.9rem; line-height: 1.8; font-weight: 300; }
+  .proj-5-right {
+    background: #1a1a1a; padding: 2rem 2.5rem;
+    font-family: var(--f-mono); font-size: 0.78rem; line-height: 1.9;
+    overflow: hidden; display: flex; align-items: center;
+  }
+  .code-block { color: rgba(240,237,232,0.7); }
+  .kw { color: #b48bff; }
+  .fn { color: #5bc8ff; }
+  .str { color: #c8f135; }
+  .cm { color: rgba(240,237,232,0.3); }
+
+  /* Project 6 — Yaydoo PorCobrar — Warm editorial */
+  .proj-6 {
+    background: #1a0f2e;
+    min-height: 360px;
+    display: grid; grid-template-columns: 1.5fr 1fr; align-items: stretch;
+    border-radius: 0 0 16px 16px;
+  }
+  .proj-6-left {
+    padding: 3.5rem; display: flex; flex-direction: column; justify-content: space-between;
+    border-right: 1px solid rgba(255,184,48,0.1);
+  }
+  .proj-6-eyebrow {
+    font-family: var(--f-mono); font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--c-amber); margin-bottom: 1rem;
+  }
+  .proj-6-title {
+    font-family: var(--f-display); font-size: 2.4rem; font-weight: 800;
+    color: var(--c-text); letter-spacing: -0.03em; line-height: 1;
+    margin-bottom: 1rem;
+  }
+  .proj-6-title span { color: var(--c-amber); }
+  .proj-6-body { color: rgba(240,237,232,0.55); font-size: 0.9rem; line-height: 1.8; font-weight: 300; }
+  .proj-6-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .proj-6-pill {
+    font-size: 0.7rem; padding: 0.3rem 0.75rem; border-radius: 4px;
+    background: rgba(255,184,48,0.1); border: 1px solid rgba(255,184,48,0.2); color: var(--c-amber);
+    font-family: var(--f-mono); letter-spacing: 0.05em;
+  }
+  .proj-6-right {
+    padding: 3rem; display: flex; flex-direction: column; justify-content: center; gap: 1.5rem;
+  }
+  .proj-6-module {
+    padding: 0.85rem 1rem; border-radius: 8px;
+    border-left: 3px solid var(--c-amber);
+    background: rgba(255,184,48,0.05);
+    font-size: 0.8rem; color: rgba(240,237,232,0.65); font-weight: 400;
+  }
+  .proj-6-module strong { color: var(--c-text); display: block; margin-bottom: 0.15rem; font-weight: 500; font-size: 0.78rem; }
+
+  /* ─── SKILLS ─── */
+  #skills { background: var(--c-bg); }
+  .skills-bento { display: grid; grid-template-columns: repeat(12, 1fr); gap: 1rem; margin-top: 3rem; }
+  .sk { border-radius: 16px; padding: 1.75rem; position: relative; overflow: hidden; }
+  .sk-title { font-family: var(--f-display); font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; }
+  .sk-items { display: flex; flex-direction: column; gap: 0.35rem; margin-top: 1rem; }
+  .sk-item { font-size: 0.8rem; color: var(--c-muted); display: flex; align-items: center; gap: 0.5rem; }
+  .sk-item::before { content: ''; width: 4px; height: 4px; border-radius: 50%; background: currentColor; flex-shrink: 0; }
+  .sk-1 { grid-column: span 4; background: rgba(200,241,53,0.08); border: 1px solid rgba(200,241,53,0.2); }
+  .sk-1 .sk-title { color: var(--c-lime); }
+  .sk-2 { grid-column: span 4; background: rgba(255,107,74,0.08); border: 1px solid rgba(255,107,74,0.2); }
+  .sk-2 .sk-title { color: var(--c-coral); }
+  .sk-3 { grid-column: span 4; background: rgba(180,139,255,0.08); border: 1px solid rgba(180,139,255,0.2); }
+  .sk-3 .sk-title { color: var(--c-violet); }
+  .sk-4 { grid-column: span 3; background: rgba(91,200,255,0.08); border: 1px solid rgba(91,200,255,0.2); }
+  .sk-4 .sk-title { color: var(--c-sky); }
+  .sk-5 { grid-column: span 3; background: rgba(255,184,48,0.08); border: 1px solid rgba(255,184,48,0.2); }
+  .sk-5 .sk-title { color: var(--c-amber); }
+  .sk-6 { grid-column: span 6; background: rgba(50,221,132,0.08); border: 1px solid rgba(50,221,132,0.2); }
+  .sk-6 .sk-title { color: var(--c-green); }
+  .sk-6 .sk-items { display: grid; grid-template-columns: 1fr 1fr; }
+
+  /* ─── CONTACT ─── */
+  #contact {
+    background: var(--c-surface);
+    text-align: center; padding: 8rem 3rem;
+  }
+  .contact-eyebrow {
+    font-family: var(--f-mono); font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--c-lime); margin-bottom: 2rem;
+  }
+  .contact-title {
+    font-family: var(--f-display); font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 800; letter-spacing: -0.04em; line-height: 0.95;
+    margin-bottom: 2rem;
+  }
+  .contact-title .stroke {
+    -webkit-text-stroke: 1.5px var(--c-text); color: transparent;
+  }
+  .contact-sub { color: var(--c-muted); font-size: 1.05rem; font-weight: 300; max-width: 480px; margin: 0 auto 3rem; }
+  .contact-links { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+  .contact-link {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    padding: 0.85rem 1.75rem; border-radius: 10px;
+    text-decoration: none; font-size: 0.9rem; font-weight: 500;
+    transition: all 0.2s;
+  }
+  .contact-link.linkedin { background: rgba(91,200,255,0.1); color: var(--c-sky); border: 1px solid rgba(91,200,255,0.2); }
+  .contact-link.linkedin:hover { background: rgba(91,200,255,0.2); }
+  .contact-link.email { background: rgba(200,241,53,0.1); color: var(--c-lime); border: 1px solid rgba(200,241,53,0.2); }
+  .contact-link.email:hover { background: rgba(200,241,53,0.2); }
+  .contact-link.phone { background: rgba(255,107,74,0.1); color: var(--c-coral); border: 1px solid rgba(255,107,74,0.2); }
+  .contact-link.phone:hover { background: rgba(255,107,74,0.2); }
+
+  /* ─── FOOTER ─── */
+  footer {
+    padding: 2rem 3rem;
+    border-top: 1px solid var(--c-border);
+    display: flex; justify-content: space-between; align-items: center;
+    color: var(--c-faint); font-size: 0.78rem;
+  }
+  footer a { color: var(--c-lime); text-decoration: none; }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .reveal {
+    opacity: 0; transform: translateY(32px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ─── LANGUAGE SWITCH ─── */
+  [data-lang="es"] { display: none; }
+  body.es-active [data-lang="es"] { display: block; }
+  body.es-active [data-lang="en"] { display: none; }
+  span[data-lang="es"], span[data-lang="en"] { display: inline; }
+  body.es-active span[data-lang="en"] { display: none; }
+  body.es-active span[data-lang="es"] { display: inline; }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    #hero { grid-template-columns: 1fr; padding: 6rem 1.5rem 3rem; }
+    .hero-right { display: none; }
+    section { padding: 4rem 1.5rem; }
+    #about { grid-template-columns: 1fr; gap: 3rem; }
+    .exp-grid::before { display: none; }
+    .exp-item { grid-template-columns: 1fr; }
+    .exp-meta { text-align: left; padding-right: 0; }
+    .exp-meta::after { display: none; }
+    .proj-1, .proj-2, .proj-3, .proj-4, .proj-5, .proj-6 { grid-template-columns: 1fr; }
+    .proj-1-right { border-top: 1px solid rgba(255,255,255,0.1); }
+    .skills-bento { grid-template-columns: 1fr 1fr; }
+    .sk-1,.sk-2,.sk-3,.sk-4,.sk-5,.sk-6 { grid-column: span 1; }
+    footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#hero">DT<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#about" data-lang="en">About</a><a href="#about" data-lang="es">Sobre mí</a></li>
+    <li><a href="#experience" data-lang="en">Experience</a><a href="#experience" data-lang="es">Experiencia</a></li>
+    <li><a href="#projects" data-lang="en">Projects</a><a href="#projects" data-lang="es">Proyectos</a></li>
+    <li><a href="#skills" data-lang="en">Skills</a><a href="#skills" data-lang="es">Habilidades</a></li>
+    <li><a href="#contact" data-lang="en">Contact</a><a href="#contact" data-lang="es">Contacto</a></li>
+  </ul>
+  <div class="lang-toggle">
+    <button class="lang-btn active" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" onclick="setLang('es')">ES</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-blob"></div>
+  <div class="hero-left">
+    <div class="hero-tag" data-lang="en">Available for new opportunities</div>
+    <div class="hero-tag" data-lang="es">Disponible para nuevas oportunidades</div>
+    <h1 class="hero-h1">
+      <span class="line-stroke" data-lang="en">Daniela</span>
+      <span class="line-stroke" data-lang="es">Daniela</span>
+      <span class="line-accent">Tostado.</span>
+      <span data-lang="en" style="font-size:clamp(1.2rem,2vw,1.8rem);font-weight:400;color:var(--c-muted);letter-spacing:-0.01em;display:block;margin-top:0.5rem;line-height:1.3">Marketing · Web · Content<br>B2B SaaS</span>
+      <span data-lang="es" style="font-size:clamp(1.2rem,2vw,1.8rem);font-weight:400;color:var(--c-muted);letter-spacing:-0.01em;display:block;margin-top:0.5rem;line-height:1.3">Marketing · Web · Contenido<br>B2B SaaS</span>
+    </h1>
+    <p class="hero-sub" data-lang="en">I turn complex B2B products into clear, converting digital experiences. From strategy to copy to code — I own the full stack of marketing execution.</p>
+    <p class="hero-sub" data-lang="es">Convierto productos B2B complejos en experiencias digitales claras y que convierten. De la estrategia al copy al código — soy dueña de todo el stack de ejecución de marketing.</p>
+    <div class="hero-ctas">
+      <a href="#projects" class="btn-primary" data-lang="en">See my work ↓</a>
+      <a href="#projects" class="btn-primary" data-lang="es">Ver mi trabajo ↓</a>
+      <a href="mailto:danielatostado00@gmail.com" class="btn-outline" data-lang="en">Get in touch</a>
+      <a href="mailto:danielatostado00@gmail.com" class="btn-outline" data-lang="es">Contáctame</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-photo-frame">
+      <div class="hero-photo-inner">
+        <div class="hero-photo-placeholder">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="18" r="8" stroke="currentColor" stroke-width="1.5"/><path d="M8 40c0-8.837 7.163-16 16-16s16 7.163 16 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <span>Add your photo</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="reveal">
+  <div class="about-text">
+    <div class="section-label" data-lang="en">About me</div>
+    <div class="section-label" data-lang="es">Sobre mí</div>
+    <h2 class="section-title" data-lang="en">Strategist. Builder.<br>Fintech specialist.</h2>
+    <h2 class="section-title" data-lang="es">Estratega. Constructora.<br>Especialista fintech.</h2>
+    <p data-lang="en">I'm a <strong>Marketing & Web Strategist</strong> based in Guadalajara, Mexico, with deep expertise in B2B SaaS and fintech. My work sits at the intersection of strategy, copywriting, and technical execution — I don't just write the brief, I ship the page.</p>
+    <p data-lang="es">Soy <strong>Marketing & Web Strategist</strong> basada en Guadalajara, México, con experiencia profunda en B2B SaaS y fintech. Mi trabajo vive en la intersección de estrategia, copywriting y ejecución técnica — no solo escribo el brief, también entrego la página.</p>
+    <p data-lang="en">At Paystand, I've led conversion optimization, built modular page systems in HubSpot, and designed messaging architecture for a $7B+ market. I translate product complexity into revenue — clearly, credibly, fast.</p>
+    <p data-lang="es">En Paystand, he liderado optimización de conversión, construido sistemas de páginas modulares en HubSpot, y diseñado arquitectura de messaging para un mercado de +$7B. Traduzco complejidad de producto en revenue — con claridad, credibilidad y velocidad.</p>
+    <p data-lang="en">Outside of work: <strong>nature lover, gym regular, intensely curious, quietly ambitious</strong>. I bring that same energy to everything I build.</p>
+    <p data-lang="es">Fuera del trabajo: <strong>amante de la naturaleza, constante en el gym, intensamente curiosa, silenciosamente ambiciosa</strong>. Esa misma energía la traigo a todo lo que construyo.</p>
+    <div class="about-traits">
+      <span class="trait" data-lang="en">Proactive</span><span class="trait" data-lang="es">Proactiva</span>
+      <span class="trait" data-lang="en">Detail-oriented</span><span class="trait" data-lang="es">Orientada al detalle</span>
+      <span class="trait" data-lang="en">Strategic thinker</span><span class="trait" data-lang="es">Pensamiento estratégico</span>
+      <span class="trait" data-lang="en">Systems builder</span><span class="trait" data-lang="es">Constructora de sistemas</span>
+      <span class="trait" data-lang="en">Introvert powerhouse</span><span class="trait" data-lang="es">Introvertida con impacto</span>
+      <span class="trait" data-lang="en">Bilingual</span><span class="trait" data-lang="es">Bilingüe</span>
+    </div>
+  </div>
+  <div class="about-stats">
+    <div class="stat-card lime">
+      <div class="stat-num">4+</div>
+      <div class="stat-label" data-lang="en">Years in B2B SaaS marketing</div>
+      <div class="stat-label" data-lang="es">Años en marketing B2B SaaS</div>
+    </div>
+    <div class="stat-card coral">
+      <div class="stat-num">30+</div>
+      <div class="stat-label" data-lang="en">Web pages built & optimized</div>
+      <div class="stat-label" data-lang="es">Páginas web construidas y optimizadas</div>
+    </div>
+    <div class="stat-card violet">
+      <div class="stat-num">3</div>
+      <div class="stat-label" data-lang="en">Industries: Fintech · CPG · Payments</div>
+      <div class="stat-label" data-lang="es">Industrias: Fintech · CPG · Payments</div>
+    </div>
+    <div class="stat-card sky">
+      <div class="stat-num">2</div>
+      <div class="stat-label" data-lang="en">Languages. One standard: excellence.</div>
+      <div class="stat-label" data-lang="es">Idiomas. Un estándar: la excelencia.</div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="reveal">
+  <div class="section-label" data-lang="en">Work history</div>
+  <div class="section-label" data-lang="es">Experiencia</div>
+  <h2 class="section-title" data-lang="en">Where I've built.</h2>
+  <h2 class="section-title" data-lang="es">Dónde he construido.</h2>
+  <div class="exp-grid">
+
+    <div class="exp-item">
+      <div class="exp-meta">
+        <div class="exp-company">Paystand</div>
+        <div class="exp-period">2024 – Present</div>
+        <div class="exp-role" data-lang="en">Webmaster & Marketing Strategist</div>
+        <div class="exp-role" data-lang="es">Webmaster y Estratega de Marketing</div>
+      </div>
+      <div class="exp-body">
+        <div class="exp-title" data-lang="en">Full-stack marketing ownership at a B2B fintech platform.</div>
+        <div class="exp-title" data-lang="es">Ownership completo de marketing en plataforma fintech B2B.</div>
+        <p class="exp-desc" data-lang="en">Led website strategy, copy, and conversion optimization for Paystand — a B2B payments infrastructure platform. Owned the full cycle: from messaging audits to HubSpot module builds to A/B test analysis. Drove Q2 2026 OKR targeting funnel conversion from 0.61% → 0.83%. Built modular page systems for AR automation, payments, and expense management. Managed Teampay brand integration, rewrote 10+ pages, and created the first internal copy guidelines system.</p>
+        <p class="exp-desc" data-lang="es">Lideré estrategia web, copy y optimización de conversión para Paystand. Dueña del ciclo completo: desde auditorías de messaging hasta construcción de módulos en HubSpot y análisis de pruebas A/B. Lideré OKR Q2 2026 con objetivo de conversión 0.61% → 0.83%. Construí sistemas de páginas modulares para AR automation, pagos y expense management.</p>
+        <div class="exp-tags">
+          <span class="exp-tag">HubSpot</span><span class="exp-tag">Conversion CRO</span><span class="exp-tag">Copywriting</span>
+          <span class="exp-tag">SEO</span><span class="exp-tag">Fullstory</span><span class="exp-tag">A/B Testing</span>
+          <span class="exp-tag">B2B SaaS</span><span class="exp-tag">Fintech</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-meta">
+        <div class="exp-company">Yaydoo</div>
+        <div class="exp-period">2023 – 2024</div>
+        <div class="exp-role" data-lang="en">Marketing & Content Strategist</div>
+        <div class="exp-role" data-lang="es">Estratega de Marketing y Contenido</div>
+      </div>
+      <div class="exp-body">
+        <div class="exp-title" data-lang="en">Spanish-market positioning for B2B fintech.</div>
+        <div class="exp-title" data-lang="es">Posicionamiento en mercado hispano para fintech B2B.</div>
+        <p class="exp-desc" data-lang="en">Built the Spanish-language content strategy for Yaydoo's PorCobrar product — consolidating 4 subpages into a single integral page across 10 modules. Developed SEO-optimized copy for finance teams in LATAM, with domain vocabulary spanning CFDI, SPEI, domiciliación, and cobranza preventiva.</p>
+        <p class="exp-desc" data-lang="es">Construí la estrategia de contenido en español para el producto PorCobrar de Yaydoo — consolidando 4 subpáginas en una sola página integral de 10 módulos. Desarrollé copy optimizado para SEO dirigido a equipos financieros en LATAM.</p>
+        <div class="exp-tags">
+          <span class="exp-tag">Spanish SEO</span><span class="exp-tag">B2B Fintech LATAM</span><span class="exp-tag">Content Strategy</span>
+          <span class="exp-tag">Product Positioning</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-meta">
+        <div class="exp-company">Wispok</div>
+        <div class="exp-period">2023 – 2024</div>
+        <div class="exp-role" data-lang="en">Business Project Manager</div>
+        <div class="exp-role" data-lang="es">Gerente de Proyectos</div>
+      </div>
+      <div class="exp-body">
+        <div class="exp-title" data-lang="en">Growth, operations & investor strategy.</div>
+        <div class="exp-title" data-lang="es">Crecimiento, operaciones y estrategia de inversores.</div>
+        <p class="exp-desc" data-lang="en">Led SAP integration projects, investor communications, and go-to-market campaigns. Negotiated vendor agreements reducing costs by 15%. Developed market expansion strategies and pitch presentations for new verticals.</p>
+        <p class="exp-desc" data-lang="es">Lideré proyectos de integración SAP, comunicaciones con inversores y campañas de go-to-market. Negocié acuerdos con proveedores reduciendo costos en un 15%.</p>
+        <div class="exp-tags">
+          <span class="exp-tag">Project Management</span><span class="exp-tag">SAP</span><span class="exp-tag">Go-to-Market</span><span class="exp-tag">Investor Relations</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-meta">
+        <div class="exp-company">Piel Arena</div>
+        <div class="exp-period">2020 – 2024</div>
+        <div class="exp-role" data-lang="en">Marketing Strategist</div>
+        <div class="exp-role" data-lang="es">Estratega de Marketing</div>
+      </div>
+      <div class="exp-body">
+        <div class="exp-title" data-lang="en">Brand building & multi-channel expansion.</div>
+        <div class="exp-title" data-lang="es">Construcción de marca y expansión multicanal.</div>
+        <p class="exp-desc" data-lang="en">Developed marketing campaigns that increased product engagement by 30%. Expanded distribution to 7 new channels, increasing product reach by 25%.</p>
+        <p class="exp-desc" data-lang="es">Desarrollé campañas de marketing que incrementaron el engagement en un 30%. Expandí distribución a 7 nuevos canales, aumentando alcance de producto en un 25%.</p>
+        <div class="exp-tags">
+          <span class="exp-tag">Brand Strategy</span><span class="exp-tag">Multi-channel</span><span class="exp-tag">Campaigns</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-meta">
+        <div class="exp-company">LeanMail</div>
+        <div class="exp-period">Earlier</div>
+        <div class="exp-role" data-lang="en">Marketing</div>
+        <div class="exp-role" data-lang="es">Marketing</div>
+      </div>
+      <div class="exp-body">
+        <div class="exp-title" data-lang="en">Email marketing & content foundations.</div>
+        <div class="exp-title" data-lang="es">Email marketing y fundamentos de contenido.</div>
+        <p class="exp-desc" data-lang="en">Early career experience in email marketing, content, and digital campaign execution — building the discipline and attention to messaging detail that defines my work today.</p>
+        <p class="exp-desc" data-lang="es">Experiencia early career en email marketing, contenido y ejecución de campañas digitales — construyendo la disciplina y atención al detalle de messaging que define mi trabajo hoy.</p>
+        <div class="exp-tags">
+          <span class="exp-tag">Email Marketing</span><span class="exp-tag">Content</span><span class="exp-tag">Digital Campaigns</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="reveal">
+  <div class="section-label" data-lang="en">Selected work</div>
+  <div class="section-label" data-lang="es">Trabajo selecto</div>
+  <h2 class="section-title" data-lang="en">Projects that moved the needle.</h2>
+  <h2 class="section-title" data-lang="es">Proyectos que movieron el marcador.</h2>
+  <p class="projects-intro" data-lang="en">Six projects. Six distinct design systems. Each one reflects a different context, challenge, and craft decision.</p>
+  <p class="projects-intro" data-lang="es">Seis proyectos. Seis sistemas de diseño distintos. Cada uno refleja un contexto, reto y decisión creativa diferente.</p>
+  <div class="projects-grid">
+
+    <!-- 1. Messaging Audit -->
+    <div class="proj-card proj-1">
+      <div class="proj-1-left">
+        <div>
+          <div class="proj-1-tag" data-lang="en">01 — Paystand · 2026</div>
+          <div class="proj-1-tag" data-lang="es">01 — Paystand · 2026</div>
+          <h3 class="proj-1-title" data-lang="en">Website<br><em>Messaging</em><br>Audit</h3>
+          <h3 class="proj-1-title" data-lang="es">Auditoría<br>de<br><em>Messaging</em></h3>
+        </div>
+        <div class="proj-1-meta">
+          <span data-lang="en">Strategy</span><span data-lang="es">Estrategia</span>
+          <span data-lang="en">Copy</span><span data-lang="es">Copy</span>
+          <span>10+ pages</span>
+        </div>
+      </div>
+      <div class="proj-1-right">
+        <p data-lang="en">After Paystand acquired Teampay, the website was selling features that didn't exist yet — creating friction with enterprise clients. I audited every page, mapped real vs. promised capabilities, and rewrote the entire messaging architecture.</p>
+        <p data-lang="es">Tras la adquisición de Teampay por Paystand, el sitio vendía features inexistentes — creando fricción con clientes enterprise. Audité cada página, mapeé capacidades reales vs. prometidas y reescribí toda la arquitectura de messaging.</p>
+        <div class="proj-outcomes">
+          <div class="proj-outcome" data-lang="en">10+ pages rewritten from scratch</div>
+          <div class="proj-outcome" data-lang="es">+10 páginas reescritas desde cero</div>
+          <div class="proj-outcome" data-lang="en">Internal copy guidelines system created</div>
+          <div class="proj-outcome" data-lang="es">Sistema interno de guías de copy creado</div>
+          <div class="proj-outcome" data-lang="en">Feature accuracy fully restored across site</div>
+          <div class="proj-outcome" data-lang="es">Precisión de features restaurada en todo el sitio</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Q2 OKR Tracker -->
+    <div class="proj-card proj-2">
+      <div class="proj-2-left">
+        <div>
+          <div class="proj-2-eyebrow">
+            <div class="proj-2-dot"></div>
+            <span data-lang="en">02 — Paystand · Q2 2026</span>
+            <span data-lang="es">02 — Paystand · Q2 2026</span>
+          </div>
+          <h3 class="proj-2-title" data-lang="en">Conversion OKR<br>System</h3>
+          <h3 class="proj-2-title" data-lang="es">Sistema OKR<br>de Conversión</h3>
+          <p class="proj-2-desc" data-lang="en">Built a full conversion measurement system from scratch — Fullstory dashboards, bi-weekly snapshots, A/B test tracking, and a custom HTML tracker app. Targeting funnel conversion rate from 0.61% to 0.83%.</p>
+          <p class="proj-2-desc" data-lang="es">Construí un sistema de medición de conversión desde cero — dashboards en Fullstory, snapshots quincenales, tracking de A/B tests y una app HTML personalizada.</p>
+        </div>
+        <div class="proj-2-metrics">
+          <div class="proj-2-metric"><div class="val">0.61%</div><div class="lbl" data-lang="en">Baseline conversion</div><div class="lbl" data-lang="es">Conversión base</div></div>
+          <div class="proj-2-metric"><div class="val">0.83%</div><div class="lbl" data-lang="en">Q2 target</div><div class="lbl" data-lang="es">Objetivo Q2</div></div>
+          <div class="proj-2-metric"><div class="val">53K</div><div class="lbl" data-lang="en">Monthly homepage visits</div><div class="lbl" data-lang="es">Visitas mensuales</div></div>
+          <div class="proj-2-metric"><div class="val">21%</div><div class="lbl" data-lang="en">Get Started page CR</div><div class="lbl" data-lang="es">CR página Get Started</div></div>
+        </div>
+      </div>
+      <div class="proj-2-right">
+        <div>
+          <div class="proj-2-bar-label"><span>Homepage → Get Started</span><span>2.3%</span></div>
+          <div class="proj-2-bar-track"><div class="proj-2-bar-fill" style="width:23%"></div></div>
+        </div>
+        <div>
+          <div class="proj-2-bar-label"><span data-lang="en">Funnel Conversion</span><span data-lang="es">Conversión Funnel</span><span>0.61%</span></div>
+          <div class="proj-2-bar-track"><div class="proj-2-bar-fill" style="width:61%"></div></div>
+        </div>
+        <div>
+          <div class="proj-2-bar-label"><span data-lang="en">Organic Traffic</span><span data-lang="es">Tráfico Orgánico</span><span>29.5K</span></div>
+          <div class="proj-2-bar-track"><div class="proj-2-bar-fill" style="width:75%"></div></div>
+        </div>
+        <div>
+          <div class="proj-2-bar-label"><span data-lang="en">Get Started CR</span><span data-lang="es">CR Get Started</span><span>21%</span></div>
+          <div class="proj-2-bar-track"><div class="proj-2-bar-fill" style="width:85%"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Allterra Case Study -->
+    <div class="proj-card proj-3">
+      <div class="proj-3-left">
+        <div class="proj-3-number">03</div>
+        <div>
+          <div class="proj-3-label" data-lang="en">Allterra Solar<br>Case Study</div>
+          <div class="proj-3-label" data-lang="es">Caso de Estudio<br>Allterra Solar</div>
+          <div class="proj-3-sub" data-lang="en">Paystand · 2026</div>
+          <div class="proj-3-sub" data-lang="es">Paystand · 2026</div>
+        </div>
+      </div>
+      <div class="proj-3-right">
+        <h3 class="proj-3-title" data-lang="en">Turning a customer story into a conversion asset.</h3>
+        <h3 class="proj-3-title" data-lang="es">Convertir la historia de un cliente en un activo de conversión.</h3>
+        <p class="proj-3-body" data-lang="en">Full production of the Allterra Solar case study landing page — 8 modules, from hero to CTA. Two-person finance team, $7M+ annual payments through Paystand. Built copy guidelines document as a reusable template for all future case studies.</p>
+        <p class="proj-3-body" data-lang="es">Producción completa del landing page del caso de estudio Allterra Solar — 8 módulos, de hero a CTA. Equipo de finanzas de dos personas, +$7M en pagos anuales por Paystand.</p>
+        <div class="proj-3-stats">
+          <div class="proj-3-stat"><div class="n">$7M+</div><div class="l" data-lang="en">Annual payments</div><div class="l" data-lang="es">Pagos anuales</div></div>
+          <div class="proj-3-stat"><div class="n">8</div><div class="l" data-lang="en">Modules built</div><div class="l" data-lang="es">Módulos construidos</div></div>
+          <div class="proj-3-stat"><div class="n">3</div><div class="l" data-lang="en">Doc revisions</div><div class="l" data-lang="es">Revisiones doc</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. Waypoint -->
+    <div class="proj-card proj-4">
+      <div class="proj-4-left">
+        <div>
+          <div class="proj-4-badge" data-lang="en">04 — Personal project · 2025</div>
+          <div class="proj-4-badge" data-lang="es">04 — Proyecto personal · 2025</div>
+          <h3 class="proj-4-title">Waypoint</h3>
+        </div>
+        <p class="proj-4-desc" data-lang="en">A personal trip planning app built with Claude Code — featuring a "Mis Viajes" library, budget panels, itinerary builders, and multi-agent development setup (frontend, fullstack, code-reviewer, debugger agents).</p>
+        <p class="proj-4-desc" data-lang="es">Una app personal de planeación de viajes construida con Claude Code — con biblioteca "Mis Viajes", paneles de presupuesto, constructores de itinerarios y configuración multi-agente.</p>
+        <div class="proj-4-tech">
+          <span class="proj-4-tech-pill">Claude Code</span>
+          <span class="proj-4-tech-pill">HTML/CSS/JS</span>
+          <span class="proj-4-tech-pill">Multi-agent</span>
+          <span class="proj-4-tech-pill">UI/UX</span>
+        </div>
+      </div>
+      <div class="proj-4-right">
+        <div class="proj-4-feature">
+          <div class="proj-4-feat-icon" style="background:rgba(180,139,255,0.15)">✈</div>
+          <div><div class="proj-4-feat-title" data-lang="en">Trip Library</div><div class="proj-4-feat-title" data-lang="es">Biblioteca de Viajes</div><div class="proj-4-feat-sub" data-lang="en">Saved trips with full itinerary view</div><div class="proj-4-feat-sub" data-lang="es">Viajes guardados con vista de itinerario</div></div>
+        </div>
+        <div class="proj-4-feature">
+          <div class="proj-4-feat-icon" style="background:rgba(255,107,74,0.15)">💰</div>
+          <div><div class="proj-4-feat-title" data-lang="en">Budget Panel</div><div class="proj-4-feat-title" data-lang="es">Panel de Presupuesto</div><div class="proj-4-feat-sub" data-lang="en">Real-time spend tracking per trip</div><div class="proj-4-feat-sub" data-lang="es">Seguimiento de gastos en tiempo real</div></div>
+        </div>
+        <div class="proj-4-feature">
+          <div class="proj-4-feat-icon" style="background:rgba(255,184,48,0.15)">🤖</div>
+          <div><div class="proj-4-feat-title" data-lang="en">Multi-agent Setup</div><div class="proj-4-feat-title" data-lang="es">Setup Multi-agente</div><div class="proj-4-feat-sub" data-lang="en">4 specialized Claude Code agents</div><div class="proj-4-feat-sub" data-lang="es">4 agentes especializados de Claude Code</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. HubSpot Modules -->
+    <div class="proj-card proj-5">
+      <div class="proj-5-left">
+        <div>
+          <div style="font-family:var(--f-mono);font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(0,0,0,0.4);margin-bottom:1rem">05 — Paystand · HubSpot</div>
+          <h3 class="proj-5-title" data-lang="en">Custom<br><span>HubSpot</span><br>Modules</h3>
+          <h3 class="proj-5-title" data-lang="es">Módulos<br><span>HubSpot</span><br>Custom</h3>
+        </div>
+        <p class="proj-5-desc" data-lang="en">Built reusable, interactive HubSpot modules from scratch — FAQ accordions, testimonial cards with conditional logic, an interactive pricing calculator, and responsive blog templates. All in HubL.</p>
+        <p class="proj-5-desc" data-lang="es">Construí módulos HubSpot reutilizables e interactivos — FAQ accordions, testimonial cards con lógica condicional, calculadora de pricing interactiva y templates de blog responsivos. Todo en HubL.</p>
+      </div>
+      <div class="proj-5-right">
+        <div class="code-block"><span class="cm">/* FAQ Accordion — HubL */</span><br><span class="kw">{% for</span> item <span class="kw">in</span> module.faq_items <span class="kw">%}</span><br>&nbsp;&nbsp;<span class="fn">&lt;div</span> class=<span class="str">"faq-item"</span><span class="fn">&gt;</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="fn">&lt;button</span> class=<span class="str">"faq-q"</span><span class="fn">&gt;</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ item.question }}<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="fn">&lt;/button&gt;</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="fn">&lt;div</span> class=<span class="str">"faq-a"</span><span class="fn">&gt;</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ item.answer }}<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="fn">&lt;/div&gt;</span><br>&nbsp;&nbsp;<span class="fn">&lt;/div&gt;</span><br><span class="kw">{% endfor %}</span><br><br><span class="cm">/* Testimonial — conditional */</span><br><span class="kw">{% if</span> module.show_video <span class="kw">%}</span><br>&nbsp;&nbsp;<span class="fn">&lt;video</span> src=<span class="str">"{{ video_url }}"</span><span class="fn">/&gt;</span><br><span class="kw">{% else %}</span><br>&nbsp;&nbsp;<span class="fn">&lt;blockquote&gt;</span>{{ quote }}<span class="fn">&lt;/blockquote&gt;</span><br><span class="kw">{% endif %}</span></div>
+      </div>
+    </div>
+
+    <!-- 6. Yaydoo PorCobrar -->
+    <div class="proj-card proj-6">
+      <div class="proj-6-left">
+        <div>
+          <div class="proj-6-eyebrow">06 — Yaydoo · PorCobrar</div>
+          <h3 class="proj-6-title" data-lang="en">Spanish-Market<br><span>Content System</span></h3>
+          <h3 class="proj-6-title" data-lang="es">Sistema de<br><span>Contenido en Español</span></h3>
+          <p class="proj-6-body" data-lang="en">Consolidated 4 separate product subpages into a single integral PorCobrar page — 10 modules, fully SEO-optimized for LATAM finance teams. Domain expertise in CFDI, SPEI, domiciliación, and cobranza preventiva.</p>
+          <p class="proj-6-body" data-lang="es">Consolidé 4 subpáginas de producto en una sola página integral de PorCobrar — 10 módulos, totalmente optimizados para SEO para equipos financieros de LATAM.</p>
+        </div>
+        <div class="proj-6-pills">
+          <span class="proj-6-pill">CFDI</span>
+          <span class="proj-6-pill">SPEI</span>
+          <span class="proj-6-pill">Domiciliación</span>
+          <span class="proj-6-pill">Cobranza preventiva</span>
+          <span class="proj-6-pill">Intereses moratorios</span>
+        </div>
+      </div>
+      <div class="proj-6-right">
+        <div class="proj-6-module"><strong data-lang="en">Before</strong><strong data-lang="es">Antes</strong><span data-lang="en">4 disconnected subpages · duplicate content · confusing navigation</span><span data-lang="es">4 subpáginas desconectadas · contenido duplicado · navegación confusa</span></div>
+        <div class="proj-6-module"><strong data-lang="en">After</strong><strong data-lang="es">Después</strong><span data-lang="en">1 integral page · 10 modules · clear user journey · SEO-structured</span><span data-lang="es">1 página integral · 10 módulos · journey de usuario claro · estructura SEO</span></div>
+        <div class="proj-6-module"><strong data-lang="en">Impact</strong><strong data-lang="es">Impacto</strong><span data-lang="en">Foundation for LATAM SEO strategy · internal editorial guidelines delivered</span><span data-lang="es">Base para estrategia SEO LATAM · guías editoriales internas entregadas</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="reveal">
+  <div class="section-label" data-lang="en">Capabilities</div>
+  <div class="section-label" data-lang="es">Capacidades</div>
+  <h2 class="section-title" data-lang="en">The full stack.</h2>
+  <h2 class="section-title" data-lang="es">El stack completo.</h2>
+  <div class="skills-bento">
+    <div class="sk sk-1">
+      <div class="sk-title" data-lang="en">Strategy & Messaging</div>
+      <div class="sk-title" data-lang="es">Estrategia y Messaging</div>
+      <div class="sk-items">
+        <div class="sk-item" data-lang="en">Product positioning & GTM</div><div class="sk-item" data-lang="es">Posicionamiento de producto</div>
+        <div class="sk-item" data-lang="en">Messaging architecture</div><div class="sk-item" data-lang="es">Arquitectura de messaging</div>
+        <div class="sk-item" data-lang="en">Competitive analysis</div><div class="sk-item" data-lang="es">Análisis competitivo</div>
+        <div class="sk-item" data-lang="en">Sales enablement</div><div class="sk-item" data-lang="es">Sales enablement</div>
+        <div class="sk-item" data-lang="en">B2B SaaS / Fintech</div><div class="sk-item" data-lang="es">B2B SaaS / Fintech</div>
+      </div>
+    </div>
+    <div class="sk sk-2">
+      <div class="sk-title" data-lang="en">Copywriting & Content</div>
+      <div class="sk-title" data-lang="es">Copywriting y Contenido</div>
+      <div class="sk-items">
+        <div class="sk-item" data-lang="en">Web copy (EN + ES)</div><div class="sk-item" data-lang="es">Copy web (EN + ES)</div>
+        <div class="sk-item" data-lang="en">Case studies</div><div class="sk-item" data-lang="es">Casos de estudio</div>
+        <div class="sk-item" data-lang="en">One-pagers & sales docs</div><div class="sk-item" data-lang="es">One-pagers y docs de ventas</div>
+        <div class="sk-item" data-lang="en">SEO content strategy</div><div class="sk-item" data-lang="es">Estrategia de contenido SEO</div>
+        <div class="sk-item" data-lang="en">A/B test copy variants</div><div class="sk-item" data-lang="es">Variantes de copy A/B</div>
+      </div>
+    </div>
+    <div class="sk sk-3">
+      <div class="sk-title" data-lang="en">Web & CRO</div>
+      <div class="sk-title" data-lang="es">Web y CRO</div>
+      <div class="sk-items">
+        <div class="sk-item">HubSpot CMS & HubL</div>
+        <div class="sk-item" data-lang="en">Conversion optimization</div><div class="sk-item" data-lang="es">Optimización de conversión</div>
+        <div class="sk-item" data-lang="en">UX writing</div><div class="sk-item" data-lang="es">UX writing</div>
+        <div class="sk-item">Fullstory · GA4</div>
+        <div class="sk-item" data-lang="en">Heatmaps & analytics</div><div class="sk-item" data-lang="es">Heatmaps y analítica</div>
+      </div>
+    </div>
+    <div class="sk sk-4">
+      <div class="sk-title">SEO</div>
+      <div class="sk-items">
+        <div class="sk-item" data-lang="en">Keyword strategy</div><div class="sk-item" data-lang="es">Estrategia de keywords</div>
+        <div class="sk-item" data-lang="en">On-page optimization</div><div class="sk-item" data-lang="es">Optimización on-page</div>
+        <div class="sk-item" data-lang="en">EN + ES markets</div><div class="sk-item" data-lang="es">Mercados EN + ES</div>
+        <div class="sk-item" data-lang="en">Technical SEO basics</div><div class="sk-item" data-lang="es">SEO técnico básico</div>
+      </div>
+    </div>
+    <div class="sk sk-5">
+      <div class="sk-title" data-lang="en">Tools</div>
+      <div class="sk-title" data-lang="es">Herramientas</div>
+      <div class="sk-items">
+        <div class="sk-item">HubSpot</div>
+        <div class="sk-item">Fullstory · GA4</div>
+        <div class="sk-item">Figma</div>
+        <div class="sk-item">Claude Code</div>
+        <div class="sk-item">HTML / CSS</div>
+      </div>
+    </div>
+    <div class="sk sk-6">
+      <div class="sk-title" data-lang="en">AI & Automation</div>
+      <div class="sk-title" data-lang="es">IA y Automatización</div>
+      <div class="sk-items">
+        <div class="sk-item" data-lang="en">Advanced prompt engineering</div><div class="sk-item" data-lang="es">Prompt engineering avanzado</div>
+        <div class="sk-item" data-lang="en">GPT agents for marketing</div><div class="sk-item" data-lang="es">Agentes GPT para marketing</div>
+        <div class="sk-item" data-lang="en">Claude Code development</div><div class="sk-item" data-lang="es">Desarrollo con Claude Code</div>
+        <div class="sk-item" data-lang="en">Content automation systems</div><div class="sk-item" data-lang="es">Sistemas de automatización de contenido</div>
+        <div class="sk-item" data-lang="en">Multi-agent orchestration</div><div class="sk-item" data-lang="es">Orquestación multi-agente</div>
+        <div class="sk-item" data-lang="en">AI-assisted CRO</div><div class="sk-item" data-lang="es">CRO asistido por IA</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="reveal">
+  <div class="contact-eyebrow" data-lang="en">Let's work together</div>
+  <div class="contact-eyebrow" data-lang="es">Trabajemos juntos</div>
+  <h2 class="contact-title" data-lang="en">Ready to build<br><span class="stroke">something great?</span></h2>
+  <h2 class="contact-title" data-lang="es">¿Lista para construir<br><span class="stroke">algo increíble?</span></h2>
+  <p class="contact-sub" data-lang="en">I'm open to new opportunities in marketing, content strategy, and web. Let's talk about what you're building.</p>
+  <p class="contact-sub" data-lang="es">Estoy abierta a nuevas oportunidades en marketing, estrategia de contenido y web. Hablemos de lo que estás construyendo.</p>
+  <div class="contact-links">
+    <a href="https://www.linkedin.com/in/danielatostadoc/" class="contact-link linkedin" target="_blank">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      LinkedIn
+    </a>
+    <a href="mailto:danielatostado00@gmail.com" class="contact-link email">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      danielatostado00@gmail.com
+    </a>
+    <a href="tel:+523332584872" class="contact-link phone">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.63A2 2 0 012 .18h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
+      +52 333 258 4872
+    </a>
+  </div>
+</section>
+
+<footer>
+  <span>© 2026 Daniela Tostado Contreras</span>
+  <span>Built with <a href="https://claude.ai">Claude</a> · Guadalajara, México 🌵</span>
+</footer>
+
+<script>
+  // Language toggle
+  function setLang(lang) {
+    document.body.classList.toggle('es-active', lang === 'es');
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.textContent === lang.toUpperCase());
+    });
+  }
+
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Animate bars on scroll
+  const barObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.querySelectorAll('.proj-2-bar-fill').forEach(bar => {
+          const w = bar.style.width;
+          bar.style.width = '0';
+          setTimeout(() => bar.style.width = w, 100);
+        });
+      }
+    });
+  }, { threshold: 0.3 });
+  document.querySelectorAll('.proj-2').forEach(el => barObserver.observe(el));
+</script>
+</body>
+</html>
