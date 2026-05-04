@@ -53,6 +53,29 @@ html[lang=en] li[data-en-li]{display:flex}
 html[lang=es] li[data-es-li]{display:flex}
 /* nav */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.25rem 3.5rem;transition:background .3s}
+/* ── CURSOR TRAIL ── */
+.ctail{position:fixed;width:5px;height:5px;border-radius:50%;background:var(--pom);pointer-events:none;z-index:9998;opacity:0;transform:translate(-50%,-50%);transition:opacity .4s ease}
+/* ── HERO SCRAMBLE ── */
+.scramble-char{display:inline-block;transition:color .08s}
+.scramble-char.scrambling{color:var(--pom);opacity:.6}
+/* ── MAGNETIC TILT on project cards ── */
+.pc{transform-style:preserve-3d;will-change:transform}
+.pc-inner-wrap{transition:transform .12s ease-out;transform-style:preserve-3d}
+/* ── SERVICES: hover dims siblings ── */
+.svcg:has(.sc:hover) .sc:not(:hover){opacity:.45;transition:opacity .3s}
+.svcg .sc{transition:background .4s,opacity .3s}
+/* ── CONTACT TYPEWRITER ── */
+.ctit-typed{border-right:2px solid var(--pom);padding-right:3px;animation:blink .75s step-end infinite}
+@keyframes blink{0%,100%{border-color:var(--pom)}50%{border-color:transparent}}
+/* ── HERO GRADIENT BLOB ── */
+#hero-blob{position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(184,50,40,.07) 0%,transparent 70%);pointer-events:none;z-index:0;filter:blur(40px);transition:transform .3s ease-out}
+/* ── ABOUT STAT BIG BG NUMBER ── */
+.astat{position:relative;overflow:hidden}
+.astat-bg{position:absolute;bottom:-.2em;right:.1em;font-family:'Syne',sans-serif;font-size:4.5rem;font-weight:800;color:rgba(28,21,16,.04);letter-spacing:-.08em;line-height:1;pointer-events:none;user-select:none;transition:color .5s}
+.astat:hover .astat-bg{color:rgba(184,50,40,.07)}
+/* ── PROJECT CARD: glow border on hover ── */
+.pc::after{content:'';position:absolute;inset:0;border-radius:0;opacity:0;transition:opacity .4s;pointer-events:none;box-shadow:inset 0 0 0 1px rgba(184,50,40,.15)}
+.pc:hover::after{opacity:1}
 nav::before{content:'';position:absolute;inset:0;background:rgba(244,239,230,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--b2);z-index:-1;opacity:0;transition:opacity .4s}
 nav.sc::before{opacity:1}
 .logo{font-family:'Syne',sans-serif;font-size:1rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--ink)}
@@ -585,6 +608,7 @@ footer{background:var(--ink);padding:1.4rem 3.5rem;display:flex;justify-content:
 </head>
 <body>
 <a href="#hero" class="skip-link">Skip to main content</a>
+<div id="scroll-prog"></div>
 <div id="cur"></div><div id="curR"></div>
 <nav id="nav" aria-label="Main navigation">
   <a class="logo" href="#hero" aria-label="Daniela Tostado – Home">DANIELA<em>.</em></a>
@@ -601,6 +625,7 @@ footer{background:var(--ink);padding:1.4rem 3.5rem;display:flex;justify-content:
   </div>
 </nav>
 <section id="hero">
+<div id="hero-blob"></div>
   <div class="hg"></div>
   <div class="horb" id="orb"></div>
   <div class="h-ey"><span data-en-i>Marketing · Web · Content · Branding</span><span data-es-i>Marketing · Web · Contenido · Branding</span></div>
@@ -662,10 +687,10 @@ footer{background:var(--ink);padding:1.4rem 3.5rem;display:flex;justify-content:
   <h2 class="st" data-en>Strategy.<br>Copy.<br><em>Execution.</em></h2>
   <h2 class="st" data-es>Estrategia.<br>Copy.<br><em>Ejecución.</em></h2>
   <div class="astats sr d2">
-    <div class="astat"><div class="n" data-target="4+">0+</div><div class="l" data-en-i>Years in B2B SaaS</div><div class="l" data-es-i>Años en B2B SaaS</div></div>
-    <div class="astat"><div class="n" data-target="30+">0+</div><div class="l" data-en-i>Pages built & optimized</div><div class="l" data-es-i>Páginas construidas</div></div>
-    <div class="astat"><div class="n">2</div><div class="l" data-en-i>Languages · one standard</div><div class="l" data-es-i>Idiomas · un estándar</div></div>
-    <div class="astat"><div class="n">5</div><div class="l" data-en-i>Companies · 3 industries</div><div class="l" data-es-i>Empresas · 3 industrias</div></div>
+    <div class="astat"><div class="astat-bg">4+</div><div class="n" data-target="4+">0+</div><div class="l" data-en-i>Years in B2B SaaS</div><div class="l" data-es-i>Años en B2B SaaS</div></div>
+    <div class="astat"><div class="astat-bg">30+</div><div class="n" data-target="30+">0+</div><div class="l" data-en-i>Pages built & optimized</div><div class="l" data-es-i>Páginas construidas</div></div>
+    <div class="astat"><div class="astat-bg">2</div><div class="n">2</div><div class="l" data-en-i>Languages · one standard</div><div class="l" data-es-i>Idiomas · un estándar</div></div>
+    <div class="astat"><div class="astat-bg">5</div><div class="n">5</div><div class="l" data-en-i>Companies · 3 industries</div><div class="l" data-es-i>Empresas · 3 industrias</div></div>
   </div>
 </div>
 <div class="abody sr d2">
@@ -1343,8 +1368,8 @@ footer{background:var(--ink);padding:1.4rem 3.5rem;display:flex;justify-content:
 <div class="clay">
 <div>
   <div class="ov sr" data-en>Get in touch</div><div class="ov sr" data-es>Contáctame</div>
-  <h2 class="ctit sr d1" data-en>Let's build<br><em>together.</em></h2>
-  <h2 class="ctit sr d1" data-es>Construyamos<br><em>juntos.</em></h2>
+  <h2 class="ctit sr d1" id="ct-typed-en" data-en>Let's build<br><em>together.</em></h2>
+  <h2 class="ctit sr d1" id="ct-typed-es" data-es>Construyamos<br><em>juntos.</em></h2>
   <p class="csub sr d2" data-en>Open to new opportunities in marketing, web strategy, branding, and content.</p>
   <p class="csub sr d2" data-es>Abierta a nuevas oportunidades en marketing, estrategia web, branding y contenido.</p>
   <div class="cls sr d3">
@@ -1498,6 +1523,124 @@ new IntersectionObserver(entries=>{
 // pause on hover
 const wb = document.getElementById('wbrowser');
 if(wb){ wb.addEventListener('mouseenter', stopWaypointAuto); wb.addEventListener('mouseleave', startWaypointAuto); }
+
+// ── SCROLL PROGRESS BAR ──
+const scrollProg = document.getElementById('scroll-prog');
+window.addEventListener('scroll', () => {
+  const pct = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100;
+  if(scrollProg) scrollProg.style.width = Math.min(100, pct) + '%';
+}, {passive: true});
+
+// ── CURSOR TRAIL ──
+const trailCount = 8;
+const trailDots = [];
+for(let i = 0; i < trailCount; i++) {
+  const d = document.createElement('div');
+  d.className = 'ctail';
+  const sz = Math.max(2, 5 - i * 0.4);
+  d.style.cssText = `width:${sz}px;height:${sz}px`;
+  document.body.appendChild(d);
+  trailDots.push({el: d, x: -100, y: -100});
+}
+let tmx = -100, tmy = -100;
+window.addEventListener('mousemove', e => { tmx = e.clientX; tmy = e.clientY; }, {passive: true});
+(function animT() {
+  trailDots.forEach((t, i) => {
+    const src = i === 0 ? {x: tmx, y: tmy} : trailDots[i-1];
+    t.x += (src.x - t.x) * 0.38;
+    t.y += (src.y - t.y) * 0.38;
+    t.el.style.left = t.x + 'px';
+    t.el.style.top = t.y + 'px';
+    t.el.style.opacity = String((1 - i / trailCount) * 0.5);
+  });
+  requestAnimationFrame(animT);
+})();
+
+// ── HERO BLOB follows mouse ──
+const heroBlob = document.getElementById('hero-blob');
+const heroSec = document.getElementById('hero');
+if(heroBlob && heroSec) {
+  heroSec.addEventListener('mousemove', e => {
+    const r = heroSec.getBoundingClientRect();
+    heroBlob.style.transform = `translate(${e.clientX - r.left - 300}px,${e.clientY - r.top - 300}px)`;
+  }, {passive: true});
+}
+
+// ── HERO TEXT SCRAMBLE ──
+const SCHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ#@&';
+function scramble(el) {
+  if(!el) return;
+  const orig = el.textContent;
+  let step = 0;
+  const iv = setInterval(() => {
+    el.textContent = orig.split('').map((ch, i) => {
+      if(i < step) return ch;
+      return ch === ' ' || ch === '.' ? ch : SCHARS[Math.floor(Math.random() * SCHARS.length)];
+    }).join('');
+    step += 0.6;
+    if(step > orig.length) { el.textContent = orig; clearInterval(iv); }
+  }, 30);
+}
+// Get hero name lines and scramble on load
+setTimeout(() => {
+  document.querySelectorAll('.h-name').forEach((el, i) => setTimeout(() => scramble(el), i * 80));
+}, 300);
+
+// ── MAGNETIC TILT on project cards ──
+document.querySelectorAll('.pc[data-proj]').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const r = card.getBoundingClientRect();
+    const dx = (e.clientX - r.left - r.width/2) / (r.width/2);
+    const dy = (e.clientY - r.top - r.height/2) / (r.height/2);
+    card.style.transform = `perspective(1400px) rotateY(${dx*2.5}deg) rotateX(${-dy*1.2}deg) scale(1.006)`;
+    card.style.transition = 'transform .1s ease';
+  });
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = '';
+    card.style.transition = 'transform .55s cubic-bezier(.22,1,.36,1)';
+    setTimeout(() => { card.style.transition = ''; }, 550);
+  });
+});
+
+// ── CONTACT TYPEWRITER ──
+let ctDone = false;
+const ctWatcher = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(!e.isIntersecting || ctDone) return;
+    ctDone = true;
+    const lang = document.documentElement.lang;
+    const el = document.getElementById(lang === 'es' ? 'ct-typed-es' : 'ct-typed-en');
+    if(!el) return;
+    const raw = el.innerHTML;
+    el.innerHTML = '';
+    el.style.borderRight = '2px solid var(--pom)';
+    el.style.paddingRight = '3px';
+    // Split preserving <br> and <em>...</em>
+    const tokens = [];
+    let buf = '', j = 0;
+    while(j < raw.length) {
+      if(raw.slice(j,j+4) === '<br>') { if(buf) tokens.push(buf); tokens.push('<br>'); buf=''; j+=4; }
+      else if(raw.slice(j,j+4) === '<em>') {
+        if(buf) tokens.push(buf); buf='';
+        const end = raw.indexOf('</em>',j);
+        tokens.push(raw.slice(j, end+5)); j = end+5;
+      } else { buf += raw[j]; j++; }
+    }
+    if(buf) tokens.push(buf);
+    let ti = 0, ci = 0;
+    function tick() {
+      if(ti >= tokens.length) { el.style.borderRight='none'; el.style.paddingRight='0'; return; }
+      const tok = tokens[ti];
+      if(tok === '<br>') { el.innerHTML += '<br>'; ti++; ci=0; setTimeout(tick,60); return; }
+      if(tok.startsWith('<em>')) { el.innerHTML += tok; ti++; ci=0; setTimeout(tick,40); return; }
+      if(ci < tok.length) { el.innerHTML += tok[ci++]; setTimeout(tick, 48); }
+      else { ti++; ci=0; setTimeout(tick,48); }
+    }
+    setTimeout(tick, 500);
+  });
+}, {threshold: 0.4});
+const ctSec = document.getElementById('ct');
+if(ctSec) ctWatcher.observe(ctSec);
 // nav active
 document.querySelectorAll('section[id]').forEach(s=>{
   new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)document.querySelectorAll('.nl a').forEach(a=>a.classList.toggle('act',a.getAttribute('href')==='#'+x.target.id))})},{threshold:.4}).observe(s);
