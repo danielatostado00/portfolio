@@ -12,27 +12,21 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{background:#f4efe6;color:#1c1510;font-family:'Inter',sans-serif;font-weight:300;overflow-x:hidden;cursor:none}
-
-/* ── PALETTE ── */
 :root{
-  --c0:#f4efe6; --c1:#ede5d5; --c2:#e4d8c4; --c3:#d8c9b0;
-  --ink:#1c1510; --ink2:#2e231a; --muted:#7a6a58; --faint:#b0998a;
-  --b:rgba(28,21,16,.1); --b2:rgba(28,21,16,.05);
-  /* Pomegranate — main accent */
-  --pom:#c0392b; --pom2:#e74c3c; --pom-bg:#fdf0ee;
-  /* Secondaries — each card/section gets one */
-  --gold:#b8860b; --gold-bg:#fdf7e8;
-  --sage:#2e7d52; --sage-bg:#edf7f1;
-  --sky:#1a5276; --sky-bg:#e8f0f8;
-  --plum:#6c3483; --plum-bg:#f5edf8;
-  --warm:#c67c2a; --warm-bg:#fdf3e7;
+  --c0:#f4efe6;--c1:#ede5d5;--c2:#e4d8c4;--c3:#d8c9b0;
+  --ink:#1c1510;--ink2:#2e231a;--mut:#7a6a58;--faint:#b0998a;
+  --b:rgba(28,21,16,.1);--b2:rgba(28,21,16,.05);
+  --pom:#b83228;--pom2:#d64030;--pom-bg:#fdf0ee;
+  --gold:#b8860b;--gold-bg:#fdf7e8;
+  --sage:#2e7d52;--sage-bg:#edf7f1;
+  --sky:#1a5276;--sky-bg:#e8f0f8;
+  --plum:#6c3483;--plum-bg:#f5edf8;
+  --warm:#c67c2a;--warm-bg:#fdf3e7;
 }
-
-/* ── CURSOR ── */
+/* cursor */
 #cur{position:fixed;width:9px;height:9px;background:var(--ink);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .3s,height .3s,background .2s;mix-blend-mode:multiply}
-#curR{position:fixed;width:34px;height:34px;border:1.5px solid rgba(28,21,16,.28);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .3s,height .3s}
-
-/* ── LANG ── */
+#curR{position:fixed;width:34px;height:34px;border:1.5px solid rgba(28,21,16,.25);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .3s,height .3s}
+/* lang */
 [data-en],[data-es]{display:none}
 html[lang=en] [data-en]{display:block}
 html[lang=es] [data-es]{display:block}
@@ -42,122 +36,113 @@ html[lang=es] [data-es-i]{display:inline}
 li[data-en-li],li[data-es-li]{display:none}
 html[lang=en] li[data-en-li]{display:flex}
 html[lang=es] li[data-es-li]{display:flex}
-
-/* ── NAV ── */
+/* nav */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.25rem 3.5rem;transition:background .3s}
 nav::before{content:'';position:absolute;inset:0;background:rgba(244,239,230,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--b2);z-index:-1;opacity:0;transition:opacity .4s}
-nav.scrolled::before{opacity:1}
+nav.sc::before{opacity:1}
 .logo{font-family:'Syne',sans-serif;font-size:1rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--ink)}
 .logo em{font-style:normal;color:var(--pom)}
 .nl{display:flex;gap:2.5rem;list-style:none}
-.nl a{font-size:.7rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);transition:color .2s;position:relative}
+.nl a{font-size:.7rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);transition:color .2s;position:relative}
 .nl a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1px;background:var(--pom);transition:width .3s}
 .nl a:hover,.nl a.act{color:var(--ink)}
 .nl a:hover::after,.nl a.act::after{width:100%}
 .lt{display:flex;border:1.5px solid var(--b);border-radius:3px;overflow:hidden}
-.lb{background:none;border:none;cursor:none;font-family:'JetBrains Mono',monospace;font-size:.66rem;font-weight:500;letter-spacing:.1em;padding:.36rem .76rem;transition:all .2s;color:var(--muted)}
+.lb{background:none;border:none;cursor:none;font-family:'JetBrains Mono',monospace;font-size:.66rem;font-weight:500;letter-spacing:.1em;padding:.36rem .76rem;transition:all .2s;color:var(--mut)}
 .lb.on{background:var(--ink);color:var(--c0)}
-
-/* ── HERO ── */
+/* hero */
 #hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 3.5rem 4.5rem;position:relative;overflow:hidden;background:var(--c0)}
-.hgrid{position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(90deg,transparent,transparent calc(100%/12 - 1px),rgba(28,21,16,.035) calc(100%/12 - 1px),rgba(28,21,16,.035) calc(100%/12))}
-.horb{position:absolute;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(192,57,43,.08),transparent 70%);top:-80px;right:-80px;pointer-events:none;will-change:transform}
-
-/* Eyebrow */
+.hg{position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(90deg,transparent,transparent calc(100%/12 - 1px),rgba(28,21,16,.035) calc(100%/12 - 1px),rgba(28,21,16,.035) calc(100%/12))}
+.horb{position:absolute;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(184,50,40,.07),transparent 70%);top:-80px;right:-80px;pointer-events:none;will-change:transform}
 .h-ey{font-family:'JetBrains Mono',monospace;font-size:.64rem;letter-spacing:.24em;text-transform:uppercase;color:var(--pom);margin-bottom:2rem;display:flex;align-items:center;gap:.75rem;opacity:0;animation:fup .6s .1s ease forwards}
 .h-ey::before{content:'';width:28px;height:1px;background:var(--pom)}
-
-/* Name — each word slides up */
-.hn{font-family:'Syne',sans-serif;font-size:clamp(4.5rem,9.5vw,11rem);font-weight:800;line-height:.88;letter-spacing:-.04em;color:var(--ink)}
+/* name — clamp prevents mobile overflow */
+.hn{font-family:'Syne',sans-serif;font-size:clamp(2.8rem,8.5vw,11rem);font-weight:800;line-height:.9;letter-spacing:-.04em;color:var(--ink);overflow:hidden}
 .hn-w{display:block;overflow:hidden}
 .hn-w span{display:block;transform:translateY(110%);animation:slideUp .85s cubic-bezier(.22,1,.36,1) forwards}
 .hn-w:nth-child(1) span{animation-delay:.18s}
 .hn-w:nth-child(2) span{animation-delay:.3s}
 .hn-w:nth-child(3) span{animation-delay:.42s;color:var(--pom)}
-
-/* Animated role line */
-.role-line{height:2.2rem;overflow:hidden;margin-top:1.2rem;opacity:0;animation:fup .6s .6s ease forwards}
-.role-track{display:flex;flex-direction:column;gap:0;transition:transform .65s cubic-bezier(.22,1,.36,1)}
-.role-item{font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:700;letter-spacing:-.02em;color:var(--muted);line-height:2.2rem;white-space:nowrap}
-.role-item span{color:var(--pom)}
-
+/* role line */
+.role-wrap{overflow:hidden;height:2.2rem;margin-top:1.2rem;opacity:0;animation:fup .6s .62s ease forwards}
+.role-inner{font-family:'Syne',sans-serif;font-size:1.45rem;font-weight:700;letter-spacing:-.02em;color:var(--mut);line-height:2.2rem;opacity:0;transform:translateY(100%);transition:opacity .4s,transform .4s cubic-bezier(.22,1,.36,1)}
+.role-inner.show{opacity:1;transform:translateY(0)}
+.role-inner.hide{opacity:0;transform:translateY(-100%)}
+.role-inner span{color:var(--pom)}
 .h-bot{display:flex;align-items:flex-end;justify-content:space-between;margin-top:3.5rem;gap:2rem;flex-wrap:wrap;opacity:0;animation:fup .8s .72s ease forwards}
-.h-desc{font-size:.98rem;font-weight:300;color:var(--muted);line-height:1.85;max-width:420px}
+.h-desc{font-size:.98rem;font-weight:300;color:var(--mut);line-height:1.85;max-width:420px}
 .h-desc strong{color:var(--ink);font-weight:500}
 .h-actions{display:flex;flex-direction:column;align-items:flex-end;gap:1rem;flex-shrink:0}
-.h-btns{display:flex;gap:.85rem}
-.btn-pom{display:inline-flex;align-items:center;gap:.5rem;background:var(--pom);color:#fff;font-family:'Syne',sans-serif;font-size:.76rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:.85rem 1.75rem;border-radius:2px;border:none;cursor:none;text-decoration:none;transition:all .28s}
-.btn-pom:hover{background:var(--pom2);transform:translateY(-3px);box-shadow:0 10px 28px rgba(192,57,43,.3)}
-.btn-out{display:inline-flex;align-items:center;gap:.5rem;background:transparent;color:var(--ink);font-family:'Syne',sans-serif;font-size:.76rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.85rem 1.75rem;border-radius:2px;border:1.5px solid var(--b);cursor:none;text-decoration:none;transition:all .28s}
-.btn-out:hover{border-color:var(--pom);color:var(--pom);transform:translateY(-3px)}
+.h-btns{display:flex;gap:.85rem;flex-wrap:wrap}
+.bp{display:inline-flex;align-items:center;gap:.5rem;background:var(--pom);color:#fff;font-family:'Syne',sans-serif;font-size:.76rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:.85rem 1.75rem;border-radius:2px;border:none;cursor:none;text-decoration:none;transition:all .28s}
+.bp:hover{background:var(--pom2);transform:translateY(-3px);box-shadow:0 10px 28px rgba(184,50,40,.3)}
+.bo{display:inline-flex;align-items:center;gap:.5rem;background:transparent;color:var(--ink);font-family:'Syne',sans-serif;font-size:.76rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.85rem 1.75rem;border-radius:2px;border:1.5px solid var(--b);cursor:none;text-decoration:none;transition:all .28s}
+.bo:hover{border-color:var(--pom);color:var(--pom);transform:translateY(-3px)}
 .h-tags{display:flex;gap:.4rem;flex-wrap:wrap;justify-content:flex-end}
-.h-tag{font-family:'JetBrains Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding:.25rem .65rem;border:1px solid var(--b);border-radius:2px}
-
+.h-tag{font-family:'JetBrains Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);padding:.25rem .65rem;border:1px solid var(--b);border-radius:2px}
 .h-scroll{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.38rem;color:var(--faint);font-family:'JetBrains Mono',monospace;font-size:.56rem;letter-spacing:.16em;opacity:0;animation:fup 1s .95s ease forwards}
 .sbar{width:1px;height:34px;background:linear-gradient(to bottom,var(--pom),transparent);animation:sb 2s ease infinite}
 @keyframes sb{0%,100%{opacity:.4;transform:scaleY(1)}50%{opacity:1;transform:scaleY(1.2)}}
-
-/* ── MARQUEE ── */
-.mq{overflow:hidden;border-top:1px solid var(--b2);border-bottom:1px solid var(--b2);background:var(--c1);padding:.7rem 0}
-.mq-track{display:flex;gap:3rem;width:max-content;animation:mqs 28s linear infinite}
-.mq:hover .mq-track{animation-play-state:paused}
-.mq-item{font-family:'Syne',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);white-space:nowrap;display:flex;align-items:center;gap:1rem}
-.mq-dot{width:5px;height:5px;border-radius:50%;background:var(--pom);flex-shrink:0}
+/* marquee */
+.mq{overflow:hidden;border-top:1px solid var(--b2);border-bottom:1px solid var(--b2);background:var(--c1);padding:.68rem 0}
+.mq-t{display:flex;gap:3rem;width:max-content;animation:mqs 28s linear infinite}
+.mq:hover .mq-t{animation-play-state:paused}
+.mq-i{font-family:'Syne',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);white-space:nowrap;display:flex;align-items:center;gap:1rem}
+.mq-d{width:5px;height:5px;border-radius:50%;background:var(--pom);flex-shrink:0}
 @keyframes mqs{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-
-/* ── SCROLL REVEAL ── */
+/* scroll reveal — multiple types */
 @keyframes fup{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
 @keyframes slideUp{from{transform:translateY(110%)}to{transform:translateY(0)}}
-.sr{opacity:0;transform:translateY(48px);transition:opacity .9s cubic-bezier(.22,1,.36,1),transform .9s cubic-bezier(.22,1,.36,1)}
-.sr.v{opacity:1;transform:none}
+/* base: fade+up */
+.sr{opacity:0;transform:translateY(48px);transition:opacity .88s cubic-bezier(.22,1,.36,1),transform .88s cubic-bezier(.22,1,.36,1)}
+/* left slide */
+.sr-l{opacity:0;transform:translateX(-36px);transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1)}
+/* right slide */
+.sr-r{opacity:0;transform:translateX(36px);transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1)}
+/* scale */
+.sr-s{opacity:0;transform:scale(.9);transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1)}
+/* all revealed */
+.sr.v,.sr-l.v,.sr-r.v,.sr-s.v{opacity:1;transform:none}
 .d1{transition-delay:.07s!important}.d2{transition-delay:.14s!important}.d3{transition-delay:.21s!important}
 .d4{transition-delay:.28s!important}.d5{transition-delay:.35s!important}.d6{transition-delay:.42s!important}
-
-/* ── SECTION BASE ── */
+/* sections */
 section{padding:8rem 3.5rem}
 .wrap{max-width:1200px;margin:0 auto}
 .ov{font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;color:var(--pom);display:flex;align-items:center;gap:.75rem;margin-bottom:1.5rem}
 .ov::before{content:'';width:16px;height:1px;background:var(--pom)}
-.st{font-family:'Syne',sans-serif;font-size:clamp(2.8rem,5vw,4.8rem);font-weight:800;letter-spacing:-.04em;line-height:.92;color:var(--ink);margin-bottom:2rem}
+.st{font-family:'Syne',sans-serif;font-size:clamp(2.6rem,5vw,4.8rem);font-weight:800;letter-spacing:-.04em;line-height:.92;color:var(--ink);margin-bottom:2rem}
 .st em{font-style:normal;color:var(--pom)}
-
-/* ── ABOUT ── */
+/* about */
 #about{background:var(--c1)}
 .alay{display:grid;grid-template-columns:1fr 1fr;gap:8rem;align-items:start}
 .astats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--b);border:1px solid var(--b);margin-top:1.5rem}
 .astat{background:var(--c1);padding:1.75rem;transition:background .3s;cursor:default}
 .astat:hover{background:var(--c2)}
 .astat .n{font-family:'Syne',sans-serif;font-size:2.7rem;font-weight:800;letter-spacing:-.04em;color:var(--pom);line-height:1}
-.astat .l{font-size:.72rem;color:var(--muted);margin-top:.28rem;font-weight:300}
-.abody p{font-size:.98rem;font-weight:300;color:var(--muted);line-height:1.92;padding:1.3rem 0;border-bottom:1px solid var(--b2)}
+.astat .l{font-size:.72rem;color:var(--mut);margin-top:.28rem;font-weight:300}
+.abody p{font-size:.98rem;font-weight:300;color:var(--mut);line-height:1.92;padding:1.3rem 0;border-bottom:1px solid var(--b2)}
 .abody p:first-child{padding-top:0}
 .abody p strong{color:var(--ink);font-weight:500}
 .traits{display:flex;flex-wrap:wrap;gap:.38rem;padding-top:1.3rem}
-.trait{font-family:'JetBrains Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;padding:.26rem .7rem;border:1px solid var(--b);color:var(--muted);border-radius:2px;transition:all .22s;cursor:default}
+.trait{font-family:'JetBrains Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;padding:.26rem .7rem;border:1px solid var(--b);color:var(--mut);border-radius:2px;transition:all .22s;cursor:default}
 .trait:hover{border-color:var(--pom);color:var(--pom);background:var(--pom-bg)}
-
-/* ── SERVICES — IMPACTFUL ── */
+/* services - dark */
 #svc{background:var(--ink);padding:8rem 0;overflow:hidden}
-#svc .ov{color:rgba(244,239,230,.4)}
+#svc .ov{color:rgba(244,239,230,.38)}
 #svc .ov::before{background:var(--pom)}
 #svc .st{color:var(--c0)}
 #svc .st em{color:var(--pom)}
-.svc-intro{max-width:460px;font-size:.95rem;color:rgba(244,239,230,.45);line-height:1.82;margin-bottom:3.5rem;font-weight:300}
-
-/* Big number accent that appears on hover */
+.svc-sub{max-width:440px;font-size:.92rem;color:rgba(244,239,230,.42);line-height:1.85;margin-bottom:3.5rem;font-weight:300}
 .svcg{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(244,239,230,.06)}
 .sc{padding:2.75rem 2.4rem;cursor:default;position:relative;overflow:hidden;transition:background .35s;background:rgba(244,239,230,.03)}
-.sc:hover{background:rgba(244,239,230,.07)}
-/* Large decorative number bg */
-.sc::before{content:attr(data-num);position:absolute;bottom:-1.5rem;right:-1rem;font-family:'Syne',sans-serif;font-size:8rem;font-weight:800;letter-spacing:-.06em;opacity:0;transition:opacity .4s,transform .4s cubic-bezier(.22,1,.36,1);transform:translateY(10px);pointer-events:none;line-height:1}
-.sc:nth-child(1)::before{color:var(--gold);opacity:0}
-.sc:nth-child(2)::before{color:var(--sky);opacity:0}
-.sc:nth-child(3)::before{color:var(--pom);opacity:0}
-.sc:nth-child(4)::before{color:var(--sage);opacity:0}
-.sc:nth-child(5)::before{color:var(--plum);opacity:0}
-.sc:nth-child(6)::before{color:var(--warm);opacity:0}
-.sc:hover::before{opacity:.12;transform:translateY(0)}
-/* Color strip left edge */
+.sc:hover{background:rgba(244,239,230,.075)}
+.sc::before{content:attr(data-n);position:absolute;bottom:-1.5rem;right:-.5rem;font-family:'Syne',sans-serif;font-size:8rem;font-weight:800;letter-spacing:-.06em;color:rgba(244,239,230,.06);opacity:1;pointer-events:none;line-height:1;transition:color .4s}
+.sc:nth-child(1):hover::before{color:rgba(184,134,11,.18)}
+.sc:nth-child(2):hover::before{color:rgba(26,82,118,.18)}
+.sc:nth-child(3):hover::before{color:rgba(184,50,40,.18)}
+.sc:nth-child(4):hover::before{color:rgba(46,125,82,.18)}
+.sc:nth-child(5):hover::before{color:rgba(108,52,131,.18)}
+.sc:nth-child(6):hover::before{color:rgba(198,124,42,.18)}
 .sc::after{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;transform:scaleY(0);transform-origin:bottom;transition:transform .45s cubic-bezier(.22,1,.36,1)}
 .sc:nth-child(1)::after{background:var(--gold)}
 .sc:nth-child(2)::after{background:var(--sky)}
@@ -166,45 +151,42 @@ section{padding:8rem 3.5rem}
 .sc:nth-child(5)::after{background:var(--plum)}
 .sc:nth-child(6)::after{background:var(--warm)}
 .sc:hover::after{transform:scaleY(1)}
-.sc-ico{font-size:2rem;margin-bottom:1.4rem;display:block}
-.sc-nm{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;color:rgba(244,239,230,.9);margin-bottom:.7rem;letter-spacing:-.01em;transition:color .25s}
+.sc-ico{font-size:1.8rem;margin-bottom:1.5rem;display:block}
+.sc-nm{font-family:'Syne',sans-serif;font-size:1.08rem;font-weight:700;color:rgba(244,239,230,.88);margin-bottom:.65rem;letter-spacing:-.01em;transition:color .25s}
 .sc:nth-child(1):hover .sc-nm{color:var(--gold)}
-.sc:nth-child(2):hover .sc-nm{color:var(--sky-bg)}
+.sc:nth-child(2):hover .sc-nm{color:#87b8e0}
 .sc:nth-child(3):hover .sc-nm{color:var(--pom2)}
-.sc:nth-child(4):hover .sc-nm{color:var(--sage-bg)}
-.sc:nth-child(5):hover .sc-nm{color:var(--plum-bg)}
+.sc:nth-child(4):hover .sc-nm{color:#7ecf9a}
+.sc:nth-child(5):hover .sc-nm{color:#c4a0d8}
 .sc:nth-child(6):hover .sc-nm{color:var(--warm)}
-.sc-desc{font-size:.8rem;color:rgba(244,239,230,.4);line-height:1.82;margin-bottom:1.1rem}
+.sc-desc{font-size:.8rem;color:rgba(244,239,230,.38);line-height:1.82;margin-bottom:1.1rem}
 .sc-items{max-height:0;overflow:hidden;opacity:0;transition:max-height .55s cubic-bezier(.22,1,.36,1),opacity .4s ease}
-.sc:hover .sc-items{max-height:200px;opacity:1}
-.sc-item{font-size:.7rem;color:rgba(244,239,230,.55);display:flex;align-items:center;gap:.5rem;font-family:'JetBrains Mono',monospace;letter-spacing:.04em;margin-bottom:.32rem}
+.sc:hover .sc-items{max-height:220px;opacity:1}
+.sc-item{font-size:.7rem;color:rgba(244,239,230,.5);display:flex;align-items:center;gap:.5rem;font-family:'JetBrains Mono',monospace;letter-spacing:.04em;margin-bottom:.32rem}
 .sc-item::before{content:'→';color:var(--pom);flex-shrink:0}
-.svc-hint{font-size:.72rem;color:rgba(244,239,230,.28);font-family:'JetBrains Mono',monospace;letter-spacing:.08em;text-transform:uppercase;margin-top:1.5rem;text-align:right;padding-right:.5rem}
-
-/* ── EXPERIENCE ── */
+.svc-hint{font-size:.68rem;color:rgba(244,239,230,.22);font-family:'JetBrains Mono',monospace;letter-spacing:.1em;text-transform:uppercase;margin-top:1.5rem;text-align:right;padding-right:.5rem}
+/* experience */
 #exp{background:var(--c0)}
 .erow{display:grid;grid-template-columns:200px 1fr;border-top:1px solid var(--b2);padding:2.75rem 0;cursor:default;transition:background .25s}
 .erow:last-child{border-bottom:1px solid var(--b2)}
-.erow:hover{background:rgba(192,57,43,.03)}
+.erow:hover{background:rgba(184,50,40,.03)}
 .erow:hover .etit{color:var(--pom)}
 .eco{font-family:'Syne',sans-serif;font-size:.95rem;font-weight:700;color:var(--ink);margin-bottom:.25rem;letter-spacing:-.01em}
 .eper{font-family:'JetBrains Mono',monospace;font-size:.59rem;color:var(--faint);letter-spacing:.07em}
 .eloc{font-size:.68rem;color:var(--faint);margin-top:.15rem}
 .etit{font-size:.97rem;font-weight:500;color:var(--ink);margin-bottom:.58rem;transition:color .25s;letter-spacing:-.01em}
-.edesc{font-size:.86rem;font-weight:300;color:var(--muted);line-height:1.87;margin-bottom:.85rem;max-width:600px}
+.edesc{font-size:.86rem;font-weight:300;color:var(--mut);line-height:1.87;margin-bottom:.85rem;max-width:600px}
 .etags{display:flex;flex-wrap:wrap;gap:.28rem}
 .etag{font-family:'JetBrains Mono',monospace;font-size:.56rem;letter-spacing:.08em;text-transform:uppercase;padding:.18rem .55rem;border:1px solid var(--b);color:var(--faint)}
 .esub{margin-top:1.3rem;padding:1.15rem 1.4rem;border-left:2px solid var(--sage);background:rgba(46,125,82,.05)}
 .esub-lbl{font-family:'JetBrains Mono',monospace;font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;color:var(--sage);margin-bottom:.38rem}
 .esub-tit{font-size:.88rem;font-weight:500;color:var(--ink);margin-bottom:.3rem;letter-spacing:-.01em}
-.esub-desc{font-size:.78rem;font-weight:300;color:var(--muted);line-height:1.78}
-
-/* ── PROJECTS ── */
+.esub-desc{font-size:.78rem;font-weight:300;color:var(--mut);line-height:1.78}
+/* projects */
 #proj{background:var(--c1)}
 .ph{margin-bottom:3.5rem}
-.ph-hint{font-size:.82rem;color:var(--muted);margin-top:.6rem}
-
-/* 2×2 grid */
+.ph-hint{font-size:.82rem;color:var(--mut);margin-top:.6rem}
+/* 2x2 grid with staggered entrance animations */
 .pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--b);margin-bottom:1px}
 .pc{padding:2.75rem;cursor:default;position:relative;overflow:hidden;transition:transform .38s cubic-bezier(.22,1,.36,1),box-shadow .38s}
 .pc:nth-child(1){background:var(--sky-bg)}
@@ -225,82 +207,135 @@ section{padding:8rem 3.5rem}
 .pc:nth-child(3) .pc-cat{color:var(--plum)}
 .pc:nth-child(4) .pc-cat{color:var(--sage)}
 .pc-tit{font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:700;color:var(--ink);letter-spacing:-.02em;line-height:1.15;margin-bottom:.85rem}
-.pc-sum{font-size:.8rem;font-weight:300;color:var(--muted);line-height:1.82}
+.pc-sum{font-size:.8rem;font-weight:300;color:var(--mut);line-height:1.82}
 .pexp{max-height:0;overflow:hidden;transition:max-height .6s cubic-bezier(.22,1,.36,1),opacity .45s ease;opacity:0}
 .pc:hover .pexp{max-height:340px;opacity:1}
 .pexp-in{padding-top:1.3rem;border-top:1px solid rgba(28,21,16,.08);margin-top:1.3rem}
-.pdet{font-size:.76rem;font-weight:300;color:var(--muted);line-height:1.87;margin-bottom:.85rem}
+.pdet{font-size:.76rem;font-weight:300;color:var(--mut);line-height:1.87;margin-bottom:.85rem}
 .pmet{display:flex;gap:1.4rem;flex-wrap:wrap;margin-bottom:.78rem}
 .pmet .v{font-family:'Syne',sans-serif;font-size:1.35rem;font-weight:800;color:var(--ink);letter-spacing:-.03em;line-height:1}
 .pmet .l{font-family:'JetBrains Mono',monospace;font-size:.54rem;letter-spacing:.08em;color:var(--faint);margin-top:.1rem}
 .pouts{display:flex;flex-direction:column;gap:.3rem}
-.pout{font-size:.72rem;color:var(--muted);display:flex;align-items:flex-start;gap:.45rem}
+.pout{font-size:.72rem;color:var(--mut);display:flex;align-items:flex-start;gap:.45rem}
 .pout::before{content:'→';color:var(--pom);flex-shrink:0}
+/* ── WAYPOINT FEATURED — bone white, full-width, real branding ── */
+/* Waypoint brand tokens */
+:root{
+  --wp-navy:#1c2b3a; --wp-navy2:#243447; --wp-gold:#c9922a; --wp-gold2:#e0a83a;
+  --wp-cream:#faf8f4; --wp-text:rgba(255,255,255,.9); --wp-muted:rgba(255,255,255,.45);
+}
+.wfeat{background:#faf8f4;border-top:1px solid var(--b2);border-bottom:1px solid var(--b2);display:grid;grid-template-columns:1fr 1fr;overflow:hidden;position:relative;min-height:600px}
+/* subtle watermark */
+.wfeat::after{content:'waypoint';position:absolute;bottom:-1.5rem;left:-1rem;font-family:'Syne',sans-serif;font-size:14rem;font-weight:800;letter-spacing:-.06em;color:rgba(201,146,42,.06);pointer-events:none;user-select:none;line-height:1;white-space:nowrap}
+.wfeat-l{padding:4rem 3.5rem;display:flex;flex-direction:column;justify-content:space-between;position:relative;z-index:1}
+.wf-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(201,146,42,.1);border:1px solid rgba(201,146,42,.3);border-radius:30px;padding:.3rem .85rem;width:fit-content;margin-bottom:1.5rem}
+.wf-badge-dot{width:6px;height:6px;border-radius:50%;background:var(--wp-gold);animation:pulse 2s ease infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.6;transform:scale(.8)}}
+.wf-badge-txt{font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--wp-gold)}
+/* Waypoint logo mark */
+.wf-logo{font-family:'Syne',sans-serif;font-size:clamp(3rem,5vw,5.5rem);font-weight:800;letter-spacing:-.04em;line-height:.88;margin-bottom:1.25rem}
+.wf-logo .way{color:var(--ink)}
+.wf-logo .pt{color:var(--wp-gold)}
+.wf-desc{font-size:.9rem;font-weight:300;color:var(--mut);line-height:1.88;max-width:400px;margin-bottom:2rem}
+.wf-meta{display:flex;flex-direction:column;gap:1.5rem}
+.wf-stats{display:flex;gap:2rem}
+.wf-stat .n{font-family:'Syne',sans-serif;font-size:1.8rem;font-weight:800;color:var(--wp-gold);letter-spacing:-.03em;line-height:1}
+.wf-stat .l{font-size:.65rem;color:var(--mut);font-weight:400;margin-top:.15rem}
+.wf-pills{display:flex;flex-wrap:wrap;gap:.35rem}
+.wf-pill{font-family:'JetBrains Mono',monospace;font-size:.55rem;letter-spacing:.08em;padding:.22rem .6rem;border:1px solid var(--b);color:var(--mut);border-radius:2px}
+.wf-link{display:inline-flex;align-items:center;gap:.4rem;font-family:'Syne',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--wp-gold);transition:gap .22s,color .2s;text-decoration:none}
+.wf-link:hover{gap:.75rem;color:var(--pom)}
 
-/* ── WAYPOINT FEATURED ── */
-.pfeat{background:var(--ink);padding:4rem 3.5rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;position:relative;overflow:hidden}
-.pfeat::before{content:'WAYPOINT';position:absolute;right:-1rem;bottom:-2.5rem;font-family:'Syne',sans-serif;font-size:10rem;font-weight:800;color:rgba(244,239,230,.03);letter-spacing:-.04em;pointer-events:none;white-space:nowrap;user-select:none}
-.pfeat-l{position:relative;z-index:1}
-.pftag{display:inline-flex;align-items:center;gap:.4rem;border:1px solid rgba(192,57,43,.45);border-radius:2px;padding:.22rem .68rem;font-family:'JetBrains Mono',monospace;font-size:.56rem;letter-spacing:.12em;text-transform:uppercase;color:var(--pom);margin-bottom:1.3rem}
-.pftit{font-family:'Syne',sans-serif;font-size:3.5rem;font-weight:800;letter-spacing:-.04em;line-height:.9;color:var(--c0);margin-bottom:1.15rem}
-.pftit em{font-style:normal;color:var(--pom)}
-.pfdesc{font-size:.86rem;font-weight:300;color:rgba(244,239,230,.52);line-height:1.87;max-width:420px;margin-bottom:1.35rem}
-.pfpills{display:flex;flex-wrap:wrap;gap:.32rem;margin-bottom:1.3rem}
-.pfpill{font-family:'JetBrains Mono',monospace;font-size:.55rem;letter-spacing:.08em;padding:.2rem .58rem;border:1px solid rgba(244,239,230,.15);color:rgba(244,239,230,.45)}
-.pflink{display:inline-flex;align-items:center;gap:.4rem;font-family:'Syne',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--pom);transition:gap .22s,color .2s;text-decoration:none}
-.pflink:hover{gap:.8rem;color:var(--pom2)}
-.pfeat-r{position:relative;z-index:1}
-
-/* Waypoint animated mock */
-.wmock{border:1px solid rgba(244,239,230,.1);border-radius:10px;overflow:hidden;background:#1a1a1a}
-.wmock-bar{height:30px;background:#222;border-bottom:1px solid rgba(244,239,230,.07);display:flex;align-items:center;padding:0 .9rem;gap:.32rem}
-.wd{width:7px;height:7px;border-radius:50%}
-.wurl{font-family:'JetBrains Mono',monospace;font-size:.54rem;color:rgba(244,239,230,.22);margin-left:.4rem}
-.wmock-body{padding:1rem;display:flex;flex-direction:column;gap:.32rem}
-.wrow{display:flex;align-items:center;gap:.58rem;padding:.44rem .62rem;background:rgba(244,239,230,.04);border-radius:5px;border:1px solid rgba(244,239,230,.07);opacity:0;transform:translateX(-12px);transition:opacity .5s,transform .5s}
-.wrow.wv{opacity:1;transform:none}
-.wrow:nth-child(1){transition-delay:.1s}
-.wrow:nth-child(2){transition-delay:.25s}
-.wrow:nth-child(3){transition-delay:.4s}
-.wico{width:22px;height:22px;border-radius:5px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:.66rem}
-.wrtit{font-size:.74rem;font-weight:500;color:rgba(244,239,230,.78)}
-.wrsub{font-size:.61rem;color:rgba(244,239,230,.3);margin-top:.04rem}
-.wmock-prog{padding:.7rem 1rem;border-top:1px solid rgba(244,239,230,.07)}
-.wprog-lbl{font-family:'JetBrains Mono',monospace;font-size:.54rem;color:rgba(244,239,230,.3);margin-bottom:.32rem;display:flex;justify-content:space-between}
-.wprog-track{height:3px;background:rgba(244,239,230,.07);border-radius:2px;overflow:hidden}
-.wprog-fill{height:100%;border-radius:2px;background:linear-gradient(90deg,var(--pom),var(--warm));width:0%;transition:width 1.4s cubic-bezier(.22,1,.36,1)}
-.wprog-fill.wv{width:73%}
-.wmock-stats{padding:.75rem 1rem;border-top:1px solid rgba(244,239,230,.07);display:grid;grid-template-columns:repeat(3,1fr)}
-.ws .v{font-family:'Syne',sans-serif;font-size:1rem;font-weight:800;color:var(--pom);letter-spacing:-.03em}
-.ws .l{font-size:.52rem;color:rgba(244,239,230,.28);font-family:'JetBrains Mono',monospace;letter-spacing:.06em;margin-top:.04rem}
-
-/* ── SKILLS ── */
+/* Right side — animated browser with navigating screens */
+.wfeat-r{padding:3.5rem;display:flex;align-items:center;justify-content:center;position:relative;z-index:1;background:#f2ede4}
+.wbrowser{width:100%;max-width:520px;border-radius:14px;overflow:hidden;box-shadow:0 32px 80px rgba(28,43,58,.18),0 8px 24px rgba(28,43,58,.1);border:1px solid rgba(28,43,58,.08)}
+/* Browser chrome */
+.wb-chrome{height:38px;background:#e8e2d8;border-bottom:1px solid rgba(28,43,58,.1);display:flex;align-items:center;padding:0 1rem;gap:.5rem;flex-shrink:0}
+.wb-dots{display:flex;gap:.35rem}
+.wb-dot{width:10px;height:10px;border-radius:50%}
+.wb-bar{flex:1;height:22px;background:rgba(28,43,58,.08);border-radius:4px;margin:0 .75rem;display:flex;align-items:center;padding:0 .6rem;gap:.4rem}
+.wb-lock{font-size:.55rem;color:rgba(28,43,58,.4)}
+.wb-url{font-family:'JetBrains Mono',monospace;font-size:.58rem;color:rgba(28,43,58,.45)}
+/* Screen container — clips the sliding screens */
+.wb-screens{position:relative;height:360px;overflow:hidden;background:var(--wp-navy)}
+.wb-screen{position:absolute;inset:0;opacity:0;transform:translateX(24px);transition:opacity .55s cubic-bezier(.22,1,.36,1),transform .55s cubic-bezier(.22,1,.36,1);pointer-events:none}
+.wb-screen.ws-active{opacity:1;transform:none;pointer-events:auto}
+.wb-screen.ws-out{opacity:0;transform:translateX(-24px)}
+/* Screen 1 — Hero / Home */
+.ws1{background:var(--wp-navy)}
+.ws1-nav{height:40px;display:flex;align-items:center;justify-content:space-between;padding:0 1rem;border-bottom:1px solid rgba(255,255,255,.07)}
+.ws1-logo{font-size:.75rem;font-weight:800;letter-spacing:.01em}
+.ws1-logo .way{color:rgba(255,255,255,.9);font-family:'Syne',sans-serif}
+.ws1-logo .pt{color:var(--wp-gold);font-family:'Syne',sans-serif}
+.ws1-btn{font-family:'JetBrains Mono',monospace;font-size:.52rem;letter-spacing:.08em;text-transform:uppercase;padding:.22rem .6rem;border:1px solid rgba(201,146,42,.4);color:var(--wp-gold);border-radius:2px}
+.ws1-body{padding:1.25rem 1rem;text-align:center}
+.ws1-label{font-family:'JetBrains Mono',monospace;font-size:.52rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:.6rem}
+.ws1-h{font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;color:rgba(255,255,255,.92);letter-spacing:-.02em;line-height:1.1;margin-bottom:.25rem}
+.ws1-italic{font-style:italic;color:var(--wp-gold);display:block}
+.ws1-sub{font-size:.7rem;color:rgba(255,255,255,.4);margin-bottom:1rem}
+.ws1-bubbles{display:flex;justify-content:center;gap:.5rem;margin-bottom:1rem;flex-wrap:wrap}
+.ws1-bubble{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:.9rem}
+.ws1-bub-lbl{font-size:.38rem;color:rgba(255,255,255,.35);font-family:'JetBrains Mono',monospace;margin-top:1px}
+.ws1-input{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:.6rem .8rem;font-size:.68rem;color:rgba(255,255,255,.35);font-style:italic;text-align:left}
+/* Screen 2 — Mis Viajes */
+.ws2{background:var(--wp-navy)}
+.ws2-nav{height:40px;display:flex;align-items:center;justify-content:space-between;padding:0 1rem;border-bottom:1px solid rgba(255,255,255,.07)}
+.ws2-title{font-family:'Syne',sans-serif;font-size:.82rem;font-weight:700;color:rgba(255,255,255,.9)}
+.ws2-add{width:24px;height:24px;border-radius:50%;background:rgba(201,146,42,.25);border:1px solid rgba(201,146,42,.4);display:flex;align-items:center;justify-content:center;font-size:.8rem;color:var(--wp-gold)}
+.ws2-body{padding:.8rem}
+.ws2-trip{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:.75rem;margin-bottom:.5rem;display:flex;align-items:center;gap:.65rem}
+.ws2-trip:last-child{margin-bottom:0}
+.ws2-flag{font-size:1.2rem;flex-shrink:0}
+.ws2-trip-name{font-family:'Syne',sans-serif;font-size:.76rem;font-weight:700;color:rgba(255,255,255,.88)}
+.ws2-trip-date{font-family:'JetBrains Mono',monospace;font-size:.55rem;color:rgba(255,255,255,.35);margin-top:.08rem}
+.ws2-pill{margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:.48rem;letter-spacing:.06em;padding:.18rem .45rem;border-radius:3px;flex-shrink:0}
+.ws2-pill.active{background:rgba(201,146,42,.15);color:var(--wp-gold);border:1px solid rgba(201,146,42,.3)}
+.ws2-pill.done{background:rgba(255,255,255,.06);color:rgba(255,255,255,.35);border:1px solid rgba(255,255,255,.08)}
+/* Screen 3 — Itinerary detail */
+.ws3{background:var(--wp-navy)}
+.ws3-nav{height:40px;display:flex;align-items:center;gap:.6rem;padding:0 1rem;border-bottom:1px solid rgba(255,255,255,.07)}
+.ws3-back{font-size:.7rem;color:var(--wp-gold)}
+.ws3-nav-title{font-family:'Syne',sans-serif;font-size:.78rem;font-weight:700;color:rgba(255,255,255,.88)}
+.ws3-hero{background:rgba(201,146,42,.1);border-bottom:1px solid rgba(201,146,42,.15);padding:.75rem 1rem;display:flex;align-items:center;gap:.75rem}
+.ws3-dest-ico{font-size:1.6rem}
+.ws3-dest-name{font-family:'Syne',sans-serif;font-size:.9rem;font-weight:800;color:rgba(255,255,255,.92);letter-spacing:-.01em}
+.ws3-dest-meta{font-family:'JetBrains Mono',monospace;font-size:.5rem;color:var(--wp-gold);letter-spacing:.08em;text-transform:uppercase;margin-top:.1rem}
+.ws3-body{padding:.75rem 1rem}
+.ws3-day{margin-bottom:.65rem}
+.ws3-day-head{font-family:'JetBrains Mono',monospace;font-size:.52rem;letter-spacing:.12em;text-transform:uppercase;color:var(--wp-gold);margin-bottom:.35rem;display:flex;align-items:center;gap:.4rem}
+.ws3-day-head::after{content:'';flex:1;height:1px;background:rgba(201,146,42,.2)}
+.ws3-item{display:flex;align-items:flex-start;gap:.5rem;padding:.4rem .5rem;background:rgba(255,255,255,.04);border-radius:6px;margin-bottom:.3rem}
+.ws3-item:last-child{margin-bottom:0}
+.ws3-time{font-family:'JetBrains Mono',monospace;font-size:.5rem;color:rgba(255,255,255,.3);flex-shrink:0;margin-top:.15rem}
+.ws3-act{font-size:.68rem;color:rgba(255,255,255,.75);line-height:1.3}
+/* Screen nav indicators */
+.wb-indicators{height:28px;background:var(--wp-navy);display:flex;align-items:center;justify-content:center;gap:.4rem;border-top:1px solid rgba(255,255,255,.05)}
+.wb-ind{width:18px;height:3px;border-radius:2px;background:rgba(255,255,255,.15);transition:all .35s ease;cursor:pointer}
+.wb-ind.wi-active{width:28px;background:var(--wp-gold)}
+/* Screen label */
+.wb-screen-label{position:absolute;top:.6rem;right:.75rem;font-family:'JetBrains Mono',monospace;font-size:.48rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.2);z-index:5;pointer-events:none}
+/* skills */
 #sk{background:var(--c0)}
 .skg{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--b);margin-top:2.5rem}
 .skc{background:var(--c0);padding:2rem;position:relative;overflow:hidden;transition:background .3s,transform .32s cubic-bezier(.22,1,.36,1);cursor:default}
 .skc:hover{background:var(--c1);transform:translateY(-2px)}
 .skc::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;transform:scaleX(0);transform-origin:left;transition:transform .42s cubic-bezier(.22,1,.36,1)}
-.skc:nth-child(1)::before{background:var(--gold)}
-.skc:nth-child(2)::before{background:var(--sky)}
-.skc:nth-child(3)::before{background:var(--sage)}
-.skc:nth-child(4)::before{background:var(--pom)}
-.skc:nth-child(5)::before{background:var(--plum)}
-.skc:nth-child(6)::before{background:var(--warm)}
+.skc:nth-child(1)::before{background:var(--gold)}.skc:nth-child(2)::before{background:var(--sky)}.skc:nth-child(3)::before{background:var(--sage)}
+.skc:nth-child(4)::before{background:var(--pom)}.skc:nth-child(5)::before{background:var(--plum)}.skc:nth-child(6)::before{background:var(--warm)}
 .skc:hover::before{transform:scaleX(1)}
 .ski{font-size:1.15rem;margin-bottom:.88rem}
 .skt{font-family:'Syne',sans-serif;font-size:.88rem;font-weight:700;color:var(--ink);margin-bottom:.7rem;letter-spacing:-.01em}
 .skl{list-style:none;display:flex;flex-direction:column;gap:.26rem}
-.skl li{font-size:.74rem;font-weight:300;color:var(--muted);line-height:1.5;display:flex;align-items:center;gap:.4rem}
+.skl li{font-size:.74rem;font-weight:300;color:var(--mut);line-height:1.5;display:flex;align-items:center;gap:.4rem}
 .skl li::before{content:'';width:3px;height:3px;border-radius:50%;background:var(--pom);flex-shrink:0;opacity:.65}
-
-/* ── CONTACT ── */
+/* contact */
 #ct{background:var(--c1);padding:8rem 3.5rem}
 .clay{display:grid;grid-template-columns:1fr 1fr;gap:8rem;align-items:start;max-width:1200px;margin:0 auto}
-.ctit{font-family:'Syne',sans-serif;font-size:clamp(2.8rem,4.5vw,4.2rem);font-weight:800;letter-spacing:-.04em;line-height:.93;color:var(--ink);margin-bottom:1.35rem}
+.ctit{font-family:'Syne',sans-serif;font-size:clamp(2.6rem,4.5vw,4.2rem);font-weight:800;letter-spacing:-.04em;line-height:.93;color:var(--ink);margin-bottom:1.35rem}
 .ctit em{font-style:normal;color:var(--pom)}
-.csub{font-size:.88rem;font-weight:300;color:var(--muted);line-height:1.87;max-width:400px;margin-bottom:2.4rem}
+.csub{font-size:.88rem;font-weight:300;color:var(--mut);line-height:1.87;max-width:400px;margin-bottom:2.4rem}
 .cls{display:flex;flex-direction:column;gap:.7rem}
-.cl{display:flex;align-items:center;gap:.85rem;color:var(--muted);font-size:.82rem;font-weight:300;transition:color .2s;text-decoration:none}
+.cl{display:flex;align-items:center;gap:.85rem;color:var(--mut);font-size:.82rem;font-weight:300;transition:color .2s;text-decoration:none}
 .cl:hover{color:var(--ink)}
 .ci{width:32px;height:32px;border:1.5px solid var(--b);border-radius:3px;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:border-color .2s,background .2s}
 .cl:hover .ci{border-color:var(--pom);background:var(--pom-bg)}
@@ -313,39 +348,33 @@ section{padding:8rem 3.5rem}
 .fi:focus,.ft:focus{border-color:var(--pom);background:rgba(253,240,238,.6)}
 .ft{resize:vertical;min-height:115px}
 .fbtn{display:inline-flex;align-items:center;gap:.5rem;background:var(--pom);color:#fff;font-family:'Syne',sans-serif;font-size:.75rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:.86rem 1.9rem;border-radius:2px;border:none;cursor:none;width:fit-content;transition:all .26s;margin-top:.3rem}
-.fbtn:hover{background:var(--pom2);transform:translateY(-2px);box-shadow:0 8px 22px rgba(192,57,43,.3)}
+.fbtn:hover{background:var(--pom2);transform:translateY(-2px);box-shadow:0 8px 22px rgba(184,50,40,.3)}
 .fok{display:none;padding:.86rem 1rem;border:1px solid rgba(46,125,82,.28);background:rgba(46,125,82,.07);color:var(--sage);font-size:.8rem;font-weight:300;margin-top:.38rem;border-radius:2px}
-
-/* ── FOOTER ── */
 footer{background:var(--ink);padding:1.4rem 3.5rem;display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(244,239,230,.06);color:rgba(244,239,230,.28);font-size:.64rem;font-family:'JetBrains Mono',monospace;letter-spacing:.08em}
-
-/* ── RESPONSIVE ── */
+/* RESPONSIVE */
 @media(max-width:1000px){
   nav{padding:1rem 1.5rem}.nl{display:none}
-  #hero{padding:0 1.5rem 3.5rem}
-  .hn{font-size:clamp(3rem,11vw,5.5rem)}
+  #hero{padding:0 1.5rem 4rem}
   .h-bot{flex-direction:column;align-items:flex-start}
   .h-actions{align-items:flex-start}
   .h-tags{justify-content:flex-start}
   section,#svc,#ct{padding:5rem 1.5rem}
-  .alay,.clay,.pfeat{grid-template-columns:1fr;gap:3rem}
-  .pfeat{padding:2.5rem 1.5rem}
-  .pfeat::before{display:none}
+  .alay,.clay{grid-template-columns:1fr;gap:3rem}
   .erow{grid-template-columns:1fr;gap:.72rem}
   .pgrid,.svcg,.skg{grid-template-columns:1fr 1fr}
+  .wfeat{grid-template-columns:1fr;min-height:auto}
+  .wfeat::after{display:none}
+  .wfeat-l{padding:2.5rem 1.5rem}
+  .wfeat-r{padding:1.5rem;background:#f2ede4}
+  .wb-screens{height:280px}
 }
 @media(max-width:600px){
   .pgrid,.svcg,.skg,.fr{grid-template-columns:1fr}
-  .pftit{font-size:2.5rem}
 }
 </style>
 </head>
 <body>
-
-<!-- CURSOR -->
 <div id="cur"></div><div id="curR"></div>
-
-<!-- NAV -->
 <nav id="nav">
   <a class="logo" href="#hero">DANIELA<em>.</em></a>
   <ul class="nl">
@@ -360,10 +389,8 @@ footer{background:var(--ink);padding:1.4rem 3.5rem;display:flex;justify-content:
     <button class="lb" onclick="setLang('es')">ES</button>
   </div>
 </nav>
-
-<!-- HERO -->
 <section id="hero">
-  <div class="hgrid"></div>
+  <div class="hg"></div>
   <div class="horb" id="orb"></div>
   <div class="h-ey"><span data-en-i>Marketing · Web · Content · Branding</span><span data-es-i>Marketing · Web · Contenido · Branding</span></div>
   <div class="hn">
@@ -371,71 +398,27 @@ footer{background:var(--ink);padding:1.4rem 3.5rem;display:flex;justify-content:
     <div class="hn-w"><span>TOSTADO</span></div>
     <div class="hn-w"><span>CONTRERAS.</span></div>
   </div>
-
-  <!-- Animated rotating role -->
-  <div class="role-line">
-    <div class="role-track" id="roleTrack">
-      <div class="role-item" data-en-i>Webmaster <span>·</span> Strategist <span>·</span> Builder</div>
-      <div class="role-item" data-en-i>Copywriter <span>·</span> CRO Expert <span>·</span> Creator</div>
-      <div class="role-item" data-en-i>Brand Designer <span>·</span> AI Builder <span>·</span> Analyst</div>
-      <div class="role-item" data-en-i>Fintech Specialist <span>·</span> HubSpot Pro</div>
-      <div class="role-item" data-es-i>Webmaster <span>·</span> Estratega <span>·</span> Creadora</div>
-      <div class="role-item" data-es-i>Copywriter <span>·</span> Experta CRO <span>·</span> Builder</div>
-      <div class="role-item" data-es-i>Diseño de Marca <span>·</span> IA <span>·</span> Analítica</div>
-      <div class="role-item" data-es-i>Especialista Fintech <span>·</span> HubSpot Pro</div>
-    </div>
-  </div>
-
+  <div class="role-wrap"><div class="role-inner" id="roleEl"></div></div>
   <div class="h-bot">
     <p class="h-desc" data-en>I turn complex <strong>B2B products</strong> into clear, converting web experiences — from strategy and copy to code, branding, and measurement.</p>
-    <p class="h-desc" data-es>Convierto productos <strong>B2B complejos</strong> en experiencias web claras que convierten — de la estrategia y el copy al código, branding y medición.</p>
+    <p class="h-desc" data-es>Convierto productos <strong>B2B complejos</strong> en experiencias web claras que convierten — de la estrategia al código, branding y medición.</p>
     <div class="h-actions">
       <div class="h-btns">
-        <a href="#proj" class="btn-pom"><span data-en-i>See my work</span><span data-es-i>Ver mi trabajo</span></a>
-        <a href="#ct" class="btn-out"><span data-en-i>Get in touch</span><span data-es-i>Contáctame</span></a>
+        <a href="#proj" class="bp"><span data-en-i>See my work</span><span data-es-i>Ver mi trabajo</span></a>
+        <a href="#ct" class="bo"><span data-en-i>Get in touch</span><span data-es-i>Contáctame</span></a>
       </div>
-      <div class="h-tags">
-        <div class="h-tag">B2B SaaS</div><div class="h-tag">Fintech</div><div class="h-tag">EN + ES</div><div class="h-tag">Guadalajara, MX</div>
-      </div>
+      <div class="h-tags"><div class="h-tag">B2B SaaS</div><div class="h-tag">Fintech</div><div class="h-tag">EN + ES</div><div class="h-tag">Guadalajara, MX</div></div>
     </div>
   </div>
   <div class="h-scroll"><div class="sbar"></div><span>scroll</span></div>
 </section>
-
-<!-- MARQUEE -->
 <div class="mq">
-  <div class="mq-track">
-    <span class="mq-item"><span class="mq-dot"></span>B2B Fintech</span>
-    <span class="mq-item"><span class="mq-dot"></span>Web Strategy</span>
-    <span class="mq-item"><span class="mq-dot"></span>Copywriting</span>
-    <span class="mq-item"><span class="mq-dot"></span>HubSpot CMS</span>
-    <span class="mq-item"><span class="mq-dot"></span>CRO</span>
-    <span class="mq-item"><span class="mq-dot"></span>AI Automation</span>
-    <span class="mq-item"><span class="mq-dot"></span>Branding</span>
-    <span class="mq-item"><span class="mq-dot"></span>SEO EN + ES</span>
-    <span class="mq-item"><span class="mq-dot"></span>Fullstory</span>
-    <span class="mq-item"><span class="mq-dot"></span>OKR Systems</span>
-    <span class="mq-item"><span class="mq-dot"></span>Claude Code</span>
-    <span class="mq-item"><span class="mq-dot"></span>LATAM Markets</span>
-    <span class="mq-item"><span class="mq-dot"></span>B2B Fintech</span>
-    <span class="mq-item"><span class="mq-dot"></span>Web Strategy</span>
-    <span class="mq-item"><span class="mq-dot"></span>Copywriting</span>
-    <span class="mq-item"><span class="mq-dot"></span>HubSpot CMS</span>
-    <span class="mq-item"><span class="mq-dot"></span>CRO</span>
-    <span class="mq-item"><span class="mq-dot"></span>AI Automation</span>
-    <span class="mq-item"><span class="mq-dot"></span>Branding</span>
-    <span class="mq-item"><span class="mq-dot"></span>SEO EN + ES</span>
-    <span class="mq-item"><span class="mq-dot"></span>Fullstory</span>
-    <span class="mq-item"><span class="mq-dot"></span>OKR Systems</span>
-    <span class="mq-item"><span class="mq-dot"></span>Claude Code</span>
-    <span class="mq-item"><span class="mq-dot"></span>LATAM Markets</span>
+  <div class="mq-t">
+    <span class="mq-i"><span class="mq-d"></span>B2B Fintech</span><span class="mq-i"><span class="mq-d"></span>Web Strategy</span><span class="mq-i"><span class="mq-d"></span>Copywriting</span><span class="mq-i"><span class="mq-d"></span>HubSpot CMS</span><span class="mq-i"><span class="mq-d"></span>CRO</span><span class="mq-i"><span class="mq-d"></span>AI Automation</span><span class="mq-i"><span class="mq-d"></span>Branding</span><span class="mq-i"><span class="mq-d"></span>SEO EN + ES</span><span class="mq-i"><span class="mq-d"></span>Fullstory</span><span class="mq-i"><span class="mq-d"></span>OKR Systems</span><span class="mq-i"><span class="mq-d"></span>Claude Code</span><span class="mq-i"><span class="mq-d"></span>LATAM Markets</span><span class="mq-i"><span class="mq-d"></span>B2B Fintech</span><span class="mq-i"><span class="mq-d"></span>Web Strategy</span><span class="mq-i"><span class="mq-d"></span>Copywriting</span><span class="mq-i"><span class="mq-d"></span>HubSpot CMS</span><span class="mq-i"><span class="mq-d"></span>CRO</span><span class="mq-i"><span class="mq-d"></span>AI Automation</span><span class="mq-i"><span class="mq-d"></span>Branding</span><span class="mq-i"><span class="mq-d"></span>SEO EN + ES</span><span class="mq-i"><span class="mq-d"></span>Fullstory</span><span class="mq-i"><span class="mq-d"></span>OKR Systems</span><span class="mq-i"><span class="mq-d"></span>Claude Code</span><span class="mq-i"><span class="mq-d"></span>LATAM Markets</span>
   </div>
 </div>
-
-<!-- ABOUT -->
 <section id="about">
-<div class="wrap">
-<div class="alay">
+<div class="wrap"><div class="alay">
 <div class="sr">
   <div class="ov" data-en>About me</div><div class="ov" data-es>Sobre mí</div>
   <h2 class="st" data-en>Strategy.<br>Copy.<br><em>Execution.</em></h2>
@@ -462,38 +445,33 @@ footer{background:var(--ink);padding:1.4rem 3.5rem;display:flex;justify-content:
     <span class="trait" data-en>Introvert powerhouse</span><span class="trait" data-es>Introvertida con impacto</span>
   </div>
 </div>
-</div>
-</div>
+</div></div>
 </section>
-
-<!-- SERVICES — dark, impactful -->
 <section id="svc">
 <div class="wrap">
   <div class="ov sr" data-en>What I do</div><div class="ov sr" data-es>Qué hago</div>
   <h2 class="st sr d1" data-en>Services &<br><em>capabilities.</em></h2>
   <h2 class="st sr d1" data-es>Servicios &<br><em>capacidades.</em></h2>
-  <p class="svc-intro sr d2" data-en>Six areas. One standard: clarity, execution, results. Hover to explore.</p>
-  <p class="svc-intro sr d2" data-es>Seis áreas. Un estándar: claridad, ejecución, resultados. Pasa el cursor.</p>
+  <p class="svc-sub sr d2" data-en>Six areas. One standard: clarity, execution, results. Hover each to explore.</p>
+  <p class="svc-sub sr d2" data-es>Seis áreas. Un estándar: claridad, ejecución, resultados. Pasa el cursor.</p>
 </div>
-<div class="svcg" style="max-width:none">
-  <div class="sc sr" data-num="01"><span class="sc-ico">✍️</span><div class="sc-nm" data-en>Strategy & Copy</div><div class="sc-nm" data-es>Estrategia & Copy</div><div class="sc-desc" data-en>Messaging architecture and web copy that converts — in English and Spanish.</div><div class="sc-desc" data-es>Arquitectura de messaging y copy web que convierte — en inglés y español.</div><div class="sc-items"><div class="sc-item" data-en>Product positioning & GTM</div><div class="sc-item" data-es>Posicionamiento y GTM</div><div class="sc-item" data-en>Web copy (EN + ES)</div><div class="sc-item" data-es>Copy web (EN + ES)</div><div class="sc-item" data-en>Case studies & sales enablement</div><div class="sc-item" data-es>Casos de estudio y sales enablement</div><div class="sc-item" data-en>SEO content strategy</div><div class="sc-item" data-es>Estrategia de contenido SEO</div></div></div>
-  <div class="sc sr d1" data-num="02"><span class="sc-ico">🌐</span><div class="sc-nm" data-en>Web & CRO</div><div class="sc-nm" data-es>Web & Conversión</div><div class="sc-desc" data-en>End-to-end web execution — HubSpot builds, A/B testing, analytics.</div><div class="sc-desc" data-es>Ejecución web completa — HubSpot, A/B testing y analítica.</div><div class="sc-items"><div class="sc-item">HubSpot CMS & HubL</div><div class="sc-item" data-en>Conversion rate optimization</div><div class="sc-item" data-es>Optimización de conversión</div><div class="sc-item" data-en>A/B testing & analytics</div><div class="sc-item" data-es>A/B testing y analítica</div><div class="sc-item" data-en>UX writing & page architecture</div><div class="sc-item" data-es>UX writing y arquitectura</div></div></div>
-  <div class="sc sr d2" data-num="03"><span class="sc-ico">🎨</span><div class="sc-nm" data-en>Branding & Web Design</div><div class="sc-nm" data-es>Branding & Diseño Web</div><div class="sc-desc" data-en>Integral brand creation — identity, design, and launch.</div><div class="sc-desc" data-es>Creación integral de marca — identidad, diseño y lanzamiento.</div><div class="sc-items"><div class="sc-item" data-en>Brand identity & messaging systems</div><div class="sc-item" data-es>Identidad de marca y mensajería</div><div class="sc-item" data-en>Landing page design & build</div><div class="sc-item" data-es>Diseño y construcción de landing pages</div><div class="sc-item" data-en>Visual brand guidelines</div><div class="sc-item" data-es>Guías visuales de marca</div></div></div>
-  <div class="sc sr d3" data-num="04"><span class="sc-ico">🤖</span><div class="sc-nm" data-en>AI & Automation</div><div class="sc-nm" data-es>IA & Automatización</div><div class="sc-desc" data-en>AI-powered marketing systems and prompt engineering at scale.</div><div class="sc-desc" data-es>Sistemas de marketing con IA y prompt engineering a escala.</div><div class="sc-items"><div class="sc-item" data-en>Advanced prompt engineering</div><div class="sc-item" data-es>Prompt engineering avanzado</div><div class="sc-item" data-en>Claude Code development</div><div class="sc-item" data-es>Desarrollo con Claude Code</div><div class="sc-item" data-en>Content automation systems</div><div class="sc-item" data-es>Sistemas de automatización</div></div></div>
-  <div class="sc sr d4" data-num="05"><span class="sc-ico">📊</span><div class="sc-nm" data-en>Analytics & OKRs</div><div class="sc-nm" data-es>Analítica & OKRs</div><div class="sc-desc" data-en>Measurement systems and data-driven reporting for every decision.</div><div class="sc-desc" data-es>Sistemas de medición y reportes para justificar cada decisión.</div><div class="sc-items"><div class="sc-item">Fullstory · GA4 · HubSpot</div><div class="sc-item" data-en>OKR systems & dashboards</div><div class="sc-item" data-es>Sistemas OKR y dashboards</div><div class="sc-item" data-en>Bi-weekly snapshot reporting</div><div class="sc-item" data-es>Reportes quincenales</div></div></div>
-  <div class="sc sr d5" data-num="06"><span class="sc-ico">🌎</span><div class="sc-nm" data-en>B2B Fintech Expert</div><div class="sc-nm" data-es>Experta Fintech B2B</div><div class="sc-desc" data-en>Deep expertise in B2B payments, AR automation, and LATAM markets.</div><div class="sc-desc" data-es>Experiencia profunda en pagos B2B, AR y mercados LATAM.</div><div class="sc-items"><div class="sc-item" data-en>AR / AP automation messaging</div><div class="sc-item" data-es>Mensajería AR/AP</div><div class="sc-item" data-en>LATAM adaptation (CFDI, SPEI)</div><div class="sc-item" data-es>Adaptación LATAM (CFDI, SPEI)</div><div class="sc-item" data-en>ERP-native platform positioning</div><div class="sc-item" data-es>Posicionamiento de plataformas ERP</div></div></div>
+<div class="svcg">
+  <div class="sc sr" data-n="01"><span class="sc-ico">✍️</span><div class="sc-nm" data-en>Strategy & Copy</div><div class="sc-nm" data-es>Estrategia & Copy</div><div class="sc-desc" data-en>Messaging architecture and web copy that converts — in English and Spanish.</div><div class="sc-desc" data-es>Arquitectura de messaging y copy web que convierte — en inglés y español.</div><div class="sc-items"><div class="sc-item" data-en>Product positioning & GTM</div><div class="sc-item" data-es>Posicionamiento y GTM</div><div class="sc-item" data-en>Web copy (EN + ES)</div><div class="sc-item" data-es>Copy web (EN + ES)</div><div class="sc-item" data-en>Case studies & sales enablement</div><div class="sc-item" data-es>Casos de estudio y sales enablement</div><div class="sc-item" data-en>SEO content strategy</div><div class="sc-item" data-es>Estrategia de contenido SEO</div></div></div>
+  <div class="sc sr d1" data-n="02"><span class="sc-ico">🌐</span><div class="sc-nm" data-en>Web & CRO</div><div class="sc-nm" data-es>Web & Conversión</div><div class="sc-desc" data-en>End-to-end web execution — HubSpot builds, A/B testing, analytics.</div><div class="sc-desc" data-es>Ejecución web completa — HubSpot, A/B testing y analítica.</div><div class="sc-items"><div class="sc-item">HubSpot CMS & HubL</div><div class="sc-item" data-en>Conversion rate optimization</div><div class="sc-item" data-es>Optimización de conversión</div><div class="sc-item" data-en>A/B testing & analytics</div><div class="sc-item" data-es>A/B testing y analítica</div><div class="sc-item" data-en>UX writing & page architecture</div><div class="sc-item" data-es>UX writing y arquitectura</div></div></div>
+  <div class="sc sr d2" data-n="03"><span class="sc-ico">🎨</span><div class="sc-nm" data-en>Branding & Web Design</div><div class="sc-nm" data-es>Branding & Diseño Web</div><div class="sc-desc" data-en>Integral brand creation — identity, design, and launch.</div><div class="sc-desc" data-es>Creación integral de marca — identidad, diseño y lanzamiento.</div><div class="sc-items"><div class="sc-item" data-en>Brand identity & messaging systems</div><div class="sc-item" data-es>Identidad de marca y mensajería</div><div class="sc-item" data-en>Landing page design & build</div><div class="sc-item" data-es>Diseño y construcción de landing pages</div><div class="sc-item" data-en>Visual brand guidelines</div><div class="sc-item" data-es>Guías visuales de marca</div></div></div>
+  <div class="sc sr d3" data-n="04"><span class="sc-ico">🤖</span><div class="sc-nm" data-en>AI & Automation</div><div class="sc-nm" data-es>IA & Automatización</div><div class="sc-desc" data-en>AI-powered marketing systems and prompt engineering at scale.</div><div class="sc-desc" data-es>Sistemas de marketing con IA y prompt engineering a escala.</div><div class="sc-items"><div class="sc-item" data-en>Advanced prompt engineering</div><div class="sc-item" data-es>Prompt engineering avanzado</div><div class="sc-item" data-en>Claude Code development</div><div class="sc-item" data-es>Desarrollo con Claude Code</div><div class="sc-item" data-en>Content automation systems</div><div class="sc-item" data-es>Sistemas de automatización</div></div></div>
+  <div class="sc sr d4" data-n="05"><span class="sc-ico">📊</span><div class="sc-nm" data-en>Analytics & OKRs</div><div class="sc-nm" data-es>Analítica & OKRs</div><div class="sc-desc" data-en>Measurement systems and data-driven reporting for every decision.</div><div class="sc-desc" data-es>Sistemas de medición y reportes para justificar cada decisión.</div><div class="sc-items"><div class="sc-item">Fullstory · GA4 · HubSpot</div><div class="sc-item" data-en>OKR systems & dashboards</div><div class="sc-item" data-es>Sistemas OKR y dashboards</div><div class="sc-item" data-en>Bi-weekly snapshot reporting</div><div class="sc-item" data-es>Reportes quincenales</div></div></div>
+  <div class="sc sr d5" data-n="06"><span class="sc-ico">🌎</span><div class="sc-nm" data-en>B2B Fintech Expert</div><div class="sc-nm" data-es>Experta Fintech B2B</div><div class="sc-desc" data-en>Deep expertise in B2B payments, AR automation, and LATAM markets.</div><div class="sc-desc" data-es>Experiencia profunda en pagos B2B, AR y mercados LATAM.</div><div class="sc-items"><div class="sc-item" data-en>AR / AP automation messaging</div><div class="sc-item" data-es>Mensajería AR/AP</div><div class="sc-item" data-en>LATAM adaptation (CFDI, SPEI)</div><div class="sc-item" data-es>Adaptación LATAM (CFDI, SPEI)</div><div class="sc-item" data-en>ERP-native platform positioning</div><div class="sc-item" data-es>Posicionamiento de plataformas ERP</div></div></div>
 </div>
-<div class="wrap"><p class="svc-hint" data-en-i>Hover each card to expand ↑</p><p class="svc-hint" data-es-i>Pasa el cursor para expandir ↑</p></div>
+<div class="wrap"><p class="svc-hint sr" data-en-i>Hover each card to expand ↑</p><p class="svc-hint sr" data-es-i>Pasa el cursor para expandir ↑</p></div>
 </section>
-
-<!-- EXPERIENCE -->
 <section id="exp">
 <div class="wrap">
 <div class="ov sr" data-en>Work history</div><div class="ov sr" data-es>Historial profesional</div>
 <h2 class="st sr d1" data-en>Where I've <em>built.</em></h2>
 <h2 class="st sr d1" data-es>Dónde he <em>construido.</em></h2>
 <div style="margin-top:.5rem">
-<div class="erow sr">
+<div class="erow sr-l">
   <div><div class="eco">Paystand</div><div class="eper">2024 – Present</div><div class="eloc">Guadalajara, MX</div></div>
   <div>
     <div class="etit" data-en>Webmaster & Marketing Strategist</div><div class="etit" data-es>Webmaster y Estratega de Marketing</div>
@@ -508,7 +486,7 @@ footer{background:var(--ink);padding:1.4rem 3.5rem;display:flex;justify-content:
     </div>
   </div>
 </div>
-<div class="erow sr d1">
+<div class="erow sr-l d1">
   <div><div class="eco">Wispok</div><div class="eper">2023 – 2024</div><div class="eloc">Guadalajara, MX</div></div>
   <div>
     <div class="etit" data-en>Business Project Manager</div><div class="etit" data-es>Gerente de Proyectos</div>
@@ -517,16 +495,16 @@ footer{background:var(--ink);padding:1.4rem 3.5rem;display:flex;justify-content:
     <div class="etags"><span class="etag">Project Management</span><span class="etag">SAP</span><span class="etag">GTM</span><span class="etag">Investor Relations</span></div>
   </div>
 </div>
-<div class="erow sr d2">
+<div class="erow sr-l d2">
   <div><div class="eco">Piel Arena</div><div class="eper">2020 – 2024</div><div class="eloc">Guadalajara, MX</div></div>
   <div>
     <div class="etit" data-en>Marketing Strategist</div><div class="etit" data-es>Estratega de Marketing</div>
     <p class="edesc" data-en>Campaigns that increased product engagement by 30%. Expanded to 7 new channels, growing reach by 25%.</p>
-    <p class="edesc" data-es>Campañas que incrementaron el engagement en 30%. Expansión a 7 nuevos canales, alcance +25%.</p>
+    <p class="edesc" data-es>Campañas que incrementaron el engagement en 30%. Expansión a 7 nuevos canales, crecimiento del 25%.</p>
     <div class="etags"><span class="etag">Brand Strategy</span><span class="etag">Campaigns</span><span class="etag">Multi-channel</span></div>
   </div>
 </div>
-<div class="erow sr d3">
+<div class="erow sr-l d3">
   <div><div class="eco">LeanMail</div><div class="eper">Earlier</div></div>
   <div>
     <div class="etit" data-en>Marketing</div><div class="etit" data-es>Marketing</div>
@@ -538,8 +516,6 @@ footer{background:var(--ink);padding:1.4rem 3.5rem;display:flex;justify-content:
 </div>
 </div>
 </section>
-
-<!-- PROJECTS — 2x2 + Waypoint -->
 <section id="proj">
 <div class="wrap">
 <div class="ph sr">
@@ -547,11 +523,10 @@ footer{background:var(--ink);padding:1.4rem 3.5rem;display:flex;justify-content:
   <h2 class="st" data-en>Projects that<br><em>moved the needle.</em></h2>
   <h2 class="st" data-es>Proyectos que<br><em>movieron el marcador.</em></h2>
   <p class="ph-hint" data-en>Hover to reveal details, metrics & outcomes.</p>
-  <p class="ph-hint" data-es>Pasa el cursor para ver detalles, métricas y resultados.</p>
+  <p class="ph-hint" data-es>Pasa el cursor para ver detalles y resultados.</p>
 </div>
 <div class="pgrid">
-  <!-- Card 1 -->
-  <div class="pc sr">
+  <div class="pc sr-l">
     <div class="pc-n">01</div>
     <div class="pc-cat" data-en>B2B Fintech · Strategy · Copy</div><div class="pc-cat" data-es>Fintech B2B · Estrategia · Copy</div>
     <div class="pc-tit" data-en>Website Messaging Audit</div><div class="pc-tit" data-es>Auditoría de Messaging Web</div>
@@ -564,8 +539,7 @@ footer{background:var(--ink);padding:1.4rem 3.5rem;display:flex;justify-content:
       <div class="pouts"><div class="pout" data-en>Pages realigned with real product capabilities</div><div class="pout" data-es>Páginas alineadas con capacidades reales</div><div class="pout" data-en>Internal guidelines delivered to leadership</div><div class="pout" data-es>Guías internas entregadas a liderazgo</div></div>
     </div></div>
   </div>
-  <!-- Card 2 -->
-  <div class="pc sr d1">
+  <div class="pc sr-r">
     <div class="pc-n">02</div>
     <div class="pc-cat" data-en>Analytics · CRO · Q2 2026</div><div class="pc-cat" data-es>Analítica · CRO · Q2 2026</div>
     <div class="pc-tit" data-en>Conversion OKR System</div><div class="pc-tit" data-es>Sistema OKR de Conversión</div>
@@ -573,93 +547,209 @@ footer{background:var(--ink);padding:1.4rem 3.5rem;display:flex;justify-content:
     <p class="pc-sum" data-es>Sistema completo de medición de conversión — dashboards Fullstory, tracking A/B y app HTML personalizada.</p>
     <div class="pexp"><div class="pexp-in">
       <p class="pdet" data-en>Fullstory dashboards, bi-weekly snapshots, A/B test tracking, and a persistent HTML tracker with OKR checklist and performance charts.</p>
-      <p class="pdet" data-es>Dashboards Fullstory, snapshots quincenales, tracking A/B y app HTML persistente con checklist OKR y gráficas.</p>
+      <p class="pdet" data-es>Dashboards Fullstory, snapshots quincenales, tracking A/B y app HTML persistente con checklist OKR y gráficas de performance.</p>
       <div class="pmet"><div><div class="v">0.61%</div><div class="l" data-en-i>Baseline CR</div><div class="l" data-es-i>CR base</div></div><div><div class="v">0.83%</div><div class="l" data-en-i>Q2 target</div><div class="l" data-es-i>Objetivo Q2</div></div><div><div class="v">53K</div><div class="l" data-en-i>Monthly visits</div><div class="l" data-es-i>Visitas/mes</div></div></div>
     </div></div>
   </div>
-  <!-- Card 3 -->
-  <div class="pc sr d2">
+  <div class="pc sr-l d1">
     <div class="pc-n">03</div>
     <div class="pc-cat" data-en>HubSpot CMS · HubL</div><div class="pc-cat" data-es>HubSpot CMS · HubL</div>
     <div class="pc-tit" data-en>Custom HubSpot Modules</div><div class="pc-tit" data-es>Módulos HubSpot Custom</div>
-    <p class="pc-sum" data-en>Reusable, interactive HubSpot modules built in HubL — production-grade and live on the site.</p>
-    <p class="pc-sum" data-es>Módulos HubSpot reutilizables e interactivos en HubL — todos en producción y en uso.</p>
+    <p class="pc-sum" data-en>Reusable, interactive HubSpot modules built in HubL — production-grade and live.</p>
+    <p class="pc-sum" data-es>Módulos HubSpot reutilizables e interactivos en HubL — en producción y en uso.</p>
     <div class="pexp"><div class="pexp-in">
       <div class="pouts"><div class="pout" data-en>FAQ Accordion — 2-col, dynamic HubL</div><div class="pout" data-es>FAQ Accordion 2 col, HubL dinámico</div><div class="pout" data-en>Testimonial cards — conditional video/quote logic</div><div class="pout" data-es>Testimonial cards con lógica condicional</div><div class="pout" data-en>Interactive pricing calculator</div><div class="pout" data-es>Calculadora de pricing interactiva</div><div class="pout" data-en>Responsive blog sidebar</div><div class="pout" data-es>Sidebar de blog responsivo</div></div>
     </div></div>
   </div>
-  <!-- Card 4 -->
-  <div class="pc sr d3">
+  <div class="pc sr-r d1">
     <div class="pc-n">04</div>
     <div class="pc-cat" data-en>Content Strategy · LATAM SEO</div><div class="pc-cat" data-es>Estrategia · SEO LATAM</div>
     <div class="pc-tit" data-en>Yaydoo PorCobrar Content System</div><div class="pc-tit" data-es>Sistema de Contenido PorCobrar</div>
     <p class="pc-sum" data-en>Consolidated 4 subpages into one integral product page — SEO-optimized for LATAM finance teams.</p>
     <p class="pc-sum" data-es>Consolidé 4 subpáginas en una página integral — optimizada para equipos financieros LATAM.</p>
     <div class="pexp"><div class="pexp-in">
-      <p class="pdet" data-en>10 modules, fully SEO-optimized. Deep domain vocabulary: CFDI, SPEI, domiciliación, intereses moratorios, cobranza preventiva.</p>
-      <p class="pdet" data-es>10 módulos, totalmente optimizados para SEO. Dominio profundo: CFDI, SPEI, domiciliación, intereses moratorios, cobranza preventiva.</p>
+      <p class="pdet" data-en>10 modules, fully SEO-optimized. Domain: CFDI, SPEI, domiciliación, intereses moratorios, cobranza preventiva.</p>
+      <p class="pdet" data-es>10 módulos optimizados. Dominio: CFDI, SPEI, domiciliación, intereses moratorios, cobranza preventiva.</p>
       <div class="pmet"><div><div class="v">4→1</div><div class="l" data-en-i>Pages consolidated</div><div class="l" data-es-i>Páginas consolidadas</div></div><div><div class="v">10</div><div class="l" data-en-i>Modules</div><div class="l" data-es-i>Módulos</div></div></div>
     </div></div>
   </div>
 </div>
-
-<!-- WAYPOINT FEATURED -->
-<div class="pfeat sr" id="waypoint-card">
-  <div class="pfeat-l">
-    <div class="pftag" data-en-i>⭐ Personal project · 2025</div>
-    <div class="pftag" data-es-i>⭐ Proyecto personal · 2025</div>
-    <div class="pftit">Way<em>point</em></div>
-    <p class="pfdesc" data-en>A full-stack AI travel planning app built from scratch using Claude Code — featuring a trip library ("Mis Viajes"), real-time budget panels, AI-powered itinerary generation, and a 4-agent Claude Code development setup deployed on Google Cloud + Vercel.</p>
-    <p class="pfdesc" data-es>App de planeación de viajes con IA construida desde cero con Claude Code — con biblioteca "Mis Viajes", paneles de presupuesto en tiempo real, generación de itinerarios con IA y setup de 4 agentes desplegado en Google Cloud + Vercel.</p>
-    <div class="pfpills"><span class="pfpill">Claude Code</span><span class="pfpill">HTML/CSS/JS</span><span class="pfpill">Multi-agent</span><span class="pfpill">Google Cloud</span><span class="pfpill">Vercel</span></div>
-    <a class="pflink" href="https://waypoint-henna.vercel.app" target="_blank"><span data-en-i>View live app</span><span data-es-i>Ver app en vivo</span> ↗</a>
+<!-- WAYPOINT — bone white, full-width, navigating screens -->
+<div class="wfeat sr-s" id="wcrd">
+  <div class="wfeat-l">
+    <div>
+      <div class="wf-badge">
+        <span class="wf-badge-dot"></span>
+        <span class="wf-badge-txt" data-en-i>Personal project · Live on Vercel</span>
+        <span class="wf-badge-txt" data-es-i>Proyecto personal · Live en Vercel</span>
+      </div>
+      <div class="wf-logo"><span class="way">way</span><span class="pt">point</span></div>
+      <p class="wf-desc" data-en>A full-stack AI travel planning app built from scratch using Claude Code — trip library, real-time budgets, AI itineraries, and a 4-agent development setup on Google Cloud + Vercel.</p>
+      <p class="wf-desc" data-es>App de planeación de viajes con IA construida desde cero con Claude Code — biblioteca de viajes, presupuestos en tiempo real, itinerarios con IA y setup de 4 agentes en Google Cloud + Vercel.</p>
+    </div>
+    <div class="wf-meta">
+      <div class="wf-stats">
+        <div class="wf-stat"><div class="n">4</div><div class="l" data-en-i>Claude Code agents</div><div class="l" data-es-i>Agentes Claude Code</div></div>
+        <div class="wf-stat"><div class="n">2</div><div class="l" data-en-i>Languages supported</div><div class="l" data-es-i>Idiomas soportados</div></div>
+        <div class="wf-stat"><div class="n">∞</div><div class="l" data-en-i>Destinations possible</div><div class="l" data-es-i>Destinos posibles</div></div>
+      </div>
+      <div class="wf-pills">
+        <span class="wf-pill">Claude Code</span>
+        <span class="wf-pill">HTML/CSS/JS</span>
+        <span class="wf-pill">Multi-agent</span>
+        <span class="wf-pill">Google Cloud</span>
+        <span class="wf-pill">Vercel</span>
+      </div>
+      <a class="wf-link" href="https://waypoint-henna.vercel.app" target="_blank">
+        <span data-en-i>Open live app</span><span data-es-i>Abrir app en vivo</span> ↗
+      </a>
+    </div>
   </div>
-  <div class="pfeat-r">
-    <div class="wmock" id="wmock">
-      <div class="wmock-bar">
-        <div class="wd" style="background:rgba(244,239,230,.22)"></div>
-        <div class="wd" style="background:rgba(244,239,230,.14)"></div>
-        <div class="wd" style="background:rgba(244,239,230,.08)"></div>
-        <span class="wurl">waypoint-henna.vercel.app</span>
+  <div class="wfeat-r">
+    <div class="wbrowser" id="wbrowser">
+      <!-- Browser chrome -->
+      <div class="wb-chrome">
+        <div class="wb-dots">
+          <div class="wb-dot" style="background:#ff6058"></div>
+          <div class="wb-dot" style="background:#ffbd2e"></div>
+          <div class="wb-dot" style="background:#28c840"></div>
+        </div>
+        <div class="wb-bar">
+          <span class="wb-lock">🔒</span>
+          <span class="wb-url">waypoint-henna.vercel.app</span>
+        </div>
       </div>
-      <div class="wmock-body">
-        <div class="wrow" id="wr1"><div class="wico" style="background:rgba(192,57,43,.2)">✈</div><div><div class="wrtit" data-en-i>Trip Library "Mis Viajes"</div><div class="wrtit" data-es-i>Biblioteca "Mis Viajes"</div><div class="wrsub" data-en-i>Full itinerary + map integration</div><div class="wrsub" data-es-i>Itinerario completo + mapa</div></div></div>
-        <div class="wrow" id="wr2"><div class="wico" style="background:rgba(184,134,11,.18)">💰</div><div><div class="wrtit" data-en-i>Budget Panel</div><div class="wrtit" data-es-i>Panel de Presupuesto</div><div class="wrsub" data-en-i>Real-time spend tracking</div><div class="wrsub" data-es-i>Seguimiento de gastos en tiempo real</div></div></div>
-        <div class="wrow" id="wr3"><div class="wico" style="background:rgba(26,82,118,.18)">🤖</div><div><div class="wrtit" data-en-i>AI Itinerary Builder</div><div class="wrtit" data-es-i>Constructor con IA</div><div class="wrsub" data-en-i>Instant planning, any destination</div><div class="wrsub" data-es-i>Planeación instantánea, cualquier destino</div></div></div>
+      <!-- Screens container -->
+      <div class="wb-screens">
+        <!-- Screen 1: Home -->
+        <div class="wb-screen ws1 ws-active" id="wscreen-0">
+          <div class="wb-screen-label" data-en-i>Home</div>
+          <div class="wb-screen-label" data-es-i>Inicio</div>
+          <div class="ws1-nav">
+            <div class="ws1-logo"><span class="way">way</span><span class="pt">point</span></div>
+            <div class="ws1-btn" data-en-i>Mis viajes</div>
+            <div class="ws1-btn" data-es-i>Mis viajes</div>
+          </div>
+          <div class="ws1-body">
+            <div class="ws1-label" data-en-i>Tu asistente de viajes con IA</div>
+            <div class="ws1-label" data-es-i>Tu asistente de viajes con IA</div>
+            <div class="ws1-h">
+              <span data-en-i>Plan your next</span>
+              <span data-es-i>Planea tu próxima</span>
+              <em class="ws1-italic" data-en-i>adventure.</em>
+              <em class="ws1-italic" data-es-i>aventura.</em>
+            </div>
+            <div class="ws1-sub" data-en-i>Waypoint builds your full itinerary instantly.</div>
+            <div class="ws1-sub" data-es-i>Waypoint construye tu itinerario completo al instante.</div>
+            <div class="ws1-bubbles">
+              <div class="ws1-bubble">🗼<div class="ws1-bub-lbl">Paris</div></div>
+              <div class="ws1-bubble">⛩<div class="ws1-bub-lbl">Tokio</div></div>
+              <div class="ws1-bubble">🏛<div class="ws1-bub-lbl">Roma</div></div>
+              <div class="ws1-bubble">🗽<div class="ws1-bub-lbl">NY</div></div>
+              <div class="ws1-bubble">🌴<div class="ws1-bub-lbl">Bali</div></div>
+              <div class="ws1-bubble">🌮<div class="ws1-bub-lbl">CDMX</div></div>
+            </div>
+            <div class="ws1-input" data-en-i>Ej: Quiero ir a Roma 5 días, me gusta el arte y la gastronomía...</div>
+            <div class="ws1-input" data-es-i>Ej: Quiero ir a Roma 5 días, me gusta el arte y la gastronomía...</div>
+          </div>
+        </div>
+        <!-- Screen 2: Mis Viajes -->
+        <div class="wb-screen ws2" id="wscreen-1">
+          <div class="wb-screen-label" data-en-i>My Trips</div>
+          <div class="wb-screen-label" data-es-i>Mis Viajes</div>
+          <div class="ws2-nav">
+            <div class="ws2-title" data-en-i>✈ Mis Viajes</div>
+            <div class="ws2-title" data-es-i>✈ Mis Viajes</div>
+            <div class="ws2-add">+</div>
+          </div>
+          <div class="ws2-body">
+            <div class="ws2-trip">
+              <div class="ws2-flag">🇯🇵</div>
+              <div>
+                <div class="ws2-trip-name" data-en-i>Tokyo & Kyoto · 10 days</div>
+                <div class="ws2-trip-name" data-es-i>Tokyo y Kyoto · 10 días</div>
+                <div class="ws2-trip-date">Jun 14 – Jun 24, 2025</div>
+              </div>
+              <div class="ws2-pill active" data-en-i>UPCOMING</div>
+              <div class="ws2-pill active" data-es-i>PRÓXIMO</div>
+            </div>
+            <div class="ws2-trip">
+              <div class="ws2-flag">🇮🇹</div>
+              <div>
+                <div class="ws2-trip-name" data-en-i>Rome & Amalfi · 7 days</div>
+                <div class="ws2-trip-name" data-es-i>Roma y Amalfi · 7 días</div>
+                <div class="ws2-trip-date">Apr 2 – Apr 9, 2025</div>
+              </div>
+              <div class="ws2-pill done" data-en-i>DONE</div>
+              <div class="ws2-pill done" data-es-i>HECHO</div>
+            </div>
+            <div class="ws2-trip">
+              <div class="ws2-flag">🇲🇽</div>
+              <div>
+                <div class="ws2-trip-name" data-en-i>CDMX Weekend</div>
+                <div class="ws2-trip-name" data-es-i>CDMX fin de semana</div>
+                <div class="ws2-trip-date">Mar 22 – Mar 24, 2025</div>
+              </div>
+              <div class="ws2-pill done" data-en-i>DONE</div>
+              <div class="ws2-pill done" data-es-i>HECHO</div>
+            </div>
+          </div>
+        </div>
+        <!-- Screen 3: Itinerary detail -->
+        <div class="wb-screen ws3" id="wscreen-2">
+          <div class="wb-screen-label" data-en-i>Itinerary</div>
+          <div class="wb-screen-label" data-es-i>Itinerario</div>
+          <div class="ws3-nav">
+            <div class="ws3-back">←</div>
+            <div class="ws3-nav-title" data-en-i>Tokyo & Kyoto</div>
+            <div class="ws3-nav-title" data-es-i>Tokyo y Kyoto</div>
+          </div>
+          <div class="ws3-hero">
+            <div class="ws3-dest-ico">🇯🇵</div>
+            <div>
+              <div class="ws3-dest-name" data-en-i>Tokyo & Kyoto · 10 days</div>
+              <div class="ws3-dest-name" data-es-i>Tokyo y Kyoto · 10 días</div>
+              <div class="ws3-dest-meta" data-en-i>Jun 14 · AI-generated itinerary</div>
+              <div class="ws3-dest-meta" data-es-i>Jun 14 · Itinerario generado con IA</div>
+            </div>
+          </div>
+          <div class="ws3-body">
+            <div class="ws3-day">
+              <div class="ws3-day-head" data-en-i>Day 1 — Arrival & Shinjuku</div>
+              <div class="ws3-day-head" data-es-i>Día 1 — Llegada y Shinjuku</div>
+              <div class="ws3-item"><span class="ws3-time">09:00</span><span class="ws3-act" data-en-i>Arrive Narita, check in hotel</span><span class="ws3-act" data-es-i>Llegada a Narita, check in hotel</span></div>
+              <div class="ws3-item"><span class="ws3-time">14:00</span><span class="ws3-act" data-en-i>Shinjuku Gyoen National Garden</span><span class="ws3-act" data-es-i>Jardín Nacional Shinjuku Gyoen</span></div>
+              <div class="ws3-item"><span class="ws3-time">19:00</span><span class="ws3-act" data-en-i>Ramen dinner in Kabukicho</span><span class="ws3-act" data-es-i>Cena de ramen en Kabukicho</span></div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="wmock-prog">
-        <div class="wprog-lbl"><span data-en-i>Q2 Trips planned</span><span data-es-i>Viajes planeados Q2</span><span id="wpct">0%</span></div>
-        <div class="wprog-track"><div class="wprog-fill" id="wfill"></div></div>
-      </div>
-      <div class="wmock-stats">
-        <div class="ws"><div class="v">4</div><div class="l" data-en-i>Agents</div><div class="l" data-es-i>Agentes</div></div>
-        <div class="ws"><div class="v">2</div><div class="l" data-en-i>Languages</div><div class="l" data-es-i>Idiomas</div></div>
-        <div class="ws"><div class="v">Live</div><div class="l" data-en-i>On Vercel</div><div class="l" data-es-i>En Vercel</div></div>
+      <!-- Screen indicators -->
+      <div class="wb-indicators">
+        <div class="wb-ind wi-active" onclick="goToScreen(0)"></div>
+        <div class="wb-ind" onclick="goToScreen(1)"></div>
+        <div class="wb-ind" onclick="goToScreen(2)"></div>
       </div>
     </div>
   </div>
 </div>
 </div>
 </section>
-
-<!-- SKILLS -->
 <section id="sk">
 <div class="wrap">
 <div class="ov sr" data-en>Capabilities</div><div class="ov sr" data-es>Capacidades</div>
 <h2 class="st sr d1" data-en>The full <em>stack.</em></h2>
 <h2 class="st sr d1" data-es>El stack <em>completo.</em></h2>
 <div class="skg">
-<div class="skc sr"><div class="ski">🎯</div><div class="skt" data-en>Strategy & Messaging</div><div class="skt" data-es>Estrategia y Messaging</div><ul class="skl"><li data-en-li>Product positioning & GTM</li><li data-es-li>Posicionamiento y GTM</li><li data-en-li>Messaging architecture</li><li data-es-li>Arquitectura de messaging</li><li data-en-li>Competitive analysis</li><li data-es-li>Análisis competitivo</li><li data-en-li>Sales enablement</li><li data-es-li>Sales enablement</li></ul></div>
-<div class="skc sr d1"><div class="ski">✍️</div><div class="skt" data-en>Copywriting & Content</div><div class="skt" data-es>Copywriting y Contenido</div><ul class="skl"><li data-en-li>Web copy (EN + ES)</li><li data-es-li>Copy web (EN + ES)</li><li data-en-li>Case studies</li><li data-es-li>Casos de estudio</li><li data-en-li>SEO content strategy</li><li data-es-li>Estrategia SEO</li><li data-en-li>A/B copy variants</li><li data-es-li>Variantes A/B</li></ul></div>
-<div class="skc sr d2"><div class="ski">🌐</div><div class="skt" data-en>Web & Conversion</div><div class="skt" data-es>Web y Conversión</div><ul class="skl"><li>HubSpot CMS & HubL</li><li data-en-li>CRO & UX writing</li><li data-es-li>CRO y UX writing</li><li>Fullstory · GA4</li><li>HTML · CSS · JS</li></ul></div>
-<div class="skc sr d3"><div class="ski">🎨</div><div class="skt" data-en>Branding & Design</div><div class="skt" data-es>Branding y Diseño</div><ul class="skl"><li data-en-li>Brand identity systems</li><li data-es-li>Sistemas de identidad</li><li data-en-li>Visual guidelines</li><li data-es-li>Guías visuales</li><li data-en-li>Landing page design</li><li data-es-li>Diseño de landing pages</li><li>Figma</li></ul></div>
-<div class="skc sr d4"><div class="ski">🔍</div><div class="skt">SEO</div><ul class="skl"><li data-en-li>Keyword strategy</li><li data-es-li>Estrategia de keywords</li><li data-en-li>On-page optimization</li><li data-es-li>Optimización on-page</li><li data-en-li>EN + ES markets</li><li data-es-li>Mercados EN + ES</li></ul></div>
-<div class="skc sr d5"><div class="ski">🤖</div><div class="skt" data-en>AI & Tools</div><div class="skt" data-es>IA y Herramientas</div><ul class="skl"><li data-en-li>Prompt engineering</li><li data-es-li>Prompt engineering</li><li data-en-li>Claude Code development</li><li data-es-li>Desarrollo Claude Code</li><li>Google Cloud · Vercel</li><li>HubSpot · Fullstory</li></ul></div>
+<div class="skc sr d1"><div class="ski">🎯</div><div class="skt" data-en>Strategy & Messaging</div><div class="skt" data-es>Estrategia y Messaging</div><ul class="skl"><li data-en-li>Product positioning & GTM</li><li data-es-li>Posicionamiento y GTM</li><li data-en-li>Messaging architecture</li><li data-es-li>Arquitectura de messaging</li><li data-en-li>Competitive analysis</li><li data-es-li>Análisis competitivo</li><li data-en-li>Sales enablement</li><li data-es-li>Sales enablement</li></ul></div>
+<div class="skc sr d2"><div class="ski">✍️</div><div class="skt" data-en>Copywriting & Content</div><div class="skt" data-es>Copywriting y Contenido</div><ul class="skl"><li data-en-li>Web copy (EN + ES)</li><li data-es-li>Copy web (EN + ES)</li><li data-en-li>Case studies</li><li data-es-li>Casos de estudio</li><li data-en-li>SEO content strategy</li><li data-es-li>Estrategia SEO</li><li data-en-li>A/B copy variants</li><li data-es-li>Variantes A/B</li></ul></div>
+<div class="skc sr d3"><div class="ski">🌐</div><div class="skt" data-en>Web & Conversion</div><div class="skt" data-es>Web y Conversión</div><ul class="skl"><li>HubSpot CMS & HubL</li><li data-en-li>CRO & UX writing</li><li data-es-li>CRO y UX writing</li><li>Fullstory · GA4</li><li>HTML · CSS · JS</li></ul></div>
+<div class="skc sr d4"><div class="ski">🎨</div><div class="skt" data-en>Branding & Design</div><div class="skt" data-es>Branding y Diseño</div><ul class="skl"><li data-en-li>Brand identity systems</li><li data-es-li>Sistemas de identidad</li><li data-en-li>Visual guidelines</li><li data-es-li>Guías visuales</li><li data-en-li>Landing page design</li><li data-es-li>Diseño de landing pages</li><li>Figma</li></ul></div>
+<div class="skc sr d5"><div class="ski">🔍</div><div class="skt">SEO</div><ul class="skl"><li data-en-li>Keyword strategy</li><li data-es-li>Estrategia de keywords</li><li data-en-li>On-page optimization</li><li data-es-li>Optimización on-page</li><li data-en-li>EN + ES markets</li><li data-es-li>Mercados EN + ES</li></ul></div>
+<div class="skc sr d6"><div class="ski">🤖</div><div class="skt" data-en>AI & Tools</div><div class="skt" data-es>IA y Herramientas</div><ul class="skl"><li data-en-li>Prompt engineering</li><li data-es-li>Prompt engineering</li><li data-en-li>Claude Code dev</li><li data-es-li>Desarrollo Claude Code</li><li>Google Cloud · Vercel</li><li>HubSpot · Fullstory</li></ul></div>
 </div>
 </div>
 </section>
-
-<!-- CONTACT -->
 <section id="ct">
 <div class="clay">
 <div>
@@ -669,171 +759,104 @@ footer{background:var(--ink);padding:1.4rem 3.5rem;display:flex;justify-content:
   <p class="csub sr d2" data-en>Open to new opportunities in marketing, web strategy, branding, and content.</p>
   <p class="csub sr d2" data-es>Abierta a nuevas oportunidades en marketing, estrategia web, branding y contenido.</p>
   <div class="cls sr d3">
-    <a href="https://www.linkedin.com/in/danielatostadoc/" target="_blank" class="cl">
-      <div class="ci"><svg width="13" height="13" viewBox="0 0 24 24" fill="rgba(122,106,88,.75)"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></div>
-      linkedin.com/in/danielatostadoc
-    </a>
-    <a href="mailto:danielatostado00@gmail.com" class="cl">
-      <div class="ci"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(122,106,88,.75)" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-      danielatostado00@gmail.com
-    </a>
-    <a href="tel:+523332584872" class="cl">
-      <div class="ci"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(122,106,88,.75)" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.63A2 2 0 012 .18h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg></div>
-      +52 333 258 4872
-    </a>
+    <a href="https://www.linkedin.com/in/danielatostadoc/" target="_blank" class="cl"><div class="ci"><svg width="13" height="13" viewBox="0 0 24 24" fill="rgba(122,106,88,.75)"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></div>linkedin.com/in/danielatostadoc</a>
+    <a href="mailto:danielatostado00@gmail.com" class="cl"><div class="ci"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(122,106,88,.75)" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>danielatostado00@gmail.com</a>
+    <a href="tel:+523332584872" class="cl"><div class="ci"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(122,106,88,.75)" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.63A2 2 0 012 .18h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg></div>+52 333 258 4872</a>
   </div>
 </div>
 <div class="sr d2">
   <form class="cform" id="cF" action="https://formspree.io/f/xwpbqjvk" method="POST">
     <div class="fr">
-      <div class="ff">
-        <label class="fl" data-en>Name</label><label class="fl" data-es>Nombre</label>
-        <input class="fi" type="text" name="name" placeholder="Jane Smith" required>
-      </div>
-      <div class="ff">
-        <label class="fl">Email</label>
-        <input class="fi" type="email" name="email" placeholder="jane@company.com" required>
-      </div>
+      <div class="ff"><label class="fl" data-en>Name</label><label class="fl" data-es>Nombre</label><input class="fi" type="text" name="name" placeholder="Jane Smith" required></div>
+      <div class="ff"><label class="fl">Email</label><input class="fi" type="email" name="email" placeholder="jane@company.com" required></div>
     </div>
-    <div class="ff">
-      <label class="fl" data-en>Subject</label><label class="fl" data-es>Asunto</label>
-      <input class="fi" type="text" name="subject" placeholder="Let's work together">
-    </div>
-    <div class="ff">
-      <label class="fl" data-en>Message</label><label class="fl" data-es>Mensaje</label>
-      <textarea class="ft" name="message" placeholder="Tell me about your project..." required></textarea>
-    </div>
-    <button type="submit" class="fbtn" id="fBtn">
-      <span data-en-i>Send message →</span>
-      <span data-es-i>Enviar mensaje →</span>
-    </button>
-    <div class="fok" id="fok">
-      <span data-en-i>✓ Message sent! I'll be in touch soon.</span>
-      <span data-es-i>✓ ¡Mensaje enviado! Te contacto pronto.</span>
-    </div>
+    <div class="ff"><label class="fl" data-en>Subject</label><label class="fl" data-es>Asunto</label><input class="fi" type="text" name="subject" placeholder="Let's work together"></div>
+    <div class="ff"><label class="fl" data-en>Message</label><label class="fl" data-es>Mensaje</label><textarea class="ft" name="message" placeholder="Tell me about your project..." required></textarea></div>
+    <button type="submit" class="fbtn" id="fBtn"><span data-en-i>Send message →</span><span data-es-i>Enviar mensaje →</span></button>
+    <div class="fok" id="fok"><span data-en-i>✓ Message sent! I'll be in touch soon.</span><span data-es-i>✓ ¡Mensaje enviado! Te contacto pronto.</span></div>
   </form>
 </div>
 </div>
 </section>
-
-<footer>
-  <span>© 2026 DANIELA TOSTADO CONTRERAS</span>
-  <span>GUADALAJARA, MÉXICO</span>
-</footer>
-
+<footer><span>© 2026 DANIELA TOSTADO CONTRERAS</span><span>GUADALAJARA, MÉXICO</span></footer>
 <script>
-// ── CURSOR ──
+// cursor
 const C=document.getElementById('cur'),R=document.getElementById('curR');
 let mx=0,my=0,rx=0,ry=0;
 document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;C.style.left=mx+'px';C.style.top=my+'px'});
-(function tick(){rx+=(mx-rx)*.1;ry+=(my-ry)*.1;R.style.left=rx+'px';R.style.top=ry+'px';requestAnimationFrame(tick)})();
-document.querySelectorAll('a,button,.pc,.sc,.skc,.astat,.pfeat').forEach(el=>{
+(function t(){rx+=(mx-rx)*.1;ry+=(my-ry)*.1;R.style.left=rx+'px';R.style.top=ry+'px';requestAnimationFrame(t)})();
+document.querySelectorAll('a,button,.pc,.sc,.skc,.astat,.wfeat,.wf-link').forEach(el=>{
   el.addEventListener('mouseenter',()=>{C.style.width='14px';C.style.height='14px';R.style.width='52px';R.style.height='52px';C.style.background='var(--pom)'});
   el.addEventListener('mouseleave',()=>{C.style.width='9px';C.style.height='9px';R.style.width='34px';R.style.height='34px';C.style.background='var(--ink)'});
 });
-
-// ── PARALLAX ORB ──
+// parallax orb
 document.addEventListener('mousemove',e=>{
-  const orb=document.getElementById('orb');
-  if(orb) orb.style.transform=`translate(${(e.clientX-window.innerWidth/2)*.018}px,${(e.clientY-window.innerHeight/2)*.018}px)`;
+  const o=document.getElementById('orb');
+  if(o) o.style.transform=`translate(${(e.clientX-innerWidth/2)*.018}px,${(e.clientY-innerHeight/2)*.018}px)`;
 });
-
-// ── NAV ──
-window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',window.scrollY>60));
-
-// ── LANG ──
+// nav scroll
+window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('sc',scrollY>60));
+// lang
 function setLang(l){
   document.documentElement.lang=l;
   document.querySelectorAll('.lb').forEach(b=>b.classList.toggle('on',b.textContent.trim()===l.toUpperCase()));
-  // Re-sync role line for new lang
-  roleIdx=0;
-  updateRole(l);
 }
 document.documentElement.lang='en';
-
-// ── ANIMATED ROLE LINE ──
-const roles={
-  en:['Webmaster · Strategist · Builder','Copywriter · CRO Expert · Creator','Brand Designer · AI Builder · Analyst','Fintech Specialist · HubSpot Pro'],
-  es:['Webmaster · Estratega · Creadora','Copywriter · Experta CRO · Builder','Diseñadora de Marca · IA · Analítica','Especialista Fintech · HubSpot Pro']
-};
-let roleIdx=0;
-const track=document.getElementById('roleTrack');
-
-function updateRole(lang){
-  const list=roles[lang||document.documentElement.lang];
-  // Replace track content with a single animated item
-  track.innerHTML='';
-  const span=document.createElement('div');
-  span.className='role-item';
-  span.innerHTML=list[roleIdx].replace(/·/g,'<span>·</span>');
-  span.style.opacity='0';
-  span.style.transform='translateY(100%)';
-  span.style.transition='opacity .45s ease,transform .45s cubic-bezier(.22,1,.36,1)';
-  track.appendChild(span);
-  requestAnimationFrame(()=>requestAnimationFrame(()=>{span.style.opacity='1';span.style.transform='translateY(0)'}));
+// animated role
+const roles={en:['Webmaster · Strategist · <span>Builder</span>','Copywriter · CRO Expert · <span>Creator</span>','Brand Designer · AI · <span>Analyst</span>','Fintech Specialist · <span>HubSpot Pro</span>'],es:['Webmaster · Estratega · <span>Creadora</span>','Copywriter · Experta CRO · <span>Builder</span>','Diseñadora de Marca · IA · <span>Analítica</span>','Especialista Fintech · <span>HubSpot Pro</span>']};
+let ri=0;
+const re=document.getElementById('roleEl');
+function showRole(){
+  const lang=document.documentElement.lang;
+  const txt=roles[lang][ri%4];
+  re.innerHTML=txt;
+  re.classList.remove('hide');
+  re.classList.add('show');
 }
-
-// Start role cycling after hero animations
-setTimeout(()=>{
-  updateRole('en');
-  setInterval(()=>{
-    const lang=document.documentElement.lang;
-    const list=roles[lang];
-    // Fade out current
-    const cur=track.querySelector('.role-item');
-    if(cur){cur.style.opacity='0';cur.style.transform='translateY(-100%)';}
-    setTimeout(()=>{
-      roleIdx=(roleIdx+1)%4;
-      updateRole(lang);
-    },400);
-  },2800);
-},1000);
-
-// ── SCROLL REVEAL ──
-const io=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('v');io.unobserve(e.target);}});
-},{threshold:.08});
-document.querySelectorAll('.sr').forEach(el=>io.observe(el));
-
-// ── WAYPOINT MOCK ANIMATION ──
+setTimeout(()=>{showRole();setInterval(()=>{re.classList.remove('show');re.classList.add('hide');setTimeout(()=>{ri=(ri+1)%4;showRole();},380);},2800);},850);
+// scroll reveal
+const io=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('v');io.unobserve(x.target)}})},{threshold:.08});
+document.querySelectorAll('.sr,.sr-l,.sr-r,.sr-s').forEach(el=>io.observe(el));
+// waypoint screen navigator
+let wCurScreen = 0;
+let wAutoTimer = null;
+function goToScreen(idx) {
+  const screens = document.querySelectorAll('.wb-screen');
+  const inds = document.querySelectorAll('.wb-ind');
+  if(!screens.length) return;
+  screens[wCurScreen].classList.remove('ws-active');
+  screens[wCurScreen].classList.add('ws-out');
+  setTimeout(()=>{ screens[wCurScreen].classList.remove('ws-out'); wCurScreen=idx; screens[wCurScreen].classList.add('ws-active'); },60);
+  wCurScreen = idx;
+  inds.forEach((d,i)=>d.classList.toggle('wi-active', i===idx));
+}
+function startWaypointAuto() {
+  wAutoTimer = setInterval(()=>{ goToScreen((wCurScreen+1)%3); }, 3000);
+}
+function stopWaypointAuto() { clearInterval(wAutoTimer); }
+// start auto when card enters view
 new IntersectionObserver(entries=>{
   entries.forEach(e=>{
-    if(e.isIntersecting){
-      ['wr1','wr2','wr3'].forEach((id,i)=>{
-        setTimeout(()=>{const el=document.getElementById(id);if(el)el.classList.add('wv');},i*200+300);
-      });
-      setTimeout(()=>{
-        const fill=document.getElementById('wfill');
-        const pct=document.getElementById('wpct');
-        if(fill) fill.classList.add('wv');
-        if(pct){let n=0;const iv=setInterval(()=>{n+=2;pct.textContent=n+'%';if(n>=73)clearInterval(iv);},28);}
-      },700);
-    }
+    if(e.isIntersecting){ startWaypointAuto(); }
+    else { stopWaypointAuto(); }
   });
-},{threshold:.3}).observe(document.getElementById('waypoint-card'));
-
-// ── NAV ACTIVE ──
+},{threshold:.3}).observe(document.getElementById('wcrd'));
+// pause on hover
+const wb = document.getElementById('wbrowser');
+if(wb){ wb.addEventListener('mouseenter', stopWaypointAuto); wb.addEventListener('mouseleave', startWaypointAuto); }
+// nav active
 document.querySelectorAll('section[id]').forEach(s=>{
-  new IntersectionObserver(entries=>{
-    entries.forEach(x=>{
-      if(x.isIntersecting) document.querySelectorAll('.nl a').forEach(a=>{
-        a.classList.toggle('act',a.getAttribute('href')==='#'+x.target.id);
-      });
-    });
-  },{threshold:.4}).observe(s);
+  new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)document.querySelectorAll('.nl a').forEach(a=>a.classList.toggle('act',a.getAttribute('href')==='#'+x.target.id))})},{threshold:.4}).observe(s);
 });
-
-// ── FORM ──
+// form
 const form=document.getElementById('cF');
 if(form) form.addEventListener('submit',async e=>{
   e.preventDefault();
-  const btn=document.getElementById('fBtn');
-  btn.disabled=true;btn.style.opacity='.55';
-  try{
-    const res=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}});
-    if(res.ok){form.reset();document.getElementById('fok').style.display='block';btn.style.display='none';}
-    else{btn.disabled=false;btn.style.opacity='1';}
-  }catch{btn.disabled=false;btn.style.opacity='1';}
+  const btn=document.getElementById('fBtn');btn.disabled=true;btn.style.opacity='.55';
+  try{const r=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}});
+    if(r.ok){form.reset();document.getElementById('fok').style.display='block';btn.style.display='none';}
+    else{btn.disabled=false;btn.style.opacity='1';}}
+  catch{btn.disabled=false;btn.style.opacity='1';}
 });
 </script>
 </body>
