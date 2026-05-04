@@ -3,8 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Daniela Tostado — Marketing & Web Strategist</title>
-<meta name="description" content="Marketing, Web & Content Strategist. B2B SaaS · Fintech · Conversion · Branding. Guadalajara, México.">
+<title>Daniela Tostado Contreras — Marketing & Web Strategist | B2B SaaS · Fintech</title>
+<meta name="description" content="Marketing, Web & Content Strategist with 4+ years in B2B SaaS and Fintech. Webmaster at Paystand. Copywriting, HubSpot, CRO, branding, AI automation. EN + ES. Guadalajara, México.">
+<link rel="canonical" href="https://danielatostado00.github.io/portfolio/">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://danielatostado00.github.io/portfolio/">
+<meta property="og:title" content="Daniela Tostado — Marketing & Web Strategist">
+<meta property="og:description" content="B2B SaaS & Fintech strategist. Copywriting, HubSpot, CRO, branding, AI. 4+ years · Guadalajara, MX.">
+<meta property="og:image" content="https://danielatostado00.github.io/portfolio/og-cover.png">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Daniela Tostado — Marketing & Web Strategist">
+<meta name="twitter:description" content="B2B SaaS & Fintech strategist. Copywriting, HubSpot, CRO, branding, AI.">
+<!-- Schema: Person -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Daniela Tostado Contreras","jobTitle":"Marketing & Web Strategist","url":"https://danielatostado00.github.io/portfolio/","email":"danielatostado00@gmail.com","telephone":"+52-333-258-4872","address":{"@type":"PostalAddress","addressLocality":"Guadalajara","addressRegion":"Jalisco","addressCountry":"MX"},"sameAs":["https://www.linkedin.com/in/danielatostadoc/"],"knowsAbout":["B2B SaaS Marketing","Fintech","Copywriting","HubSpot","CRO","SEO","Branding","Web Strategy","AI Automation"],"worksFor":{"@type":"Organization","name":"Paystand"},"description":"Marketing, Web & Content Strategist specialized in B2B SaaS and fintech. 4+ years building conversion-focused web experiences."}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700;800&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -78,6 +93,8 @@ nav.sc::before{opacity:1}
 .bp:hover{background:var(--pom2);transform:translateY(-3px);box-shadow:0 10px 28px rgba(184,50,40,.3)}
 .bo{display:inline-flex;align-items:center;gap:.5rem;background:transparent;color:var(--ink);font-family:'Syne',sans-serif;font-size:.76rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.85rem 1.75rem;border-radius:2px;border:1.5px solid var(--b);cursor:none;text-decoration:none;transition:all .28s}
 .bo:hover{border-color:var(--pom);color:var(--pom);transform:translateY(-3px)}
+.btn-li{display:inline-flex;align-items:center;gap:.45rem;background:transparent;color:var(--mut);font-family:'JetBrains Mono',monospace;font-size:.62rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:.6rem 1.1rem;border-radius:2px;border:1px dashed var(--b);cursor:none;text-decoration:none;transition:all .28s;white-space:nowrap}
+.btn-li:hover{border-color:var(--pom);color:var(--pom);background:var(--pom-bg)}
 .h-tags{display:flex;gap:.4rem;flex-wrap:wrap;justify-content:flex-end}
 .h-tag{font-family:'JetBrains Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);padding:.25rem .65rem;border:1px solid var(--b);border-radius:2px}
 .h-scroll{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.38rem;color:var(--faint);font-family:'JetBrains Mono',monospace;font-size:.56rem;letter-spacing:.16em;opacity:0;animation:fup 1s .95s ease forwards}
@@ -126,6 +143,9 @@ section{padding:8rem 3.5rem}
 .traits{display:flex;flex-wrap:wrap;gap:.38rem;padding-top:1.3rem}
 .trait{font-family:'JetBrains Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;padding:.26rem .7rem;border:1px solid var(--b);color:var(--mut);border-radius:2px;transition:all .22s;cursor:default}
 .trait:hover{border-color:var(--pom);color:var(--pom);background:var(--pom-bg)}
+/* traits use data-en/es — override display:block to inline-flex */
+html[lang=en] .trait[data-en]{display:inline-flex!important}
+html[lang=es] .trait[data-es]{display:inline-flex!important}
 /* ── SERVICES — light bg, accordion list inspired by fourmula.ai ── */
 #svc{background:var(--c1);padding:8rem 0}
 #svc .wrap{max-width:1200px;margin:0 auto;padding:0 3.5rem}
@@ -146,9 +166,9 @@ section{padding:8rem 3.5rem}
 .sc:nth-child(6)::after{background:linear-gradient(90deg,var(--warm),transparent)}
 .sc:hover::after{transform:scaleX(1)}
 /* Inner layout: always-visible left + reveal right */
-.sc-inner{display:grid;grid-template-columns:3fr 2fr;align-items:stretch;min-height:96px;padding:0 3.5rem}
+.sc-inner{display:grid;grid-template-columns:3fr 2fr;align-items:stretch;min-height:88px;padding:0 3.5rem}
 /* Left: number + icon + title */
-.sc-left{display:grid;grid-template-columns:64px 52px 1fr;align-items:center;gap:0;padding:2rem 2rem 2rem 0;border-right:1px solid var(--b2);transition:border-color .3s}
+.sc-left{display:grid;grid-template-columns:64px 52px 1fr;align-items:center;gap:0;padding:1.75rem 2rem 1.75rem 0;border-right:1px solid var(--b2);transition:border-color .3s}
 .sc:hover .sc-left{border-right-color:transparent}
 .sc-num{font-family:'JetBrains Mono',monospace;font-size:.58rem;letter-spacing:.2em;color:var(--faint);transition:color .3s}
 .sc:hover .sc-num{color:var(--pom)}
@@ -181,42 +201,197 @@ section{padding:8rem 3.5rem}
 .esub-lbl{font-family:'JetBrains Mono',monospace;font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;color:var(--sage);margin-bottom:.38rem}
 .esub-tit{font-size:.88rem;font-weight:500;color:var(--ink);margin-bottom:.3rem;letter-spacing:-.01em}
 .esub-desc{font-size:.78rem;font-weight:300;color:var(--mut);line-height:1.78}
-/* projects */
-#proj{background:var(--c1)}
-.ph{margin-bottom:3.5rem}
+/* ── PROJECTS — case study timeline ── */
+#proj{background:var(--c0);padding:8rem 3.5rem}
+.ph{margin-bottom:5rem}
 .ph-hint{font-size:.82rem;color:var(--mut);margin-top:.6rem}
-/* 2x2 grid with staggered entrance animations */
-.pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--b);margin-bottom:1px}
-.pc{padding:2.75rem;cursor:default;position:relative;overflow:hidden;transition:transform .38s cubic-bezier(.22,1,.36,1),box-shadow .38s}
-.pc:nth-child(1){background:var(--sky-bg)}
-.pc:nth-child(2){background:var(--warm-bg)}
-.pc:nth-child(3){background:var(--plum-bg)}
-.pc:nth-child(4){background:var(--sage-bg)}
-.pc:hover{transform:translateY(-6px);box-shadow:0 22px 58px rgba(28,21,16,.11);z-index:2}
-.pc::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;transform:scaleX(0);transform-origin:left;transition:transform .42s cubic-bezier(.22,1,.36,1)}
-.pc:nth-child(1)::before{background:var(--sky)}
-.pc:nth-child(2)::before{background:var(--warm)}
-.pc:nth-child(3)::before{background:var(--plum)}
-.pc:nth-child(4)::before{background:var(--sage)}
-.pc:hover::before{transform:scaleX(1)}
-.pc-n{font-family:'JetBrains Mono',monospace;font-size:.56rem;letter-spacing:.16em;color:var(--faint);margin-bottom:1rem}
-.pc-cat{font-family:'JetBrains Mono',monospace;font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.58rem}
-.pc:nth-child(1) .pc-cat{color:var(--sky)}
-.pc:nth-child(2) .pc-cat{color:var(--warm)}
-.pc:nth-child(3) .pc-cat{color:var(--plum)}
-.pc:nth-child(4) .pc-cat{color:var(--sage)}
-.pc-tit{font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:700;color:var(--ink);letter-spacing:-.02em;line-height:1.15;margin-bottom:.85rem}
-.pc-sum{font-size:.8rem;font-weight:300;color:var(--mut);line-height:1.82}
-.pexp{max-height:0;overflow:hidden;transition:max-height .6s cubic-bezier(.22,1,.36,1),opacity .45s ease;opacity:0}
-.pc:hover .pexp{max-height:340px;opacity:1}
-.pexp-in{padding-top:1.3rem;border-top:1px solid rgba(28,21,16,.08);margin-top:1.3rem}
-.pdet{font-size:.76rem;font-weight:300;color:var(--mut);line-height:1.87;margin-bottom:.85rem}
-.pmet{display:flex;gap:1.4rem;flex-wrap:wrap;margin-bottom:.78rem}
-.pmet .v{font-family:'Syne',sans-serif;font-size:1.35rem;font-weight:800;color:var(--ink);letter-spacing:-.03em;line-height:1}
-.pmet .l{font-family:'JetBrains Mono',monospace;font-size:.54rem;letter-spacing:.08em;color:var(--faint);margin-top:.1rem}
-.pouts{display:flex;flex-direction:column;gap:.3rem}
-.pout{font-size:.72rem;color:var(--mut);display:flex;align-items:flex-start;gap:.45rem}
-.pout::before{content:'→';color:var(--pom);flex-shrink:0}
+
+/* Case study cards — alternating full-width layout */
+.pgrid{display:flex;flex-direction:column;gap:2px;background:transparent;margin-bottom:2px}
+
+.pc{
+  display:grid;grid-template-columns:1fr 1fr;
+  background:var(--c1);border:1px solid var(--b2);
+  overflow:hidden;position:relative;cursor:default;
+  transition:box-shadow .4s cubic-bezier(.22,1,.36,1);
+}
+.pc:hover{box-shadow:0 24px 64px rgba(28,21,16,.1)}
+
+/* Odd: text left, visual right / Even: visual left, text right */
+.pc:nth-child(even){direction:rtl}
+.pc:nth-child(even) > *{direction:ltr}
+
+/* Colored left border per project */
+.pc::before{
+  content:'';position:absolute;left:0;top:0;bottom:0;width:4px;
+  transition:width .4s cubic-bezier(.22,1,.36,1);z-index:2
+}
+/* Even cards: border on right */
+.pc:nth-child(even)::before{left:auto;right:0}
+.pc:hover::before{width:6px}
+
+.pc:nth-child(1)::before{background:linear-gradient(to bottom,var(--sky),var(--plum))}
+.pc:nth-child(2)::before{background:linear-gradient(to bottom,var(--pom),var(--warm))}
+.pc:nth-child(3)::before{background:linear-gradient(to bottom,var(--plum),var(--sky))}
+.pc:nth-child(4)::before{background:linear-gradient(to bottom,var(--sage),var(--gold))}
+
+/* Left panel — text */
+.pc-body{
+  padding:3.5rem;display:flex;flex-direction:column;
+  justify-content:space-between;gap:2rem;
+  border-right:1px solid var(--b2);position:relative;z-index:1
+}
+.pc:nth-child(even) .pc-body{border-right:none;border-left:1px solid var(--b2)}
+
+.pc-meta{display:flex;align-items:center;gap:1rem;margin-bottom:.5rem}
+.pc-n{
+  font-family:'Syne',sans-serif;font-size:3.5rem;font-weight:800;
+  letter-spacing:-.06em;line-height:1;
+  opacity:.08;position:absolute;top:2.5rem;right:2.5rem;
+  pointer-events:none;transition:opacity .4s
+}
+.pc:hover .pc-n{opacity:.14}
+.pc:nth-child(even) .pc-n{right:auto;left:2.5rem}
+
+.pc-tag{
+  font-family:'JetBrains Mono',monospace;font-size:.57rem;
+  letter-spacing:.12em;text-transform:uppercase;
+  padding:.22rem .65rem;border-radius:30px;
+  border:1px solid;flex-shrink:0
+}
+.pc:nth-child(1) .pc-tag{color:var(--sky);border-color:rgba(26,82,118,.25);background:var(--sky-bg)}
+.pc:nth-child(2) .pc-tag{color:var(--pom);border-color:rgba(184,50,40,.25);background:var(--pom-bg)}
+.pc:nth-child(3) .pc-tag{color:var(--plum);border-color:rgba(108,52,131,.25);background:var(--plum-bg)}
+.pc:nth-child(4) .pc-tag{color:var(--sage);border-color:rgba(46,125,82,.25);background:var(--sage-bg)}
+
+.pc-tit{
+  font-family:'Syne',sans-serif;font-size:clamp(1.4rem,2.2vw,2rem);
+  font-weight:800;color:var(--ink);letter-spacing:-.03em;line-height:1.05;
+  margin-bottom:.85rem;transition:color .25s
+}
+.pc:hover .pc-tit{color:var(--pom)}
+
+.pc-prob{
+  font-size:.82rem;font-weight:300;color:var(--mut);line-height:1.88;
+  border-left:2px solid var(--b);padding-left:.85rem;margin-bottom:1.2rem
+}
+.pc:nth-child(2) .pc-prob{border-left-color:rgba(184,50,40,.2)}
+.pc:nth-child(3) .pc-prob{border-left-color:rgba(108,52,131,.2)}
+.pc:nth-child(4) .pc-prob{border-left-color:rgba(46,125,82,.2)}
+
+/* Outcome pills */
+.pc-pills{display:flex;flex-wrap:wrap;gap:.35rem}
+.pc-pill{
+  font-size:.65rem;color:var(--mut);font-family:'JetBrains Mono',monospace;
+  letter-spacing:.04em;padding:.2rem .6rem;border:1px solid var(--b);
+  border-radius:2px;transition:all .2s
+}
+.pc:hover .pc-pill{border-color:rgba(28,21,16,.18)}
+
+/* Right panel — animated visual */
+.pc-vis{
+  padding:3rem 2.5rem;display:flex;flex-direction:column;
+  justify-content:center;gap:1.75rem;background:var(--c0);position:relative;
+  overflow:hidden
+}
+/* Decorative bg pattern */
+.pc-vis::before{
+  content:'';position:absolute;inset:0;
+  background:repeating-linear-gradient(
+    45deg,
+    transparent,transparent 18px,
+    rgba(28,21,16,.018) 18px,rgba(28,21,16,.018) 19px
+  );pointer-events:none
+}
+
+/* Metric blocks */
+.pc-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--b2)}
+.pm{
+  background:var(--c1);padding:1.25rem;text-align:center;
+  transition:background .3s
+}
+.pc:hover .pm{background:var(--c0)}
+.pm-v{
+  font-family:'Syne',sans-serif;font-size:1.6rem;font-weight:800;
+  letter-spacing:-.04em;color:var(--ink);line-height:1;margin-bottom:.25rem;
+  transition:color .3s
+}
+.pm-v.animate{opacity:0;transform:translateY(8px);transition:opacity .6s,transform .6s,color .3s}
+.pm-v.animate.pv-in{opacity:1;transform:none}
+.pc:hover .pm-v{color:var(--pom)}
+.pm-l{font-family:'JetBrains Mono',monospace;font-size:.54rem;color:var(--faint);letter-spacing:.08em;text-transform:uppercase}
+
+/* Animated bar chart */
+.pc-bars{display:flex;flex-direction:column;gap:.65rem;position:relative;z-index:1}
+.pb-row{display:flex;align-items:center;gap:.75rem}
+.pb-label{font-family:'JetBrains Mono',monospace;font-size:.58rem;color:var(--mut);width:80px;flex-shrink:0;text-align:right}
+.pb-track{flex:1;height:6px;background:var(--b2);border-radius:3px;overflow:hidden}
+.pb-fill{height:100%;border-radius:3px;width:0%;transition:width 1.2s cubic-bezier(.22,1,.36,1)}
+.pb-fill.pv-in{width:var(--w)}
+.pb-val{font-family:'Syne',sans-serif;font-size:.72rem;font-weight:800;color:var(--ink);width:48px;flex-shrink:0}
+
+/* Mini funnel visual */
+.pc-funnel{display:flex;flex-direction:column;gap:.5rem;position:relative;z-index:1}
+.pf-step{
+  display:flex;align-items:center;justify-content:space-between;
+  background:var(--c1);border:1px solid var(--b2);border-radius:3px;
+  padding:.6rem 1rem;transition:all .4s cubic-bezier(.22,1,.36,1);
+  opacity:0;transform:translateX(12px)
+}
+.pf-step.pv-in{opacity:1;transform:none}
+.pf-step:nth-child(1){transition-delay:.1s}
+.pf-step:nth-child(2){transition-delay:.22s}
+.pf-step:nth-child(3){transition-delay:.34s}
+.pf-step:nth-child(4){transition-delay:.46s}
+.pf-name{font-size:.72rem;font-weight:500;color:var(--ink)}
+.pf-n{font-family:'Syne',sans-serif;font-size:.75rem;font-weight:800;color:var(--pom)}
+.pf-bar{height:3px;border-radius:2px;background:var(--pom);margin-top:.3rem;width:0;transition:width 1s cubic-bezier(.22,1,.36,1)}
+.pf-bar.pv-in{width:100%}
+
+/* HubSpot modules grid visual */
+.pc-modules{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;position:relative;z-index:1}
+.pmod{
+  background:var(--c1);border:1px solid var(--b2);border-radius:4px;
+  padding:.75rem;opacity:0;transform:scale(.92);
+  transition:opacity .45s,transform .45s cubic-bezier(.22,1,.36,1)
+}
+.pmod.pv-in{opacity:1;transform:none}
+.pmod:nth-child(1){transition-delay:.05s}
+.pmod:nth-child(2){transition-delay:.12s}
+.pmod:nth-child(3){transition-delay:.19s}
+.pmod:nth-child(4){transition-delay:.26s}
+.pmod-ico{font-size:1.1rem;margin-bottom:.4rem}
+.pmod-nm{font-family:'Syne',sans-serif;font-size:.72rem;font-weight:700;color:var(--ink);letter-spacing:-.01em}
+.pmod-tag{font-family:'JetBrains Mono',monospace;font-size:.52rem;color:var(--faint);margin-top:.2rem}
+
+/* LATAM visual */
+.pc-latam{display:flex;flex-direction:column;gap:.55rem;position:relative;z-index:1}
+.pl-item{
+  display:flex;align-items:center;gap:.75rem;
+  padding:.6rem .85rem;background:var(--c1);border:1px solid var(--b2);border-radius:3px;
+  opacity:0;transform:translateX(-10px);
+  transition:opacity .45s,transform .45s cubic-bezier(.22,1,.36,1)
+}
+.pl-item.pv-in{opacity:1;transform:none}
+.pl-item:nth-child(1){transition-delay:.1s}
+.pl-item:nth-child(2){transition-delay:.2s}
+.pl-item:nth-child(3){transition-delay:.3s}
+.pl-item:nth-child(4){transition-delay:.4s}
+.pl-item:nth-child(5){transition-delay:.5s}
+.pl-ico{font-size:1rem;flex-shrink:0}
+.pl-term{font-family:'JetBrains Mono',monospace;font-size:.65rem;font-weight:500;color:var(--ink);letter-spacing:.02em}
+.pl-desc{font-size:.65rem;color:var(--mut);margin-left:auto;text-align:right}
+
+/* responsive */
+@media(max-width:1000px){
+  #proj{padding:5rem 1.5rem}
+  .pc{grid-template-columns:1fr}
+  .pc:nth-child(even){direction:ltr}
+  .pc-body{border-right:none;border-bottom:1px solid var(--b2);padding:2.5rem 1.5rem}
+  .pc-vis{padding:2rem 1.5rem}
+  .pc-metrics{grid-template-columns:repeat(3,1fr)}
+  .pc-n{display:none}
+}
 /* ── WAYPOINT FEATURED — bone white, full-width, real branding ── */
 /* Waypoint brand tokens */
 :root{
@@ -350,6 +525,34 @@ section{padding:8rem 3.5rem}
 .fbtn:hover{background:var(--pom2);transform:translateY(-2px);box-shadow:0 8px 22px rgba(184,50,40,.3)}
 .fok{display:none;padding:.86rem 1rem;border:1px solid rgba(46,125,82,.28);background:rgba(46,125,82,.07);color:var(--sage);font-size:.8rem;font-weight:300;margin-top:.38rem;border-radius:2px}
 footer{background:var(--ink);padding:1.4rem 3.5rem;display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(244,239,230,.06);color:rgba(244,239,230,.28);font-size:.64rem;font-family:'JetBrains Mono',monospace;letter-spacing:.08em}
+/* skip link */
+.skip-link{position:absolute;top:-100px;left:1rem;background:var(--pom);color:#fff;padding:.5rem 1rem;font-size:.75rem;font-weight:700;border-radius:2px;z-index:999;transition:top .2s}
+.skip-link:focus{top:1rem}
+/* CV download button in hero */
+/* PROCESS */
+#proc{background:var(--c0);padding:8rem 3.5rem}
+.prow{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;margin-bottom:6rem}
+.prow:last-child{margin-bottom:0}
+.prow:nth-child(even){direction:rtl}
+.prow:nth-child(even) > *{direction:ltr}
+.prow-vis{background:var(--c1);border:1px solid var(--b2);border-radius:4px;padding:2.5rem;display:flex;flex-direction:column;gap:1rem}
+.prow-step{font-family:'JetBrains Mono',monospace;font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--pom);margin-bottom:.5rem;display:flex;align-items:center;gap:.6rem}
+.prow-step::before{content:'';width:20px;height:1px;background:var(--pom)}
+.prow-h{font-family:'Syne',sans-serif;font-size:clamp(1.6rem,3vw,2.4rem);font-weight:800;color:var(--ink);letter-spacing:-.03em;line-height:1;margin-bottom:.9rem}
+.prow-h em{font-style:normal;color:var(--pom)}
+.prow-p{font-size:.88rem;font-weight:300;color:var(--mut);line-height:1.9}
+.pstep-item{display:flex;align-items:flex-start;gap:.75rem;padding:.6rem 0;border-bottom:1px solid var(--b2)}
+.pstep-item:last-child{border-bottom:none;padding-bottom:0}
+.pstep-n{font-family:'Syne',sans-serif;font-size:1.6rem;font-weight:800;color:var(--pom);line-height:1;opacity:.35;flex-shrink:0;width:2rem}
+.pstep-txt{font-size:.8rem;font-weight:300;color:var(--mut);line-height:1.7;padding-top:.25rem}
+.pstep-txt strong{color:var(--ink);font-weight:500}
+/* responsive additions */
+@media(max-width:1000px){
+  #proc{padding:5rem 1.5rem}
+  .tgrid{grid-template-columns:1fr}
+  .prow{grid-template-columns:1fr;gap:2rem;margin-bottom:4rem}
+  .prow:nth-child(even){direction:ltr}
+}
 /* RESPONSIVE */
 @media(max-width:1000px){
   nav{padding:1rem 1.5rem}.nl{display:none}
@@ -381,9 +584,10 @@ footer{background:var(--ink);padding:1.4rem 3.5rem;display:flex;justify-content:
 </style>
 </head>
 <body>
+<a href="#hero" class="skip-link">Skip to main content</a>
 <div id="cur"></div><div id="curR"></div>
-<nav id="nav">
-  <a class="logo" href="#hero">DANIELA<em>.</em></a>
+<nav id="nav" aria-label="Main navigation">
+  <a class="logo" href="#hero" aria-label="Daniela Tostado – Home">DANIELA<em>.</em></a>
   <ul class="nl">
     <li><a href="#about"><span data-en-i>About</span><span data-es-i>Sobre mí</span></a></li>
     <li><a href="#svc"><span data-en-i>Services</span><span data-es-i>Servicios</span></a></li>
@@ -413,6 +617,10 @@ footer{background:var(--ink);padding:1.4rem 3.5rem;display:flex;justify-content:
       <div class="h-btns">
         <a href="#proj" class="bp"><span data-en-i>See my work</span><span data-es-i>Ver mi trabajo</span></a>
         <a href="#ct" class="bo"><span data-en-i>Get in touch</span><span data-es-i>Contáctame</span></a>
+        <a href="https://www.linkedin.com/in/danielatostadoc/" target="_blank" rel="noopener" class="btn-li" aria-label="LinkedIn">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
       </div>
       <div class="h-tags"><div class="h-tag">B2B SaaS</div><div class="h-tag">Fintech</div><div class="h-tag">EN + ES</div><div class="h-tag">Guadalajara, MX</div></div>
     </div>
@@ -420,8 +628,31 @@ footer{background:var(--ink);padding:1.4rem 3.5rem;display:flex;justify-content:
   <div class="h-scroll"><div class="sbar"></div><span>scroll</span></div>
 </section>
 <div class="mq">
-  <div class="mq-t">
-    <span class="mq-i"><span class="mq-d"></span>B2B Fintech</span><span class="mq-i"><span class="mq-d"></span>Web Strategy</span><span class="mq-i"><span class="mq-d"></span>Copywriting</span><span class="mq-i"><span class="mq-d"></span>HubSpot CMS</span><span class="mq-i"><span class="mq-d"></span>CRO</span><span class="mq-i"><span class="mq-d"></span>AI Automation</span><span class="mq-i"><span class="mq-d"></span>Branding</span><span class="mq-i"><span class="mq-d"></span>SEO EN + ES</span><span class="mq-i"><span class="mq-d"></span>Fullstory</span><span class="mq-i"><span class="mq-d"></span>OKR Systems</span><span class="mq-i"><span class="mq-d"></span>Claude Code</span><span class="mq-i"><span class="mq-d"></span>LATAM Markets</span><span class="mq-i"><span class="mq-d"></span>B2B Fintech</span><span class="mq-i"><span class="mq-d"></span>Web Strategy</span><span class="mq-i"><span class="mq-d"></span>Copywriting</span><span class="mq-i"><span class="mq-d"></span>HubSpot CMS</span><span class="mq-i"><span class="mq-d"></span>CRO</span><span class="mq-i"><span class="mq-d"></span>AI Automation</span><span class="mq-i"><span class="mq-d"></span>Branding</span><span class="mq-i"><span class="mq-d"></span>SEO EN + ES</span><span class="mq-i"><span class="mq-d"></span>Fullstory</span><span class="mq-i"><span class="mq-d"></span>OKR Systems</span><span class="mq-i"><span class="mq-d"></span>Claude Code</span><span class="mq-i"><span class="mq-d"></span>LATAM Markets</span>
+  <div class="mq-t" id="mqTrack">
+    <span class="mq-i"><span class="mq-d"></span><span data-en-i>B2B Fintech</span><span data-es-i>Fintech B2B</span></span>
+    <span class="mq-i"><span class="mq-d"></span><span data-en-i>Web Strategy</span><span data-es-i>Estrategia Web</span></span>
+    <span class="mq-i"><span class="mq-d"></span><span data-en-i>Copywriting</span><span data-es-i>Copywriting</span></span>
+    <span class="mq-i"><span class="mq-d"></span><span data-en-i>HubSpot CMS</span><span data-es-i>HubSpot CMS</span></span>
+    <span class="mq-i"><span class="mq-d"></span><span data-en-i>CRO</span><span data-es-i>CRO</span></span>
+    <span class="mq-i"><span class="mq-d"></span><span data-en-i>AI Automation</span><span data-es-i>Automatización IA</span></span>
+    <span class="mq-i"><span class="mq-d"></span><span data-en-i>Branding</span><span data-es-i>Branding</span></span>
+    <span class="mq-i"><span class="mq-d"></span><span data-en-i>SEO EN + ES</span><span data-es-i>SEO EN + ES</span></span>
+    <span class="mq-i"><span class="mq-d"></span><span data-en-i>Fullstory</span><span data-es-i>Fullstory</span></span>
+    <span class="mq-i"><span class="mq-d"></span><span data-en-i>OKR Systems</span><span data-es-i>Sistemas OKR</span></span>
+    <span class="mq-i"><span class="mq-d"></span><span data-en-i>Claude Code</span><span data-es-i>Claude Code</span></span>
+    <span class="mq-i"><span class="mq-d"></span><span data-en-i>LATAM Markets</span><span data-es-i>Mercados LATAM</span></span>
+    <span class="mq-i"><span class="mq-d"></span><span data-en-i>B2B Fintech</span><span data-es-i>Fintech B2B</span></span>
+    <span class="mq-i"><span class="mq-d"></span><span data-en-i>Web Strategy</span><span data-es-i>Estrategia Web</span></span>
+    <span class="mq-i"><span class="mq-d"></span><span data-en-i>Copywriting</span><span data-es-i>Copywriting</span></span>
+    <span class="mq-i"><span class="mq-d"></span><span data-en-i>HubSpot CMS</span><span data-es-i>HubSpot CMS</span></span>
+    <span class="mq-i"><span class="mq-d"></span><span data-en-i>CRO</span><span data-es-i>CRO</span></span>
+    <span class="mq-i"><span class="mq-d"></span><span data-en-i>AI Automation</span><span data-es-i>Automatización IA</span></span>
+    <span class="mq-i"><span class="mq-d"></span><span data-en-i>Branding</span><span data-es-i>Branding</span></span>
+    <span class="mq-i"><span class="mq-d"></span><span data-en-i>SEO EN + ES</span><span data-es-i>SEO EN + ES</span></span>
+    <span class="mq-i"><span class="mq-d"></span><span data-en-i>Fullstory</span><span data-es-i>Fullstory</span></span>
+    <span class="mq-i"><span class="mq-d"></span><span data-en-i>OKR Systems</span><span data-es-i>Sistemas OKR</span></span>
+    <span class="mq-i"><span class="mq-d"></span><span data-en-i>Claude Code</span><span data-es-i>Claude Code</span></span>
+    <span class="mq-i"><span class="mq-d"></span><span data-en-i>LATAM Markets</span><span data-es-i>Mercados LATAM</span></span>
   </div>
 </div>
 <section id="about">
@@ -431,8 +662,8 @@ footer{background:var(--ink);padding:1.4rem 3.5rem;display:flex;justify-content:
   <h2 class="st" data-en>Strategy.<br>Copy.<br><em>Execution.</em></h2>
   <h2 class="st" data-es>Estrategia.<br>Copy.<br><em>Ejecución.</em></h2>
   <div class="astats sr d2">
-    <div class="astat"><div class="n">4+</div><div class="l" data-en-i>Years in B2B SaaS</div><div class="l" data-es-i>Años en B2B SaaS</div></div>
-    <div class="astat"><div class="n">30+</div><div class="l" data-en-i>Pages built & optimized</div><div class="l" data-es-i>Páginas construidas</div></div>
+    <div class="astat"><div class="n" data-target="4+">0+</div><div class="l" data-en-i>Years in B2B SaaS</div><div class="l" data-es-i>Años en B2B SaaS</div></div>
+    <div class="astat"><div class="n" data-target="30+">0+</div><div class="l" data-en-i>Pages built & optimized</div><div class="l" data-es-i>Páginas construidas</div></div>
     <div class="astat"><div class="n">2</div><div class="l" data-en-i>Languages · one standard</div><div class="l" data-es-i>Idiomas · un estándar</div></div>
     <div class="astat"><div class="n">5</div><div class="l" data-en-i>Companies · 3 industries</div><div class="l" data-es-i>Empresas · 3 industrias</div></div>
   </div>
@@ -649,57 +880,227 @@ footer{background:var(--ink);padding:1.4rem 3.5rem;display:flex;justify-content:
   <div class="ov" data-en>Selected work</div><div class="ov" data-es>Trabajo selecto</div>
   <h2 class="st" data-en>Projects that<br><em>moved the needle.</em></h2>
   <h2 class="st" data-es>Proyectos que<br><em>movieron el marcador.</em></h2>
-  <p class="ph-hint" data-en>Hover to reveal details, metrics & outcomes.</p>
-  <p class="ph-hint" data-es>Pasa el cursor para ver detalles y resultados.</p>
+  <p class="ph-hint" data-en>Problem → Approach → Measurable outcome.</p>
+  <p class="ph-hint" data-es>Problema → Enfoque → Resultado medible.</p>
+</div>
 </div>
 <div class="pgrid">
-  <div class="pc sr-l">
+
+<!-- ── 01: Teampay Rebrand ── -->
+<div class="pc sr-l" data-proj="01">
+  <div class="pc-body">
     <div class="pc-n">01</div>
-    <div class="pc-cat" data-en>B2B Fintech · Strategy · Copy</div><div class="pc-cat" data-es>Fintech B2B · Estrategia · Copy</div>
-    <div class="pc-tit" data-en>Website Messaging Audit</div><div class="pc-tit" data-es>Auditoría de Messaging Web</div>
-    <p class="pc-sum" data-en>Post-acquisition, the site was selling unreleased features — creating enterprise friction.</p>
-    <p class="pc-sum" data-es>Tras una adquisición, el sitio vendía features inexistentes — fricción con clientes enterprise.</p>
-    <div class="pexp"><div class="pexp-in">
-      <p class="pdet" data-en>Audited every page, mapped real vs. promised capabilities, and rewrote the entire messaging architecture. Delivered the first internal copy guidelines system.</p>
-      <p class="pdet" data-es>Audité cada página, mapeé capacidades reales vs. prometidas y reescribí toda la arquitectura de messaging. Primer sistema de guías de copy internas.</p>
-      <div class="pmet"><div><div class="v">10+</div><div class="l" data-en-i>Pages rewritten</div><div class="l" data-es-i>Páginas reescritas</div></div><div><div class="v">1st</div><div class="l" data-en-i>Copy system</div><div class="l" data-es-i>Sistema de copy</div></div></div>
-      <div class="pouts"><div class="pout" data-en>Pages realigned with real product capabilities</div><div class="pout" data-es>Páginas alineadas con capacidades reales</div><div class="pout" data-en>Internal guidelines delivered to leadership</div><div class="pout" data-es>Guías internas entregadas a liderazgo</div></div>
-    </div></div>
+    <div>
+      <div class="pc-meta">
+        <span class="pc-tag" data-en>Enterprise Rebrand · PM</span>
+        <span class="pc-tag" data-es>Rebranding Enterprise · PM</span>
+      </div>
+      <h3 class="pc-tit" data-en>Teampay by Paystand —<br>Acquisition Rebrand</h3>
+      <h3 class="pc-tit" data-es>Teampay by Paystand —<br>Rebranding de Adquisición</h3>
+      <p class="pc-prob" data-en>Paystand acquired Teampay (April 2024, TechCrunch-covered, $65M-funded). The entire digital presence — brand, website, messaging, and product positioning — had to be unified under a new identity without disrupting 250K+ existing customers.</p>
+      <p class="pc-prob" data-es>Paystand adquirió Teampay (abril 2024, cubierto por TechCrunch, $65M levantados). Toda la presencia digital — marca, sitio, messaging y posicionamiento — debía unificarse bajo una nueva identidad sin afectar a 250K+ clientes existentes.</p>
+    </div>
+    <div class="pc-pills">
+      <span class="pc-pill" data-en>End-to-end PM</span><span class="pc-pill" data-es>PM end-to-end</span>
+      <span class="pc-pill" data-en>Messaging strategy</span><span class="pc-pill" data-es>Estrategia de messaging</span>
+      <span class="pc-pill" data-en>Web copy & architecture</span><span class="pc-pill" data-es>Copy y arquitectura web</span>
+      <span class="pc-pill" data-en>Team coordination</span><span class="pc-pill" data-es>Coordinación de equipo</span>
+    </div>
   </div>
-  <div class="pc sr-r">
+  <div class="pc-vis" data-anim="rebrand">
+    <div style="position:relative;z-index:1">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-bottom:1.25rem" data-en-i>Rebrand at a glance</div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-bottom:1.25rem" data-es-i>El rebrand en números</div>
+      <div class="pc-funnel">
+        <div class="pf-step pv-anim" style="border-color:rgba(26,82,118,.25);background:rgba(26,82,118,.04)">
+          <div class="pf-name" data-en-i>Announcement</div><div class="pf-name" data-es-i>Anuncio público</div>
+          <div class="pf-n" style="color:var(--sky)">Apr 25, 2024</div>
+        </div>
+        <div class="pf-step pv-anim">
+          <div class="pf-name" data-en-i>Pages rewritten</div><div class="pf-name" data-es-i>Páginas reescritas</div>
+          <div class="pf-n">32</div>
+        </div>
+        <div class="pf-step pv-anim">
+          <div class="pf-name" data-en-i>Team coordinated</div><div class="pf-name" data-es-i>Equipo coordinado</div>
+          <div class="pf-n">7 <span style="font-size:.6rem;font-weight:400;color:var(--mut)" data-en-i>people</span><span style="font-size:.6rem;font-weight:400;color:var(--mut)" data-es-i>personas</span></div>
+        </div>
+        <div class="pf-step pv-anim" style="border-color:rgba(46,125,82,.3);background:rgba(46,125,82,.04)">
+          <div class="pf-name" style="color:var(--sage);font-weight:600" data-en-i>Launched on time</div><div class="pf-name" style="color:var(--sage);font-weight:600" data-es-i>Lanzado en tiempo</div>
+          <div class="pf-n" style="color:var(--sage)">6 weeks</div>
+        </div>
+      </div>
+    </div>
+    <div class="pc-metrics">
+      <div class="pm"><div class="pm-v animate" data-val="32">—</div><div class="pm-l" data-en-i>Pages</div><div class="pm-l" data-es-i>Páginas</div></div>
+      <div class="pm"><div class="pm-v animate" data-val="7">—</div><div class="pm-l" data-en-i>Team size</div><div class="pm-l" data-es-i>Equipo</div></div>
+      <div class="pm"><div class="pm-v animate" data-val="6w">—</div><div class="pm-l" data-en-i>Delivered</div><div class="pm-l" data-es-i>Entregado</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ── 02: Post-Acquisition Migration ── -->
+<div class="pc sr-r" data-proj="02">
+  <div class="pc-body">
     <div class="pc-n">02</div>
-    <div class="pc-cat" data-en>Analytics · CRO · Q2 2026</div><div class="pc-cat" data-es>Analítica · CRO · Q2 2026</div>
-    <div class="pc-tit" data-en>Conversion OKR System</div><div class="pc-tit" data-es>Sistema OKR de Conversión</div>
-    <p class="pc-sum" data-en>Built a full conversion measurement system — Fullstory dashboards, A/B tracking, and a custom HTML tracker app.</p>
-    <p class="pc-sum" data-es>Sistema completo de medición de conversión — dashboards Fullstory, tracking A/B y app HTML personalizada.</p>
-    <div class="pexp"><div class="pexp-in">
-      <p class="pdet" data-en>Fullstory dashboards, bi-weekly snapshots, A/B test tracking, and a persistent HTML tracker with OKR checklist and performance charts.</p>
-      <p class="pdet" data-es>Dashboards Fullstory, snapshots quincenales, tracking A/B y app HTML persistente con checklist OKR y gráficas de performance.</p>
-      <div class="pmet"><div><div class="v">0.61%</div><div class="l" data-en-i>Baseline CR</div><div class="l" data-es-i>CR base</div></div><div><div class="v">0.83%</div><div class="l" data-en-i>Q2 target</div><div class="l" data-es-i>Objetivo Q2</div></div><div><div class="v">53K</div><div class="l" data-en-i>Monthly visits</div><div class="l" data-es-i>Visitas/mes</div></div></div>
-    </div></div>
+    <div>
+      <div class="pc-meta">
+        <span class="pc-tag" data-en>Web Migration · PM</span>
+        <span class="pc-tag" data-es>Migración Web · PM</span>
+      </div>
+      <h3 class="pc-tit" data-en>Post-Acquisition<br>Web Migration</h3>
+      <h3 class="pc-tit" data-es>Migración Web<br>Post-Adquisición</h3>
+      <p class="pc-prob" data-en>Merging two enterprise products into one digital ecosystem meant migrating content, URLs, and messaging from a $65M-funded platform into Paystand's architecture — without breaking SEO, losing traffic, or confusing a 1M+ business network.</p>
+      <p class="pc-prob" data-es>Fusionar dos productos enterprise en un ecosistema digital implicó migrar contenido, URLs y messaging de una plataforma con $65M levantados hacia la arquitectura de Paystand — sin romper el SEO, perder tráfico ni confundir a una red de 1M+ negocios.</p>
+    </div>
+    <div class="pc-pills">
+      <span class="pc-pill" data-en>Content migration</span><span class="pc-pill" data-es>Migración de contenido</span>
+      <span class="pc-pill" data-en>SEO preservation</span><span class="pc-pill" data-es>Preservación SEO</span>
+      <span class="pc-pill" data-en>Messaging adaptation</span><span class="pc-pill" data-es>Adaptación de messaging</span>
+      <span class="pc-pill" data-en>Cross-team coordination</span><span class="pc-pill" data-es>Coordinación cross-equipo</span>
+    </div>
   </div>
-  <div class="pc sr-l d1">
+  <div class="pc-vis" data-anim="migration">
+    <div style="position:relative;z-index:1">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-bottom:1.25rem" data-en-i>Migration scope</div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-bottom:1.25rem" data-es-i>Alcance de la migración</div>
+      <div class="pc-bars">
+        <div class="pb-row">
+          <div class="pb-label" data-en-i>Content</div><div class="pb-label" data-es-i>Contenido</div>
+          <div class="pb-track"><div class="pb-fill pv-anim" style="--w:100%;background:linear-gradient(90deg,var(--pom),var(--warm))"></div></div>
+          <div class="pb-val" style="color:var(--pom)">✓</div>
+        </div>
+        <div class="pb-row">
+          <div class="pb-label" data-en-i>URLs & redirects</div><div class="pb-label" data-es-i>URLs y redirects</div>
+          <div class="pb-track"><div class="pb-fill pv-anim" style="--w:100%;background:linear-gradient(90deg,var(--pom),var(--warm))"></div></div>
+          <div class="pb-val" style="color:var(--pom)">✓</div>
+        </div>
+        <div class="pb-row">
+          <div class="pb-label" data-en-i>Messaging</div><div class="pb-label" data-es-i>Messaging</div>
+          <div class="pb-track"><div class="pb-fill pv-anim" style="--w:95%;background:linear-gradient(90deg,var(--pom),var(--warm))"></div></div>
+          <div class="pb-val" style="color:var(--pom)">✓</div>
+        </div>
+        <div class="pb-row">
+          <div class="pb-label" data-en-i>SEO integrity</div><div class="pb-label" data-es-i>SEO intacto</div>
+          <div class="pb-track"><div class="pb-fill pv-anim" style="--w:90%;background:var(--sage)"></div></div>
+          <div class="pb-val" style="color:var(--sage)">✓</div>
+        </div>
+      </div>
+    </div>
+    <div class="pc-metrics">
+      <div class="pm"><div class="pm-v animate" data-val="1M+">—</div><div class="pm-l" data-en-i>Network size</div><div class="pm-l" data-es-i>Red afectada</div></div>
+      <div class="pm"><div class="pm-v animate" data-val="0">—</div><div class="pm-l" data-en-i>Downtime</div><div class="pm-l" data-es-i>Tiempo caído</div></div>
+      <div class="pm"><div class="pm-v animate" data-val="2">—</div><div class="pm-l" data-en-i>ERPs maintained</div><div class="pm-l" data-es-i>ERPs mantenidos</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ── 03: Messaging Audit ── -->
+<div class="pc sr-l d1" data-proj="03">
+  <div class="pc-body">
     <div class="pc-n">03</div>
-    <div class="pc-cat" data-en>HubSpot CMS · HubL</div><div class="pc-cat" data-es>HubSpot CMS · HubL</div>
-    <div class="pc-tit" data-en>Custom HubSpot Modules</div><div class="pc-tit" data-es>Módulos HubSpot Custom</div>
-    <p class="pc-sum" data-en>Reusable, interactive HubSpot modules built in HubL — production-grade and live.</p>
-    <p class="pc-sum" data-es>Módulos HubSpot reutilizables e interactivos en HubL — en producción y en uso.</p>
-    <div class="pexp"><div class="pexp-in">
-      <div class="pouts"><div class="pout" data-en>FAQ Accordion — 2-col, dynamic HubL</div><div class="pout" data-es>FAQ Accordion 2 col, HubL dinámico</div><div class="pout" data-en>Testimonial cards — conditional video/quote logic</div><div class="pout" data-es>Testimonial cards con lógica condicional</div><div class="pout" data-en>Interactive pricing calculator</div><div class="pout" data-es>Calculadora de pricing interactiva</div><div class="pout" data-en>Responsive blog sidebar</div><div class="pout" data-es>Sidebar de blog responsivo</div></div>
-    </div></div>
+    <div>
+      <div class="pc-meta">
+        <span class="pc-tag" data-en>Strategy · Copy</span>
+        <span class="pc-tag" data-es>Estrategia · Copy</span>
+      </div>
+      <h3 class="pc-tit" data-en>Website Messaging<br>Audit</h3>
+      <h3 class="pc-tit" data-es>Auditoría de<br>Messaging Web</h3>
+      <p class="pc-prob" data-en>Post-acquisition, the website was actively promoting unreleased features and retired brand names — creating friction in enterprise sales calls and misaligning marketing with the actual product.</p>
+      <p class="pc-prob" data-es>Tras la adquisición, el sitio promovía activamente features no lanzadas y nombres de marca retirados — generando fricción en llamadas de ventas enterprise y desalineando marketing con el producto real.</p>
+    </div>
+    <div class="pc-pills">
+      <span class="pc-pill" data-en>Full site audit</span><span class="pc-pill" data-es>Auditoría completa</span>
+      <span class="pc-pill" data-en>Messaging architecture</span><span class="pc-pill" data-es>Arquitectura de messaging</span>
+      <span class="pc-pill" data-en>Internal copy guidelines</span><span class="pc-pill" data-es>Guías de copy internas</span>
+    </div>
   </div>
-  <div class="pc sr-r d1">
+  <div class="pc-vis" data-anim="bars">
+    <div style="position:relative;z-index:1">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-bottom:1.25rem" data-en-i>Pages audited by type</div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-bottom:1.25rem" data-es-i>Páginas auditadas por tipo</div>
+      <div class="pc-bars">
+        <div class="pb-row">
+          <div class="pb-label" data-en-i>Homepage</div><div class="pb-label" data-es-i>Inicio</div>
+          <div class="pb-track"><div class="pb-fill pv-anim" style="--w:100%;background:var(--sky)"></div></div>
+          <div class="pb-val" style="color:var(--sky)">✓</div>
+        </div>
+        <div class="pb-row">
+          <div class="pb-label" data-en-i>Product pages</div><div class="pb-label" data-es-i>Producto</div>
+          <div class="pb-track"><div class="pb-fill pv-anim" style="--w:75%;background:var(--sky)"></div></div>
+          <div class="pb-val" style="color:var(--sky)">6</div>
+        </div>
+        <div class="pb-row">
+          <div class="pb-label" data-en-i>Features</div><div class="pb-label" data-es-i>Features</div>
+          <div class="pb-track"><div class="pb-fill pv-anim" style="--w:50%;background:var(--plum)"></div></div>
+          <div class="pb-val" style="color:var(--plum)">4</div>
+        </div>
+        <div class="pb-row">
+          <div class="pb-label" data-en-i>Pricing</div><div class="pb-label" data-es-i>Precios</div>
+          <div class="pb-track"><div class="pb-fill pv-anim" style="--w:38%;background:var(--plum)"></div></div>
+          <div class="pb-val" style="color:var(--plum)">3</div>
+        </div>
+      </div>
+    </div>
+    <div class="pc-metrics">
+      <div class="pm"><div class="pm-v animate" data-val="10+">—</div><div class="pm-l" data-en-i>Pages fixed</div><div class="pm-l" data-es-i>Páginas</div></div>
+      <div class="pm"><div class="pm-v animate" data-val="1st">—</div><div class="pm-l" data-en-i>Copy system</div><div class="pm-l" data-es-i>Sistema</div></div>
+      <div class="pm"><div class="pm-v animate" data-val="∞">—</div><div class="pm-l" data-en-i>Reusable</div><div class="pm-l" data-es-i>Reutilizable</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ── 04: Conversion OKR ── -->
+<div class="pc sr-r d1" data-proj="04">
+  <div class="pc-body">
     <div class="pc-n">04</div>
-    <div class="pc-cat" data-en>Content Strategy · LATAM SEO</div><div class="pc-cat" data-es>Estrategia · SEO LATAM</div>
-    <div class="pc-tit" data-en>Yaydoo PorCobrar Content System</div><div class="pc-tit" data-es>Sistema de Contenido PorCobrar</div>
-    <p class="pc-sum" data-en>Consolidated 4 subpages into one integral product page — SEO-optimized for LATAM finance teams.</p>
-    <p class="pc-sum" data-es>Consolidé 4 subpáginas en una página integral — optimizada para equipos financieros LATAM.</p>
-    <div class="pexp"><div class="pexp-in">
-      <p class="pdet" data-en>10 modules, fully SEO-optimized. Domain: CFDI, SPEI, domiciliación, intereses moratorios, cobranza preventiva.</p>
-      <p class="pdet" data-es>10 módulos optimizados. Dominio: CFDI, SPEI, domiciliación, intereses moratorios, cobranza preventiva.</p>
-      <div class="pmet"><div><div class="v">4→1</div><div class="l" data-en-i>Pages consolidated</div><div class="l" data-es-i>Páginas consolidadas</div></div><div><div class="v">10</div><div class="l" data-en-i>Modules</div><div class="l" data-es-i>Módulos</div></div></div>
-    </div></div>
+    <div>
+      <div class="pc-meta">
+        <span class="pc-tag" data-en>Analytics · CRO · Q2 2026</span>
+        <span class="pc-tag" data-es>Analítica · CRO · Q2 2026</span>
+      </div>
+      <h3 class="pc-tit" data-en>Conversion OKR<br>System</h3>
+      <h3 class="pc-tit" data-es>Sistema OKR<br>de Conversión</h3>
+      <p class="pc-prob" data-en>The team had no unified way to measure web performance. Marketing decisions were made without data — no one could quantify the impact of copy, UX, or A/B test changes on the conversion funnel.</p>
+      <p class="pc-prob" data-es>El equipo no tenía una forma unificada de medir el performance web. Las decisiones se tomaban sin datos — nadie podía cuantificar el impacto de cambios en copy, UX o pruebas A/B en el embudo de conversión.</p>
+    </div>
+    <div class="pc-pills">
+      <span class="pc-pill">Fullstory</span>
+      <span class="pc-pill" data-en>OKR dashboards</span><span class="pc-pill" data-es>Dashboards OKR</span>
+      <span class="pc-pill" data-en>A/B tracking</span><span class="pc-pill" data-es>Tracking A/B</span>
+      <span class="pc-pill" data-en>Bi-weekly reports</span><span class="pc-pill" data-es>Reportes quincenales</span>
+    </div>
   </div>
+  <div class="pc-vis" data-anim="funnel">
+    <div style="position:relative;z-index:1">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-bottom:1.25rem" data-en-i>Funnel — visits to conversions</div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-bottom:1.25rem" data-es-i>Embudo — visitas a conversiones</div>
+      <div class="pc-funnel">
+        <div class="pf-step pv-anim">
+          <div class="pf-name" data-en-i>Monthly visits</div><div class="pf-name" data-es-i>Visitas/mes</div>
+          <div class="pf-n">53K</div>
+        </div>
+        <div class="pf-step pv-anim">
+          <div class="pf-name" data-en-i>Engaged sessions</div><div class="pf-name" data-es-i>Sesiones activas</div>
+          <div class="pf-n">~12K</div>
+        </div>
+        <div class="pf-step pv-anim">
+          <div class="pf-name" data-en-i>Baseline CR</div><div class="pf-name" data-es-i>CR base</div>
+          <div class="pf-n" style="color:var(--warm)">0.61%</div>
+        </div>
+        <div class="pf-step pv-anim" style="border-color:rgba(46,125,82,.3);background:rgba(46,125,82,.04)">
+          <div class="pf-name" style="color:var(--sage);font-weight:600" data-en-i>Q2 2026 target</div><div class="pf-name" style="color:var(--sage);font-weight:600" data-es-i>Objetivo Q2 2026</div>
+          <div class="pf-n" style="color:var(--sage)">0.83% ↑</div>
+        </div>
+      </div>
+    </div>
+    <div class="pc-metrics">
+      <div class="pm"><div class="pm-v animate" data-val="53K">—</div><div class="pm-l" data-en-i>Monthly visits</div><div class="pm-l" data-es-i>Visitas</div></div>
+      <div class="pm"><div class="pm-v animate" data-val="36%">—</div><div class="pm-l" data-en-i>CR lift target</div><div class="pm-l" data-es-i>Mejora objetivo</div></div>
+      <div class="pm"><div class="pm-v animate" data-val="Q2">—</div><div class="pm-l" data-en-i>2026</div><div class="pm-l" data-es-i>2026</div></div>
+    </div>
+  </div>
+</div>
+
 </div>
 <!-- WAYPOINT — bone white, full-width, navigating screens -->
 <div class="wfeat sr-s" id="wcrd">
@@ -877,12 +1278,73 @@ footer{background:var(--ink);padding:1.4rem 3.5rem;display:flex;justify-content:
 </div>
 </div>
 </section>
-<section id="ct">
+
+
+<!-- MY PROCESS -->
+<section id="proc" aria-labelledby="proc-heading">
+<div class="wrap">
+  <div class="ov sr" data-en>How I work</div><div class="ov sr" data-es>Cómo trabajo</div>
+  <h2 class="st sr d1" id="proc-heading" data-en>My<br><em>process.</em></h2>
+  <h2 class="st sr d1" data-es>Mi<br><em>proceso.</em></h2>
+  <div style="margin-top:3.5rem">
+    <div class="prow">
+      <div class="sr-l">
+        <div class="prow-step" data-en-i>Step 01</div>
+        <div class="prow-step" data-es-i>Paso 01</div>
+        <h3 class="prow-h" data-en>Audit &<br><em>diagnose.</em></h3>
+        <h3 class="prow-h" data-es>Auditar &<br><em>diagnosticar.</em></h3>
+        <p class="prow-p" data-en>Before writing a single word or touching a single page, I map the full landscape — what exists, what's working, what's broken, what the audience actually needs to hear.</p>
+        <p class="prow-p" data-es>Antes de escribir una sola palabra o tocar una sola página, mapeo todo el panorama — qué existe, qué funciona, qué está roto, qué necesita escuchar la audiencia.</p>
+      </div>
+      <div class="prow-vis sr-r">
+        <div class="pstep-item"><div class="pstep-n">1</div><div class="pstep-txt"><strong data-en-i>Review existing copy, pages, analytics</strong><strong data-es-i>Revisión de copy, páginas, analítica</strong></div></div>
+        <div class="pstep-item"><div class="pstep-n">2</div><div class="pstep-txt"><strong data-en-i>Identify gaps, inconsistencies, missed opportunities</strong><strong data-es-i>Identificar gaps, inconsistencias, oportunidades</strong></div></div>
+        <div class="pstep-item"><div class="pstep-n">3</div><div class="pstep-txt"><strong data-en-i>Define target audience, intent, positioning</strong><strong data-es-i>Definir audiencia objetivo, intención, posicionamiento</strong></div></div>
+        <div class="pstep-item"><div class="pstep-n">4</div><div class="pstep-txt"><strong data-en-i>Deliverable: audit doc + priority matrix</strong><strong data-es-i>Entregable: doc de auditoría + matriz de prioridades</strong></div></div>
+      </div>
+    </div>
+    <div class="prow">
+      <div class="sr-l">
+        <div class="prow-step" data-en-i>Step 02</div>
+        <div class="prow-step" data-es-i>Paso 02</div>
+        <h3 class="prow-h" data-en>Build &<br><em>execute.</em></h3>
+        <h3 class="prow-h" data-es>Construir &<br><em>ejecutar.</em></h3>
+        <p class="prow-p" data-en>Strategy without execution is just theory. I build the actual page, module, campaign, or system — not just the deck. Every output is production-ready.</p>
+        <p class="prow-p" data-es>La estrategia sin ejecución es solo teoría. Construyo la página real, módulo, campaña o sistema — no solo la presentación. Cada output está listo para producción.</p>
+      </div>
+      <div class="prow-vis sr-r">
+        <div class="pstep-item"><div class="pstep-n">1</div><div class="pstep-txt"><strong data-en-i>Copy, structure, and messaging architecture</strong><strong data-es-i>Copy, estructura y arquitectura de mensajería</strong></div></div>
+        <div class="pstep-item"><div class="pstep-n">2</div><div class="pstep-txt"><strong data-en-i>HubSpot build, HTML/CSS, or Figma depending on scope</strong><strong data-es-i>HubSpot, HTML/CSS o Figma según el alcance</strong></div></div>
+        <div class="pstep-item"><div class="pstep-n">3</div><div class="pstep-txt"><strong data-en-i>QA across desktop, mobile, EN + ES</strong><strong data-es-i>QA en desktop, mobile, EN + ES</strong></div></div>
+        <div class="pstep-item"><div class="pstep-n">4</div><div class="pstep-txt"><strong data-en-i>Deliverable: live page, published asset, or shipped module</strong><strong data-es-i>Entregable: página en vivo, asset publicado o módulo lanzado</strong></div></div>
+      </div>
+    </div>
+    <div class="prow">
+      <div class="sr-l">
+        <div class="prow-step" data-en-i>Step 03</div>
+        <div class="prow-step" data-es-i>Paso 03</div>
+        <h3 class="prow-h" data-en>Measure &<br><em>iterate.</em></h3>
+        <h3 class="prow-h" data-es>Medir &<br><em>iterar.</em></h3>
+        <p class="prow-p" data-en>Nothing is done after launch. I track results with Fullstory, GA4, and HubSpot — then use the data to improve. Every decision is backed by a number.</p>
+        <p class="prow-p" data-es>Nada termina con el lanzamiento. Hago seguimiento de resultados con Fullstory, GA4 y HubSpot — luego uso los datos para mejorar. Cada decisión está respaldada por un número.</p>
+      </div>
+      <div class="prow-vis sr-r">
+        <div class="pstep-item"><div class="pstep-n">1</div><div class="pstep-txt"><strong data-en-i>Set up tracking, dashboards, KPIs</strong><strong data-es-i>Configurar tracking, dashboards, KPIs</strong></div></div>
+        <div class="pstep-item"><div class="pstep-n">2</div><div class="pstep-txt"><strong data-en-i>Bi-weekly snapshot reports with insights + actions</strong><strong data-es-i>Reportes quincenales con insights y acciones</strong></div></div>
+        <div class="pstep-item"><div class="pstep-n">3</div><div class="pstep-txt"><strong data-en-i>A/B test, optimize, repeat</strong><strong data-es-i>A/B test, optimizar, repetir</strong></div></div>
+        <div class="pstep-item"><div class="pstep-n">4</div><div class="pstep-txt"><strong data-en-i>Deliverable: OKR report + next-cycle recommendations</strong><strong data-es-i>Entregable: reporte OKR + recomendaciones siguiente ciclo</strong></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="ct" aria-labelledby="ct-heading">
 <div class="clay">
 <div>
   <div class="ov sr" data-en>Get in touch</div><div class="ov sr" data-es>Contáctame</div>
-  <h2 class="ctit sr d1" data-en>Let's build something<br><em>great together.</em></h2>
-  <h2 class="ctit sr d1" data-es>Construyamos algo<br><em>increíble juntos.</em></h2>
+  <h2 class="ctit sr d1" data-en>Let's build<br><em>together.</em></h2>
+  <h2 class="ctit sr d1" data-es>Construyamos<br><em>juntos.</em></h2>
   <p class="csub sr d2" data-en>Open to new opportunities in marketing, web strategy, branding, and content.</p>
   <p class="csub sr d2" data-es>Abierta a nuevas oportunidades en marketing, estrategia web, branding y contenido.</p>
   <div class="cls sr d3">
@@ -892,13 +1354,13 @@ footer{background:var(--ink);padding:1.4rem 3.5rem;display:flex;justify-content:
   </div>
 </div>
 <div class="sr d2">
-  <form class="cform" id="cF" action="https://formspree.io/f/xwpbqjvk" method="POST">
+  <form class="cform" id="cF" action="https://formspree.io/f/xwpbqjvk" method="POST" aria-label="Contact form" novalidate>
     <div class="fr">
-      <div class="ff"><label class="fl" data-en>Name</label><label class="fl" data-es>Nombre</label><input class="fi" type="text" name="name" placeholder="Jane Smith" required></div>
-      <div class="ff"><label class="fl">Email</label><input class="fi" type="email" name="email" placeholder="jane@company.com" required></div>
+      <div class="ff"><label class="fl" data-en>Name</label><label class="fl" data-es>Nombre</label><input class="fi" type="text" name="name" placeholder="Jane Smith" data-ph-en="Jane Smith" data-ph-es="Tu nombre" required></div>
+      <div class="ff"><label class="fl">Email</label><input class="fi" type="email" name="email" placeholder="jane@company.com" data-ph-en="jane@company.com" data-ph-es="tu@email.com" required></div>
     </div>
-    <div class="ff"><label class="fl" data-en>Subject</label><label class="fl" data-es>Asunto</label><input class="fi" type="text" name="subject" placeholder="Let's work together"></div>
-    <div class="ff"><label class="fl" data-en>Message</label><label class="fl" data-es>Mensaje</label><textarea class="ft" name="message" placeholder="Tell me about your project..." required></textarea></div>
+    <div class="ff"><label class="fl" data-en>Subject</label><label class="fl" data-es>Asunto</label><input class="fi" type="text" name="subject" placeholder="Let's work together" data-ph-en="Let's work together" data-ph-es="Trabajemos juntos"></div>
+    <div class="ff"><label class="fl" data-en>Message</label><label class="fl" data-es>Mensaje</label><textarea class="ft" name="message" placeholder="Tell me about your project..." data-ph-en="Tell me about your project..." data-ph-es="Cuéntame sobre tu proyecto..." required></textarea></div>
     <button type="submit" class="fbtn" id="fBtn"><span data-en-i>Send message →</span><span data-es-i>Enviar mensaje →</span></button>
     <div class="fok" id="fok"><span data-en-i>✓ Message sent! I'll be in touch soon.</span><span data-es-i>✓ ¡Mensaje enviado! Te contacto pronto.</span></div>
   </form>
@@ -927,6 +1389,10 @@ window.addEventListener('scroll',()=>document.getElementById('nav').classList.to
 function setLang(l){
   document.documentElement.lang=l;
   document.querySelectorAll('.lb').forEach(b=>b.classList.toggle('on',b.textContent.trim()===l.toUpperCase()));
+  // swap form placeholders
+  document.querySelectorAll('[data-ph-en]').forEach(el=>{
+    el.placeholder = l==='es' ? el.dataset.phEs : el.dataset.phEn;
+  });
 }
 document.documentElement.lang='en';
 // animated role
@@ -941,6 +1407,67 @@ function showRole(){
   re.classList.add('show');
 }
 setTimeout(()=>{showRole();setInterval(()=>{re.classList.remove('show');re.classList.add('hide');setTimeout(()=>{ri=(ri+1)%4;showRole();},380);},2800);},850);
+
+// ── PROJECT ANIMATIONS ──
+// Observe each project card — trigger its unique animation when visible
+const projObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    const card = e.target;
+    // Animate all .pv-anim inside this card
+    card.querySelectorAll('.pv-anim').forEach((el, i) => {
+      setTimeout(() => el.classList.add('pv-in'), i * 120 + 200);
+    });
+    // Animate metric values
+    card.querySelectorAll('.pm-v.animate').forEach((el, i) => {
+      setTimeout(() => {
+        el.classList.add('pv-in');
+        const val = el.dataset.val;
+        if (!val) return;
+        // Count-up for numeric values
+        const num = parseFloat(val.replace(/[^0-9.]/g,''));
+        if (!isNaN(num) && num > 1) {
+          const suffix = val.replace(/[0-9.]/g,'');
+          let cur = 0, steps = 40;
+          const inc = num / steps;
+          const t = setInterval(() => {
+            cur = Math.min(num, cur + inc);
+            el.textContent = (Number.isInteger(num) ? Math.floor(cur) : cur.toFixed(2)) + suffix;
+            if (cur >= num) clearInterval(t);
+          }, 30);
+        } else {
+          el.textContent = val;
+        }
+      }, i * 150 + 400);
+    });
+    projObs.unobserve(card);
+  });
+}, { threshold: 0.25 });
+document.querySelectorAll('.pc[data-proj]').forEach(c => projObs.observe(c));
+
+// stat counter for About section stats
+function animateCounter(el) {
+  const raw = el.dataset.target;
+  if(!raw) return;
+  const isPlus = raw.includes('+');
+  const num = parseInt(raw);
+  const duration = 1400;
+  const steps = 50;
+  const inc = num / steps;
+  let current = 0, step = 0;
+  const timer = setInterval(()=>{
+    step++;
+    current = Math.min(num, Math.round(inc * step));
+    el.textContent = current + (isPlus ? '+' : '');
+    if(step >= steps){ el.textContent = raw; clearInterval(timer); }
+  }, duration / steps);
+}
+const cntObs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){ animateCounter(e.target); cntObs.unobserve(e.target); }
+  });
+},{threshold:.8});
+document.querySelectorAll('.n[data-target]').forEach(el=>cntObs.observe(el));
 // scroll reveal
 const io=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('v');io.unobserve(x.target)}})},{threshold:.08});
 document.querySelectorAll('.sr,.sr-l,.sr-r,.sr-s').forEach(el=>io.observe(el));
