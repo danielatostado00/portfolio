@@ -146,15 +146,21 @@ nav.sc::before{opacity:1}
 .d1{transition-delay:.07s!important}.d2{transition-delay:.14s!important}.d3{transition-delay:.21s!important}
 .d4{transition-delay:.28s!important}.d5{transition-delay:.35s!important}.d6{transition-delay:.42s!important}
 /* sections */
-section{padding:8rem 3.5rem}
+section{padding:6rem 3.5rem}
+/* section alternation for visual rhythm */
+#about{background:var(--c1)}
+#exp{background:var(--c0)}
+#sk{background:var(--c1)}
 .wrap{max-width:1200px;margin:0 auto}
-.ov{font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;color:var(--pom);display:flex;align-items:center;gap:.75rem;margin-bottom:1.5rem}
+.ov{font-family:'JetBrains Mono',monospace;font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:var(--pom);display:inline-flex;align-items:center;gap:.6rem;margin-bottom:1rem}
+.ov::before{content:'—';letter-spacing:0;opacity:.6}
+#proc .ov{color:rgba(244,239,230,.4)}
 .ov::before{content:'';width:16px;height:1px;background:var(--pom)}
-.st{font-family:'Syne',sans-serif;font-size:clamp(2.6rem,5vw,4.8rem);font-weight:800;letter-spacing:-.04em;line-height:.92;color:var(--ink);margin-bottom:2rem}
+.st{font-family:'Syne',sans-serif;font-size:clamp(2.4rem,4.5vw,4.2rem);font-weight:800;letter-spacing:-.04em;line-height:.92;color:var(--ink);margin-bottom:1.5rem}
 .st em{font-style:normal;color:var(--pom)}
 /* about */
 #about{background:var(--c1)}
-.alay{display:grid;grid-template-columns:1fr 1fr;gap:8rem;align-items:start}
+.alay{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
 .astats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--b);border:1px solid var(--b);margin-top:1.5rem}
 .astat{background:var(--c1);padding:1.75rem;transition:background .3s;cursor:default}
 .astat:hover{background:var(--c2)}
@@ -225,8 +231,8 @@ html[lang=es] .trait[data-es]{display:inline-flex!important}
 .esub-tit{font-size:.88rem;font-weight:500;color:var(--ink);margin-bottom:.3rem;letter-spacing:-.01em}
 .esub-desc{font-size:.78rem;font-weight:300;color:var(--mut);line-height:1.78}
 /* ── PROJECTS — case study timeline ── */
-#proj{background:var(--c0);padding:8rem 3.5rem}
-.ph{margin-bottom:5rem}
+#proj{background:var(--c0);padding:6rem 3.5rem}
+.ph{margin-bottom:3.5rem}
 .ph-hint{font-size:.82rem;color:var(--mut);margin-top:.6rem}
 
 /* Case study cards — alternating full-width layout */
@@ -512,7 +518,7 @@ html[lang=es] .trait[data-es]{display:inline-flex!important}
 /* Screen label */
 .wb-screen-label{position:absolute;top:.6rem;right:.75rem;font-family:'JetBrains Mono',monospace;font-size:.48rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.2);z-index:5;pointer-events:none}
 /* skills */
-#sk{background:var(--c0)}
+#sk{background:var(--c1)}
 .skg{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--b);margin-top:2.5rem}
 .skc{background:var(--c0);padding:2rem;position:relative;overflow:hidden;transition:background .3s,transform .32s cubic-bezier(.22,1,.36,1);cursor:default}
 .skc:hover{background:var(--c1);transform:translateY(-2px)}
@@ -552,29 +558,89 @@ footer{background:var(--ink);padding:1.4rem 3.5rem;display:flex;justify-content:
 .skip-link{position:absolute;top:-100px;left:1rem;background:var(--pom);color:#fff;padding:.5rem 1rem;font-size:.75rem;font-weight:700;border-radius:2px;z-index:999;transition:top .2s}
 .skip-link:focus{top:1rem}
 /* CV download button in hero */
-/* PROCESS */
-#proc{background:var(--c0);padding:8rem 3.5rem}
-.prow{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;margin-bottom:6rem}
-.prow:last-child{margin-bottom:0}
-.prow:nth-child(even){direction:rtl}
-.prow:nth-child(even) > *{direction:ltr}
-.prow-vis{background:var(--c1);border:1px solid var(--b2);border-radius:4px;padding:2.5rem;display:flex;flex-direction:column;gap:1rem}
-.prow-step{font-family:'JetBrains Mono',monospace;font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--pom);margin-bottom:.5rem;display:flex;align-items:center;gap:.6rem}
-.prow-step::before{content:'';width:20px;height:1px;background:var(--pom)}
-.prow-h{font-family:'Syne',sans-serif;font-size:clamp(1.6rem,3vw,2.4rem);font-weight:800;color:var(--ink);letter-spacing:-.03em;line-height:1;margin-bottom:.9rem}
-.prow-h em{font-style:normal;color:var(--pom)}
-.prow-p{font-size:.88rem;font-weight:300;color:var(--mut);line-height:1.9}
-.pstep-item{display:flex;align-items:flex-start;gap:.75rem;padding:.6rem 0;border-bottom:1px solid var(--b2)}
-.pstep-item:last-child{border-bottom:none;padding-bottom:0}
-.pstep-n{font-family:'Syne',sans-serif;font-size:1.6rem;font-weight:800;color:var(--pom);line-height:1;opacity:.35;flex-shrink:0;width:2rem}
-.pstep-txt{font-size:.8rem;font-weight:300;color:var(--mut);line-height:1.7;padding-top:.25rem}
-.pstep-txt strong{color:var(--ink);font-weight:500}
+/* ── PROCESS — sticky scroll cards, color per step ── */
+#proc{background:var(--ink);padding:6rem 3.5rem;overflow:hidden}
+#proc .ov::before{background:var(--pom)}
+#proc .st{color:var(--c0)}
+#proc .st em{color:var(--pom)}
+.proc-intro{font-size:.9rem;color:rgba(244,239,230,.4);font-weight:300;line-height:1.85;max-width:420px;margin-top:1rem;margin-bottom:3rem}
+
+/* Step cards — stacked, each one slides up on scroll */
+.proc-steps{display:flex;flex-direction:column;gap:1.5rem}
+.pcard{
+  border-radius:8px;overflow:hidden;
+  opacity:0;transform:translateY(40px);
+  transition:opacity .65s cubic-bezier(.22,1,.36,1),transform .65s cubic-bezier(.22,1,.36,1);
+  will-change:transform
+}
+.pcard.pc-in{opacity:1;transform:none}
+.pcard:nth-child(1){transition-delay:.05s}
+.pcard:nth-child(2){transition-delay:.12s}
+.pcard:nth-child(3){transition-delay:.19s}
+
+/* Card inner: colored header + body */
+.pcard-head{
+  padding:2rem 2.5rem;display:flex;align-items:flex-start;
+  justify-content:space-between;gap:2rem
+}
+.pcard:nth-child(1) .pcard-head{background:var(--pom)}
+.pcard:nth-child(2) .pcard-head{background:#2a4a6b}
+.pcard:nth-child(3) .pcard-head{background:var(--sage)}
+
+.pcard-num{
+  font-family:'Syne',sans-serif;font-size:5rem;font-weight:800;
+  letter-spacing:-.08em;line-height:1;opacity:.18;
+  color:#fff;flex-shrink:0;align-self:flex-end
+}
+.pcard-title-block{flex:1}
+.pcard-label{
+  font-family:'JetBrains Mono',monospace;font-size:.56rem;
+  letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(255,255,255,.6);margin-bottom:.45rem
+}
+.pcard-h{
+  font-family:'Syne',sans-serif;font-size:clamp(1.6rem,3.5vw,2.2rem);
+  font-weight:800;letter-spacing:-.04em;line-height:1;color:#fff
+}
+.pcard-body{
+  background:rgba(244,239,230,.04);border:1px solid rgba(244,239,230,.07);
+  border-top:none;padding:2rem 2.5rem;
+  display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start
+}
+.pcard-desc{
+  font-size:.88rem;color:rgba(244,239,230,.55);
+  line-height:1.88;font-weight:300
+}
+.pcard-list{display:flex;flex-direction:column;gap:.5rem}
+.pcard-item{
+  display:flex;align-items:flex-start;gap:.65rem;
+  font-size:.78rem;color:rgba(244,239,230,.5);
+  font-family:'JetBrains Mono',monospace;letter-spacing:.03em;
+  padding:.5rem 0;border-bottom:1px solid rgba(244,239,230,.06)
+}
+.pcard-item:last-child{border-bottom:none}
+.pcard-item::before{
+  content:'→';color:var(--pom);flex-shrink:0;
+  font-family:'JetBrains Mono',monospace
+}
+.pcard:nth-child(2) .pcard-item::before{color:#6fa3d8}
+.pcard:nth-child(3) .pcard-item::before{color:var(--sage)}
+.pcard-deliverable{
+  grid-column:1/-1;
+  background:rgba(244,239,230,.04);border:1px solid rgba(244,239,230,.08);
+  border-radius:4px;padding:.75rem 1rem;
+  font-family:'JetBrains Mono',monospace;font-size:.62rem;
+  letter-spacing:.08em;color:rgba(244,239,230,.35);
+  display:flex;align-items:center;gap:.6rem;margin-top:.5rem
+}
+.pcard-deliverable::before{content:'📦';font-family:inherit}
 /* responsive additions */
 @media(max-width:1000px){
   #proc{padding:5rem 1.5rem}
-  .tgrid{grid-template-columns:1fr}
-  .prow{grid-template-columns:1fr;gap:2rem;margin-bottom:4rem}
-  .prow:nth-child(even){direction:ltr}
+  .pcard-body{grid-template-columns:1fr;gap:1.5rem}
+  .pcard-head{padding:1.5rem}
+  .pcard-body{padding:1.5rem}
+  .pcard-num{font-size:3.5rem}
 }
 /* RESPONSIVE */
 @media(max-width:1000px){
@@ -583,8 +649,10 @@ footer{background:var(--ink);padding:1.4rem 3.5rem;display:flex;justify-content:
   .h-bot{flex-direction:column;align-items:flex-start}
   .h-actions{align-items:flex-start}
   .h-tags{justify-content:flex-start}
-  section,#svc,#ct{padding:5rem 1.5rem}
-  #svc{padding:5rem 0}
+  section,#svc,#ct{padding:4rem 1.5rem}
+  #proc{padding:4rem 1.5rem}
+  #proj{padding:4rem 1.5rem}
+  #svc{padding:4rem 0}
   #svc .wrap{padding:0 1.5rem}
   .svc-top{grid-template-columns:1fr;gap:1.5rem;margin-bottom:2.5rem}
   .sc-inner{grid-template-columns:1fr;padding:0 1.5rem}
@@ -630,9 +698,9 @@ footer{background:var(--ink);padding:1.4rem 3.5rem;display:flex;justify-content:
   <div class="horb" id="orb"></div>
   <div class="h-ey"><span data-en-i>Marketing · Web · Content · Branding</span><span data-es-i>Marketing · Web · Contenido · Branding</span></div>
   <div class="hn">
-    <div class="hn-w"><span>DANIELA</span></div>
-    <div class="hn-w"><span>TOSTADO</span></div>
-    <div class="hn-w"><span>CONTRERAS.</span></div>
+    <div class="hn-w"><span class="h-name">DANIELA</span></div>
+    <div class="hn-w"><span class="h-name">TOSTADO</span></div>
+    <div class="hn-w"><span class="h-name">CONTRERAS.</span></div>
   </div>
   <div class="role-wrap"><div class="role-inner" id="roleEl"></div></div>
   <div class="h-bot">
@@ -683,7 +751,7 @@ footer{background:var(--ink);padding:1.4rem 3.5rem;display:flex;justify-content:
 <section id="about">
 <div class="wrap"><div class="alay">
 <div class="sr">
-  <div class="ov" data-en>About me</div><div class="ov" data-es>Sobre mí</div>
+  <div class="ov"><span data-en-i>About me</span><span data-es-i>Sobre mí</span></div>
   <h2 class="st" data-en>Strategy.<br>Copy.<br><em>Execution.</em></h2>
   <h2 class="st" data-es>Estrategia.<br>Copy.<br><em>Ejecución.</em></h2>
   <div class="astats sr d2">
@@ -713,7 +781,7 @@ footer{background:var(--ink);padding:1.4rem 3.5rem;display:flex;justify-content:
 <div class="wrap">
   <div class="svc-top">
     <div>
-      <div class="ov sr" data-en>What I do</div><div class="ov sr" data-es>Qué hago</div>
+      <div class="ov sr"><span data-en-i>What I do</span><span data-es-i>Qué hago</span></div>
       <h2 class="st sr d1" data-en>Services &<br><em>capabilities.</em></h2>
       <h2 class="st sr d1" data-es>Servicios &<br><em>capacidades.</em></h2>
     </div>
@@ -850,7 +918,7 @@ footer{background:var(--ink);padding:1.4rem 3.5rem;display:flex;justify-content:
 </section>
 <section id="exp">
 <div class="wrap">
-<div class="ov sr" data-en>Work history</div><div class="ov sr" data-es>Historial profesional</div>
+<div class="ov sr"><span data-en-i>Work history</span><span data-es-i>Historial profesional</span></div>
 <h2 class="st sr d1" data-en>Where I've <em>built.</em></h2>
 <h2 class="st sr d1" data-es>Dónde he <em>construido.</em></h2>
 <div style="margin-top:.5rem">
@@ -902,7 +970,7 @@ footer{background:var(--ink);padding:1.4rem 3.5rem;display:flex;justify-content:
 <section id="proj">
 <div class="wrap">
 <div class="ph sr">
-  <div class="ov" data-en>Selected work</div><div class="ov" data-es>Trabajo selecto</div>
+  <div class="ov"><span data-en-i>Selected work</span><span data-es-i>Trabajo selecto</span></div>
   <h2 class="st" data-en>Projects that<br><em>moved the needle.</em></h2>
   <h2 class="st" data-es>Proyectos que<br><em>movieron el marcador.</em></h2>
   <p class="ph-hint" data-en>Problem → Approach → Measurable outcome.</p>
@@ -1290,7 +1358,7 @@ footer{background:var(--ink);padding:1.4rem 3.5rem;display:flex;justify-content:
 </section>
 <section id="sk">
 <div class="wrap">
-<div class="ov sr" data-en>Capabilities</div><div class="ov sr" data-es>Capacidades</div>
+<div class="ov sr"><span data-en-i>Capabilities</span><span data-es-i>Capacidades</span></div>
 <h2 class="st sr d1" data-en>The full <em>stack.</em></h2>
 <h2 class="st sr d1" data-es>El stack <em>completo.</em></h2>
 <div class="skg">
@@ -1298,7 +1366,7 @@ footer{background:var(--ink);padding:1.4rem 3.5rem;display:flex;justify-content:
 <div class="skc sr d2"><div class="ski">✍️</div><div class="skt" data-en>Copywriting & Content</div><div class="skt" data-es>Copywriting y Contenido</div><ul class="skl"><li data-en-li>Web copy (EN + ES)</li><li data-es-li>Copy web (EN + ES)</li><li data-en-li>Case studies</li><li data-es-li>Casos de estudio</li><li data-en-li>SEO content strategy</li><li data-es-li>Estrategia SEO</li><li data-en-li>A/B copy variants</li><li data-es-li>Variantes A/B</li></ul></div>
 <div class="skc sr d3"><div class="ski">🌐</div><div class="skt" data-en>Web & Conversion</div><div class="skt" data-es>Web y Conversión</div><ul class="skl"><li>HubSpot CMS & HubL</li><li data-en-li>CRO & UX writing</li><li data-es-li>CRO y UX writing</li><li>Fullstory · GA4</li><li>HTML · CSS · JS</li></ul></div>
 <div class="skc sr d4"><div class="ski">🎨</div><div class="skt" data-en>Branding & Design</div><div class="skt" data-es>Branding y Diseño</div><ul class="skl"><li data-en-li>Brand identity systems</li><li data-es-li>Sistemas de identidad</li><li data-en-li>Visual guidelines</li><li data-es-li>Guías visuales</li><li data-en-li>Landing page design</li><li data-es-li>Diseño de landing pages</li><li>Figma</li></ul></div>
-<div class="skc sr d5"><div class="ski">🔍</div><div class="skt">SEO</div><ul class="skl"><li data-en-li>Keyword strategy</li><li data-es-li>Estrategia de keywords</li><li data-en-li>On-page optimization</li><li data-es-li>Optimización on-page</li><li data-en-li>EN + ES markets</li><li data-es-li>Mercados EN + ES</li></ul></div>
+<div class="skc sr d5"><div class="ski">🔍</div><div class="skt" data-en>SEO</div><div class="skt" data-es>SEO</div><ul class="skl"><li data-en-li>Keyword strategy</li><li data-es-li>Estrategia de keywords</li><li data-en-li>On-page optimization</li><li data-es-li>Optimización on-page</li><li data-en-li>EN + ES markets</li><li data-es-li>Mercados EN + ES</li></ul></div>
 <div class="skc sr d6"><div class="ski">🤖</div><div class="skt" data-en>AI & Tools</div><div class="skt" data-es>IA y Herramientas</div><ul class="skl"><li data-en-li>Prompt engineering</li><li data-es-li>Prompt engineering</li><li data-en-li>Claude Code dev</li><li data-es-li>Desarrollo Claude Code</li><li>Google Cloud · Vercel</li><li>HubSpot · Fullstory</li></ul></div>
 </div>
 </div>
@@ -1308,66 +1376,89 @@ footer{background:var(--ink);padding:1.4rem 3.5rem;display:flex;justify-content:
 <!-- MY PROCESS -->
 <section id="proc" aria-labelledby="proc-heading">
 <div class="wrap">
-  <div class="ov sr" data-en>How I work</div><div class="ov sr" data-es>Cómo trabajo</div>
+  <div class="ov sr"><span data-en-i>How I work</span><span data-es-i>Cómo trabajo</span></div>
   <h2 class="st sr d1" id="proc-heading" data-en>My<br><em>process.</em></h2>
   <h2 class="st sr d1" data-es>Mi<br><em>proceso.</em></h2>
-  <div style="margin-top:3.5rem">
-    <div class="prow">
-      <div class="sr-l">
-        <div class="prow-step" data-en-i>Step 01</div>
-        <div class="prow-step" data-es-i>Paso 01</div>
-        <h3 class="prow-h" data-en>Audit &<br><em>diagnose.</em></h3>
-        <h3 class="prow-h" data-es>Auditar &<br><em>diagnosticar.</em></h3>
-        <p class="prow-p" data-en>Before writing a single word or touching a single page, I map the full landscape — what exists, what's working, what's broken, what the audience actually needs to hear.</p>
-        <p class="prow-p" data-es>Antes de escribir una sola palabra o tocar una sola página, mapeo todo el panorama — qué existe, qué funciona, qué está roto, qué necesita escuchar la audiencia.</p>
+  <p class="proc-intro sr d2" data-en>Three phases. Every engagement. No shortcuts.</p>
+  <p class="proc-intro sr d2" data-es>Tres fases. Cada proyecto. Sin atajos.</p>
+  <div class="proc-steps">
+
+    <div class="pcard">
+      <div class="pcard-head">
+        <div class="pcard-title-block">
+          <div class="pcard-label" data-en-i>Phase 01</div>
+          <div class="pcard-label" data-es-i>Fase 01</div>
+          <div class="pcard-h" data-en>Audit &amp; Diagnose</div>
+          <div class="pcard-h" data-es>Auditar &amp; Diagnosticar</div>
+        </div>
+        <div class="pcard-num">01</div>
       </div>
-      <div class="prow-vis sr-r">
-        <div class="pstep-item"><div class="pstep-n">1</div><div class="pstep-txt"><strong data-en-i>Review existing copy, pages, analytics</strong><strong data-es-i>Revisión de copy, páginas, analítica</strong></div></div>
-        <div class="pstep-item"><div class="pstep-n">2</div><div class="pstep-txt"><strong data-en-i>Identify gaps, inconsistencies, missed opportunities</strong><strong data-es-i>Identificar gaps, inconsistencias, oportunidades</strong></div></div>
-        <div class="pstep-item"><div class="pstep-n">3</div><div class="pstep-txt"><strong data-en-i>Define target audience, intent, positioning</strong><strong data-es-i>Definir audiencia objetivo, intención, posicionamiento</strong></div></div>
-        <div class="pstep-item"><div class="pstep-n">4</div><div class="pstep-txt"><strong data-en-i>Deliverable: audit doc + priority matrix</strong><strong data-es-i>Entregable: doc de auditoría + matriz de prioridades</strong></div></div>
-      </div>
-    </div>
-    <div class="prow">
-      <div class="sr-l">
-        <div class="prow-step" data-en-i>Step 02</div>
-        <div class="prow-step" data-es-i>Paso 02</div>
-        <h3 class="prow-h" data-en>Build &<br><em>execute.</em></h3>
-        <h3 class="prow-h" data-es>Construir &<br><em>ejecutar.</em></h3>
-        <p class="prow-p" data-en>Strategy without execution is just theory. I build the actual page, module, campaign, or system — not just the deck. Every output is production-ready.</p>
-        <p class="prow-p" data-es>La estrategia sin ejecución es solo teoría. Construyo la página real, módulo, campaña o sistema — no solo la presentación. Cada output está listo para producción.</p>
-      </div>
-      <div class="prow-vis sr-r">
-        <div class="pstep-item"><div class="pstep-n">1</div><div class="pstep-txt"><strong data-en-i>Copy, structure, and messaging architecture</strong><strong data-es-i>Copy, estructura y arquitectura de mensajería</strong></div></div>
-        <div class="pstep-item"><div class="pstep-n">2</div><div class="pstep-txt"><strong data-en-i>HubSpot build, HTML/CSS, or Figma depending on scope</strong><strong data-es-i>HubSpot, HTML/CSS o Figma según el alcance</strong></div></div>
-        <div class="pstep-item"><div class="pstep-n">3</div><div class="pstep-txt"><strong data-en-i>QA across desktop, mobile, EN + ES</strong><strong data-es-i>QA en desktop, mobile, EN + ES</strong></div></div>
-        <div class="pstep-item"><div class="pstep-n">4</div><div class="pstep-txt"><strong data-en-i>Deliverable: live page, published asset, or shipped module</strong><strong data-es-i>Entregable: página en vivo, asset publicado o módulo lanzado</strong></div></div>
+      <div class="pcard-body">
+        <p class="pcard-desc" data-en>Before writing a single word or touching a single page, I map everything — what exists, what's working, what's broken, and what the audience actually needs to hear.</p>
+        <p class="pcard-desc" data-es>Antes de escribir una palabra o tocar una página, mapeo todo — qué existe, qué funciona, qué está roto, y qué necesita escuchar la audiencia.</p>
+        <div class="pcard-list">
+          <div class="pcard-item" data-en>Review existing copy, pages &amp; analytics</div><div class="pcard-item" data-es>Revisión de copy, páginas y analítica</div>
+          <div class="pcard-item" data-en>Identify gaps, inconsistencies &amp; opportunities</div><div class="pcard-item" data-es>Identificar gaps, inconsistencias y oportunidades</div>
+          <div class="pcard-item" data-en>Define audience, intent &amp; positioning</div><div class="pcard-item" data-es>Definir audiencia, intención y posicionamiento</div>
+        </div>
+        <div class="pcard-deliverable" data-en-i>Deliverable: audit doc + priority matrix</div>
+        <div class="pcard-deliverable" data-es-i>Entregable: doc de auditoría + matriz de prioridades</div>
       </div>
     </div>
-    <div class="prow">
-      <div class="sr-l">
-        <div class="prow-step" data-en-i>Step 03</div>
-        <div class="prow-step" data-es-i>Paso 03</div>
-        <h3 class="prow-h" data-en>Measure &<br><em>iterate.</em></h3>
-        <h3 class="prow-h" data-es>Medir &<br><em>iterar.</em></h3>
-        <p class="prow-p" data-en>Nothing is done after launch. I track results with Fullstory, GA4, and HubSpot — then use the data to improve. Every decision is backed by a number.</p>
-        <p class="prow-p" data-es>Nada termina con el lanzamiento. Hago seguimiento de resultados con Fullstory, GA4 y HubSpot — luego uso los datos para mejorar. Cada decisión está respaldada por un número.</p>
+
+    <div class="pcard">
+      <div class="pcard-head">
+        <div class="pcard-title-block">
+          <div class="pcard-label" data-en-i>Phase 02</div>
+          <div class="pcard-label" data-es-i>Fase 02</div>
+          <div class="pcard-h" data-en>Build &amp; Execute</div>
+          <div class="pcard-h" data-es>Construir &amp; Ejecutar</div>
+        </div>
+        <div class="pcard-num">02</div>
       </div>
-      <div class="prow-vis sr-r">
-        <div class="pstep-item"><div class="pstep-n">1</div><div class="pstep-txt"><strong data-en-i>Set up tracking, dashboards, KPIs</strong><strong data-es-i>Configurar tracking, dashboards, KPIs</strong></div></div>
-        <div class="pstep-item"><div class="pstep-n">2</div><div class="pstep-txt"><strong data-en-i>Bi-weekly snapshot reports with insights + actions</strong><strong data-es-i>Reportes quincenales con insights y acciones</strong></div></div>
-        <div class="pstep-item"><div class="pstep-n">3</div><div class="pstep-txt"><strong data-en-i>A/B test, optimize, repeat</strong><strong data-es-i>A/B test, optimizar, repetir</strong></div></div>
-        <div class="pstep-item"><div class="pstep-n">4</div><div class="pstep-txt"><strong data-en-i>Deliverable: OKR report + next-cycle recommendations</strong><strong data-es-i>Entregable: reporte OKR + recomendaciones siguiente ciclo</strong></div></div>
+      <div class="pcard-body">
+        <p class="pcard-desc" data-en>Strategy without execution is just theory. I build the actual page, module, campaign, or system — not just the deck. Every output is production-ready.</p>
+        <p class="pcard-desc" data-es>La estrategia sin ejecución es solo teoría. Construyo la página real, módulo, campaña o sistema — no solo la presentación. Cada output está listo para producción.</p>
+        <div class="pcard-list">
+          <div class="pcard-item" data-en>Copy, structure &amp; messaging architecture</div><div class="pcard-item" data-es>Copy, estructura y arquitectura de messaging</div>
+          <div class="pcard-item" data-en>HubSpot build, HTML/CSS, or Figma</div><div class="pcard-item" data-es>HubSpot, HTML/CSS o Figma según el alcance</div>
+          <div class="pcard-item" data-en>QA across desktop, mobile, EN + ES</div><div class="pcard-item" data-es>QA en desktop, mobile, EN + ES</div>
+        </div>
+        <div class="pcard-deliverable" data-en-i>Deliverable: live page, published asset, or shipped module</div>
+        <div class="pcard-deliverable" data-es-i>Entregable: página en vivo, asset publicado o módulo lanzado</div>
       </div>
     </div>
+
+    <div class="pcard">
+      <div class="pcard-head">
+        <div class="pcard-title-block">
+          <div class="pcard-label" data-en-i>Phase 03</div>
+          <div class="pcard-label" data-es-i>Fase 03</div>
+          <div class="pcard-h" data-en>Measure &amp; Iterate</div>
+          <div class="pcard-h" data-es>Medir &amp; Iterar</div>
+        </div>
+        <div class="pcard-num">03</div>
+      </div>
+      <div class="pcard-body">
+        <p class="pcard-desc" data-en>Nothing is done after launch. I track results with Fullstory, GA4, and HubSpot — then use the data to improve. Every decision is backed by a number.</p>
+        <p class="pcard-desc" data-es>Nada termina con el lanzamiento. Hago seguimiento con Fullstory, GA4 y HubSpot — luego uso los datos para mejorar. Cada decisión está respaldada por un número.</p>
+        <div class="pcard-list">
+          <div class="pcard-item" data-en>Set up tracking, dashboards &amp; KPIs</div><div class="pcard-item" data-es>Configurar tracking, dashboards y KPIs</div>
+          <div class="pcard-item" data-en>Bi-weekly snapshot reports with insights</div><div class="pcard-item" data-es>Reportes quincenales con insights y acciones</div>
+          <div class="pcard-item" data-en>A/B test, optimize, repeat</div><div class="pcard-item" data-es>A/B test, optimizar, repetir</div>
+        </div>
+        <div class="pcard-deliverable" data-en-i>Deliverable: OKR report + next-cycle recommendations</div>
+        <div class="pcard-deliverable" data-es-i>Entregable: reporte OKR + recomendaciones siguiente ciclo</div>
+      </div>
+    </div>
+
   </div>
 </div>
 </section>
-
 <section id="ct" aria-labelledby="ct-heading">
 <div class="clay">
 <div>
-  <div class="ov sr" data-en>Get in touch</div><div class="ov sr" data-es>Contáctame</div>
+  <div class="ov sr"><span data-en-i>Get in touch</span><span data-es-i>Contáctame</span></div>
   <h2 class="ctit sr d1" id="ct-typed-en" data-en>Let's build<br><em>together.</em></h2>
   <h2 class="ctit sr d1" id="ct-typed-es" data-es>Construyamos<br><em>juntos.</em></h2>
   <p class="csub sr d2" data-en>Open to new opportunities in marketing, web strategy, branding, and content.</p>
@@ -1523,6 +1614,17 @@ new IntersectionObserver(entries=>{
 // pause on hover
 const wb = document.getElementById('wbrowser');
 if(wb){ wb.addEventListener('mouseenter', stopWaypointAuto); wb.addEventListener('mouseleave', startWaypointAuto); }
+
+// ── PROCESS CARDS scroll-in animation ──
+const pcardObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(e.isIntersecting) {
+      e.target.classList.add('pc-in');
+      pcardObs.unobserve(e.target);
+    }
+  });
+}, {threshold: 0.15});
+document.querySelectorAll('.pcard').forEach(c => pcardObs.observe(c));
 
 // ── SCROLL PROGRESS BAR ──
 const scrollProg = document.getElementById('scroll-prog');
