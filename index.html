@@ -126,45 +126,44 @@ section{padding:8rem 3.5rem}
 .traits{display:flex;flex-wrap:wrap;gap:.38rem;padding-top:1.3rem}
 .trait{font-family:'JetBrains Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;padding:.26rem .7rem;border:1px solid var(--b);color:var(--mut);border-radius:2px;transition:all .22s;cursor:default}
 .trait:hover{border-color:var(--pom);color:var(--pom);background:var(--pom-bg)}
-/* services - dark */
-#svc{background:var(--ink);padding:8rem 0;overflow:hidden}
-#svc .ov{color:rgba(244,239,230,.38)}
-#svc .ov::before{background:var(--pom)}
-#svc .st{color:var(--c0)}
-#svc .st em{color:var(--pom)}
-.svc-sub{max-width:440px;font-size:.92rem;color:rgba(244,239,230,.42);line-height:1.85;margin-bottom:3.5rem;font-weight:300}
-.svcg{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(244,239,230,.06)}
-.sc{padding:2.75rem 2.4rem;cursor:default;position:relative;overflow:hidden;transition:background .35s;background:rgba(244,239,230,.03)}
-.sc:hover{background:rgba(244,239,230,.075)}
-.sc::before{content:attr(data-n);position:absolute;bottom:-1.5rem;right:-.5rem;font-family:'Syne',sans-serif;font-size:8rem;font-weight:800;letter-spacing:-.06em;color:rgba(244,239,230,.06);opacity:1;pointer-events:none;line-height:1;transition:color .4s}
-.sc:nth-child(1):hover::before{color:rgba(184,134,11,.18)}
-.sc:nth-child(2):hover::before{color:rgba(26,82,118,.18)}
-.sc:nth-child(3):hover::before{color:rgba(184,50,40,.18)}
-.sc:nth-child(4):hover::before{color:rgba(46,125,82,.18)}
-.sc:nth-child(5):hover::before{color:rgba(108,52,131,.18)}
-.sc:nth-child(6):hover::before{color:rgba(198,124,42,.18)}
-.sc::after{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;transform:scaleY(0);transform-origin:bottom;transition:transform .45s cubic-bezier(.22,1,.36,1)}
-.sc:nth-child(1)::after{background:var(--gold)}
-.sc:nth-child(2)::after{background:var(--sky)}
-.sc:nth-child(3)::after{background:var(--pom)}
-.sc:nth-child(4)::after{background:var(--sage)}
-.sc:nth-child(5)::after{background:var(--plum)}
-.sc:nth-child(6)::after{background:var(--warm)}
-.sc:hover::after{transform:scaleY(1)}
-.sc-ico{font-size:1.8rem;margin-bottom:1.5rem;display:block}
-.sc-nm{font-family:'Syne',sans-serif;font-size:1.08rem;font-weight:700;color:rgba(244,239,230,.88);margin-bottom:.65rem;letter-spacing:-.01em;transition:color .25s}
-.sc:nth-child(1):hover .sc-nm{color:var(--gold)}
-.sc:nth-child(2):hover .sc-nm{color:#87b8e0}
-.sc:nth-child(3):hover .sc-nm{color:var(--pom2)}
-.sc:nth-child(4):hover .sc-nm{color:#7ecf9a}
-.sc:nth-child(5):hover .sc-nm{color:#c4a0d8}
-.sc:nth-child(6):hover .sc-nm{color:var(--warm)}
-.sc-desc{font-size:.8rem;color:rgba(244,239,230,.38);line-height:1.82;margin-bottom:1.1rem}
-.sc-items{max-height:0;overflow:hidden;opacity:0;transition:max-height .55s cubic-bezier(.22,1,.36,1),opacity .4s ease}
-.sc:hover .sc-items{max-height:220px;opacity:1}
-.sc-item{font-size:.7rem;color:rgba(244,239,230,.5);display:flex;align-items:center;gap:.5rem;font-family:'JetBrains Mono',monospace;letter-spacing:.04em;margin-bottom:.32rem}
-.sc-item::before{content:'→';color:var(--pom);flex-shrink:0}
-.svc-hint{font-size:.68rem;color:rgba(244,239,230,.22);font-family:'JetBrains Mono',monospace;letter-spacing:.1em;text-transform:uppercase;margin-top:1.5rem;text-align:right;padding-right:.5rem}
+/* ── SERVICES — light bg, accordion list inspired by fourmula.ai ── */
+#svc{background:var(--c1);padding:8rem 0}
+#svc .wrap{max-width:1200px;margin:0 auto;padding:0 3.5rem}
+.svc-top{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:end;margin-bottom:5rem}
+.svc-sub{font-size:.95rem;color:var(--mut);line-height:1.85;font-weight:300;max-width:360px;align-self:end}
+/* List rows — full width, no container padding */
+.svcg{display:flex;flex-direction:column}
+.sc{border-top:1px solid var(--b2);cursor:default;position:relative;overflow:hidden;transition:background .4s}
+.sc:last-child{border-bottom:1px solid var(--b2)}
+.sc:hover{background:var(--c0)}
+/* Colored bar bottom */
+.sc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;transform:scaleX(0);transform-origin:left;transition:transform .5s cubic-bezier(.22,1,.36,1)}
+.sc:nth-child(1)::after{background:linear-gradient(90deg,var(--gold),transparent)}
+.sc:nth-child(2)::after{background:linear-gradient(90deg,var(--sky),transparent)}
+.sc:nth-child(3)::after{background:linear-gradient(90deg,var(--pom),transparent)}
+.sc:nth-child(4)::after{background:linear-gradient(90deg,var(--sage),transparent)}
+.sc:nth-child(5)::after{background:linear-gradient(90deg,var(--plum),transparent)}
+.sc:nth-child(6)::after{background:linear-gradient(90deg,var(--warm),transparent)}
+.sc:hover::after{transform:scaleX(1)}
+/* Inner layout: always-visible left + reveal right */
+.sc-inner{display:grid;grid-template-columns:3fr 2fr;align-items:stretch;min-height:96px;padding:0 3.5rem}
+/* Left: number + icon + title */
+.sc-left{display:grid;grid-template-columns:64px 52px 1fr;align-items:center;gap:0;padding:2rem 2rem 2rem 0;border-right:1px solid var(--b2);transition:border-color .3s}
+.sc:hover .sc-left{border-right-color:transparent}
+.sc-num{font-family:'JetBrains Mono',monospace;font-size:.58rem;letter-spacing:.2em;color:var(--faint);transition:color .3s}
+.sc:hover .sc-num{color:var(--pom)}
+.sc-ico{font-size:1.6rem;flex-shrink:0;transition:transform .4s cubic-bezier(.22,1,.36,1)}
+.sc:hover .sc-ico{transform:translateY(-3px) scale(1.1)}
+.sc-nm{font-family:'Syne',sans-serif;font-size:clamp(1.15rem,1.8vw,1.6rem);font-weight:800;color:var(--ink);letter-spacing:-.025em;line-height:1.05;transition:color .25s,transform .35s cubic-bezier(.22,1,.36,1);padding-left:.5rem}
+.sc:hover .sc-nm{color:var(--pom);transform:translateX(4px)}
+/* Right: desc + pills — hidden → visible */
+.sc-right{padding:2rem 0 2rem 2.5rem;display:flex;flex-direction:column;justify-content:center;gap:.85rem;opacity:0;transform:translateX(12px);transition:opacity .4s ease,transform .4s cubic-bezier(.22,1,.36,1)}
+.sc:hover .sc-right{opacity:1;transform:none}
+.sc-desc{font-size:.83rem;color:var(--mut);line-height:1.82;font-weight:300}
+.sc-items{display:flex;flex-wrap:wrap;gap:.35rem}
+.sc-item{font-size:.63rem;color:var(--mut);display:inline-flex;align-items:center;gap:.35rem;font-family:'JetBrains Mono',monospace;letter-spacing:.04em;padding:.2rem .6rem;border:1px solid var(--b);border-radius:30px;background:transparent;transition:border-color .2s,color .2s,background .2s}
+.sc:hover .sc-item{border-color:rgba(28,21,16,.15);background:rgba(28,21,16,.03)}
+.sc-item::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--pom);flex-shrink:0;opacity:.7}
 /* experience */
 #exp{background:var(--c0)}
 .erow{display:grid;grid-template-columns:200px 1fr;border-top:1px solid var(--b2);padding:2.75rem 0;cursor:default;transition:background .25s}
@@ -359,9 +358,17 @@ footer{background:var(--ink);padding:1.4rem 3.5rem;display:flex;justify-content:
   .h-actions{align-items:flex-start}
   .h-tags{justify-content:flex-start}
   section,#svc,#ct{padding:5rem 1.5rem}
+  #svc{padding:5rem 0}
+  #svc .wrap{padding:0 1.5rem}
+  .svc-top{grid-template-columns:1fr;gap:1.5rem;margin-bottom:2.5rem}
+  .sc-inner{grid-template-columns:1fr;padding:0 1.5rem}
+  .sc-left{grid-template-columns:44px 44px 1fr;padding:1.5rem 0;border-right:none;border-bottom:1px solid var(--b2)}
+  .sc:hover .sc-left{border-right:none;border-bottom-color:transparent}
+  .sc-right{padding:1rem 0 1.5rem;opacity:1;transform:none}
+  .sc-nm{font-size:1.1rem}
   .alay,.clay{grid-template-columns:1fr;gap:3rem}
   .erow{grid-template-columns:1fr;gap:.72rem}
-  .pgrid,.svcg,.skg{grid-template-columns:1fr 1fr}
+  .pgrid,.skg{grid-template-columns:1fr 1fr}
   .wfeat{grid-template-columns:1fr;min-height:auto}
   .wfeat::after{display:none}
   .wfeat-l{padding:2.5rem 1.5rem}
@@ -369,7 +376,7 @@ footer{background:var(--ink);padding:1.4rem 3.5rem;display:flex;justify-content:
   .wb-screens{height:280px}
 }
 @media(max-width:600px){
-  .pgrid,.svcg,.skg,.fr{grid-template-columns:1fr}
+  .pgrid,.skg,.fr{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -435,8 +442,7 @@ footer{background:var(--ink);padding:1.4rem 3.5rem;display:flex;justify-content:
   <p data-es>Soy <strong>Marketing, Web & Content Strategist</strong> basada en Guadalajara, México — especializada en B2B SaaS y fintech. Mi trabajo vive en la intersección de estrategia, copywriting y ejecución técnica.</p>
   <p data-en>I don't just write the brief — I ship the page. From messaging audits and HubSpot builds to A/B tests, branding systems, and OKR reporting.</p>
   <p data-es>No solo escribo el brief — entrego la página. Desde auditorías de messaging y módulos HubSpot hasta pruebas A/B, sistemas de branding y reportes de OKRs.</p>
-  <p data-en>Outside of work: <strong>nature lover, gym regular, intensely curious, quietly ambitious.</strong></p>
-  <p data-es>Fuera del trabajo: <strong>amante de la naturaleza, constante en el gym, intensamente curiosa, silenciosamente ambiciosa.</strong></p>
+
   <div class="traits">
     <span class="trait" data-en>Proactive</span><span class="trait" data-es>Proactiva</span>
     <span class="trait" data-en>Detail-oriented</span><span class="trait" data-es>Orientada al detalle</span>
@@ -449,21 +455,142 @@ footer{background:var(--ink);padding:1.4rem 3.5rem;display:flex;justify-content:
 </section>
 <section id="svc">
 <div class="wrap">
-  <div class="ov sr" data-en>What I do</div><div class="ov sr" data-es>Qué hago</div>
-  <h2 class="st sr d1" data-en>Services &<br><em>capabilities.</em></h2>
-  <h2 class="st sr d1" data-es>Servicios &<br><em>capacidades.</em></h2>
-  <p class="svc-sub sr d2" data-en>Six areas. One standard: clarity, execution, results. Hover each to explore.</p>
-  <p class="svc-sub sr d2" data-es>Seis áreas. Un estándar: claridad, ejecución, resultados. Pasa el cursor.</p>
+  <div class="svc-top">
+    <div>
+      <div class="ov sr" data-en>What I do</div><div class="ov sr" data-es>Qué hago</div>
+      <h2 class="st sr d1" data-en>Services &<br><em>capabilities.</em></h2>
+      <h2 class="st sr d1" data-es>Servicios &<br><em>capacidades.</em></h2>
+    </div>
+    <p class="svc-sub sr d2" data-en>Six disciplines. One standard: clarity, execution, measurable results. Hover each to explore.</p>
+    <p class="svc-sub sr d2" data-es>Seis disciplinas. Un estándar: claridad, ejecución, resultados medibles. Pasa el cursor.</p>
+  </div>
 </div>
 <div class="svcg">
-  <div class="sc sr" data-n="01"><span class="sc-ico">✍️</span><div class="sc-nm" data-en>Strategy & Copy</div><div class="sc-nm" data-es>Estrategia & Copy</div><div class="sc-desc" data-en>Messaging architecture and web copy that converts — in English and Spanish.</div><div class="sc-desc" data-es>Arquitectura de messaging y copy web que convierte — en inglés y español.</div><div class="sc-items"><div class="sc-item" data-en>Product positioning & GTM</div><div class="sc-item" data-es>Posicionamiento y GTM</div><div class="sc-item" data-en>Web copy (EN + ES)</div><div class="sc-item" data-es>Copy web (EN + ES)</div><div class="sc-item" data-en>Case studies & sales enablement</div><div class="sc-item" data-es>Casos de estudio y sales enablement</div><div class="sc-item" data-en>SEO content strategy</div><div class="sc-item" data-es>Estrategia de contenido SEO</div></div></div>
-  <div class="sc sr d1" data-n="02"><span class="sc-ico">🌐</span><div class="sc-nm" data-en>Web & CRO</div><div class="sc-nm" data-es>Web & Conversión</div><div class="sc-desc" data-en>End-to-end web execution — HubSpot builds, A/B testing, analytics.</div><div class="sc-desc" data-es>Ejecución web completa — HubSpot, A/B testing y analítica.</div><div class="sc-items"><div class="sc-item">HubSpot CMS & HubL</div><div class="sc-item" data-en>Conversion rate optimization</div><div class="sc-item" data-es>Optimización de conversión</div><div class="sc-item" data-en>A/B testing & analytics</div><div class="sc-item" data-es>A/B testing y analítica</div><div class="sc-item" data-en>UX writing & page architecture</div><div class="sc-item" data-es>UX writing y arquitectura</div></div></div>
-  <div class="sc sr d2" data-n="03"><span class="sc-ico">🎨</span><div class="sc-nm" data-en>Branding & Web Design</div><div class="sc-nm" data-es>Branding & Diseño Web</div><div class="sc-desc" data-en>Integral brand creation — identity, design, and launch.</div><div class="sc-desc" data-es>Creación integral de marca — identidad, diseño y lanzamiento.</div><div class="sc-items"><div class="sc-item" data-en>Brand identity & messaging systems</div><div class="sc-item" data-es>Identidad de marca y mensajería</div><div class="sc-item" data-en>Landing page design & build</div><div class="sc-item" data-es>Diseño y construcción de landing pages</div><div class="sc-item" data-en>Visual brand guidelines</div><div class="sc-item" data-es>Guías visuales de marca</div></div></div>
-  <div class="sc sr d3" data-n="04"><span class="sc-ico">🤖</span><div class="sc-nm" data-en>AI & Automation</div><div class="sc-nm" data-es>IA & Automatización</div><div class="sc-desc" data-en>AI-powered marketing systems and prompt engineering at scale.</div><div class="sc-desc" data-es>Sistemas de marketing con IA y prompt engineering a escala.</div><div class="sc-items"><div class="sc-item" data-en>Advanced prompt engineering</div><div class="sc-item" data-es>Prompt engineering avanzado</div><div class="sc-item" data-en>Claude Code development</div><div class="sc-item" data-es>Desarrollo con Claude Code</div><div class="sc-item" data-en>Content automation systems</div><div class="sc-item" data-es>Sistemas de automatización</div></div></div>
-  <div class="sc sr d4" data-n="05"><span class="sc-ico">📊</span><div class="sc-nm" data-en>Analytics & OKRs</div><div class="sc-nm" data-es>Analítica & OKRs</div><div class="sc-desc" data-en>Measurement systems and data-driven reporting for every decision.</div><div class="sc-desc" data-es>Sistemas de medición y reportes para justificar cada decisión.</div><div class="sc-items"><div class="sc-item">Fullstory · GA4 · HubSpot</div><div class="sc-item" data-en>OKR systems & dashboards</div><div class="sc-item" data-es>Sistemas OKR y dashboards</div><div class="sc-item" data-en>Bi-weekly snapshot reporting</div><div class="sc-item" data-es>Reportes quincenales</div></div></div>
-  <div class="sc sr d5" data-n="06"><span class="sc-ico">🌎</span><div class="sc-nm" data-en>B2B Fintech Expert</div><div class="sc-nm" data-es>Experta Fintech B2B</div><div class="sc-desc" data-en>Deep expertise in B2B payments, AR automation, and LATAM markets.</div><div class="sc-desc" data-es>Experiencia profunda en pagos B2B, AR y mercados LATAM.</div><div class="sc-items"><div class="sc-item" data-en>AR / AP automation messaging</div><div class="sc-item" data-es>Mensajería AR/AP</div><div class="sc-item" data-en>LATAM adaptation (CFDI, SPEI)</div><div class="sc-item" data-es>Adaptación LATAM (CFDI, SPEI)</div><div class="sc-item" data-en>ERP-native platform positioning</div><div class="sc-item" data-es>Posicionamiento de plataformas ERP</div></div></div>
+
+  <div class="sc sr">
+    <div class="sc-inner">
+      <div class="sc-left">
+        <span class="sc-num">01</span>
+        <span class="sc-ico">✍️</span>
+        <div class="sc-nm" data-en>Strategy<br>& Copy</div>
+        <div class="sc-nm" data-es>Estrategia<br>& Copy</div>
+      </div>
+      <div class="sc-right">
+        <p class="sc-desc" data-en>Messaging architecture and web copy that converts — in English and Spanish. From positioning to product pages.</p>
+        <p class="sc-desc" data-es>Arquitectura de messaging y copy web que convierte — en inglés y español. Del posicionamiento a las páginas de producto.</p>
+        <div class="sc-items">
+          <span class="sc-item" data-en>Product positioning & GTM</span><span class="sc-item" data-es>Posicionamiento y GTM</span>
+          <span class="sc-item" data-en>Web copy EN + ES</span><span class="sc-item" data-es>Copy web EN + ES</span>
+          <span class="sc-item" data-en>Case studies</span><span class="sc-item" data-es>Casos de estudio</span>
+          <span class="sc-item" data-en>SEO content</span><span class="sc-item" data-es>Contenido SEO</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sc sr d1">
+    <div class="sc-inner">
+      <div class="sc-left">
+        <span class="sc-num">02</span>
+        <span class="sc-ico">🌐</span>
+        <div class="sc-nm" data-en>Web<br>& CRO</div>
+        <div class="sc-nm" data-es>Web &<br>Conversión</div>
+      </div>
+      <div class="sc-right">
+        <p class="sc-desc" data-en>End-to-end web execution — HubSpot builds, A/B testing, Fullstory analytics, and UX optimization that moves conversion metrics.</p>
+        <p class="sc-desc" data-es>Ejecución web de principio a fin — HubSpot, A/B testing, analítica Fullstory y optimización UX que mueve las métricas de conversión.</p>
+        <div class="sc-items">
+          <span class="sc-item">HubSpot CMS & HubL</span>
+          <span class="sc-item" data-en>A/B testing</span><span class="sc-item" data-es>A/B testing</span>
+          <span class="sc-item">Fullstory · GA4</span>
+          <span class="sc-item" data-en>UX writing</span><span class="sc-item" data-es>UX writing</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sc sr d2">
+    <div class="sc-inner">
+      <div class="sc-left">
+        <span class="sc-num">03</span>
+        <span class="sc-ico">🎨</span>
+        <div class="sc-nm" data-en>Branding<br>& Design</div>
+        <div class="sc-nm" data-es>Branding<br>& Diseño</div>
+      </div>
+      <div class="sc-right">
+        <p class="sc-desc" data-en>Integral brand creation — from visual identity and messaging systems to full landing page design and launch.</p>
+        <p class="sc-desc" data-es>Creación integral de marca — de identidad visual y sistemas de mensajería hasta diseño y lanzamiento de landing pages.</p>
+        <div class="sc-items">
+          <span class="sc-item" data-en>Brand identity</span><span class="sc-item" data-es>Identidad de marca</span>
+          <span class="sc-item" data-en>Visual guidelines</span><span class="sc-item" data-es>Guías visuales</span>
+          <span class="sc-item" data-en>Landing pages</span><span class="sc-item" data-es>Landing pages</span>
+          <span class="sc-item">Figma</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sc sr d3">
+    <div class="sc-inner">
+      <div class="sc-left">
+        <span class="sc-num">04</span>
+        <span class="sc-ico">🤖</span>
+        <div class="sc-nm" data-en>AI &<br>Automation</div>
+        <div class="sc-nm" data-es>IA &<br>Automatización</div>
+      </div>
+      <div class="sc-right">
+        <p class="sc-desc" data-en>AI-powered marketing systems and prompt engineering at scale. Building real tools — not just prompts — with Claude Code.</p>
+        <p class="sc-desc" data-es>Sistemas de marketing con IA y prompt engineering a escala. Construyendo herramientas reales — no solo prompts — con Claude Code.</p>
+        <div class="sc-items">
+          <span class="sc-item" data-en>Prompt engineering</span><span class="sc-item" data-es>Prompt engineering</span>
+          <span class="sc-item">Claude Code</span>
+          <span class="sc-item" data-en>Content automation</span><span class="sc-item" data-es>Automatización</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sc sr d4">
+    <div class="sc-inner">
+      <div class="sc-left">
+        <span class="sc-num">05</span>
+        <span class="sc-ico">📊</span>
+        <div class="sc-nm" data-en>Analytics<br>& OKRs</div>
+        <div class="sc-nm" data-es>Analítica<br>& OKRs</div>
+      </div>
+      <div class="sc-right">
+        <p class="sc-desc" data-en>Measurement systems and data-driven reporting. Fullstory dashboards, OKR frameworks, and bi-weekly snapshot reports.</p>
+        <p class="sc-desc" data-es>Sistemas de medición y reportes basados en datos. Dashboards Fullstory, frameworks OKR y reportes de snapshot quincenales.</p>
+        <div class="sc-items">
+          <span class="sc-item">Fullstory · GA4</span>
+          <span class="sc-item" data-en>OKR dashboards</span><span class="sc-item" data-es>Dashboards OKR</span>
+          <span class="sc-item" data-en>Snapshot reports</span><span class="sc-item" data-es>Reportes quincenales</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sc sr d5">
+    <div class="sc-inner">
+      <div class="sc-left">
+        <span class="sc-num">06</span>
+        <span class="sc-ico">🌎</span>
+        <div class="sc-nm" data-en>B2B Fintech<br>Expert</div>
+        <div class="sc-nm" data-es>Experta<br>Fintech B2B</div>
+      </div>
+      <div class="sc-right">
+        <p class="sc-desc" data-en>Deep expertise in B2B payments, AR/AP automation, and LATAM markets. The domain vocabulary that closes deals.</p>
+        <p class="sc-desc" data-es>Experiencia profunda en pagos B2B, automatización AR/AP y mercados LATAM. El vocabulario de dominio que cierra deals.</p>
+        <div class="sc-items">
+          <span class="sc-item" data-en>AR/AP messaging</span><span class="sc-item" data-es>Mensajería AR/AP</span>
+          <span class="sc-item" data-en>LATAM (CFDI, SPEI)</span><span class="sc-item" data-es>LATAM (CFDI, SPEI)</span>
+          <span class="sc-item" data-en>ERP positioning</span><span class="sc-item" data-es>Posicionamiento ERP</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>
-<div class="wrap"><p class="svc-hint sr" data-en-i>Hover each card to expand ↑</p><p class="svc-hint sr" data-es-i>Pasa el cursor para expandir ↑</p></div>
 </section>
 <section id="exp">
 <div class="wrap">
