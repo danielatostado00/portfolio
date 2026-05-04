@@ -3,763 +3,568 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Daniela Tostado Contreras — Marketing & Web Strategist</title>
-<meta name="description" content="Portfolio of Daniela Tostado Contreras — Marketing, Web & Content Strategist. B2B SaaS · Fintech · Conversion Optimization.">
+<title>Daniela Tostado — Marketing & Web Strategist</title>
+<meta name="description" content="Daniela Tostado Contreras — Marketing, Web & Content Strategist. B2B SaaS · Fintech · Conversion · Branding.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;font-size:16px}
-body{background:#faf7f2;color:#1c1812;font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden}
+html{scroll-behavior:smooth}
+body{background:#0c0c0c;color:#f0ece4;font-family:'Inter',sans-serif;font-weight:300;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
 :root{
-  --cream:#faf7f2;--cream2:#f3ede2;--cream3:#ebe2d3;
-  --stone:#d6ccbc;--tan:#c4b49a;
-  --ink:#1c1812;--ink2:#3a3328;--muted:#6e6356;--faint:#a89880;
-  --terrac:#c4673a;--sage:#5c7a60;--gold:#b8922a;--navy:#1e2d40;
-  --border:rgba(28,24,18,.1);--border2:rgba(28,24,18,.06);
+  --bg:#0c0c0c;--bg2:#111;--bg3:#181818;--bg4:#1e1e1e;
+  --w:#f0ece4;--m:rgba(240,236,228,.45);--f:rgba(240,236,228,.18);
+  --b:rgba(240,236,228,.08);--b2:rgba(240,236,228,.05);
+  --a:#e8f542;--a2:#d4e03a;
+  --rose:#f07060;--sky:#60b8f0;--sage:#72b880;
 }
-
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.25rem 3.5rem;background:rgba(250,247,242,.93);backdrop-filter:blur(14px);border-bottom:1px solid var(--border2)}
-.nav-logo{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;letter-spacing:-.01em;color:var(--ink)}
-.nav-logo span{color:var(--terrac)}
-.nav-links{display:flex;gap:2.25rem;list-style:none}
-.nav-links a{font-size:.82rem;font-weight:400;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);transition:color .2s;position:relative}
-.nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;right:0;height:1px;background:var(--terrac);transform:scaleX(0);transform-origin:left;transition:transform .25s ease}
-.nav-links a:hover{color:var(--ink)}
-.nav-links a:hover::after{transform:scaleX(1)}
-.lang-toggle{display:flex;border:1px solid var(--border);border-radius:5px;overflow:hidden}
-.lang-btn{background:none;border:none;color:var(--muted);cursor:pointer;font-family:'DM Sans',sans-serif;font-size:.72rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:.4rem .8rem;transition:all .2s}
-.lang-btn.active{background:var(--ink);color:var(--cream)}
-
-/* HERO */
-#hero{min-height:100vh;padding:0 3.5rem;display:flex;align-items:center;position:relative;overflow:hidden;background:var(--cream)}
-.hero-texture{position:absolute;inset:0;pointer-events:none;z-index:0;background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%231c1812' fill-opacity='0.025'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E")}
-.hero-orb1{position:absolute;right:-100px;top:-150px;width:620px;height:620px;border-radius:50%;background:radial-gradient(circle,rgba(196,103,58,.07) 0%,transparent 70%);pointer-events:none}
-.hero-orb2{position:absolute;right:180px;bottom:-100px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(92,122,96,.06) 0%,transparent 70%);pointer-events:none}
-.hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr auto;gap:4rem;align-items:center;width:100%;max-width:1200px;margin:0 auto;padding-top:5rem}
-.hero-left{max-width:700px}
-.hero-role{display:inline-flex;align-items:center;gap:.6rem;font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--terrac);margin-bottom:2rem;opacity:0;transform:translateY(18px);animation:fadeUp .7s .1s ease forwards}
-.hero-role-line{width:28px;height:1px;background:var(--terrac)}
-.hero-h1{font-family:'Playfair Display',serif;font-size:clamp(3.6rem,6.2vw,6.2rem);font-weight:900;line-height:1;letter-spacing:-.025em;color:var(--ink);opacity:0;transform:translateY(24px);animation:fadeUp .8s .2s ease forwards}
-.hero-h1 em{font-style:italic;color:var(--terrac);display:block}
-.hero-h1 .last{display:block}
-.hero-sub{font-size:1.05rem;font-weight:300;color:var(--muted);line-height:1.75;max-width:500px;margin:1.75rem 0 2.5rem;opacity:0;transform:translateY(18px);animation:fadeUp .8s .35s ease forwards}
-.hero-ctas{display:flex;gap:1rem;flex-wrap:wrap;opacity:0;transform:translateY(18px);animation:fadeUp .8s .45s ease forwards}
-.btn-primary{display:inline-flex;align-items:center;gap:.5rem;background:var(--ink);color:var(--cream);font-family:'DM Sans',sans-serif;font-size:.88rem;font-weight:500;padding:.88rem 2rem;border-radius:100px;border:none;cursor:pointer;text-decoration:none;letter-spacing:.02em;transition:all .25s}
-.btn-primary:hover{background:var(--ink2);transform:translateY(-2px);box-shadow:0 8px 28px rgba(28,24,18,.18)}
-.btn-outline{display:inline-flex;align-items:center;gap:.5rem;background:transparent;color:var(--ink);font-family:'DM Sans',sans-serif;font-size:.88rem;font-weight:500;padding:.88rem 2rem;border-radius:100px;border:1.5px solid var(--border);cursor:pointer;text-decoration:none;letter-spacing:.02em;transition:all .25s}
-.btn-outline:hover{border-color:var(--ink);background:rgba(28,24,18,.04);transform:translateY(-2px)}
-.hero-right{display:flex;flex-direction:column;gap:.75rem;align-items:flex-end}
-.h-pill{display:flex;align-items:center;gap:.6rem;background:white;border:1px solid var(--border2);border-radius:100px;padding:.55rem 1.1rem;font-size:.8rem;font-weight:400;color:var(--ink2);box-shadow:0 2px 12px rgba(28,24,18,.06);white-space:nowrap;opacity:0}
-.h-pill:nth-child(1){animation:pillIn .7s .62s ease forwards}
-.h-pill:nth-child(2){animation:pillIn .7s .74s ease forwards}
-.h-pill:nth-child(3){animation:pillIn .7s .86s ease forwards}
-.h-pill:nth-child(4){animation:pillIn .7s .98s ease forwards}
-.h-pill:nth-child(5){animation:pillIn .7s 1.1s ease forwards}
-@keyframes pillIn{from{opacity:0;transform:translateX(18px)}to{opacity:1;transform:none}}
-.h-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
-.scroll-hint{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem;color:var(--faint);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;opacity:0;animation:fadeUp 1s 1.1s ease forwards}
-.scroll-line{width:1px;height:40px;background:linear-gradient(to bottom,var(--tan),transparent);animation:scrollPulse 2s ease infinite}
-@keyframes scrollPulse{0%,100%{opacity:.4}50%{opacity:1}}
-
-/* SECTION COMMONS */
-section{padding:7rem 3.5rem}
-.container{max-width:1100px;margin:0 auto}
-.s-label{display:flex;align-items:center;gap:.75rem;font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--terrac);margin-bottom:1.25rem}
-.s-label::before{content:'';width:20px;height:1px;background:var(--terrac)}
-.s-title{font-family:'Playfair Display',serif;font-size:clamp(2.3rem,3.8vw,3.6rem);font-weight:900;letter-spacing:-.025em;line-height:1.05;color:var(--ink);margin-bottom:1.5rem}
-.s-title em{font-style:italic;color:var(--terrac)}
-
-/* ABOUT */
-#about{background:var(--cream2)}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
-.about-photo-col{position:relative}
-.about-photo-frame{width:100%;aspect-ratio:4/5;border-radius:20px;background:var(--cream3);overflow:hidden;box-shadow:0 20px 60px rgba(28,24,18,.1)}
-.about-photo-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;color:var(--faint)}
-.about-photo-placeholder span{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase}
-.about-accent{position:absolute;bottom:-1.5rem;right:-1.5rem;background:var(--terrac);color:white;border-radius:14px;padding:1.25rem 1.5rem;box-shadow:0 8px 32px rgba(196,103,58,.35)}
-.about-accent .big{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
-.about-accent .lbl{font-size:.72rem;opacity:.8;margin-top:.25rem;font-weight:400}
-.about-text p{font-size:1rem;font-weight:300;color:var(--ink2);line-height:1.85;margin-bottom:1.2rem}
-.about-text p strong{color:var(--ink);font-weight:500}
-.about-traits{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:2rem}
-.trait{font-size:.78rem;padding:.35rem .9rem;border-radius:100px;border:1px solid var(--border);color:var(--muted);font-weight:400;transition:all .2s;cursor:default}
-.trait:hover{background:var(--ink);color:var(--cream);border-color:var(--ink)}
-
-/* EXPERIENCE */
-#experience{background:var(--cream)}
-.exp-list{margin-top:3.5rem}
-.exp-item{display:grid;grid-template-columns:200px 1fr;border-top:1px solid var(--border2);padding:2.5rem 0;transition:background .2s}
-.exp-item:last-child{border-bottom:1px solid var(--border2)}
-.exp-item:hover{background:rgba(196,103,58,.025)}
-.exp-meta{padding-right:3rem}
-.exp-company{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:.3rem}
-.exp-period{font-family:'DM Mono',monospace;font-size:.68rem;color:var(--faint);letter-spacing:.08em}
-.exp-loc{font-size:.75rem;color:var(--faint);margin-top:.2rem}
-.exp-role-title{font-size:1.05rem;font-weight:500;color:var(--ink);margin-bottom:.6rem}
-.exp-desc{font-size:.92rem;font-weight:300;color:var(--muted);line-height:1.8;margin-bottom:1rem;max-width:580px}
-.exp-tags{display:flex;flex-wrap:wrap;gap:.4rem}
-.exp-tag{font-size:.68rem;font-weight:500;letter-spacing:.07em;text-transform:uppercase;padding:.2rem .65rem;border-radius:4px;background:var(--cream3);color:var(--muted);border:1px solid var(--border2)}
-.exp-sub{margin-top:1.5rem;padding:1.25rem 1.5rem;background:var(--cream2);border-radius:12px;border-left:2px solid var(--sage)}
-.exp-sub-label{font-family:'DM Mono',monospace;font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:var(--sage);margin-bottom:.5rem}
-.exp-sub-title{font-size:.92rem;font-weight:500;color:var(--ink);margin-bottom:.4rem}
-.exp-sub-desc{font-size:.85rem;font-weight:300;color:var(--muted);line-height:1.75}
-
-/* PROJECTS */
-#projects{background:var(--cream2)}
-.proj-lead{max-width:560px;font-size:1rem;font-weight:300;color:var(--muted);line-height:1.8;margin-bottom:4rem}
-.proj-stack{display:flex;flex-direction:column;gap:2px}
-
-/* P1 — editorial warm */
-.p1{border-radius:20px 20px 0 0;background:#f0e8d8;display:grid;grid-template-columns:1fr 1fr;overflow:hidden;min-height:440px}
-.p1-l{padding:3.5rem;display:flex;flex-direction:column;justify-content:space-between;border-right:1px solid rgba(28,24,18,.1)}
-.p1-num{font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.15em;color:var(--terrac);margin-bottom:.75rem}
-.p1-title{font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:900;line-height:1;letter-spacing:-.02em;color:var(--ink)}
-.p1-title em{font-style:italic;color:var(--terrac);display:block}
-.p1-meta{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
-.p1-hr{height:1px;background:var(--border);margin:.85rem 0}
-.p1-r{padding:3.5rem;background:var(--ink);display:flex;flex-direction:column;justify-content:center;gap:1.75rem}
-.p1-r p{color:rgba(250,247,242,.62);font-size:.9rem;line-height:1.85;font-weight:300}
-.p1-out{display:flex;align-items:flex-start;gap:.75rem;font-size:.85rem;color:rgba(250,247,242,.82)}
-.p1-arr{color:var(--terrac);flex-shrink:0;margin-top:2px}
-
-/* P2 — data / navy */
-.p2{background:var(--navy);min-height:400px;display:grid;grid-template-columns:1.2fr 1fr;overflow:hidden}
-.p2-l{padding:3.5rem;display:flex;flex-direction:column;justify-content:space-between}
-.p2-eye{font-family:'DM Mono',monospace;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(250,247,242,.35);margin-bottom:1.25rem}
-.p2-title{font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:900;color:#faf7f2;line-height:1.05;letter-spacing:-.025em}
-.p2-title em{font-style:italic;color:#d4a96b}
-.p2-desc{color:rgba(250,247,242,.48);font-size:.9rem;line-height:1.8;font-weight:300;margin-top:1rem;max-width:400px}
-.p2-metrics{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
-.p2-metric{background:rgba(250,247,242,.05);border:1px solid rgba(250,247,242,.09);border-radius:10px;padding:1rem 1.1rem}
-.p2-val{font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:900;color:#d4a96b;line-height:1;letter-spacing:-.02em}
-.p2-lbl{font-size:.68rem;color:rgba(250,247,242,.32);margin-top:.2rem;letter-spacing:.04em}
-.p2-r{padding:3rem 2.5rem;background:rgba(250,247,242,.025);border-left:1px solid rgba(250,247,242,.06);display:flex;flex-direction:column;justify-content:center;gap:1.25rem}
-.p2-bar-label{display:flex;justify-content:space-between;font-size:.72rem;color:rgba(250,247,242,.38);margin-bottom:.35rem}
-.p2-track{height:4px;background:rgba(250,247,242,.08);border-radius:2px;overflow:hidden}
-.p2-fill{height:100%;border-radius:2px;background:linear-gradient(90deg,#d4a96b,#c4673a);transform:scaleX(0);transform-origin:left;transition:transform 1.2s cubic-bezier(.22,1,.36,1)}
-
-/* P3 — forest green */
-.p3{background:#2d4a2e;min-height:400px;display:grid;grid-template-columns:220px 1fr;overflow:hidden}
-.p3-l{background:#3d6240;padding:3.5rem 2.5rem;display:flex;flex-direction:column;justify-content:space-between;border-right:1px solid rgba(255,255,255,.08)}
-.p3-num{font-family:'DM Mono',monospace;font-size:4rem;font-weight:400;color:rgba(255,255,255,.1);line-height:1}
-.p3-brand{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:rgba(255,255,255,.9);line-height:1.2}
-.p3-brand-sub{font-size:.72rem;color:rgba(255,255,255,.38);margin-top:.3rem}
-.p3-r{padding:3.5rem;display:flex;flex-direction:column;justify-content:space-between}
-.p3-title{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;color:#f0f4e8;letter-spacing:-.025em;line-height:1.1;max-width:480px}
-.p3-body{color:rgba(240,244,232,.52);font-size:.9rem;line-height:1.8;font-weight:300;max-width:480px}
-.p3-stats{display:flex;gap:2.5rem}
-.p3-n{font-family:'Playfair Display',serif;font-size:2rem;font-weight:900;color:#a8d4a0;letter-spacing:-.02em}
-.p3-l2{font-size:.7rem;color:rgba(240,244,232,.38);text-transform:uppercase;letter-spacing:.08em;margin-top:.1rem}
-
-/* P4 — warm terracotta */
-.p4{background:#fdf5ec;min-height:400px;display:grid;grid-template-columns:1fr 1fr;overflow:hidden;border-top:1px solid rgba(196,103,58,.1)}
-.p4-l{padding:3.5rem;display:flex;flex-direction:column;justify-content:space-between;border-right:1px solid rgba(196,103,58,.12)}
-.p4-tag{display:inline-flex;align-items:center;gap:.5rem;background:rgba(196,103,58,.1);border:1px solid rgba(196,103,58,.2);border-radius:6px;padding:.35rem .8rem;font-family:'DM Mono',monospace;font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:var(--terrac);width:fit-content;margin-bottom:1.25rem}
-.p4-title{font-family:'Playfair Display',serif;font-size:3.2rem;font-weight:900;letter-spacing:-.03em;line-height:1;color:var(--ink)}
-.p4-title em{font-style:italic;color:var(--terrac)}
-.p4-desc{color:var(--muted);font-size:.9rem;line-height:1.85;font-weight:300;max-width:380px}
-.p4-tech{display:flex;flex-wrap:wrap;gap:.4rem}
-.p4-pill{font-size:.7rem;padding:.28rem .75rem;border-radius:100px;background:white;border:1px solid rgba(196,103,58,.2);color:var(--terrac);font-weight:400}
-.p4-r{padding:3.5rem;background:var(--terrac);display:flex;flex-direction:column;justify-content:center;gap:1.1rem}
-.p4-feat{display:flex;gap:1rem;align-items:flex-start;padding:1rem 1.1rem;border-radius:12px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.15)}
-.p4-feat-icon{width:30px;height:30px;border-radius:8px;flex-shrink:0;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-size:.85rem}
-.p4-feat-title{font-size:.85rem;font-weight:500;color:white}
-.p4-feat-sub{font-size:.75rem;color:rgba(255,255,255,.58);margin-top:.15rem}
-
-/* P5 — code/craft */
-.p5{border-radius:0 0 20px 20px;background:var(--cream3);min-height:380px;display:grid;grid-template-columns:1fr 1fr;overflow:hidden}
-.p5-l{padding:3.5rem;display:flex;flex-direction:column;justify-content:space-between}
-.p5-title{font-family:'Playfair Display',serif;font-size:2.3rem;font-weight:900;letter-spacing:-.02em;color:var(--ink);line-height:1.05}
-.p5-title span{color:var(--terrac)}
-.p5-desc{color:var(--muted);font-size:.9rem;line-height:1.8;font-weight:300}
-.p5-mods{display:flex;flex-direction:column;gap:.5rem}
-.p5-mod{display:flex;align-items:center;gap:.75rem;padding:.6rem 0;border-bottom:1px solid var(--border2);font-size:.85rem;color:var(--ink2);font-weight:400}
-.p5-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;background:var(--terrac)}
-.p5-r{padding:2.5rem;background:var(--ink);font-family:'DM Mono',monospace;font-size:.75rem;line-height:1.9;display:flex;align-items:center}
-.cl{color:rgba(250,247,242,.52)}
-.ck{color:#d4a96b}
-.cf{color:#8bbfa6}
-.cs{color:#c4b49a}
-.cc{color:rgba(250,247,242,.24)}
-
-/* SKILLS */
-#skills{background:var(--cream)}
-.sk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3.5rem}
-.sk-card{padding:2rem;border-radius:16px;border:1px solid var(--border2);background:white;transition:transform .25s,box-shadow .25s}
-.sk-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(28,24,18,.08)}
-.sk-icon{width:38px;height:38px;border-radius:10px;margin-bottom:1.1rem;display:flex;align-items:center;justify-content:center;font-size:1.1rem}
-.sk-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--ink);margin-bottom:.85rem}
-.sk-list{list-style:none;display:flex;flex-direction:column;gap:.4rem}
-.sk-list li{font-size:.82rem;color:var(--muted);font-weight:300;line-height:1.5;padding-left:.9rem;position:relative}
-.sk-list li::before{content:'';position:absolute;left:0;top:.5em;width:4px;height:4px;border-radius:50%;background:var(--tan)}
-
-/* CONTACT */
-#contact{background:var(--ink);padding:7rem 3.5rem}
-.contact-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
-.contact-left .s-label{color:#d4a96b}
-.contact-left .s-label::before{background:#d4a96b}
-.contact-title{font-family:'Playfair Display',serif;font-size:clamp(2.3rem,3.5vw,3.4rem);font-weight:900;line-height:1.05;color:#faf7f2;letter-spacing:-.025em}
-.contact-title em{font-style:italic;color:#d4a96b}
-.contact-sub{font-size:.95rem;font-weight:300;color:rgba(250,247,242,.48);line-height:1.85;margin:1.5rem 0 2.5rem;max-width:400px}
-.c-links{display:flex;flex-direction:column;gap:1rem}
-.c-link{display:flex;align-items:center;gap:1rem;color:rgba(250,247,242,.62);font-size:.88rem;font-weight:300;transition:color .2s;text-decoration:none}
-.c-link:hover{color:#faf7f2}
-.c-icon{width:36px;height:36px;border-radius:8px;flex-shrink:0;background:rgba(250,247,242,.08);display:flex;align-items:center;justify-content:center}
-.contact-form{display:flex;flex-direction:column;gap:1rem}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.form-field{display:flex;flex-direction:column;gap:.4rem}
-.form-label{font-size:.7rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(250,247,242,.38)}
-.form-input,.form-textarea{background:rgba(250,247,242,.06);border:1px solid rgba(250,247,242,.11);border-radius:10px;padding:.85rem 1rem;color:#faf7f2;font-family:'DM Sans',sans-serif;font-size:.9rem;font-weight:300;outline:none;transition:border-color .2s,background .2s;width:100%}
-.form-input::placeholder,.form-textarea::placeholder{color:rgba(250,247,242,.22)}
-.form-input:focus,.form-textarea:focus{border-color:rgba(212,169,107,.45);background:rgba(250,247,242,.09)}
-.form-textarea{resize:vertical;min-height:130px}
-.form-submit{display:inline-flex;align-items:center;gap:.6rem;background:var(--terrac);color:white;font-family:'DM Sans',sans-serif;font-size:.88rem;font-weight:500;padding:.9rem 2rem;border-radius:100px;border:none;cursor:pointer;width:fit-content;letter-spacing:.02em;transition:all .25s;margin-top:.5rem}
-.form-submit:hover{background:#b35a30;transform:translateY(-2px);box-shadow:0 8px 24px rgba(196,103,58,.4)}
-.form-success{display:none;padding:1rem 1.25rem;border-radius:10px;background:rgba(92,122,96,.15);border:1px solid rgba(92,122,96,.3);color:#a8d4a0;font-size:.88rem;font-weight:300;margin-top:.5rem}
-
-/* FOOTER */
-footer{background:#111108;padding:1.75rem 3.5rem;display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(250,247,242,.05);color:rgba(250,247,242,.28);font-size:.78rem}
-footer a{color:rgba(212,169,107,.65);transition:color .2s}
-footer a:hover{color:#d4a96b}
-
-/* ANIMATIONS */
-@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
-.reveal{opacity:0;transform:translateY(36px);transition:opacity .75s cubic-bezier(.22,1,.36,1),transform .75s cubic-bezier(.22,1,.36,1)}
-.reveal.visible{opacity:1;transform:none}
-.stagger>*{opacity:0;transform:translateY(28px);transition:opacity .65s cubic-bezier(.22,1,.36,1),transform .65s cubic-bezier(.22,1,.36,1)}
-.stagger.visible>*:nth-child(1){opacity:1;transform:none;transition-delay:0s}
-.stagger.visible>*:nth-child(2){opacity:1;transform:none;transition-delay:.1s}
-.stagger.visible>*:nth-child(3){opacity:1;transform:none;transition-delay:.19s}
-.stagger.visible>*:nth-child(4){opacity:1;transform:none;transition-delay:.28s}
-.stagger.visible>*:nth-child(5){opacity:1;transform:none;transition-delay:.37s}
-.stagger.visible>*:nth-child(6){opacity:1;transform:none;transition-delay:.46s}
-
+/* CURSOR */
+.cur{position:fixed;width:8px;height:8px;background:var(--a);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .3s,height .3s;mix-blend-mode:difference}
+.curR{position:fixed;width:36px;height:36px;border:1px solid rgba(232,245,66,.35);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .3s,height .3s}
 /* LANG */
-[data-lang="es"]{display:none}
-body.es [data-lang="es"]{display:block}
-body.es [data-lang="en"]{display:none}
-span[data-lang]{display:inline}
-body.es span[data-lang="en"]{display:none}
-body.es span[data-lang="es"]{display:inline}
-
-/* RESPONSIVE */
-@media(max-width:960px){
+.en-b,.es-b{display:none}
+body.le .en-b{display:block}body.ls .es-b{display:block}
+span.en,.es{display:none}
+body.le span.en{display:inline}body.ls span.es{display:inline}
+li.en-li,li.es-li{display:none}
+body.le li.en-li{display:flex}body.ls li.es-li{display:flex}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.35rem 3.5rem}
+nav::before{content:'';position:absolute;inset:0;background:rgba(12,12,12,.9);backdrop-filter:blur(20px);border-bottom:1px solid var(--b2);z-index:-1}
+.logo{font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:800;letter-spacing:.1em;color:var(--w)}
+.logo em{color:var(--a);font-style:normal}
+.nl{display:flex;gap:2.5rem;list-style:none}
+.nl a{font-size:.72rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--m);transition:color .2s}
+.nl a:hover,.nl a.act{color:var(--a)}
+.lt{display:flex;border:1px solid var(--b);border-radius:3px;overflow:hidden}
+.lb{background:none;border:none;color:var(--m);cursor:pointer;font-family:'JetBrains Mono',monospace;font-size:.68rem;font-weight:500;letter-spacing:.1em;padding:.38rem .78rem;transition:all .2s}
+.lb.active{background:var(--a);color:#0c0c0c}
+/* HERO */
+#hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 3.5rem 5rem;position:relative;overflow:hidden}
+.hgrid{position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(90deg,transparent,transparent calc(100%/12 - 1px),rgba(240,236,228,.02) calc(100%/12 - 1px),rgba(240,236,228,.02) calc(100%/12))}
+.hgrid2{position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,transparent,transparent 79px,rgba(240,236,228,.015) 79px,rgba(240,236,228,.015) 80px)}
+.h-ey{font-family:'JetBrains Mono',monospace;font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--a);margin-bottom:2rem;opacity:0;animation:fup .7s .12s ease forwards;display:flex;align-items:center;gap:.75rem}
+.h-ey::before{content:'';width:30px;height:1px;background:var(--a)}
+h1.hn{font-family:'Syne',sans-serif;font-size:clamp(5rem,9.5vw,10rem);font-weight:800;line-height:.9;letter-spacing:-.035em;color:var(--w);opacity:0;animation:fup .95s .2s ease forwards;position:relative;z-index:1}
+h1.hn .stroke{-webkit-text-stroke:1.5px rgba(240,236,228,.2);color:transparent}
+h1.hn em{font-style:normal;color:var(--a)}
+.h-bot{display:flex;align-items:flex-end;justify-content:space-between;margin-top:4rem;gap:2rem;opacity:0;animation:fup .8s .48s ease forwards;flex-wrap:wrap}
+.h-desc{font-size:1rem;font-weight:300;color:var(--m);line-height:1.82;max-width:430px}
+.h-desc strong{color:var(--w);font-weight:500}
+.h-ctas{display:flex;gap:.9rem;align-items:center;flex-shrink:0}
+.ba{display:inline-flex;align-items:center;gap:.5rem;background:var(--a);color:#0c0c0c;font-family:'Syne',sans-serif;font-size:.8rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:.85rem 1.75rem;border-radius:2px;border:none;cursor:pointer;text-decoration:none;transition:all .25s}
+.ba:hover{background:var(--a2);transform:translateY(-2px)}
+.bg{display:inline-flex;align-items:center;gap:.5rem;background:transparent;color:var(--w);font-family:'Syne',sans-serif;font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.85rem 1.75rem;border-radius:2px;border:1px solid var(--b);cursor:pointer;text-decoration:none;transition:all .25s}
+.bg:hover{border-color:var(--a);color:var(--a);transform:translateY(-2px)}
+.h-tags{display:flex;flex-direction:column;gap:.4rem;align-items:flex-end;opacity:0;animation:sleft .8s .65s ease forwards;flex-shrink:0}
+.h-tag{font-family:'JetBrains Mono',monospace;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--m);padding:.28rem .72rem;border:1px solid var(--b);border-radius:2px}
+.h-scroll{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.4rem;color:var(--f);font-family:'JetBrains Mono',monospace;font-size:.58rem;letter-spacing:.16em;opacity:0;animation:fup 1s .95s ease forwards}
+.sbar{width:1px;height:38px;background:linear-gradient(to bottom,var(--a),transparent);animation:sbounce 2s ease infinite}
+@keyframes sbounce{0%,100%{opacity:.45;transform:scaleY(1)}50%{opacity:1;transform:scaleY(1.18)}}
+/* SECTION */
+section{padding:8rem 3.5rem}
+.wrap{max-width:1200px;margin:0 auto}
+.ov{font-family:'JetBrains Mono',monospace;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--a);display:flex;align-items:center;gap:.75rem;margin-bottom:1.5rem}
+.ov::before{content:'';width:18px;height:1px;background:var(--a)}
+.st{font-family:'Syne',sans-serif;font-size:clamp(2.8rem,5vw,4.8rem);font-weight:800;letter-spacing:-.035em;line-height:.92;color:var(--w);margin-bottom:2rem}
+.st em{font-style:normal;color:var(--a)}
+/* SCROLL REVEAL */
+@keyframes fup{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+@keyframes sleft{from{opacity:0;transform:translateX(20px)}to{opacity:1;transform:none}}
+.sr{opacity:0;transform:translateY(44px);transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1)}
+.sr.v{opacity:1;transform:none}
+.d1{transition-delay:.07s!important}.d2{transition-delay:.14s!important}.d3{transition-delay:.21s!important}
+.d4{transition-delay:.28s!important}.d5{transition-delay:.35s!important}.d6{transition-delay:.42s!important}
+/* ABOUT */
+#about{background:var(--bg)}
+.alay{display:grid;grid-template-columns:1fr 1fr;gap:8rem;align-items:start}
+.astats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--b2);border:1px solid var(--b2);margin-top:1rem}
+.astat{background:var(--bg);padding:1.85rem;transition:background .3s}
+.astat:hover{background:var(--bg3)}
+.astat .n{font-family:'Syne',sans-serif;font-size:2.8rem;font-weight:800;letter-spacing:-.04em;color:var(--a);line-height:1}
+.astat .l{font-size:.76rem;color:var(--m);margin-top:.3rem;font-weight:300}
+.abody{display:flex;flex-direction:column}
+.abody p{font-size:1rem;font-weight:300;color:var(--m);line-height:1.9;padding:1.4rem 0;border-bottom:1px solid var(--b2)}
+.abody p:first-child{padding-top:0}
+.abody p strong{color:var(--w);font-weight:500}
+.traits{display:flex;flex-wrap:wrap;gap:.4rem;padding-top:1.4rem}
+.trait{font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;padding:.28rem .7rem;border:1px solid var(--b);color:var(--m);border-radius:2px;transition:all .2s;cursor:default}
+.trait:hover{border-color:var(--a);color:var(--a)}
+/* SERVICES */
+#svc{background:var(--bg2);padding:8rem 0}
+#svc .wrap{max-width:none;padding:0 3.5rem}
+.svch{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:2.5rem;gap:2rem;flex-wrap:wrap}
+.svch-hint{max-width:280px;font-size:.82rem;color:var(--m);line-height:1.8;align-self:flex-end}
+.svcg{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--b2)}
+.svc{background:var(--bg2);padding:2.5rem;cursor:default;position:relative;overflow:hidden;transition:background .35s}
+.svc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--a);transform:scaleX(0);transform-origin:left;transition:transform .45s cubic-bezier(.22,1,.36,1)}
+.svc:hover{background:var(--bg3)}
+.svc:hover::after{transform:scaleX(1)}
+.svc-n{font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.16em;color:var(--f);margin-bottom:1.5rem}
+.svc-ico{font-size:1.5rem;margin-bottom:1.2rem}
+.svc-nm{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;color:var(--w);margin-bottom:.7rem;letter-spacing:-.01em}
+.svc-desc{font-size:.8rem;color:var(--m);line-height:1.82;margin-bottom:1.2rem}
+.svc-items{max-height:0;overflow:hidden;opacity:0;transition:max-height .55s cubic-bezier(.22,1,.36,1),opacity .4s ease}
+.svc:hover .svc-items{max-height:200px;opacity:1}
+.svc-item{font-size:.72rem;color:rgba(240,236,228,.48);display:flex;align-items:center;gap:.45rem;font-family:'JetBrains Mono',monospace;letter-spacing:.04em;margin-bottom:.3rem}
+.svc-item::before{content:'→';color:var(--a);flex-shrink:0}
+/* EXPERIENCE */
+#exp{background:var(--bg)}
+.erow{display:grid;grid-template-columns:200px 1fr;border-top:1px solid var(--b2);padding:2.75rem 0;cursor:default}
+.erow:last-child{border-bottom:1px solid var(--b2)}
+.erow:hover .etit{color:var(--a)}
+.eco{font-family:'Syne',sans-serif;font-size:.95rem;font-weight:700;color:var(--w);margin-bottom:.28rem;letter-spacing:-.01em}
+.eper{font-family:'JetBrains Mono',monospace;font-size:.6rem;color:var(--f);letter-spacing:.07em}
+.eloc{font-size:.7rem;color:var(--f);margin-top:.18rem}
+.etit{font-size:1rem;font-weight:500;color:var(--w);margin-bottom:.6rem;transition:color .25s;letter-spacing:-.01em}
+.edesc{font-size:.87rem;font-weight:300;color:var(--m);line-height:1.85;margin-bottom:.85rem;max-width:600px}
+.etags{display:flex;flex-wrap:wrap;gap:.3rem}
+.etag{font-family:'JetBrains Mono',monospace;font-size:.58rem;letter-spacing:.08em;text-transform:uppercase;padding:.18rem .58rem;border:1px solid var(--b2);color:var(--f)}
+.esub{margin-top:1.4rem;padding:1.2rem 1.4rem;border-left:2px solid var(--sage);background:rgba(114,184,128,.04)}
+.esub-lbl{font-family:'JetBrains Mono',monospace;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--sage);margin-bottom:.4rem}
+.esub-tit{font-size:.88rem;font-weight:500;color:var(--w);margin-bottom:.32rem;letter-spacing:-.01em}
+.esub-desc{font-size:.8rem;font-weight:300;color:var(--m);line-height:1.78}
+/* PROJECTS */
+#proj{background:var(--bg2)}
+.pint{max-width:500px;font-size:.92rem;font-weight:300;color:var(--m);line-height:1.85;margin-bottom:3.5rem}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--b2);margin-bottom:1px}
+.pc{background:var(--bg2);padding:2.4rem;cursor:default;position:relative;overflow:hidden;transition:background .35s}
+.pc:hover{background:var(--bg3)}
+.pc-z{position:relative;z-index:1}
+.pc-n{font-family:'JetBrains Mono',monospace;font-size:.58rem;letter-spacing:.16em;color:var(--f);margin-bottom:1.2rem}
+.pc-cat{font-family:'JetBrains Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--a);margin-bottom:.65rem}
+.pc-tit{font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:700;color:var(--w);letter-spacing:-.02em;line-height:1.15;margin-bottom:.9rem}
+.pc-sum{font-size:.8rem;font-weight:300;color:var(--m);line-height:1.82}
+.pexp{max-height:0;overflow:hidden;transition:max-height .6s cubic-bezier(.22,1,.36,1),opacity .45s ease;opacity:0}
+.pc:hover .pexp{max-height:320px;opacity:1}
+.pexp-in{padding-top:1.4rem;border-top:1px solid var(--b2);margin-top:1.4rem}
+.pdet{font-size:.76rem;font-weight:300;color:var(--m);line-height:1.85;margin-bottom:.9rem}
+.pmet{display:flex;gap:1.5rem;flex-wrap:wrap;margin-bottom:.85rem}
+.pmet .v{font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;color:var(--a);letter-spacing:-.03em;line-height:1}
+.pmet .l{font-family:'JetBrains Mono',monospace;font-size:.56rem;letter-spacing:.08em;color:var(--f);margin-top:.12rem}
+.pouts{display:flex;flex-direction:column;gap:.35rem}
+.pout{font-size:.74rem;color:rgba(240,236,228,.65);display:flex;align-items:flex-start;gap:.45rem}
+.pout::before{content:'→';color:var(--a);flex-shrink:0}
+/* WAYPOINT */
+.pfeat{background:var(--bg2);padding:3.5rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;border-top:1px solid var(--b2);transition:background .3s}
+.pfeat:hover{background:var(--bg3)}
+.pftag{display:inline-flex;align-items:center;gap:.4rem;border:1px solid rgba(232,245,66,.3);border-radius:2px;padding:.26rem .72rem;font-family:'JetBrains Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--a);margin-bottom:1.4rem}
+.pftit{font-family:'Syne',sans-serif;font-size:3.8rem;font-weight:800;letter-spacing:-.04em;line-height:.9;color:var(--w);margin-bottom:1.2rem}
+.pftit em{font-style:normal;color:var(--a)}
+.pfdesc{font-size:.88rem;font-weight:300;color:var(--m);line-height:1.85;max-width:420px;margin-bottom:1.5rem}
+.pfpills{display:flex;flex-wrap:wrap;gap:.38rem;margin-bottom:1.4rem}
+.pfpill{font-family:'JetBrains Mono',monospace;font-size:.58rem;letter-spacing:.08em;padding:.24rem .62rem;border:1px solid var(--b);color:var(--m)}
+.pflink{display:inline-flex;align-items:center;gap:.4rem;font-family:'Syne',sans-serif;font-size:.76rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--a);transition:gap .2s}
+.pflink:hover{gap:.7rem}
+.fmock{border:1px solid var(--b);border-radius:6px;overflow:hidden;background:var(--bg4)}
+.fbar{height:30px;background:var(--bg3);border-bottom:1px solid var(--b2);display:flex;align-items:center;padding:0 .9rem;gap:.35rem}
+.fdot{width:7px;height:7px;border-radius:50%}
+.furl{font-family:'JetBrains Mono',monospace;font-size:.56rem;color:var(--f);margin-left:.4rem}
+.fbody{padding:1rem;display:flex;flex-direction:column;gap:.35rem}
+.frow{display:flex;align-items:center;gap:.6rem;padding:.45rem .65rem;background:rgba(240,236,228,.03);border-radius:5px;border:1px solid var(--b2)}
+.fico{width:22px;height:22px;border-radius:5px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:.68rem}
+.frtit{font-size:.75rem;font-weight:500;color:rgba(240,236,228,.8)}
+.frsub{font-size:.62rem;color:var(--f);margin-top:.04rem}
+.fstats{padding:1rem;border-top:1px solid var(--b2);display:grid;grid-template-columns:repeat(3,1fr);gap:.35rem}
+.fs .v{font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:800;color:var(--a);letter-spacing:-.03em}
+.fs .l{font-size:.56rem;color:var(--f);font-family:'JetBrains Mono',monospace;letter-spacing:.06em;margin-top:.06rem}
+/* SKILLS */
+#sk{background:var(--bg)}
+.skg{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--b2);margin-top:2.5rem}
+.skc{background:var(--bg);padding:2rem;position:relative;overflow:hidden;transition:background .3s;cursor:default}
+.skc::before{content:'';position:absolute;top:0;left:0;right:0;height:1.5px;background:var(--a);transform:scaleX(0);transform-origin:left;transition:transform .45s cubic-bezier(.22,1,.36,1)}
+.skc:hover{background:var(--bg3)}
+.skc:hover::before{transform:scaleX(1)}
+.ski{font-size:1.2rem;margin-bottom:.9rem}
+.skt{font-family:'Syne',sans-serif;font-size:.9rem;font-weight:700;color:var(--w);margin-bottom:.7rem;letter-spacing:-.01em}
+.skl{list-style:none;display:flex;flex-direction:column;gap:.28rem}
+.skl li{font-size:.76rem;font-weight:300;color:var(--m);line-height:1.5;display:flex;align-items:center;gap:.4rem}
+.skl li::before{content:'';width:3px;height:3px;border-radius:50%;background:var(--a);flex-shrink:0;opacity:.65}
+/* CONTACT */
+#ct{background:var(--bg2);padding:8rem 3.5rem}
+.clay{display:grid;grid-template-columns:1fr 1fr;gap:8rem;align-items:start;max-width:1200px;margin:0 auto}
+.ctit{font-family:'Syne',sans-serif;font-size:clamp(2.8rem,4.5vw,4.2rem);font-weight:800;letter-spacing:-.04em;line-height:.93;color:var(--w);margin-bottom:1.5rem}
+.ctit em{font-style:normal;color:var(--a)}
+.csub{font-size:.9rem;font-weight:300;color:var(--m);line-height:1.85;max-width:400px;margin-bottom:2.5rem}
+.cls{display:flex;flex-direction:column;gap:.75rem}
+.cl{display:flex;align-items:center;gap:.9rem;color:var(--m);font-size:.82rem;font-weight:300;transition:color .2s;text-decoration:none}
+.cl:hover{color:var(--w)}
+.ci{width:32px;height:32px;border:1px solid var(--b);border-radius:3px;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:border-color .2s}
+.cl:hover .ci{border-color:var(--a)}
+.cform{display:flex;flex-direction:column;gap:.85rem}
+.fr{display:grid;grid-template-columns:1fr 1fr;gap:.85rem}
+.ff{display:flex;flex-direction:column;gap:.32rem}
+.fl{font-family:'JetBrains Mono',monospace;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--f)}
+.fi,.ft{background:rgba(240,236,228,.04);border:1px solid var(--b);padding:.78rem 1rem;color:var(--w);font-family:'Inter',sans-serif;font-size:.86rem;font-weight:300;outline:none;transition:border-color .2s;width:100%;border-radius:2px}
+.fi::placeholder,.ft::placeholder{color:rgba(240,236,228,.17)}
+.fi:focus,.ft:focus{border-color:rgba(232,245,66,.4)}
+.ft{resize:vertical;min-height:120px}
+.fb{display:inline-flex;align-items:center;gap:.5rem;background:var(--a);color:#0c0c0c;font-family:'Syne',sans-serif;font-size:.78rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:.86rem 1.9rem;border-radius:2px;border:none;cursor:pointer;width:fit-content;transition:all .25s;margin-top:.35rem}
+.fb:hover{background:var(--a2);transform:translateY(-2px)}
+.fok{display:none;padding:.88rem 1rem;border:1px solid rgba(114,184,128,.28);background:rgba(114,184,128,.06);color:var(--sage);font-size:.8rem;font-weight:300;margin-top:.4rem;border-radius:2px}
+footer{background:var(--bg);padding:1.5rem 3.5rem;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--b2);color:var(--f);font-size:.68rem;font-family:'JetBrains Mono',monospace;letter-spacing:.08em}
+footer a{color:rgba(232,245,66,.5);transition:color .2s}
+footer a:hover{color:var(--a)}
+@media(max-width:1000px){
   nav{padding:1rem 1.5rem}
-  .nav-links{display:none}
-  #hero{padding:0 1.5rem}
-  .hero-inner{grid-template-columns:1fr;padding-top:6rem}
-  .hero-right{flex-direction:row;flex-wrap:wrap;justify-content:flex-start}
-  section{padding:5rem 1.5rem}
-  .about-grid{grid-template-columns:1fr}
-  .about-photo-col{max-width:300px}
-  .exp-item{grid-template-columns:1fr;gap:1rem}
-  .p1,.p2,.p3,.p4,.p5{grid-template-columns:1fr}
-  .p3{grid-template-columns:1fr}
-  .p3-l{width:100%}
-  .sk-grid{grid-template-columns:1fr 1fr}
-  .contact-inner{grid-template-columns:1fr;gap:3rem}
-  footer{flex-direction:column;gap:.5rem;text-align:center}
+  .nl{display:none}
+  #hero{padding:0 1.5rem 3.5rem}
+  section,#svc,#ct{padding:5rem 1.5rem}
+  #svc .wrap{padding:0 1.5rem}
+  h1.hn{font-size:clamp(3.2rem,10vw,5rem)}
+  .h-bot{flex-direction:column;align-items:flex-start}
+  .h-tags{align-items:flex-start}
+  .alay,.clay,.pfeat{grid-template-columns:1fr;gap:3rem}
+  .erow{grid-template-columns:1fr;gap:.75rem}
+  .pgrid,.svcg,.skg{grid-template-columns:1fr 1fr}
 }
 @media(max-width:600px){
-  .sk-grid{grid-template-columns:1fr}
-  .form-row{grid-template-columns:1fr}
+  .pgrid,.svcg,.skg,.fr{grid-template-columns:1fr}
+  .pfeat{padding:2rem}
+  .pftit{font-size:2.5rem}
 }
 </style>
 </head>
-<body>
-
+<body class="le">
+<div class="cur" id="cur"></div>
+<div class="curR" id="curR"></div>
 <nav>
-  <a class="nav-logo" href="#hero">DT<span>.</span></a>
-  <ul class="nav-links">
-    <li><a href="#about"><span data-lang="en">About</span><span data-lang="es">Sobre mí</span></a></li>
-    <li><a href="#experience"><span data-lang="en">Experience</span><span data-lang="es">Experiencia</span></a></li>
-    <li><a href="#projects"><span data-lang="en">Projects</span><span data-lang="es">Proyectos</span></a></li>
-    <li><a href="#skills"><span data-lang="en">Skills</span><span data-lang="es">Skills</span></a></li>
-    <li><a href="#contact"><span data-lang="en">Contact</span><span data-lang="es">Contacto</span></a></li>
+  <a class="logo" href="#hero">DANIELA<em>.</em></a>
+  <ul class="nl">
+    <li><a href="#about"><span class="en">About</span><span class="es">Sobre mí</span></a></li>
+    <li><a href="#svc"><span class="en">Services</span><span class="es">Servicios</span></a></li>
+    <li><a href="#exp"><span class="en">Experience</span><span class="es">Experiencia</span></a></li>
+    <li><a href="#proj"><span class="en">Work</span><span class="es">Proyectos</span></a></li>
+    <li><a href="#ct"><span class="en">Contact</span><span class="es">Contacto</span></a></li>
   </ul>
-  <div class="lang-toggle">
-    <button class="lang-btn active" onclick="setLang('en')">EN</button>
-    <button class="lang-btn" onclick="setLang('es')">ES</button>
+  <div class="lt">
+    <button class="lb active" onclick="setLang('e')">EN</button>
+    <button class="lb" onclick="setLang('s')">ES</button>
   </div>
 </nav>
-
 <!-- HERO -->
 <section id="hero">
-  <div class="hero-texture"></div>
-  <div class="hero-orb1"></div>
-  <div class="hero-orb2"></div>
-  <div class="hero-inner">
-    <div class="hero-left">
-      <div class="hero-role">
-        <div class="hero-role-line"></div>
-        <span data-lang="en">Marketing · Web · Content · B2B SaaS</span>
-        <span data-lang="es">Marketing · Web · Contenido · B2B SaaS</span>
-      </div>
-      <h1 class="hero-h1">
-        <span>Daniela</span>
-        <em>Tostado</em>
-        <span class="last">Contreras.</span>
-      </h1>
-      <p class="hero-sub" data-lang="en">I turn complex B2B products into clear, converting web experiences — from strategy and copy to code and measurement.</p>
-      <p class="hero-sub" data-lang="es">Convierto productos B2B complejos en experiencias web claras que convierten — de la estrategia al copy, al código y la medición.</p>
-      <div class="hero-ctas">
-        <a href="#projects" class="btn-primary" data-lang="en">See my work ↓</a>
-        <a href="#projects" class="btn-primary" data-lang="es">Ver mi trabajo ↓</a>
-        <a href="#contact" class="btn-outline" data-lang="en">Get in touch</a>
-        <a href="#contact" class="btn-outline" data-lang="es">Contáctame</a>
-      </div>
-    </div>
-    <div class="hero-right">
-      <div class="h-pill"><span class="h-dot" style="background:#c4673a"></span>Conversion Optimization</div>
-      <div class="h-pill"><span class="h-dot" style="background:#5c7a60"></span>HubSpot · HubL</div>
-      <div class="h-pill"><span class="h-dot" style="background:#b8922a"></span>B2B Copywriting</div>
-      <div class="h-pill"><span class="h-dot" style="background:#1e2d40"></span>SEO · EN + ES</div>
-      <div class="h-pill"><span class="h-dot" style="background:#8b5a8b"></span>AI & Automation</div>
-    </div>
+<div class="hgrid"></div><div class="hgrid2"></div>
+<div class="h-ey"><span class="en">Marketing · Web · Content · Branding</span><span class="es">Marketing · Web · Contenido · Branding</span></div>
+<h1 class="hn"><span class="stroke">DANIELA</span><br><span>TOSTADO</span><br><em>CONTRERAS.</em></h1>
+<div class="h-bot">
+  <p class="h-desc en-b">I turn complex <strong>B2B products</strong> into clear, converting web experiences — from strategy and copy to code, branding, and measurement.</p>
+  <p class="h-desc es-b">Convierto productos <strong>B2B complejos</strong> en experiencias web claras que convierten — de la estrategia y el copy al código, branding y medición.</p>
+  <div class="h-ctas">
+    <a href="#proj" class="ba"><span class="en">See my work</span><span class="es">Ver mi trabajo</span></a>
+    <a href="#ct" class="bg"><span class="en">Get in touch</span><span class="es">Contáctame</span></a>
   </div>
-  <div class="scroll-hint">
-    <div class="scroll-line"></div>
-    <span>scroll</span>
+  <div class="h-tags">
+    <div class="h-tag">B2B SaaS</div><div class="h-tag">Fintech</div><div class="h-tag">EN + ES</div>
   </div>
+</div>
+<div class="h-scroll"><div class="sbar"></div><span>scroll</span></div>
 </section>
-
 <!-- ABOUT -->
 <section id="about">
-  <div class="container">
-    <div class="about-grid">
-      <div class="about-photo-col reveal">
-        <div class="about-photo-frame">
-          <div class="about-photo-placeholder">
-            <svg width="44" height="44" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="18" r="8" stroke="currentColor" stroke-width="1.5"/><path d="M8 40c0-8.837 7.163-16 16-16s16 7.163 16 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-            <span data-lang="en">Add your photo</span>
-            <span data-lang="es">Añade tu foto</span>
-          </div>
-        </div>
-        <div class="about-accent">
-          <div class="big">4+</div>
-          <div class="lbl" data-lang="en">years in B2B SaaS</div>
-          <div class="lbl" data-lang="es">años en B2B SaaS</div>
-        </div>
-      </div>
-      <div class="about-text reveal">
-        <div class="s-label" data-lang="en">About me</div>
-        <div class="s-label" data-lang="es">Sobre mí</div>
-        <h2 class="s-title" data-lang="en">Where strategy meets <em>craft.</em></h2>
-        <h2 class="s-title" data-lang="es">Donde la estrategia se encuentra con el <em>oficio.</em></h2>
-        <p data-lang="en">I'm a <strong>Marketing & Web Strategist</strong> based in Guadalajara, México — specialized in B2B SaaS and fintech. My work lives at the intersection of strategy, copywriting, and technical execution.</p>
-        <p data-lang="es">Soy <strong>Marketing & Web Strategist</strong> basada en Guadalajara, México — especializada en B2B SaaS y fintech. Mi trabajo vive en la intersección de estrategia, copywriting y ejecución técnica.</p>
-        <p data-lang="en">At Paystand, I own the full marketing execution cycle: from messaging audits to HubSpot module builds, A/B tests to quarterly OKR reporting. I don't just write the brief — I ship the page.</p>
-        <p data-lang="es">En Paystand soy dueña del ciclo completo de ejecución de marketing: desde auditorías de messaging hasta construcción de módulos en HubSpot, A/B tests y reportes de OKRs. No solo escribo el brief — entrego la página.</p>
-        <p data-lang="en">Outside of work: <strong>nature lover, gym regular, intensely curious, quietly ambitious.</strong></p>
-        <p data-lang="es">Fuera del trabajo: <strong>amante de la naturaleza, constante en el gym, intensamente curiosa, silenciosamente ambiciosa.</strong></p>
-        <div class="about-traits">
-          <span class="trait" data-lang="en">Proactive</span><span class="trait" data-lang="es">Proactiva</span>
-          <span class="trait" data-lang="en">Detail-oriented</span><span class="trait" data-lang="es">Orientada al detalle</span>
-          <span class="trait" data-lang="en">Systems thinker</span><span class="trait" data-lang="es">Pensadora sistémica</span>
-          <span class="trait" data-lang="en">Bilingual EN/ES</span><span class="trait" data-lang="es">Bilingüe EN/ES</span>
-          <span class="trait" data-lang="en">Introvert powerhouse</span><span class="trait" data-lang="es">Introvertida con impacto</span>
-        </div>
-      </div>
-    </div>
+<div class="wrap">
+<div class="alay">
+<div>
+  <div class="ov sr en-b">About me</div><div class="ov sr es-b">Sobre mí</div>
+  <h2 class="st sr d1 en-b">Strategy.<br>Copy.<br><em>Execution.</em></h2>
+  <h2 class="st sr d1 es-b">Estrategia.<br>Copy.<br><em>Ejecución.</em></h2>
+  <div class="astats sr d2">
+    <div class="astat"><div class="n">4+</div><div class="l en">Years in B2B SaaS</div><div class="l es">Años en B2B SaaS</div></div>
+    <div class="astat"><div class="n">30+</div><div class="l en">Pages built & optimized</div><div class="l es">Páginas construidas</div></div>
+    <div class="astat"><div class="n">2</div><div class="l en">Languages · one standard</div><div class="l es">Idiomas · un estándar</div></div>
+    <div class="astat"><div class="n">5</div><div class="l en">Companies · 3 industries</div><div class="l es">Empresas · 3 industrias</div></div>
   </div>
+</div>
+<div class="abody sr d2">
+  <p class="en-b">I'm a <strong>Marketing, Web & Content Strategist</strong> based in Guadalajara, México — specialized in B2B SaaS and fintech. My work sits at the intersection of strategy, copywriting, and technical execution.</p>
+  <p class="es-b">Soy <strong>Marketing, Web & Content Strategist</strong> basada en Guadalajara, México — especializada en B2B SaaS y fintech. Mi trabajo vive en la intersección de estrategia, copywriting y ejecución técnica.</p>
+  <p class="en-b">I don't just write the brief — I ship the page. From messaging audits and HubSpot builds to A/B tests, branding systems, and OKR reporting.</p>
+  <p class="es-b">No solo escribo el brief — entrego la página. Desde auditorías de messaging y módulos HubSpot hasta pruebas A/B, sistemas de branding y reportes de OKRs.</p>
+  <p class="en-b">Outside of work: <strong>nature lover, gym regular, intensely curious, quietly ambitious.</strong></p>
+  <p class="es-b">Fuera del trabajo: <strong>amante de la naturaleza, constante en el gym, intensamente curiosa, silenciosamente ambiciosa.</strong></p>
+  <div class="traits">
+    <span class="trait en-b">Proactive</span><span class="trait es-b">Proactiva</span>
+    <span class="trait en-b">Detail-oriented</span><span class="trait es-b">Orientada al detalle</span>
+    <span class="trait en-b">Systems thinker</span><span class="trait es-b">Pensadora sistémica</span>
+    <span class="trait en-b">Bilingual EN/ES</span><span class="trait es-b">Bilingüe EN/ES</span>
+    <span class="trait en-b">Introvert powerhouse</span><span class="trait es-b">Introvertida con impacto</span>
+  </div>
+</div>
+</div>
+</div>
 </section>
-
+<!-- SERVICES -->
+<section id="svc">
+<div class="wrap">
+<div class="svch">
+  <div>
+    <div class="ov sr en-b">What I do</div><div class="ov sr es-b">Qué hago</div>
+    <h2 class="st sr d1 en-b">Services &<br><em>capabilities.</em></h2>
+    <h2 class="st sr d1 es-b">Servicios &<br><em>capacidades.</em></h2>
+  </div>
+  <p class="svch-hint sr d2 en-b">Hover each card to see what's included.</p>
+  <p class="svch-hint sr d2 es-b">Pasa el cursor para ver qué incluye cada servicio.</p>
+</div>
+<div class="svcg">
+<div class="svc sr"><div class="svc-n">01</div><div class="svc-ico">✍️</div><div class="svc-nm en-b">Strategy & Copy</div><div class="svc-nm es-b">Estrategia & Copy</div><div class="svc-desc en-b">Messaging architecture and web copy that converts — in English and Spanish.</div><div class="svc-desc es-b">Arquitectura de messaging y copy web que convierte — en inglés y español.</div><div class="svc-items"><div class="svc-item en-b">Product positioning & GTM</div><div class="svc-item es-b">Posicionamiento y GTM</div><div class="svc-item en-b">Web copy (EN + ES)</div><div class="svc-item es-b">Copy web (EN + ES)</div><div class="svc-item en-b">Case studies & sales enablement</div><div class="svc-item es-b">Casos de estudio y sales enablement</div><div class="svc-item en-b">SEO content strategy</div><div class="svc-item es-b">Estrategia de contenido SEO</div></div></div>
+<div class="svc sr d1"><div class="svc-n">02</div><div class="svc-ico">🌐</div><div class="svc-nm en-b">Web & CRO</div><div class="svc-nm es-b">Web & Conversión</div><div class="svc-desc en-b">End-to-end web execution — HubSpot builds, A/B testing, and analytics.</div><div class="svc-desc es-b">Ejecución web completa — HubSpot, A/B testing y analítica.</div><div class="svc-items"><div class="svc-item">HubSpot CMS & HubL</div><div class="svc-item en-b">Conversion rate optimization</div><div class="svc-item es-b">Optimización de conversión (CRO)</div><div class="svc-item en-b">A/B testing & analytics</div><div class="svc-item es-b">A/B testing y analítica</div><div class="svc-item en-b">UX writing & page architecture</div><div class="svc-item es-b">UX writing y arquitectura de páginas</div></div></div>
+<div class="svc sr d2"><div class="svc-n">03</div><div class="svc-ico">🎨</div><div class="svc-nm en-b">Branding & Web Design</div><div class="svc-nm es-b">Branding & Diseño Web</div><div class="svc-desc en-b">Integral brand creation — from visual identity to full page design and launch.</div><div class="svc-desc es-b">Creación integral de marca — desde identidad visual hasta diseño de páginas.</div><div class="svc-items"><div class="svc-item en-b">Brand identity & messaging systems</div><div class="svc-item es-b">Identidad de marca y sistemas de mensajería</div><div class="svc-item en-b">Landing page design & build</div><div class="svc-item es-b">Diseño y construcción de landing pages</div><div class="svc-item en-b">Visual brand guidelines</div><div class="svc-item es-b">Guías de marca visual</div><div class="svc-item en-b">Product launch pages</div><div class="svc-item es-b">Páginas de lanzamiento</div></div></div>
+<div class="svc sr d3"><div class="svc-n">04</div><div class="svc-ico">🤖</div><div class="svc-nm en-b">AI & Automation</div><div class="svc-nm es-b">IA & Automatización</div><div class="svc-desc en-b">AI-powered marketing systems and prompt engineering at scale.</div><div class="svc-desc es-b">Sistemas de marketing con IA y prompt engineering a escala.</div><div class="svc-items"><div class="svc-item en-b">Advanced prompt engineering</div><div class="svc-item es-b">Prompt engineering avanzado</div><div class="svc-item en-b">GPT & Claude agents for marketing</div><div class="svc-item es-b">Agentes GPT y Claude para marketing</div><div class="svc-item en-b">Claude Code development</div><div class="svc-item es-b">Desarrollo con Claude Code</div></div></div>
+<div class="svc sr d4"><div class="svc-n">05</div><div class="svc-ico">📊</div><div class="svc-nm en-b">Analytics & OKRs</div><div class="svc-nm es-b">Analítica & OKRs</div><div class="svc-desc en-b">Measurement systems and data-driven reporting for every marketing decision.</div><div class="svc-desc es-b">Sistemas de medición y reportes para justificar cada decisión de marketing.</div><div class="svc-items"><div class="svc-item">Fullstory · GA4 · HubSpot</div><div class="svc-item en-b">Funnel conversion tracking</div><div class="svc-item es-b">Tracking de conversión de embudo</div><div class="svc-item en-b">OKR systems & dashboards</div><div class="svc-item es-b">Sistemas OKR y dashboards</div></div></div>
+<div class="svc sr d5"><div class="svc-n">06</div><div class="svc-ico">🌎</div><div class="svc-nm en-b">B2B Fintech Expert</div><div class="svc-nm es-b">Experta Fintech B2B</div><div class="svc-desc en-b">Deep expertise in B2B payments, AR automation, and LATAM markets.</div><div class="svc-desc es-b">Experiencia profunda en pagos B2B, automatización AR y mercados LATAM.</div><div class="svc-items"><div class="svc-item en-b">AR / AP automation messaging</div><div class="svc-item es-b">Mensajería AR/AP</div><div class="svc-item en-b">LATAM adaptation (CFDI, SPEI)</div><div class="svc-item es-b">Adaptación LATAM (CFDI, SPEI)</div><div class="svc-item en-b">ERP-native platform positioning</div><div class="svc-item es-b">Posicionamiento de plataformas ERP</div></div></div>
+</div></div></section>
 <!-- EXPERIENCE -->
-<section id="experience">
-  <div class="container">
-    <div class="reveal">
-      <div class="s-label" data-lang="en">Work history</div>
-      <div class="s-label" data-lang="es">Experiencia</div>
-      <h2 class="s-title" data-lang="en">Where I've <em>built.</em></h2>
-      <h2 class="s-title" data-lang="es">Dónde he <em>construido.</em></h2>
-    </div>
-    <div class="exp-list stagger">
-      <div class="exp-item">
-        <div class="exp-meta">
-          <div class="exp-company">Paystand</div>
-          <div class="exp-period">2024 – Present</div>
-          <div class="exp-loc">Guadalajara, MX</div>
-        </div>
-        <div class="exp-body">
-          <div class="exp-role-title" data-lang="en">Webmaster & Marketing Strategist</div>
-          <div class="exp-role-title" data-lang="es">Webmaster y Estratega de Marketing</div>
-          <p class="exp-desc" data-lang="en">Full-stack marketing ownership at a B2B fintech platform. Led web strategy, copy, and conversion optimization — from messaging audits to HubSpot module builds and A/B testing. Driving Q2 2026 OKR to raise funnel conversion from 0.61% to 0.83%. Built modular page systems for AR automation, payments, and expense management.</p>
-          <p class="exp-desc" data-lang="es">Ownership completo de marketing en plataforma fintech B2B. Lideré estrategia web, copy y optimización de conversión — desde auditorías de messaging hasta módulos HubSpot y A/B testing. OKR Q2 2026: subir conversión del embudo de 0.61% a 0.83%.</p>
-          <div class="exp-tags">
-            <span class="exp-tag">HubSpot</span><span class="exp-tag">CRO</span><span class="exp-tag">Copywriting</span>
-            <span class="exp-tag">SEO</span><span class="exp-tag">Fullstory</span><span class="exp-tag">A/B Testing</span><span class="exp-tag">Fintech</span>
-          </div>
-          <div class="exp-sub">
-            <div class="exp-sub-label">Also within this ecosystem — Yaydoo</div>
-            <div class="exp-sub-title" data-lang="en">Spanish-Market Content Strategy · Yaydoo PorCobrar</div>
-            <div class="exp-sub-title" data-lang="es">Estrategia de contenido en español · Yaydoo PorCobrar</div>
-            <p class="exp-sub-desc" data-lang="en">Consolidated 4 product subpages into a single integral PorCobrar page — 10 modules, SEO-optimized for LATAM finance teams. Domain expertise in CFDI, SPEI, domiciliación, and cobranza preventiva.</p>
-            <p class="exp-sub-desc" data-lang="es">Consolidé 4 subpáginas en una página integral de PorCobrar — 10 módulos optimizados para equipos financieros en LATAM. Dominio de CFDI, SPEI, domiciliación y cobranza preventiva.</p>
-          </div>
-        </div>
-      </div>
-      <div class="exp-item">
-        <div class="exp-meta">
-          <div class="exp-company">Wispok</div>
-          <div class="exp-period">2023 – 2024</div>
-          <div class="exp-loc">Guadalajara, MX</div>
-        </div>
-        <div class="exp-body">
-          <div class="exp-role-title" data-lang="en">Business Project Manager</div>
-          <div class="exp-role-title" data-lang="es">Gerente de Proyectos</div>
-          <p class="exp-desc" data-lang="en">Led SAP integration projects, investor communications, and go-to-market campaigns. Negotiated vendor agreements reducing costs by 15%. Developed market expansion strategies and pitch presentations.</p>
-          <p class="exp-desc" data-lang="es">Lideré proyectos de integración SAP, comunicaciones con inversores y campañas GTM. Negocié acuerdos con proveedores reduciendo costos en 15%.</p>
-          <div class="exp-tags"><span class="exp-tag">Project Management</span><span class="exp-tag">SAP</span><span class="exp-tag">Go-to-Market</span><span class="exp-tag">Investor Relations</span></div>
-        </div>
-      </div>
-      <div class="exp-item">
-        <div class="exp-meta">
-          <div class="exp-company">Piel Arena</div>
-          <div class="exp-period">2020 – 2024</div>
-          <div class="exp-loc">Guadalajara, MX</div>
-        </div>
-        <div class="exp-body">
-          <div class="exp-role-title" data-lang="en">Marketing Strategist</div>
-          <div class="exp-role-title" data-lang="es">Estratega de Marketing</div>
-          <p class="exp-desc" data-lang="en">Developed campaigns that increased product engagement by 30%. Expanded distribution to 7 new channels, growing product reach by 25%.</p>
-          <p class="exp-desc" data-lang="es">Desarrollé campañas que incrementaron el engagement en 30%. Expandí distribución a 7 nuevos canales, aumentando alcance en 25%.</p>
-          <div class="exp-tags"><span class="exp-tag">Brand Strategy</span><span class="exp-tag">Campaigns</span><span class="exp-tag">Multi-channel</span></div>
-        </div>
-      </div>
-      <div class="exp-item">
-        <div class="exp-meta">
-          <div class="exp-company">LeanMail</div>
-          <div class="exp-period">Earlier</div>
-        </div>
-        <div class="exp-body">
-          <div class="exp-role-title" data-lang="en">Marketing</div>
-          <div class="exp-role-title" data-lang="es">Marketing</div>
-          <p class="exp-desc" data-lang="en">Email marketing, content production, and digital campaign execution — building the messaging discipline that defines my work today.</p>
-          <p class="exp-desc" data-lang="es">Email marketing, producción de contenido y campañas digitales — construyendo la disciplina de messaging que define mi trabajo hoy.</p>
-          <div class="exp-tags"><span class="exp-tag">Email Marketing</span><span class="exp-tag">Content</span><span class="exp-tag">Digital</span></div>
-        </div>
-      </div>
+<section id="exp">
+<div class="wrap">
+<div class="ov sr en-b">Work history</div><div class="ov sr es-b">Historial profesional</div>
+<h2 class="st sr d1 en-b">Where I've <em>built.</em></h2>
+<h2 class="st sr d1 es-b">Dónde he <em>construido.</em></h2>
+<div style="margin-top:1.5rem">
+<div class="erow sr">
+  <div><div class="eco">Paystand</div><div class="eper">2024 – Present</div><div class="eloc">Guadalajara, MX</div></div>
+  <div>
+    <div class="etit en-b">Webmaster & Marketing Strategist</div><div class="etit es-b">Webmaster y Estratega de Marketing</div>
+    <p class="edesc en-b">Full ownership of web strategy, copy, and conversion optimization at a B2B fintech platform. From messaging audits to HubSpot module builds, A/B testing, and OKR reporting. Target: funnel conversion 0.61% → 0.83% in Q2 2026.</p>
+    <p class="edesc es-b">Ownership completo de estrategia web, copy y optimización de conversión en plataforma fintech B2B. Desde auditorías de messaging y módulos HubSpot hasta A/B testing y reportes de OKRs. Objetivo Q2 2026: 0.61% → 0.83%.</p>
+    <div class="etags"><span class="etag">HubSpot</span><span class="etag">CRO</span><span class="etag">Copywriting</span><span class="etag">SEO</span><span class="etag">Fullstory</span><span class="etag">A/B Testing</span><span class="etag">Fintech</span></div>
+    <div class="esub">
+      <div class="esub-lbl en-b">Also within this ecosystem — Yaydoo</div><div class="esub-lbl es-b">También en este ecosistema — Yaydoo</div>
+      <div class="esub-tit en-b">Spanish-Market Content · Yaydoo PorCobrar</div><div class="esub-tit es-b">Contenido en español · Yaydoo PorCobrar</div>
+      <p class="esub-desc en-b">Consolidated 4 product subpages into a single integral PorCobrar page — 10 modules, SEO-optimized for LATAM finance teams. CFDI, SPEI, domiciliación, cobranza preventiva.</p>
+      <p class="esub-desc es-b">Consolidé 4 subpáginas en una página integral de PorCobrar — 10 módulos optimizados para equipos financieros en LATAM. CFDI, SPEI, domiciliación, cobranza preventiva.</p>
     </div>
   </div>
-</section>
-
+</div>
+<div class="erow sr d1">
+  <div><div class="eco">Wispok</div><div class="eper">2023 – 2024</div><div class="eloc">Guadalajara, MX</div></div>
+  <div>
+    <div class="etit en-b">Business Project Manager</div><div class="etit es-b">Gerente de Proyectos</div>
+    <p class="edesc en-b">Led SAP integration projects, investor communications, and GTM campaigns. Negotiated vendor agreements reducing costs by 15%.</p>
+    <p class="edesc es-b">Lideré proyectos de integración SAP, comunicaciones con inversores y campañas GTM. Negocié acuerdos reduciendo costos en 15%.</p>
+    <div class="etags"><span class="etag">Project Management</span><span class="etag">SAP</span><span class="etag">GTM</span><span class="etag">Investor Relations</span></div>
+  </div>
+</div>
+<div class="erow sr d2">
+  <div><div class="eco">Piel Arena</div><div class="eper">2020 – 2024</div><div class="eloc">Guadalajara, MX</div></div>
+  <div>
+    <div class="etit en-b">Marketing Strategist</div><div class="etit es-b">Estratega de Marketing</div>
+    <p class="edesc en-b">Campaigns that increased product engagement by 30%. Expanded to 7 new channels, growing reach by 25%.</p>
+    <p class="edesc es-b">Campañas que incrementaron el engagement en 30%. Expansión a 7 nuevos canales, aumentando alcance en 25%.</p>
+    <div class="etags"><span class="etag">Brand Strategy</span><span class="etag">Campaigns</span><span class="etag">Multi-channel</span></div>
+  </div>
+</div>
+<div class="erow sr d3">
+  <div><div class="eco">LeanMail</div><div class="eper">Earlier</div></div>
+  <div>
+    <div class="etit en-b">Marketing</div><div class="etit es-b">Marketing</div>
+    <p class="edesc en-b">Email marketing, content production, and digital campaigns — building the messaging discipline that defines my work today.</p>
+    <p class="edesc es-b">Email marketing, producción de contenido y campañas digitales — construyendo la disciplina que define mi trabajo hoy.</p>
+    <div class="etags"><span class="etag">Email Marketing</span><span class="etag">Content</span><span class="etag">Digital</span></div>
+  </div>
+</div>
+</div></div></section>
 <!-- PROJECTS -->
-<section id="projects">
-  <div class="container">
-    <div class="reveal">
-      <div class="s-label" data-lang="en">Selected work</div>
-      <div class="s-label" data-lang="es">Trabajo selecto</div>
-      <h2 class="s-title" data-lang="en">Projects that <em>moved the needle.</em></h2>
-      <h2 class="s-title" data-lang="es">Proyectos que <em>movieron el marcador.</em></h2>
-      <p class="proj-lead" data-lang="en">Five projects. Five distinct design approaches. Each one a different context, challenge, and creative decision.</p>
-      <p class="proj-lead" data-lang="es">Cinco proyectos. Cinco enfoques de diseño distintos. Cada uno un contexto, reto y decisión creativa diferente.</p>
-    </div>
-    <div class="proj-stack">
-
-      <div class="p1 reveal">
-        <div class="p1-l">
-          <div>
-            <div class="p1-num" data-lang="en">01 — Paystand · 2026</div>
-            <div class="p1-num" data-lang="es">01 — Paystand · 2026</div>
-            <div class="p1-title" data-lang="en">Website<em>Messaging</em>Audit</div>
-            <div class="p1-title" data-lang="es">Auditoría de<em>Messaging</em>Web</div>
-          </div>
-          <div>
-            <div class="p1-meta">Paystand · Strategy · Copy</div>
-            <div class="p1-hr"></div>
-            <div style="font-size:.82rem;color:var(--muted);line-height:1.7" data-lang="en">10+ pages · Copy system · Internal guidelines</div>
-            <div style="font-size:.82rem;color:var(--muted);line-height:1.7" data-lang="es">+10 páginas · Sistema de copy · Guías internas</div>
-          </div>
-        </div>
-        <div class="p1-r">
-          <p data-lang="en">After Paystand acquired Teampay, the website was selling features that didn't exist yet — creating friction with enterprise clients. I audited every page, mapped real vs. promised capabilities, and rewrote the entire messaging architecture.</p>
-          <p data-lang="es">Tras la adquisición de Teampay, el sitio vendía features inexistentes — generando fricción con clientes enterprise. Audité cada página, mapeé capacidades reales vs. prometidas y reescribí toda la arquitectura de messaging.</p>
-          <div>
-            <div class="p1-out"><span class="p1-arr">→</span><span data-lang="en">10+ pages rewritten from scratch</span><span data-lang="es">+10 páginas reescritas desde cero</span></div>
-            <div class="p1-out"><span class="p1-arr">→</span><span data-lang="en">First internal copy guidelines system delivered</span><span data-lang="es">Primer sistema de guías de copy creado</span></div>
-            <div class="p1-out"><span class="p1-arr">→</span><span data-lang="en">Feature accuracy fully restored across the site</span><span data-lang="es">Precisión de features restaurada en el sitio</span></div>
-          </div>
-        </div>
+<section id="proj">
+<div class="wrap">
+<div class="ov sr en-b">Selected work</div><div class="ov sr es-b">Trabajo selecto</div>
+<h2 class="st sr d1 en-b">Projects that<br><em>moved the needle.</em></h2>
+<h2 class="st sr d1 es-b">Proyectos que<br><em>movieron el marcador.</em></h2>
+<p class="pint sr d2 en-b">Hover each card to see details, results, and outcomes.</p>
+<p class="pint sr d2 es-b">Pasa el cursor sobre cada tarjeta para ver detalles y resultados.</p>
+<div class="pgrid">
+<div class="pc sr">
+  <div class="pc-z">
+    <div class="pc-n">01</div>
+    <div class="pc-cat en">B2B Fintech · Strategy · Copy</div><div class="pc-cat es">Fintech B2B · Estrategia · Copy</div>
+    <div class="pc-tit en-b">Website Messaging Audit</div><div class="pc-tit es-b">Auditoría de Messaging Web</div>
+    <p class="pc-sum en-b">Post-acquisition, the site was selling unreleased features — creating enterprise friction.</p>
+    <p class="pc-sum es-b">Tras una adquisición, el sitio vendía features inexistentes — fricción con clientes enterprise.</p>
+    <div class="pexp"><div class="pexp-in">
+      <p class="pdet en-b">Audited every page, mapped real vs. promised capabilities, and rewrote the entire messaging architecture. Delivered the first internal copy guidelines system.</p>
+      <p class="pdet es-b">Audité cada página, mapeé capacidades reales vs. prometidas y reescribí toda la arquitectura de messaging. Entregué el primer sistema de guías de copy internas.</p>
+      <div class="pmet"><div><div class="v">10+</div><div class="l en">Pages rewritten</div><div class="l es">Páginas reescritas</div></div><div><div class="v">1st</div><div class="l en">Copy system</div><div class="l es">Sistema de copy</div></div></div>
+      <div class="pouts">
+        <div class="pout en-b">Expense & payments pages realigned with real product</div>
+        <div class="pout es-b">Páginas alineadas con el producto real</div>
+        <div class="pout en-b">Internal guidelines delivered to leadership</div>
+        <div class="pout es-b">Guías internas entregadas a liderazgo</div>
       </div>
-
-      <div class="p2 reveal">
-        <div class="p2-l">
-          <div>
-            <div class="p2-eye" data-lang="en">02 — Paystand · Q2 2026 · Analytics & CRO</div>
-            <div class="p2-eye" data-lang="es">02 — Paystand · Q2 2026 · Analítica y CRO</div>
-            <div class="p2-title" data-lang="en">Conversion <em>OKR System</em></div>
-            <div class="p2-title" data-lang="es">Sistema OKR de <em>Conversión</em></div>
-            <p class="p2-desc" data-lang="en">Built a full conversion measurement system — Fullstory dashboards, bi-weekly snapshots, A/B test tracking, and a custom HTML tracker app. Targeting funnel conversion from 0.61% to 0.83%.</p>
-            <p class="p2-desc" data-lang="es">Construí un sistema de medición de conversión desde cero — dashboards Fullstory, snapshots quincenales, A/B tracking y app HTML personalizada.</p>
-          </div>
-          <div class="p2-metrics">
-            <div class="p2-metric"><div class="p2-val">0.61%</div><div class="p2-lbl" data-lang="en">Baseline conversion</div><div class="p2-lbl" data-lang="es">Conversión base</div></div>
-            <div class="p2-metric"><div class="p2-val">0.83%</div><div class="p2-lbl" data-lang="en">Q2 target</div><div class="p2-lbl" data-lang="es">Objetivo Q2</div></div>
-            <div class="p2-metric"><div class="p2-val">53K</div><div class="p2-lbl" data-lang="en">Monthly visits</div><div class="p2-lbl" data-lang="es">Visitas mensuales</div></div>
-            <div class="p2-metric"><div class="p2-val">21%</div><div class="p2-lbl" data-lang="en">Get Started CR</div><div class="p2-lbl" data-lang="es">CR Get Started</div></div>
-          </div>
-        </div>
-        <div class="p2-r">
-          <div class="p2-bar-row">
-            <div class="p2-bar-label"><span data-lang="en">Homepage → Get Started</span><span data-lang="es">Homepage → Get Started</span><span>2.3%</span></div>
-            <div class="p2-track"><div class="p2-fill" data-w="0.23"></div></div>
-          </div>
-          <div class="p2-bar-row">
-            <div class="p2-bar-label"><span data-lang="en">Funnel Conversion</span><span data-lang="es">Conversión Funnel</span><span>0.61%</span></div>
-            <div class="p2-track"><div class="p2-fill" data-w="0.61"></div></div>
-          </div>
-          <div class="p2-bar-row">
-            <div class="p2-bar-label"><span data-lang="en">Organic Traffic</span><span data-lang="es">Tráfico Orgánico</span><span>29.5K</span></div>
-            <div class="p2-track"><div class="p2-fill" data-w="0.75"></div></div>
-          </div>
-          <div class="p2-bar-row">
-            <div class="p2-bar-label"><span data-lang="en">Get Started CR</span><span data-lang="es">CR Get Started</span><span>21%</span></div>
-            <div class="p2-track"><div class="p2-fill" data-w="0.85"></div></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="p3 reveal">
-        <div class="p3-l">
-          <div class="p3-num">03</div>
-          <div>
-            <div class="p3-brand" data-lang="en">Allterra Solar<br>Case Study</div>
-            <div class="p3-brand" data-lang="es">Caso de Estudio<br>Allterra Solar</div>
-            <div class="p3-brand-sub">Paystand · 2026</div>
-          </div>
-        </div>
-        <div class="p3-r">
-          <div>
-            <div class="p2-eye" style="color:rgba(240,244,232,.3);margin-bottom:.5rem" data-lang="en">Sales enablement · Case study production</div>
-            <div class="p2-eye" style="color:rgba(240,244,232,.3);margin-bottom:.5rem" data-lang="es">Sales enablement · Producción de caso de estudio</div>
-            <div class="p3-title" data-lang="en">Turning a customer story into a conversion asset.</div>
-            <div class="p3-title" data-lang="es">Convertir la historia de un cliente en un activo de conversión.</div>
-          </div>
-          <p class="p3-body" data-lang="en">Full production of the Allterra Solar landing page — 8 modules from hero to CTA. Two-person finance team managing $7M+ in annual payments. Built internal copy guidelines as a reusable template for all future case studies.</p>
-          <p class="p3-body" data-lang="es">Producción completa del landing page de Allterra Solar — 8 módulos. Equipo de 2 personas gestionando +$7M en pagos anuales. Guías internas de copy como sistema reutilizable.</p>
-          <div class="p3-stats">
-            <div><div class="p3-n">$7M+</div><div class="p3-l2" data-lang="en">Annual payments</div><div class="p3-l2" data-lang="es">Pagos anuales</div></div>
-            <div><div class="p3-n">8</div><div class="p3-l2" data-lang="en">Modules built</div><div class="p3-l2" data-lang="es">Módulos</div></div>
-            <div><div class="p3-n">1</div><div class="p3-l2" data-lang="en">Reusable system</div><div class="p3-l2" data-lang="es">Sistema reutilizable</div></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="p4 reveal">
-        <div class="p4-l">
-          <div>
-            <div class="p4-tag" data-lang="en">04 — Personal project · 2025</div>
-            <div class="p4-tag" data-lang="es">04 — Proyecto personal · 2025</div>
-            <div class="p4-title" data-lang="en">Way<em>point</em></div>
-            <div class="p4-title" data-lang="es">Way<em>point</em></div>
-          </div>
-          <p class="p4-desc" data-lang="en">A travel planning app built with Claude Code — featuring a trip library, budget panels, AI-powered itinerary builders, and a full multi-agent development setup (frontend, fullstack, code-reviewer, debugger).</p>
-          <p class="p4-desc" data-lang="es">App de planeación de viajes construida con Claude Code — con biblioteca de viajes, paneles de presupuesto, itinerarios con IA y setup multi-agente completo.</p>
-          <div class="p4-tech">
-            <span class="p4-pill">Claude Code</span><span class="p4-pill">HTML/CSS/JS</span>
-            <span class="p4-pill">Multi-agent</span><span class="p4-pill">Google Cloud</span><span class="p4-pill">Vercel</span>
-          </div>
-        </div>
-        <div class="p4-r">
-          <div class="p4-feat">
-            <div class="p4-feat-icon">✈</div>
-            <div><div class="p4-feat-title" data-lang="en">Trip Library "Mis Viajes"</div><div class="p4-feat-title" data-lang="es">Biblioteca "Mis Viajes"</div><div class="p4-feat-sub" data-lang="en">Full itinerary view with map integration</div><div class="p4-feat-sub" data-lang="es">Vista de itinerario con integración de mapa</div></div>
-          </div>
-          <div class="p4-feat">
-            <div class="p4-feat-icon">💰</div>
-            <div><div class="p4-feat-title" data-lang="en">Budget Panel</div><div class="p4-feat-title" data-lang="es">Panel de Presupuesto</div><div class="p4-feat-sub" data-lang="en">Real-time spend tracking per trip</div><div class="p4-feat-sub" data-lang="es">Seguimiento de gastos en tiempo real</div></div>
-          </div>
-          <div class="p4-feat">
-            <div class="p4-feat-icon">🤖</div>
-            <div><div class="p4-feat-title" data-lang="en">Multi-agent Dev Setup</div><div class="p4-feat-title" data-lang="es">Setup Multi-agente</div><div class="p4-feat-sub" data-lang="en">4 specialized Claude Code agents</div><div class="p4-feat-sub" data-lang="es">4 agentes Claude Code especializados</div></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="p5 reveal">
-        <div class="p5-l">
-          <div>
-            <div class="p1-num" style="color:var(--terrac)">05 — Paystand · HubSpot</div>
-            <div class="p5-title" data-lang="en">Custom<br><span>HubSpot</span><br>Modules</div>
-            <div class="p5-title" data-lang="es">Módulos<br><span>HubSpot</span><br>Custom</div>
-          </div>
-          <p class="p5-desc" data-lang="en">Built reusable, interactive HubSpot modules in HubL — FAQ accordions, testimonial cards with conditional logic, interactive calculators, and responsive blog templates.</p>
-          <p class="p5-desc" data-lang="es">Módulos HubSpot reutilizables e interactivos en HubL — FAQ accordions, testimonial cards con lógica condicional, calculadoras y templates de blog responsivos.</p>
-          <div class="p5-mods">
-            <div class="p5-mod"><div class="p5-dot"></div><span data-lang="en">FAQ Accordion (2-col, dynamic)</span><span data-lang="es">FAQ Accordion (2 col, dinámico)</span></div>
-            <div class="p5-mod"><div class="p5-dot"></div><span data-lang="en">Testimonial cards — conditional logic</span><span data-lang="es">Testimonial cards con lógica condicional</span></div>
-            <div class="p5-mod"><div class="p5-dot"></div><span data-lang="en">Interactive pricing calculator</span><span data-lang="es">Calculadora de pricing interactiva</span></div>
-            <div class="p5-mod"><div class="p5-dot"></div><span data-lang="en">Responsive blog templates</span><span data-lang="es">Templates de blog responsivos</span></div>
-          </div>
-        </div>
-        <div class="p5-r">
-          <div>
-            <div class="cl"><span class="cc">{# FAQ Accordion — HubL #}</span></div>
-            <div class="cl"><span class="ck">{% for</span> item <span class="ck">in</span> module.faq_items <span class="ck">%}</span></div>
-            <div class="cl">&nbsp;&nbsp;<span class="cf">&lt;div</span> class=<span class="cs">"faq-item"</span><span class="cf">&gt;</span></div>
-            <div class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="cf">&lt;button</span> class=<span class="cs">"faq-q"</span><span class="cf">&gt;</span></div>
-            <div class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ item.question }}</div>
-            <div class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="cf">&lt;/button&gt;</span></div>
-            <div class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="cf">&lt;div</span> class=<span class="cs">"faq-a"</span><span class="cf">&gt;</span></div>
-            <div class="cl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ item.answer }}</div>
-            <div class="cl">&nbsp;&nbsp;&nbsp;&nbsp;<span class="cf">&lt;/div&gt;</span></div>
-            <div class="cl">&nbsp;&nbsp;<span class="cf">&lt;/div&gt;</span></div>
-            <div class="cl"><span class="ck">{% endfor %}</span></div>
-            <br>
-            <div class="cl"><span class="cc">{# Conditional testimonial #}</span></div>
-            <div class="cl"><span class="ck">{% if</span> module.show_video <span class="ck">%}</span></div>
-            <div class="cl">&nbsp;&nbsp;<span class="cf">&lt;video</span> src=<span class="cs">"{{ video_url }}"</span><span class="cf">/&gt;</span></div>
-            <div class="cl"><span class="ck">{% else %}</span></div>
-            <div class="cl">&nbsp;&nbsp;<span class="cf">&lt;blockquote&gt;</span>{{ quote }}<span class="cf">&lt;/blockquote&gt;</span></div>
-            <div class="cl"><span class="ck">{% endif %}</span></div>
-          </div>
-        </div>
-      </div>
-
-    </div>
+    </div></div>
   </div>
-</section>
-
+</div>
+<div class="pc sr d1">
+  <div class="pc-z">
+    <div class="pc-n">02</div>
+    <div class="pc-cat en">Analytics · CRO · Q2 2026</div><div class="pc-cat es">Analítica · CRO · Q2 2026</div>
+    <div class="pc-tit en-b">Conversion OKR System</div><div class="pc-tit es-b">Sistema OKR de Conversión</div>
+    <p class="pc-sum en-b">Built a full conversion measurement system — dashboards, tracking, and a custom HTML app.</p>
+    <p class="pc-sum es-b">Construí un sistema completo de medición de conversión con dashboards y app HTML.</p>
+    <div class="pexp"><div class="pexp-in">
+      <p class="pdet en-b">Fullstory dashboards, bi-weekly snapshots, A/B test tracking, and a persistent HTML tracker with OKR checklist and performance charts.</p>
+      <p class="pdet es-b">Dashboards Fullstory, snapshots quincenales, tracking A/B y app HTML persistente con checklist OKR y gráficas de performance.</p>
+      <div class="pmet"><div><div class="v">0.61%</div><div class="l en">Baseline CR</div><div class="l es">CR base</div></div><div><div class="v">0.83%</div><div class="l en">Q2 target</div><div class="l es">Objetivo Q2</div></div><div><div class="v">53K</div><div class="l en">Monthly visits</div><div class="l es">Visitas/mes</div></div></div>
+    </div></div>
+  </div>
+</div>
+<div class="pc sr d2">
+  <div class="pc-z">
+    <div class="pc-n">03</div>
+    <div class="pc-cat en">Sales Enablement · Case Study</div><div class="pc-cat es">Sales Enablement · Caso de Estudio</div>
+    <div class="pc-tit en-b">Allterra Solar Case Study</div><div class="pc-tit es-b">Caso de Estudio Allterra Solar</div>
+    <p class="pc-sum en-b">Full production of the case study landing page — 8 modules from hero to CTA.</p>
+    <p class="pc-sum es-b">Producción completa del landing page del caso de estudio — 8 módulos de hero a CTA.</p>
+    <div class="pexp"><div class="pexp-in">
+      <p class="pdet en-b">Two-person finance team managing $7M+ in annual payments. CFO as video speaker, CEO testimonial. Delivered internal copy guidelines as a reusable template system.</p>
+      <p class="pdet es-b">Equipo de 2 personas gestionando +$7M en pagos anuales. CFO como speaker, testimonio del CEO. Guías de copy como sistema de plantillas reutilizable.</p>
+      <div class="pmet"><div><div class="v">$7M+</div><div class="l en">Annual payments</div><div class="l es">Pagos anuales</div></div><div><div class="v">8</div><div class="l en">Modules</div><div class="l es">Módulos</div></div></div>
+    </div></div>
+  </div>
+</div>
+<div class="pc sr d3">
+  <div class="pc-z">
+    <div class="pc-n">04</div>
+    <div class="pc-cat en">HubSpot CMS · HubL</div><div class="pc-cat es">HubSpot CMS · HubL</div>
+    <div class="pc-tit en-b">Custom HubSpot Modules</div><div class="pc-tit es-b">Módulos HubSpot Custom</div>
+    <p class="pc-sum en-b">Reusable, interactive HubSpot modules — all production-grade and live on the site.</p>
+    <p class="pc-sum es-b">Módulos HubSpot reutilizables e interactivos — todos en producción y en uso en el sitio.</p>
+    <div class="pexp"><div class="pexp-in">
+      <div class="pouts">
+        <div class="pout en-b">FAQ Accordion — 2-col, dynamic HubL</div><div class="pout es-b">FAQ Accordion 2 col, HubL dinámico</div>
+        <div class="pout en-b">Testimonial cards — video/quote conditional logic</div><div class="pout es-b">Testimonial cards con lógica condicional</div>
+        <div class="pout en-b">Interactive pricing calculator</div><div class="pout es-b">Calculadora de pricing interactiva</div>
+        <div class="pout en-b">Responsive blog sidebar</div><div class="pout es-b">Sidebar de blog responsivo</div>
+      </div>
+    </div></div>
+  </div>
+</div>
+<div class="pc sr d4">
+  <div class="pc-z">
+    <div class="pc-n">05</div>
+    <div class="pc-cat en">Content Strategy · LATAM SEO</div><div class="pc-cat es">Estrategia · SEO LATAM</div>
+    <div class="pc-tit en-b">Yaydoo PorCobrar Content System</div><div class="pc-tit es-b">Sistema de Contenido PorCobrar</div>
+    <p class="pc-sum en-b">Consolidated 4 subpages into one integral product page for LATAM finance teams.</p>
+    <p class="pc-sum es-b">Consolidé 4 subpáginas en una página integral de producto para equipos financieros LATAM.</p>
+    <div class="pexp"><div class="pexp-in">
+      <p class="pdet en-b">10 modules, fully SEO-optimized. Domain: CFDI, SPEI, domiciliación, intereses moratorios, cobranza preventiva.</p>
+      <p class="pdet es-b">10 módulos optimizados para SEO. Dominio: CFDI, SPEI, domiciliación, intereses moratorios, cobranza preventiva.</p>
+      <div class="pmet"><div><div class="v">4→1</div><div class="l en">Pages consolidated</div><div class="l es">Páginas consolidadas</div></div><div><div class="v">10</div><div class="l en">Modules built</div><div class="l es">Módulos</div></div></div>
+    </div></div>
+  </div>
+</div>
+<div style="background:var(--bg2)"></div>
+</div>
+<!-- Waypoint featured -->
+<div class="pfeat sr">
+<div>
+  <div class="pftag en">⭐ Personal project · 2025</div><div class="pftag es">⭐ Proyecto personal · 2025</div>
+  <div class="pftit">Way<em>point</em></div>
+  <p class="pfdesc en-b">A full-stack AI travel planning app built from scratch using Claude Code — featuring a trip library ("Mis Viajes"), real-time budget panels, AI-powered itinerary generation, and a multi-agent setup with 4 specialized Claude Code agents.</p>
+  <p class="pfdesc es-b">App de planeación de viajes con IA construida desde cero con Claude Code — con biblioteca "Mis Viajes", paneles de presupuesto en tiempo real, itinerarios con IA y setup multi-agente con 4 agentes Claude Code especializados.</p>
+  <div class="pfpills"><span class="pfpill">Claude Code</span><span class="pfpill">HTML/CSS/JS</span><span class="pfpill">Multi-agent</span><span class="pfpill">Google Cloud</span><span class="pfpill">Vercel</span></div>
+  <a class="pflink" href="https://waypoint-henna.vercel.app" target="_blank"><span class="en">View live app</span><span class="es">Ver app en vivo</span> ↗</a>
+</div>
+<div>
+  <div class="fmock">
+    <div class="fbar"><div class="fdot" style="background:rgba(240,236,228,.2)"></div><div class="fdot" style="background:rgba(240,236,228,.12)"></div><div class="fdot" style="background:rgba(240,236,228,.08)"></div><span class="furl">waypoint-henna.vercel.app</span></div>
+    <div class="fbody">
+      <div class="frow"><div class="fico" style="background:rgba(232,245,66,.15)">✈</div><div><div class="frtit en">Trip Library "Mis Viajes"</div><div class="frtit es">Biblioteca "Mis Viajes"</div><div class="frsub en">Full itinerary + map integration</div><div class="frsub es">Itinerario completo + mapa</div></div></div>
+      <div class="frow"><div class="fico" style="background:rgba(240,112,96,.15)">💰</div><div><div class="frtit en">Budget Panel</div><div class="frtit es">Panel de Presupuesto</div><div class="frsub en">Real-time spend tracking</div><div class="frsub es">Seguimiento de gastos en tiempo real</div></div></div>
+      <div class="frow"><div class="fico" style="background:rgba(96,184,240,.15)">🤖</div><div><div class="frtit en">AI Itinerary Builder</div><div class="frtit es">Constructor con IA</div><div class="frsub en">Instant planning, any destination</div><div class="frsub es">Planeación instantánea, cualquier destino</div></div></div>
+    </div>
+    <div class="fstats"><div class="fs"><div class="v">4</div><div class="l en">Agents</div><div class="l es">Agentes</div></div><div class="fs"><div class="v">2</div><div class="l en">Languages</div><div class="l es">Idiomas</div></div><div class="fs"><div class="v">Live</div><div class="l en">On Vercel</div><div class="l es">En Vercel</div></div></div>
+  </div>
+</div>
+</div>
+</div></section>
 <!-- SKILLS -->
-<section id="skills">
-  <div class="container">
-    <div class="reveal">
-      <div class="s-label" data-lang="en">Capabilities</div>
-      <div class="s-label" data-lang="es">Capacidades</div>
-      <h2 class="s-title" data-lang="en">The full <em>stack.</em></h2>
-      <h2 class="s-title" data-lang="es">El stack <em>completo.</em></h2>
-    </div>
-    <div class="sk-grid stagger">
-      <div class="sk-card"><div class="sk-icon" style="background:#fdf0e8">🎯</div><div class="sk-title" data-lang="en">Strategy & Messaging</div><div class="sk-title" data-lang="es">Estrategia y Messaging</div><ul class="sk-list"><li data-lang="en">Product positioning & GTM</li><li data-lang="es">Posicionamiento y GTM</li><li data-lang="en">Messaging architecture</li><li data-lang="es">Arquitectura de messaging</li><li data-lang="en">Competitive analysis</li><li data-lang="es">Análisis competitivo</li><li data-lang="en">Sales enablement</li><li data-lang="es">Sales enablement</li></ul></div>
-      <div class="sk-card"><div class="sk-icon" style="background:#f0f4e8">✍️</div><div class="sk-title" data-lang="en">Copywriting & Content</div><div class="sk-title" data-lang="es">Copywriting y Contenido</div><ul class="sk-list"><li data-lang="en">Web copy (EN + ES)</li><li data-lang="es">Copy web (EN + ES)</li><li data-lang="en">Case studies</li><li data-lang="es">Casos de estudio</li><li data-lang="en">One-pagers & sales docs</li><li data-lang="es">One-pagers y docs de ventas</li><li data-lang="en">SEO content strategy</li><li data-lang="es">Estrategia de contenido SEO</li></ul></div>
-      <div class="sk-card"><div class="sk-icon" style="background:#e8f0f4">📊</div><div class="sk-title" data-lang="en">Web & Conversion</div><div class="sk-title" data-lang="es">Web y Conversión</div><ul class="sk-list"><li>HubSpot CMS & HubL</li><li data-lang="en">Conversion optimization</li><li data-lang="es">Optimización de conversión</li><li data-lang="en">UX writing</li><li data-lang="es">UX writing</li><li>Fullstory · GA4</li></ul></div>
-      <div class="sk-card"><div class="sk-icon" style="background:#f4e8f0">🔍</div><div class="sk-title">SEO</div><ul class="sk-list"><li data-lang="en">Keyword strategy</li><li data-lang="es">Estrategia de keywords</li><li data-lang="en">On-page optimization</li><li data-lang="es">Optimización on-page</li><li data-lang="en">EN + ES markets</li><li data-lang="es">Mercados EN + ES</li><li data-lang="en">Search intent mapping</li><li data-lang="es">Mapeo de intención</li></ul></div>
-      <div class="sk-card"><div class="sk-icon" style="background:#f4f0e8">🤖</div><div class="sk-title" data-lang="en">AI & Automation</div><div class="sk-title" data-lang="es">IA y Automatización</div><ul class="sk-list"><li data-lang="en">Advanced prompt engineering</li><li data-lang="es">Prompt engineering avanzado</li><li data-lang="en">GPT agents for marketing</li><li data-lang="es">Agentes GPT para marketing</li><li data-lang="en">Claude Code development</li><li data-lang="es">Desarrollo con Claude Code</li><li data-lang="en">Content automation systems</li><li data-lang="es">Sistemas de automatización</li></ul></div>
-      <div class="sk-card"><div class="sk-icon" style="background:#e8f4ec">🛠</div><div class="sk-title" data-lang="en">Tools</div><div class="sk-title" data-lang="es">Herramientas</div><ul class="sk-list"><li>HubSpot</li><li>Fullstory · GA4</li><li>Figma</li><li>Claude Code</li><li>Google Cloud · Vercel</li></ul></div>
-    </div>
-  </div>
-</section>
-
+<section id="sk">
+<div class="wrap">
+<div class="ov sr en-b">Capabilities</div><div class="ov sr es-b">Capacidades</div>
+<h2 class="st sr d1 en-b">The full <em>stack.</em></h2>
+<h2 class="st sr d1 es-b">El stack <em>completo.</em></h2>
+<div class="skg">
+<div class="skc sr"><div class="ski">🎯</div><div class="skt en-b">Strategy & Messaging</div><div class="skt es-b">Estrategia y Messaging</div><ul class="skl"><li class="en-li">Product positioning & GTM</li><li class="es-li">Posicionamiento y GTM</li><li class="en-li">Messaging architecture</li><li class="es-li">Arquitectura de messaging</li><li class="en-li">Competitive analysis</li><li class="es-li">Análisis competitivo</li><li class="en-li">Sales enablement</li><li class="es-li">Sales enablement</li></ul></div>
+<div class="skc sr d1"><div class="ski">✍️</div><div class="skt en-b">Copywriting & Content</div><div class="skt es-b">Copywriting y Contenido</div><ul class="skl"><li class="en-li">Web copy (EN + ES)</li><li class="es-li">Copy web (EN + ES)</li><li class="en-li">Case studies</li><li class="es-li">Casos de estudio</li><li class="en-li">SEO content strategy</li><li class="es-li">Estrategia SEO</li><li class="en-li">A/B copy variants</li><li class="es-li">Variantes A/B</li></ul></div>
+<div class="skc sr d2"><div class="ski">🌐</div><div class="skt en-b">Web & Conversion</div><div class="skt es-b">Web y Conversión</div><ul class="skl"><li>HubSpot CMS & HubL</li><li class="en-li">CRO & UX writing</li><li class="es-li">CRO y UX writing</li><li>Fullstory · GA4</li><li>HTML · CSS · JS</li></ul></div>
+<div class="skc sr d3"><div class="ski">🎨</div><div class="skt en-b">Branding & Design</div><div class="skt es-b">Branding y Diseño</div><ul class="skl"><li class="en-li">Brand identity systems</li><li class="es-li">Sistemas de identidad</li><li class="en-li">Visual guidelines</li><li class="es-li">Guías visuales</li><li class="en-li">Landing page design</li><li class="es-li">Diseño de landing pages</li><li>Figma</li></ul></div>
+<div class="skc sr d4"><div class="ski">🔍</div><div class="skt">SEO</div><ul class="skl"><li class="en-li">Keyword strategy</li><li class="es-li">Estrategia de keywords</li><li class="en-li">On-page optimization</li><li class="es-li">Optimización on-page</li><li class="en-li">EN + ES markets</li><li class="es-li">Mercados EN + ES</li></ul></div>
+<div class="skc sr d5"><div class="ski">🤖</div><div class="skt en-b">AI & Tools</div><div class="skt es-b">IA y Herramientas</div><ul class="skl"><li class="en-li">Prompt engineering</li><li class="es-li">Prompt engineering</li><li class="en-li">Claude Code dev</li><li class="es-li">Desarrollo Claude Code</li><li>Google Cloud · Vercel</li><li>HubSpot · Fullstory</li></ul></div>
+</div></div></section>
 <!-- CONTACT -->
-<section id="contact">
-  <div class="contact-inner">
-    <div class="contact-left reveal">
-      <div class="s-label" data-lang="en">Get in touch</div>
-      <div class="s-label" data-lang="es">Contáctame</div>
-      <h2 class="contact-title" data-lang="en">Let's build something <em>together.</em></h2>
-      <h2 class="contact-title" data-lang="es">Construyamos algo <em>juntos.</em></h2>
-      <p class="contact-sub" data-lang="en">Open to new opportunities in marketing, web strategy, and content. Let's talk about what you're building.</p>
-      <p class="contact-sub" data-lang="es">Abierta a nuevas oportunidades en marketing, estrategia web y contenido. Hablemos de lo que estás construyendo.</p>
-      <div class="c-links">
-        <a href="https://www.linkedin.com/in/danielatostadoc/" target="_blank" class="c-link">
-          <div class="c-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="rgba(250,247,242,.65)"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></div>
-          linkedin.com/in/danielatostadoc
-        </a>
-        <a href="mailto:danielatostado00@gmail.com" class="c-link">
-          <div class="c-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(250,247,242,.65)" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-          danielatostado00@gmail.com
-        </a>
-        <a href="tel:+523332584872" class="c-link">
-          <div class="c-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(250,247,242,.65)" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.63A2 2 0 012 .18h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg></div>
-          +52 333 258 4872
-        </a>
-      </div>
-    </div>
-    <div class="reveal">
-      <form class="contact-form" id="contactForm" action="https://formspree.io/f/xwpbqjvk" method="POST">
-        <div class="form-row">
-          <div class="form-field">
-            <label class="form-label" data-lang="en">Name</label>
-            <label class="form-label" data-lang="es">Nombre</label>
-            <input class="form-input" type="text" name="name" placeholder="Jane Smith" required>
-          </div>
-          <div class="form-field">
-            <label class="form-label">Email</label>
-            <input class="form-input" type="email" name="email" placeholder="jane@company.com" required>
-          </div>
-        </div>
-        <div class="form-field">
-          <label class="form-label" data-lang="en">Subject</label>
-          <label class="form-label" data-lang="es">Asunto</label>
-          <input class="form-input" type="text" name="subject" placeholder="Let's work together">
-        </div>
-        <div class="form-field">
-          <label class="form-label" data-lang="en">Message</label>
-          <label class="form-label" data-lang="es">Mensaje</label>
-          <textarea class="form-textarea" name="message" placeholder="Tell me about your project..." required></textarea>
-        </div>
-        <button type="submit" class="form-submit">
-          <span data-lang="en">Send message →</span>
-          <span data-lang="es">Enviar mensaje →</span>
-        </button>
-        <div class="form-success" id="formSuccess">
-          <span data-lang="en">✓ Message sent! I'll get back to you soon.</span>
-          <span data-lang="es">✓ ¡Mensaje enviado! Te respondo pronto.</span>
-        </div>
-      </form>
-    </div>
+<section id="ct">
+<div class="clay">
+<div>
+  <div class="ov sr en-b">Get in touch</div><div class="ov sr es-b">Contáctame</div>
+  <h2 class="ctit sr d1 en-b">Let's build something<br><em>great together.</em></h2>
+  <h2 class="ctit sr d1 es-b">Construyamos algo<br><em>increíble juntos.</em></h2>
+  <p class="csub sr d2 en-b">Open to new opportunities in marketing, web strategy, branding, and content.</p>
+  <p class="csub sr d2 es-b">Abierta a nuevas oportunidades en marketing, estrategia web, branding y contenido.</p>
+  <div class="cls sr d3">
+    <a href="https://www.linkedin.com/in/danielatostadoc/" target="_blank" class="cl">
+      <div class="ci"><svg width="14" height="14" viewBox="0 0 24 24" fill="rgba(240,236,228,.55)"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></div>
+      linkedin.com/in/danielatostadoc
+    </a>
+    <a href="mailto:danielatostado00@gmail.com" class="cl">
+      <div class="ci"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(240,236,228,.55)" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+      danielatostado00@gmail.com
+    </a>
+    <a href="tel:+523332584872" class="cl">
+      <div class="ci"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(240,236,228,.55)" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.63A2 2 0 012 .18h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg></div>
+      +52 333 258 4872
+    </a>
   </div>
-</section>
-
+</div>
+<div class="sr d2">
+  <form class="cform" id="cF" action="https://formspree.io/f/xwpbqjvk" method="POST">
+    <div class="fr">
+      <div class="ff"><label class="fl en-b">Name</label><label class="fl es-b">Nombre</label><input class="fi" type="text" name="name" placeholder="Jane Smith" required></div>
+      <div class="ff"><label class="fl">Email</label><input class="fi" type="email" name="email" placeholder="jane@company.com" required></div>
+    </div>
+    <div class="ff"><label class="fl en-b">Subject</label><label class="fl es-b">Asunto</label><input class="fi" type="text" name="subject" placeholder="Let's work together"></div>
+    <div class="ff"><label class="fl en-b">Message</label><label class="fl es-b">Mensaje</label><textarea class="ft" name="message" placeholder="Tell me about your project..." required></textarea></div>
+    <button type="submit" class="fb"><span class="en">Send message →</span><span class="es">Enviar mensaje →</span></button>
+    <div class="fok" id="fok"><span class="en">✓ Message sent! I'll be in touch soon.</span><span class="es">✓ ¡Mensaje enviado! Te contacto pronto.</span></div>
+  </form>
+</div>
+</div></section>
 <footer>
-  <span>© 2026 Daniela Tostado Contreras</span>
-  <span>Built with <a href="https://claude.ai" target="_blank">Claude</a> · Guadalajara, México</span>
+  <span>© 2026 DANIELA TOSTADO CONTRERAS</span>
+  <span><span class="en">BUILT WITH</span><span class="es">CONSTRUIDO CON</span> <a href="https://claude.ai" target="_blank">CLAUDE</a> · GUADALAJARA, MX</span>
 </footer>
-
 <script>
+// Cursor
+const C=document.getElementById('cur'),R=document.getElementById('curR');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;C.style.left=mx+'px';C.style.top=my+'px'});
+(function anim(){rx+=(mx-rx)*.1;ry+=(my-ry)*.1;R.style.left=rx+'px';R.style.top=ry+'px';requestAnimationFrame(anim)})();
+document.querySelectorAll('a,button,.pc,.svc,.skc,.astat').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{C.style.width='14px';C.style.height='14px';R.style.width='54px';R.style.height='54px'});
+  el.addEventListener('mouseleave',()=>{C.style.width='8px';C.style.height='8px';R.style.width='36px';R.style.height='36px'});
+});
+// Lang
 function setLang(l){
-  document.body.classList.toggle('es',l==='es');
-  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active',b.textContent.trim()===l.toUpperCase()));
+  document.body.className=l==='e'?'le':'ls';
+  document.querySelectorAll('.lb').forEach(b=>b.classList.toggle('active',b.textContent.trim()===(l==='e'?'EN':'ES')));
 }
-const io=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});
-},{threshold:.12});
-document.querySelectorAll('.reveal,.stagger').forEach(el=>io.observe(el));
-
-const barObs=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){
-      e.target.querySelectorAll('.p2-fill').forEach((f,i)=>{
-        setTimeout(()=>{f.style.transform=`scaleX(${f.dataset.w})`;},200+i*120);
-      });
-      barObs.unobserve(e.target);
-    }
-  });
-},{threshold:.3});
-document.querySelectorAll('.p2').forEach(el=>barObs.observe(el));
-
-const form=document.getElementById('contactForm');
-if(form){
-  form.addEventListener('submit',async e=>{
-    e.preventDefault();
-    const btn=form.querySelector('.form-submit');
-    const origText=btn.innerHTML;
-    btn.innerHTML='<span>Sending...</span>';
-    btn.disabled=true;
-    try{
-      const res=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}});
-      if(res.ok){form.reset();document.getElementById('formSuccess').style.display='block';btn.style.display='none';}
-      else{btn.innerHTML=origText;btn.disabled=false;}
-    }catch{btn.innerHTML=origText;btn.disabled=false;}
-  });
-}
-
-const navLinks=document.querySelectorAll('.nav-links a');
-const secObs=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){
-      navLinks.forEach(a=>{
-        const isActive=a.getAttribute('href')==='#'+e.target.id;
-        a.style.color=isActive?'var(--ink)':'';
-      });
-    }
-  });
-},{threshold:.4});
-document.querySelectorAll('section[id]').forEach(s=>secObs.observe(s));
+// Scroll reveal
+const io=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('v');io.unobserve(x.target)}})},{threshold:.08});
+document.querySelectorAll('.sr').forEach(el=>io.observe(el));
+// Nav active state
+document.querySelectorAll('section[id]').forEach(s=>{
+  new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)document.querySelectorAll('.nl a').forEach(a=>{a.classList.toggle('act',a.getAttribute('href')==='#'+x.target.id)})})},{threshold:.4}).observe(s);
+});
+// Form
+const form=document.getElementById('cF');
+if(form)form.addEventListener('submit',async e=>{
+  e.preventDefault();
+  const btn=form.querySelector('.fb');btn.disabled=true;btn.style.opacity='.6';
+  try{const r=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}});
+    if(r.ok){form.reset();document.getElementById('fok').style.display='block';btn.style.display='none';}
+    else{btn.disabled=false;btn.style.opacity='1';}}
+  catch{btn.disabled=false;btn.style.opacity='1';}
+});
 </script>
 </body>
 </html>
