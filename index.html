@@ -774,7 +774,6 @@ body::after{
   <div class="hg"></div>
   <div class="horb" id="orb"></div>
   <div class="h-ey"><span data-en-i>Marketing · Web · Content · Branding</span><span data-es-i>Marketing · Web · Contenido · Branding</span></div>
-  <div class="h-avail sr"><div class="h-avail-dot"></div><span class="h-avail-txt" data-en-i>Open to new opportunities</span><span class="h-avail-txt" data-es-i>Abierta a nuevas oportunidades</span></div>
   <div class="hn">
     <div class="hn-w"><span class="h-name">DANIELA</span></div>
     <div class="hn-w"><span class="h-name">TOSTADO</span></div>
@@ -1034,7 +1033,7 @@ body::after{
   </div>
 </div>
 <div class="erow sr-l d3">
-  <div><div class="eco">LeanMail</div><div class="eper">Earlier</div></div>
+  <div><div class="eco">LeanMail</div><div class="eper" data-en>Earlier</div><div class="eper" data-es>Antes</div></div>
   <div>
     <div class="etit" data-en>Marketing</div><div class="etit" data-es>Marketing</div>
     <p class="edesc" data-en>Email marketing, content production, and digital campaigns — building the messaging discipline that defines my work today.</p>
@@ -1704,7 +1703,33 @@ const pcardObs = new IntersectionObserver(entries => {
 }, {threshold: 0.15});
 document.querySelectorAll('.pcard').forEach(c => pcardObs.observe(c));
 
-// ── SCROLL PROGRESS BAR ──
+// ── ACTIVE NAV STATE — highlight current section ──
+const navLinks = document.querySelectorAll('.nl a[href^="#"]');
+const navSections = [...navLinks].map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+
+function setActiveNav() {
+  let current = navSections[0];
+  const scrollY = window.scrollY + 120; // offset for fixed nav
+  navSections.forEach(sec => {
+    if (sec.offsetTop <= scrollY) current = sec;
+  });
+  navLinks.forEach(a => {
+    a.classList.toggle('act', a.getAttribute('href') === '#' + current.id);
+  });
+}
+window.addEventListener('scroll', setActiveNav, {passive: true});
+setActiveNav(); // run once on load
+
+// ── SMOOTH SCROLL — all anchor links ──
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (!target) return;
+    e.preventDefault();
+    const offset = target.getBoundingClientRect().top + window.scrollY - 70;
+    window.scrollTo({top: offset, behavior: 'smooth'});
+  });
+});
 const scrollProg = document.getElementById('scroll-prog');
 window.addEventListener('scroll', () => {
   const pct = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100;
