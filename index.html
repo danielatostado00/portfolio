@@ -177,6 +177,10 @@ section{padding:7rem 3.5rem}
 .trait:hover{border-color:var(--acc);color:var(--acc);background:var(--acc-bg)}
 html[lang=en] .trait[data-en]{display:inline-flex!important}
 html[lang=es] .trait[data-es]{display:inline-flex!important}
+html[lang=en] .pcard-item[data-es]{display:none!important}
+html[lang=es] .pcard-item[data-en]{display:none!important}
+html[lang=en] .pcard-deliverable[data-es-i]{display:none!important}
+html[lang=es] .pcard-deliverable[data-en-i]{display:none!important}
 /* SERVICES — Sage */
 #svc{background:var(--c1);padding:8rem 0}
 #svc .wrap{max-width:1200px;margin:0 auto;padding:0 3.5rem}
@@ -587,13 +591,13 @@ footer{background:#0d1f0a;padding:1.4rem 3.5rem;display:flex;justify-content:spa
   display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start
 }
 .pcard-desc{
-  font-size:.88rem;color:rgba(212,240,212,.72);
+  font-size:.88rem;color:rgba(212,240,212,.82);
   line-height:1.88;font-weight:300
 }
 .pcard-list{display:flex;flex-direction:column;gap:.5rem}
 .pcard-item{
   display:flex;align-items:flex-start;gap:.65rem;
-  font-size:.78rem;color:rgba(212,240,212,.68);
+  font-size:.78rem;color:rgba(212,240,212,.78);
   font-family:'DM Mono',monospace;letter-spacing:.03em;
   padding:.5rem 0;border-bottom:1px solid rgba(244,239,230,.08)
 }
@@ -663,14 +667,6 @@ footer{background:#0d1f0a;padding:1.4rem 3.5rem;display:flex;justify-content:spa
   letter-spacing:.2em;text-transform:uppercase;color:var(--faint);white-space:nowrap;
   padding:1rem 0}
 
-/* ── HERO availability badge ── */
-.h-avail{
-  display:inline-flex;align-items:center;gap:.55rem;
-  background:rgba(45,122,58,.08);border:1px solid rgba(45,122,58,.22);
-  border-radius:30px;padding:.32rem .85rem;margin-bottom:2rem;width:fit-content
-}
-.h-avail-dot{width:6px;height:6px;border-radius:50%;background:var(--acc);animation:pulse 2s ease infinite;flex-shrink:0}
-.h-avail-txt{font-family:'DM Mono',monospace;font-size:.56rem;letter-spacing:.08em;text-transform:uppercase;color:var(--acc)}
 
 /* ── EXPERIENCE — refined hover + company accent ── */
 .erow:hover .eco{color:var(--acc)}
@@ -774,10 +770,10 @@ body::after{
 .reel-header{padding:7rem 3.5rem 3rem;display:flex;align-items:end;justify-content:space-between;gap:2rem;flex-wrap:wrap}
 .reel-hint{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);display:flex;align-items:center;gap:.5rem}
 .reel-hint::before{content:'';width:20px;height:1px;background:var(--faint)}
-.reel-track{display:flex;gap:16px;padding:0 3.5rem 5rem;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-ms-overflow-style:none;cursor:grab}
+.reel-track{display:flex;gap:16px;padding:0 3.5rem 2rem;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-ms-overflow-style:none;cursor:grab}
 .reel-track:active{cursor:grabbing}
 .reel-track::-webkit-scrollbar{display:none}
-.reel-card{min-width:520px;max-width:520px;border-radius:20px;overflow:hidden;scroll-snap-align:start;flex-shrink:0;position:relative}
+.reel-card{min-width:min(520px,88vw);max-width:min(520px,88vw);border-radius:20px;overflow:hidden;scroll-snap-align:start;flex-shrink:0;position:relative}
 .rc-head{padding:3rem 3rem 2rem;position:relative;min-height:200px;display:flex;flex-direction:column;justify-content:flex-end}
 .rc-head-1{background:#0d1f0a}
 .rc-head-2{background:#1a3d20}
@@ -808,9 +804,11 @@ body::after{
    MODULE 4 — SIGNAL WALL (Trusted by / Works with)
    Logos + credibility metrics in clean grid
    ══════════════════════════════════════════════ */
-#signal{background:var(--c1);padding:5rem 3.5rem;border-top:1px solid var(--b2)}
-.signal-top{text-align:center;margin-bottom:4rem}
-.signal-label{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--faint);margin-bottom:1.5rem;display:flex;align-items:center;justify-content:center;gap:.75rem}
+#signal{background:var(--c1);padding:3rem 3.5rem 4rem;border-top:1px solid var(--b2)}
+.signal-top{text-align:center;margin-bottom:2.5rem}
+.signal-label{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--faint);margin-bottom:1.5rem;align-items:center;justify-content:center;gap:.75rem}
+html[lang=en] .signal-label[data-en]{display:flex}
+html[lang=es] .signal-label[data-es]{display:flex}
 .signal-label::before,.signal-label::after{content:'';width:40px;height:1px;background:var(--b)}
 .signal-logos{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--b2);border:1px solid var(--b2);border-radius:12px;overflow:hidden}
 .sl{background:var(--c0);padding:2rem;display:flex;align-items:center;justify-content:center;transition:background .25s}
@@ -888,9 +886,12 @@ body::after{
     <li><a href="#proj"><span data-en-i>Work</span><span data-es-i>Proyectos</span></a></li>
     <li><a href="#ct"><span data-en-i>Contact</span><span data-es-i>Contacto</span></a></li>
   </ul>
-  <div class="lt">
-    <button class="lb on" onclick="setLang('en')">EN</button>
-    <button class="lb" onclick="setLang('es')">ES</button>
+  <div style="display:flex;align-items:center;gap:.6rem">
+    <div id="scroll-pct" style="font-family:'DM Mono',monospace;font-size:.58rem;font-weight:500;color:var(--mut);letter-spacing:.06em;border:1px solid var(--b);border-radius:20px;padding:.28rem .8rem;min-width:46px;text-align:center;opacity:0;transition:opacity .4s;background:transparent">0%</div>
+    <div class="lt">
+      <button class="lb on" onclick="setLang('en')">EN</button>
+      <button class="lb" onclick="setLang('es')">ES</button>
+    </div>
   </div>
 </nav>
 <section id="hero">
@@ -898,6 +899,7 @@ body::after{
 <div id="hero-blob2" style="position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(184,134,11,.06) 0%,transparent 70%);pointer-events:none;z-index:0;filter:blur(50px);bottom:-50px;right:10%;"></div>
   <div class="hg"></div>
   <div class="horb" id="orb"></div>
+  <div style="display:inline-flex;align-items:center;gap:.5rem;margin-bottom:1.5rem;opacity:0;animation:fup .6s .05s ease forwards"><span style="font-family:'DM Mono',monospace;font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;color:var(--acc);background:rgba(45,122,58,.07);border:1px solid rgba(45,122,58,.18);border-radius:20px;padding:.25rem .75rem">Guadalajara · MX</span><span style="font-family:'DM Mono',monospace;font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)">Open to work globally</span></div>
   <div class="h-ey"><span data-en-i>Marketing · Web · Content · Branding</span><span data-es-i>Marketing · Web · Contenido · Branding</span></div>
   <div class="hn">
     <div class="hn-w"><span class="h-name">DANIELA</span></div>
@@ -952,8 +954,8 @@ body::after{
 <!-- ══ MODULE: SIGNAL WALL ══ -->
 <section id="signal">
 <div class="signal-top">
-  <div class="signal-label" data-en-i>Built with and for</div>
-  <div class="signal-label" data-es-i>Construido con y para</div>
+  <div class="signal-label" data-en>Built with and for</div>
+  <div class="signal-label" data-es>Construido con y para</div>
 </div>
 <div class="signal-logos">
   <div class="sl"><span class="sl-name">Paystand</span></div>
@@ -965,7 +967,7 @@ body::after{
 <div class="signal-creds sr-modules">
   <div class="sc-card">
     <span class="sc-card-ico">📄</span>
-    <div class="sc-card-n">30+</div>
+    <div class="sc-card-n" id="sc-n1">0+</div>
     <div class="sc-card-l" data-en>Web pages built and optimized — from HubSpot modules to full landing page architecture.</div>
     <div class="sc-card-l" data-es>Páginas web construidas y optimizadas — desde módulos HubSpot hasta arquitectura de landing pages.</div>
     <div class="sc-card-ghost">30</div>
@@ -994,8 +996,13 @@ body::after{
   <div class="fs-left">
     <div class="fs-label" data-en-i>What I deliver</div>
     <div class="fs-label" data-es-i>Qué entrego</div>
-    <div class="fs-stem" data-en>Daniela<br>that <em>ships.</em></div>
+    <div class="fs-stem" data-en>Daniela<br>that <em id="fs-swap">ships.</em></div>
     <div class="fs-stem" data-es>Daniela<br>que <em>entrega.</em></div>
+    <div style="display:flex;gap:1.5rem;margin-top:2.5rem;flex-wrap:wrap;padding-top:1.5rem;border-top:1px solid rgba(212,240,212,.08)">
+      <div><div style="font-family:Syne,sans-serif;font-size:1.6rem;font-weight:800;color:#e8f5e4;letter-spacing:-.05em;line-height:1">4+</div><div style="font-size:.6rem;color:rgba(212,240,212,.3);letter-spacing:.12em;text-transform:uppercase;margin-top:.2rem;font-family:DM Mono,monospace" data-en-i>Years</div><div style="font-size:.6rem;color:rgba(212,240,212,.3);letter-spacing:.12em;text-transform:uppercase;margin-top:.2rem;font-family:DM Mono,monospace" data-es-i>Años</div></div>
+      <div><div style="font-family:Syne,sans-serif;font-size:1.6rem;font-weight:800;color:#e8f5e4;letter-spacing:-.05em;line-height:1">30+</div><div style="font-size:.6rem;color:rgba(212,240,212,.3);letter-spacing:.12em;text-transform:uppercase;margin-top:.2rem;font-family:DM Mono,monospace" data-en-i>Pages</div><div style="font-size:.6rem;color:rgba(212,240,212,.3);letter-spacing:.12em;text-transform:uppercase;margin-top:.2rem;font-family:DM Mono,monospace" data-es-i>Páginas</div></div>
+      <div><div style="font-family:Syne,sans-serif;font-size:1.6rem;font-weight:800;color:#e8f5e4;letter-spacing:-.05em;line-height:1">EN+ES</div><div style="font-size:.6rem;color:rgba(212,240,212,.3);letter-spacing:.12em;text-transform:uppercase;margin-top:.2rem;font-family:DM Mono,monospace">Bilingual</div></div>
+    </div>
   </div>
   <div class="fs-right">
 
@@ -1059,19 +1066,19 @@ body::after{
     <div class="imp-ghost">4</div>
   </div>
   <div class="imp-item sr-modules d1">
-    <div class="imp-n" id="imp-n2">32<span class="acc">+</span></div>
+    <div class="imp-n" id="imp-n2">0<span class="acc">+</span></div>
     <div class="imp-l" data-en>Pages rewritten in the Teampay acquisition rebrand. 7-person team. 6 weeks.</div>
     <div class="imp-l" data-es>Páginas reescritas en el rebranding de adquisición Teampay. 7 personas. 6 semanas.</div>
     <div class="imp-ghost">32</div>
   </div>
   <div class="imp-item sr-modules d2">
-    <div class="imp-n" id="imp-n3">53<span class="acc">K</span></div>
+    <div class="imp-n" id="imp-n3">0<span class="acc">K</span></div>
     <div class="imp-l" data-en>Monthly visits to Paystand.com. Funnel CR target: 0.61% → 0.83% in Q2 2026</div>
     <div class="imp-l" data-es>Visitas mensuales a Paystand.com. Objetivo CR: 0.61% → 0.83% en Q2 2026</div>
     <div class="imp-ghost">53K</div>
   </div>
   <div class="imp-item sr-modules d3">
-    <div class="imp-n" id="imp-n4">1<span class="acc">M+</span></div>
+    <div class="imp-n" id="imp-n4">0<span class="acc">M+</span></div>
     <div class="imp-l" data-en>Business network migrated across two enterprise products without downtime</div>
     <div class="imp-l" data-es>Red de negocios migrada entre dos productos enterprise sin tiempo de inactividad</div>
     <div class="imp-ghost">1M</div>
@@ -2090,8 +2097,8 @@ const cntObs = new IntersectionObserver(entries=>{
   entries.forEach(e=>{
     if(e.isIntersecting){ animateCounter(e.target); cntObs.unobserve(e.target); }
   });
-},{threshold:.8});
-document.querySelectorAll('.n[data-target], .a-kpi-n[data-target]').forEach(el=>cntObs.observe(el));
+},{threshold:.3});
+document.querySelectorAll('[data-target]').forEach(el=>{if(el.closest('#hero,footer')) return; cntObs.observe(el);});
 // scroll reveal — higher threshold for more dramatic reveal
 const io=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('v');io.unobserve(x.target)}})},{threshold:.12});
 document.querySelectorAll('.sr,.sr-l,.sr-r,.sr-s').forEach(el=>io.observe(el));
@@ -2167,6 +2174,20 @@ window.addEventListener('scroll', () => {
   if(scrollProg) scrollProg.style.width = Math.min(100, pct) + '%';
 }, {passive: true});
 
+// ── SCROLL % PILL ──
+const scrollPctEl = document.getElementById('scroll-pct');
+window.addEventListener('scroll', () => {
+  const pct = Math.round(window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100);
+  if(scrollPctEl) {
+    scrollPctEl.textContent = pct + '%';
+    scrollPctEl.style.opacity = pct > 2 ? '1' : '0';
+  }
+}, {passive: true});
+
+// ── SCROLL % PILL ──
+const _spe=document.getElementById('scroll-pct');
+window.addEventListener('scroll',()=>{const pct=Math.round(window.scrollY/(document.body.scrollHeight-window.innerHeight)*100);if(_spe){_spe.textContent=pct+'%';_spe.style.opacity=pct>2?'1':'0';}},{passive:true});
+
 // ── CURSOR TRAIL ──
 const trailCount = 8;
 const trailDots = [];
@@ -2238,43 +2259,17 @@ document.querySelectorAll('.pc[data-proj]').forEach(card => {
   });
 });
 
-// ── CONTACT TYPEWRITER — fixed: no content wipe on scroll ──
-let ctDone = false;
+// ── CONTACT — cursor blink effect only, no content manipulation ──
+// Title stays fully visible; we just add/remove a blinking cursor class
 const ctWatcher = new IntersectionObserver(entries => {
   entries.forEach(e => {
-    if(!e.isIntersecting || ctDone) return;
-    ctDone = true;
+    if(!e.isIntersecting) return;
     const lang = document.documentElement.lang;
     const el = document.getElementById(lang === 'es' ? 'ct-typed-es' : 'ct-typed-en');
     if(!el) return;
-    const raw = el.innerHTML;
-    // Only animate if content has multiple words (not already mid-render)
-    if(raw.trim().length < 3) return;
-    el.innerHTML = '';
-    el.style.borderRight = '2px solid var(--acc)';
-    el.style.paddingRight = '3px';
-    // Split preserving <br> and <em>...</em>
-    const tokens = [];
-    let buf = '', j = 0;
-    while(j < raw.length) {
-      if(raw.slice(j,j+4) === '<br>') { if(buf) tokens.push(buf); tokens.push('<br>'); buf=''; j+=4; }
-      else if(raw.slice(j,j+4) === '<em>') {
-        if(buf) tokens.push(buf); buf='';
-        const end = raw.indexOf('</em>',j);
-        tokens.push(raw.slice(j, end+5)); j = end+5;
-      } else { buf += raw[j]; j++; }
-    }
-    if(buf) tokens.push(buf);
-    let ti = 0, ci = 0;
-    function tick() {
-      if(ti >= tokens.length) { el.style.borderRight='none'; el.style.paddingRight='0'; return; }
-      const tok = tokens[ti];
-      if(tok === '<br>') { el.innerHTML += '<br>'; ti++; ci=0; setTimeout(tick,60); return; }
-      if(tok.startsWith('<em>')) { el.innerHTML += tok; ti++; ci=0; setTimeout(tick,40); return; }
-      if(ci < tok.length) { el.innerHTML += tok[ci++]; setTimeout(tick, 42); }
-      else { ti++; ci=0; setTimeout(tick,42); }
-    }
-    setTimeout(tick, 300);
+    el.classList.add('ctit-typed');
+    setTimeout(() => el.classList.remove('ctit-typed'), 2800);
+    ctWatcher.unobserve(e.target);
   });
 }, {threshold: 0.3});
 const ctSec = document.getElementById('ct');
@@ -2338,10 +2333,87 @@ const impObs = new IntersectionObserver(entries=>{
     impObs.unobserve(e.target);
   });
 }, {threshold: 0.5});
+// Signal creds counter animation
+(function(){
+  const scObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if(!e.isIntersecting) return;
+      const id = e.target.id;
+      if(id === 'sc-n1') {
+        let cur = 0, target = 30, steps = 40, duration = 1400;
+        const startTime = performance.now();
+        const eOut = t => 1 - Math.pow(1-t,3);
+        const tick = now => {
+          const t = Math.min((now-startTime)/duration, 1);
+          e.target.textContent = Math.floor(eOut(t)*target) + '+';
+          if(t<1) requestAnimationFrame(tick);
+          else e.target.textContent = '30+';
+        };
+        requestAnimationFrame(tick);
+      }
+      scObs.unobserve(e.target);
+    });
+  }, {threshold: 0.5});
+  const sc1 = document.getElementById('sc-n1');
+  if(sc1) scObs.observe(sc1);
+})();
+
 ['imp-n1','imp-n2','imp-n3','imp-n4'].forEach(id=>{
   const el = document.getElementById(id);
   if(el) impObs.observe(el);
 });
+
+// Feature strip word swap
+(function(){
+  const words = ['ships.','converts.','measures.','delivers.'];
+  let wi = 0;
+  const el = document.getElementById('fs-swap');
+  if(!el) return;
+  setInterval(()=>{
+    el.style.opacity='0';el.style.transform='translateY(-6px)';
+    el.style.transition='opacity .25s,transform .25s';
+    setTimeout(()=>{wi=(wi+1)%words.length;el.textContent=words[wi];
+      el.style.transform='translateY(6px)';
+      setTimeout(()=>{el.style.transform='none';el.style.opacity='1';},20);
+    },260);
+  },3000);
+})();
+// Tools init — set initial filter state
+(function(){
+  const initCat = 'strategy';
+  document.querySelectorAll('.tool-bubble').forEach(b=>{
+    const bc = b.dataset.cat;
+    if(bc === initCat || bc === 'all'){b.classList.add('lit');b.classList.remove('dim');}
+    else{b.classList.remove('lit');b.classList.add('dim');}
+  });
+})();
+// Reel auto-play
+(function(){
+  const rt = document.getElementById('reelTrack');
+  if(!rt) return;
+  let timer = null, isDragging = false;
+  const cardW = 520 + 16; // card + gap
+  let curIdx = 0;
+  function autoNext() {
+    curIdx = (curIdx + 1) % 4;
+    rt.scrollTo({left: curIdx * cardW, behavior: 'smooth'});
+  }
+  function start() { if(!isDragging) timer = setInterval(autoNext, 4500); }
+  function stop() { clearInterval(timer); }
+  rt.addEventListener('mouseenter', stop);
+  rt.addEventListener('mouseleave', start);
+  rt.addEventListener('mousedown', ()=>{isDragging=true; stop();});
+  window.addEventListener('mouseup', ()=>{isDragging=false; start();});
+  // Start when reel enters viewport
+  new IntersectionObserver(entries=>{
+    entries.forEach(e=>{ if(e.isIntersecting) start(); else stop(); });
+  },{threshold:.3}).observe(rt);
+})();
+// Feature strip word swap
+(function(){var w=['ships.','converts.','measures.','delivers.'];var i=0;var el=document.getElementById('fs-swap');if(!el)return;setInterval(function(){el.style.opacity='0';el.style.transform='translateY(-6px)';el.style.transition='opacity .25s,transform .25s';setTimeout(function(){i=(i+1)%w.length;el.textContent=w[i];el.style.transform='translateY(6px)';setTimeout(function(){el.style.transform='none';el.style.opacity='1';},20);},260);},3000);})();
+
+// Reel auto-play
+(function(){var rt=document.getElementById('reelTrack');if(!rt)return;var timer=null,drag=false,idx=0;function next(){idx=(idx+1)%4;rt.scrollTo({left:idx*(520+16),behavior:'smooth'});}function start(){if(!drag)timer=setInterval(next,4500);}function stop(){clearInterval(timer);}rt.addEventListener('mouseenter',stop);rt.addEventListener('mouseleave',start);rt.addEventListener('mousedown',function(){drag=true;stop();});window.addEventListener('mouseup',function(){drag=false;start();});new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting)start();else stop();});},{threshold:.3}).observe(rt);})();
 
 // sr-modules scroll reveal
 const modObs = new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('v');modObs.unobserve(x.target)}})},{threshold:.1});
