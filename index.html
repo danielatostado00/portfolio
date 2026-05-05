@@ -1215,7 +1215,7 @@ html[lang=es] .signal-label[data-es]{display:flex}
 nav.sc{background:rgba(244,246,241,.96)!important;border-bottom-color:var(--b2)!important}
 
 /* ── MOBILE NAV HAMBURGER ── */
-.nav-ham{display:none;flex-direction:column;gap:4px;cursor:pointer;padding:.4rem;z-index:101;background:none;border:none}
+.nav-ham{display:none;flex-direction:column;gap:4px;cursor:pointer;padding:.35rem .4rem;z-index:101;background:none;border:none;flex-shrink:0}
 .nav-ham span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;transition:all .28s cubic-bezier(.22,1,.36,1)}
 .nav-ham.open span:nth-child(1){transform:translateY(6px) rotate(45deg)}
 .nav-ham.open span:nth-child(2){opacity:0;transform:scaleX(0)}
@@ -1240,14 +1240,26 @@ nav.sc{background:rgba(244,246,241,.96)!important;border-bottom-color:var(--b2)!
   padding:.4rem 1rem;border-radius:8px;margin-top:1rem;
 }
 .nav-drawer .nav-drawer-lang{display:flex;gap:.5rem;margin-top:1rem}
-.nav-drawer .nd-lb{font-family:'DM Mono',monospace;font-size:.7rem;letter-spacing:.1em;
-  padding:.3rem .7rem;border:1px solid var(--b);border-radius:4px;cursor:pointer;color:var(--mut)}
-.nav-drawer .nd-lb.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.nav-drawer .nav-drawer-lang{
+  display:flex;background:rgba(45,122,58,.08);border:1px solid rgba(45,122,58,.2);
+  border-radius:10px;padding:3px;gap:3px;
+}
+.nav-drawer .nd-lb{
+  font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.12em;font-weight:600;
+  padding:.5rem 1.4rem;border-radius:7px;border:none;
+  cursor:pointer;color:rgba(30,50,30,.45);background:transparent;
+  transition:background .22s,color .22s;
+}
+.nav-drawer .nd-lb.on{
+  background:#2d7a3a;color:#fff;
+  box-shadow:0 1px 4px rgba(45,122,58,.3);
+}
+.nav-drawer .nd-lb:hover:not(.on){color:rgba(30,50,30,.75)}
 @media(max-width:700px){
-  .nav-ham{display:flex}
+  .nav-ham{display:flex;margin-left:auto}
   .nl{display:none!important}
 }
-@media(max-width:700px){.nav-wp-btn{display:none}.scroll-pct{display:none}#scroll-pct{display:none}}
+@media(max-width:700px){.nav-wp-btn{display:none}#scroll-pct{display:none}.lt{display:none!important}}
 @media(max-width:700px){.fs-inner{grid-template-columns:1fr;min-height:auto}.fs-left{height:auto;position:relative;padding:2.5rem 1.5rem 1.5rem}.fs-row{min-height:auto;padding:2rem 1.5rem}.fs-stem{font-size:clamp(2.2rem,10vw,3.5rem)}}
 </style>
 </head>
@@ -1264,9 +1276,6 @@ nav.sc{background:rgba(244,246,241,.96)!important;border-bottom-color:var(--b2)!
     <li><a href="#proj"><span data-en-i>Work</span><span data-es-i>Proyectos</span></a></li>
     <li><a href="#ct"><span data-en-i>Contact</span><span data-es-i>Contacto</span></a></li>
   </ul>
-  <button class="nav-ham" id="navHam" aria-label="Menu" onclick="toggleNav()" style="display:none">
-    <span></span><span></span><span></span>
-  </button>
   <div style="display:flex;align-items:center;gap:.6rem">
     <a href="#wcrd" class="nav-wp-btn" aria-label="Waypoint section"><span class="nav-wp-way">way</span><span class="nav-wp-pt">point</span></a>
     <div id="scroll-pct" style="font-family:'DM Mono',monospace;font-size:.58rem;font-weight:500;color:var(--mut);letter-spacing:.06em;border:1px solid var(--b);border-radius:20px;padding:.28rem .8rem;min-width:46px;text-align:center;opacity:0;transition:opacity .4s;background:transparent">0%</div>
@@ -1275,6 +1284,9 @@ nav.sc{background:rgba(244,246,241,.96)!important;border-bottom-color:var(--b2)!
       <button class="lb" onclick="setLang('es')">ES</button>
     </div>
   </div>
+  <button class="nav-ham" id="navHam" aria-label="Menu" onclick="toggleNav()" style="display:none">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 <!-- Mobile nav drawer -->
 <div class="nav-drawer" id="navDrawer">
@@ -1285,8 +1297,8 @@ nav.sc{background:rgba(244,246,241,.96)!important;border-bottom-color:var(--b2)!
   <a href="#wcrd" onclick="closeNav()">waypoint ↗</a>
   <a href="#ct" onclick="closeNav()"><span data-en-i>Contact</span><span data-es-i>Contacto</span></a>
   <div class="nav-drawer-lang">
-    <div class="nd-lb on" onclick="setLang('en');closeNav()">EN</div>
-    <div class="nd-lb" onclick="setLang('es');closeNav()">ES</div>
+    <button class="nd-lb" id="ndLbEn" onclick="setLang('en');syncDrawerLang()">EN</button>
+    <button class="nd-lb" id="ndLbEs" onclick="setLang('es');syncDrawerLang()">ES</button>
   </div>
 </div>
 <section id="hero">
@@ -3087,6 +3099,14 @@ function filterTools(cat, el) {
 
 
 // Mobile nav toggle
+// Sync drawer lang pills with current page lang
+function syncDrawerLang(){
+  const lang = document.documentElement.lang;
+  const en = document.getElementById('ndLbEn');
+  const es = document.getElementById('ndLbEs');
+  if(en) en.classList.toggle('on', lang === 'en');
+  if(es) es.classList.toggle('on', lang === 'es');
+}
 function toggleNav(){
   const ham = document.getElementById('navHam');
   const drawer = document.getElementById('navDrawer');
@@ -3094,6 +3114,7 @@ function toggleNav(){
   ham.classList.toggle('open', !isOpen);
   drawer.classList.toggle('open', !isOpen);
   document.body.style.overflow = isOpen ? '' : 'hidden';
+  if(!isOpen) syncDrawerLang();
 }
 function closeNav(){
   const ham = document.getElementById('navHam');
