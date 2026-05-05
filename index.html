@@ -881,6 +881,69 @@ html[lang=es] .signal-label[data-es]{display:flex}
    ══════════════════════════════════════════════ */
 .sr-modules{opacity:1;transform:none}
 .sr-modules.v{opacity:1;transform:none}
+
+/* ── WAYPOINT SCREEN 1 additions ── */
+.ws1-btn-primary{background:var(--wp-gold);color:white!important}
+.ws1-form-row{display:flex;flex-wrap:wrap;gap:4px;margin-top:.5rem;align-items:center}
+.ws1-form-chip{font-size:.52rem;padding:.22rem .5rem;background:rgba(255,255,255,.12);color:rgba(255,255,255,.75);border-radius:4px;white-space:nowrap}
+.ws1-create-btn{font-size:.52rem;padding:.28rem .65rem;background:var(--wp-gold);color:white;border-radius:4px;font-weight:700;white-space:nowrap;margin-left:auto}
+/* ── WAYPOINT SCREEN 2/3 additions ── */
+.ws3-summary-bar{display:grid;grid-template-columns:repeat(4,1fr);background:white;border-bottom:1px solid rgba(30,45,61,.08)}
+.ws3-sum-item{padding:.5rem .4rem;text-align:center;border-right:1px solid rgba(30,45,61,.06)}
+.ws3-sum-item:last-child{border-right:none}
+.ws3-sum-n{font-family:'Syne',sans-serif;font-size:.72rem;font-weight:800;color:#1e2d3d;letter-spacing:-.03em;line-height:1}
+.ws3-sum-l{font-size:.42rem;color:rgba(30,45,61,.4);text-transform:uppercase;letter-spacing:.06em;margin-top:.1rem}
+.ws3-day-tabs{display:flex;gap:2px;padding:.4rem .75rem .3rem;overflow-x:auto;scrollbar-width:none;border-bottom:1px solid rgba(30,45,61,.06);background:white}
+.ws3-tab{font-size:.48rem;padding:.22rem .5rem;border-radius:20px;white-space:nowrap;color:rgba(30,45,61,.45);cursor:default}
+.ws3-tab.active{background:var(--wp-navy);color:white}
+.ws3-day-title{font-size:.58rem;font-weight:600;color:#1e2d3d;padding:.5rem 0 .1rem;letter-spacing:-.01em}
+.ws3-day-theme{font-size:.5rem;color:rgba(30,45,61,.4);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.4rem}
+.ws3-act-item{display:grid;grid-template-columns:16px 1fr auto;gap:5px;align-items:start;padding:.45rem 0;border-bottom:1px solid rgba(30,45,61,.05)}
+.ws3-act-num{width:16px;height:16px;border-radius:50%;background:var(--wp-gold);color:white;font-size:.5rem;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.ws3-act-name{font-size:.6rem;font-weight:700;color:#1e2d3d;margin-bottom:.15rem;letter-spacing:-.01em}
+.ws3-act-desc{font-size:.5rem;color:rgba(30,45,61,.5);line-height:1.4;margin-bottom:.2rem}
+.ws3-act-tags{display:flex;gap:3px;flex-wrap:wrap}
+.ws3-tag{font-size:.44rem;padding:.12rem .38rem;background:rgba(30,45,61,.06);color:rgba(30,45,61,.6);border-radius:3px}
+.ws3-tag-food{background:rgba(201,146,42,.1);color:#9a6e1a}
+.ws3-tag-act{background:rgba(30,45,61,.08);color:#1e2d3d}
+.ws3-tag-free{background:rgba(40,200,64,.12);color:#1a6e2a}
+.ws3-act-time{font-size:.52rem;color:rgba(30,45,61,.5);font-family:'DM Mono',monospace;white-space:nowrap;padding-top:1px}
+.ws3-top-chip{font-size:.46rem;padding:.18rem .44rem;background:rgba(30,45,61,.07);color:rgba(30,45,61,.5);border-radius:4px;white-space:nowrap;cursor:default}
+.ws3-chip-active{background:var(--wp-navy);color:white}
+/* ── WAYPOINT MAP screen ── */
+.ws-map-area{flex:1;overflow:hidden;position:relative}
+.ws-map-legend{display:flex;flex-direction:column;gap:3px;padding:.4rem .6rem;background:white;border-top:1px solid rgba(30,45,61,.08)}
+.ws-map-leg-item{display:flex;align-items:center;gap:4px;font-size:.48rem;color:rgba(30,45,61,.65)}
+.ws-map-pin-dot{width:7px;height:7px;border-radius:50%;background:var(--wp-gold);flex-shrink:0}
+/* ── WAYPOINT BUDGET screen ── */
+.ws-budget-body{padding:.5rem .75rem}
+.ws-budget-title{font-size:.52rem;font-weight:700;color:rgba(30,45,61,.45);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem}
+.ws-budget-row{display:flex;align-items:center;justify-content:space-between;background:white;border-radius:6px;padding:.5rem .6rem;margin-bottom:.35rem}
+.ws-brow-name{font-size:.58rem;font-weight:600;color:#1e2d3d}
+.ws-brow-sub{font-size:.46rem;color:rgba(30,45,61,.4);margin-top:.1rem}
+.ws-brow-amt{font-family:'Syne',sans-serif;font-size:.8rem;font-weight:800;color:#1e2d3d;letter-spacing:-.03em}
+.ws-budget-total{display:flex;justify-content:space-between;align-items:center;padding:.4rem .6rem;border-top:1px solid rgba(30,45,61,.1);font-size:.56rem;font-weight:600;color:rgba(30,45,61,.6);margin-top:.2rem}
+.ws-budget-total-amt{font-family:'Syne',sans-serif;font-size:.9rem;font-weight:800;color:var(--wp-gold);letter-spacing:-.03em}
+.ws-bday-row{display:flex;align-items:center;gap:.4rem;margin-bottom:.3rem;font-size:.5rem;color:rgba(30,45,61,.6)}
+.ws-bday-row>span:first-child{min-width:70px;white-space:nowrap}
+.ws-bday-bar{flex:1;height:4px;background:rgba(30,45,61,.1);border-radius:2px;overflow:hidden}
+.ws-bday-fill{height:100%;background:var(--wp-gold);border-radius:2px}
+.ws-bday-row>span:last-child{font-weight:700;color:#1e2d3d;min-width:28px;text-align:right}
+/* ── WAYPOINT WEATHER screen ── */
+.ws-weather-body{padding:.5rem .75rem}
+.ws-weather-city{font-size:.58rem;font-weight:700;color:#1e2d3d;letter-spacing:-.01em;margin-bottom:.5rem}
+.ws-weather-main{display:flex;gap:.6rem;align-items:flex-start;background:white;border-radius:8px;padding:.6rem;margin-bottom:.5rem}
+.ws-weather-ico{font-size:1.5rem;flex-shrink:0}
+.ws-weather-temp{font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;color:#1e2d3d;letter-spacing:-.04em;line-height:1}
+.ws-weather-feel{font-size:.48rem;color:rgba(30,45,61,.5);margin-top:.15rem}
+.ws-weather-desc{font-size:.48rem;color:rgba(30,45,61,.55);line-height:1.45;margin-top:.25rem;max-width:160px}
+.ws-weather-days{display:grid;grid-template-columns:repeat(5,1fr);gap:3px}
+.ws-wday{background:white;border-radius:6px;padding:.4rem .3rem;text-align:center}
+.ws-wday-name{font-size:.42rem;color:rgba(30,45,61,.5);letter-spacing:.04em;text-transform:uppercase;margin-bottom:.2rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ws-wday-ico{font-size:.9rem;margin-bottom:.2rem}
+.ws-wday-temp{font-size:.5rem;font-weight:700;color:#1e2d3d;margin-bottom:.15rem}
+.ws-wday-note{font-size:.4rem;color:rgba(30,45,61,.4);line-height:1.3}
+
 </style>
 </head>
 <body>
@@ -1546,24 +1609,24 @@ html[lang=es] .signal-label[data-es]{display:flex}
 </div>
 
 </div>
-<!-- WAYPOINT — bone white, full-width, navigating screens -->
+<!-- WAYPOINT — full showcase, 5 real screens, bilingual -->
 <div class="wfeat sr-s" id="wcrd">
   <div class="wfeat-l">
     <div>
       <div class="wf-badge">
         <span class="wf-badge-dot"></span>
         <span class="wf-badge-txt" data-en-i>Personal project · Live on Vercel</span>
-        <span class="wf-badge-txt" data-es-i>Proyecto personal · Live en Vercel</span>
+        <span class="wf-badge-txt" data-es-i>Proyecto personal · En vivo en Vercel</span>
       </div>
       <div class="wf-logo"><span class="way">way</span><span class="pt">point</span></div>
-      <p class="wf-desc" data-en>A full-stack AI travel planning app built from scratch using Claude Code — trip library, real-time budgets, AI itineraries, and a 4-agent development setup on Google Cloud + Vercel.</p>
-      <p class="wf-desc" data-es>App de planeación de viajes con IA construida desde cero con Claude Code — biblioteca de viajes, presupuestos en tiempo real, itinerarios con IA y setup de 4 agentes en Google Cloud + Vercel.</p>
+      <p class="wf-desc" data-en>A full-stack AI travel planning app built from scratch using Claude Code — real-time AI itineraries, budget breakdowns, weather by day, and a 4-agent development setup on Google Cloud + Vercel.</p>
+      <p class="wf-desc" data-es>App de planeación de viajes con IA construida desde cero con Claude Code — itinerarios en tiempo real, desglose de presupuesto, clima por día y setup de 4 agentes en Google Cloud + Vercel.</p>
     </div>
     <div class="wf-meta">
       <div class="wf-stats">
         <div class="wf-stat"><div class="n">4</div><div class="l" data-en-i>Claude Code agents</div><div class="l" data-es-i>Agentes Claude Code</div></div>
-        <div class="wf-stat"><div class="n">2</div><div class="l" data-en-i>Languages supported</div><div class="l" data-es-i>Idiomas soportados</div></div>
-        <div class="wf-stat"><div class="n">∞</div><div class="l" data-en-i>Destinations possible</div><div class="l" data-es-i>Destinos posibles</div></div>
+        <div class="wf-stat"><div class="n">5</div><div class="l" data-en-i>App screens</div><div class="l" data-es-i>Pantallas</div></div>
+        <div class="wf-stat"><div class="n">∞</div><div class="l" data-en-i>Destinations</div><div class="l" data-es-i>Destinos</div></div>
       </div>
       <div class="wf-pills">
         <span class="wf-pill">Claude Code</span>
@@ -1579,7 +1642,6 @@ html[lang=es] .signal-label[data-es]{display:flex}
   </div>
   <div class="wfeat-r">
     <div class="wbrowser" id="wbrowser">
-      <!-- Browser chrome -->
       <div class="wb-chrome">
         <div class="wb-dots">
           <div class="wb-dot" style="background:#ff6058"></div>
@@ -1591,119 +1653,351 @@ html[lang=es] .signal-label[data-es]{display:flex}
           <span class="wb-url">waypoint-henna.vercel.app</span>
         </div>
       </div>
-      <!-- Screens container -->
       <div class="wb-screens">
-        <!-- Screen 1: Home -->
+
+        <!-- SCREEN 1: HOME — formulario de creación -->
         <div class="wb-screen ws1 ws-active" id="wscreen-0">
-          <div class="wb-screen-label" data-en-i>Home</div>
-          <div class="wb-screen-label" data-es-i>Inicio</div>
-          <div class="ws1-nav">
-            <div class="ws1-logo"><span class="way">way</span><span class="pt">point</span></div>
-            <div class="ws1-btn" data-en-i>Mis viajes</div>
-            <div class="ws1-btn" data-es-i>Mis viajes</div>
-          </div>
-          <div class="ws1-body">
-            <div class="ws1-label" data-en-i>Tu asistente de viajes con IA</div>
-            <div class="ws1-label" data-es-i>Tu asistente de viajes con IA</div>
-            <div class="ws1-h">
-              <span data-en-i>Plan your next</span>
-              <span data-es-i>Planea tu próxima</span>
-              <em class="ws1-italic" data-en-i>adventure.</em>
-              <em class="ws1-italic" data-es-i>aventura.</em>
-            </div>
-            <div class="ws1-sub" data-en-i>Waypoint builds your full itinerary instantly.</div>
-            <div class="ws1-sub" data-es-i>Waypoint construye tu itinerario completo al instante.</div>
-            <div class="ws1-bubbles">
-              <div class="ws1-bubble">🗼<div class="ws1-bub-lbl">Paris</div></div>
-              <div class="ws1-bubble">⛩<div class="ws1-bub-lbl">Tokio</div></div>
-              <div class="ws1-bubble">🏛<div class="ws1-bub-lbl">Roma</div></div>
-              <div class="ws1-bubble">🗽<div class="ws1-bub-lbl">NY</div></div>
-              <div class="ws1-bubble">🌴<div class="ws1-bub-lbl">Bali</div></div>
-              <div class="ws1-bubble">🌮<div class="ws1-bub-lbl">CDMX</div></div>
-            </div>
-            <div class="ws1-input" data-en-i>Ej: Quiero ir a Roma 5 días, me gusta el arte y la gastronomía...</div>
-            <div class="ws1-input" data-es-i>Ej: Quiero ir a Roma 5 días, me gusta el arte y la gastronomía...</div>
-          </div>
-        </div>
-        <!-- Screen 2: Mis Viajes -->
-        <div class="wb-screen ws2" id="wscreen-1">
-          <div class="wb-screen-label" data-en-i>My Trips</div>
-          <div class="wb-screen-label" data-es-i>Mis Viajes</div>
-          <div class="ws2-nav">
-            <div class="ws2-title" data-en-i>✈ Mis Viajes</div>
-            <div class="ws2-title" data-es-i>✈ Mis Viajes</div>
-            <div class="ws2-add">+</div>
-          </div>
-          <div class="ws2-body">
-            <div class="ws2-trip">
-              <div class="ws2-flag">🇯🇵</div>
-              <div>
-                <div class="ws2-trip-name" data-en-i>Tokyo & Kyoto · 10 days</div>
-                <div class="ws2-trip-name" data-es-i>Tokyo y Kyoto · 10 días</div>
-                <div class="ws2-trip-date">Jun 14 – Jun 24, 2025</div>
+          <div class="wb-screen-label" data-en-i>Home — Trip Builder</div>
+          <div class="wb-screen-label" data-es-i>Inicio — Crear viaje</div>
+          <div style="background:#1e2d3d;height:100%;display:flex;flex-direction:column">
+            <div class="ws1-nav">
+              <div class="ws1-logo"><span class="way">way</span><span class="pt">point</span></div>
+              <div style="display:flex;gap:6px">
+                <div class="ws1-btn" data-en-i>My trips</div>
+                <div class="ws1-btn" data-es-i>Mis viajes</div>
+                <div class="ws1-btn ws1-btn-primary" data-en-i>Sign in</div>
+                <div class="ws1-btn ws1-btn-primary" data-es-i>Iniciar sesión</div>
               </div>
-              <div class="ws2-pill active" data-en-i>UPCOMING</div>
-              <div class="ws2-pill active" data-es-i>PRÓXIMO</div>
             </div>
-            <div class="ws2-trip">
-              <div class="ws2-flag">🇮🇹</div>
-              <div>
-                <div class="ws2-trip-name" data-en-i>Rome & Amalfi · 7 days</div>
-                <div class="ws2-trip-name" data-es-i>Roma y Amalfi · 7 días</div>
-                <div class="ws2-trip-date">Apr 2 – Apr 9, 2025</div>
+            <div class="ws1-body">
+              <div class="ws1-label" data-en-i>Your AI travel assistant</div>
+              <div class="ws1-label" data-es-i>Tu asistente de viajes con IA</div>
+              <div class="ws1-h">
+                <span data-en-i>Plan your next</span>
+                <span data-es-i>Planea tu próxima</span>
+                <em class="ws1-italic" data-en-i>adventure.</em>
+                <em class="ws1-italic" data-es-i>aventura.</em>
               </div>
-              <div class="ws2-pill done" data-en-i>DONE</div>
-              <div class="ws2-pill done" data-es-i>HECHO</div>
-            </div>
-            <div class="ws2-trip">
-              <div class="ws2-flag">🇲🇽</div>
-              <div>
-                <div class="ws2-trip-name" data-en-i>CDMX Weekend</div>
-                <div class="ws2-trip-name" data-es-i>CDMX fin de semana</div>
-                <div class="ws2-trip-date">Mar 22 – Mar 24, 2025</div>
+              <div class="ws1-sub" data-en-i>Waypoint builds your complete itinerary instantly.</div>
+              <div class="ws1-sub" data-es-i>Waypoint construye tu itinerario completo al instante.</div>
+              <div class="ws1-bubbles">
+                <div class="ws1-bubble">🗼<div class="ws1-bub-lbl">París</div></div>
+                <div class="ws1-bubble">⛩<div class="ws1-bub-lbl">Tokio</div></div>
+                <div class="ws1-bubble">🏛<div class="ws1-bub-lbl">Roma</div></div>
+                <div class="ws1-bubble">🗽<div class="ws1-bub-lbl">NY</div></div>
+                <div class="ws1-bubble">🌴<div class="ws1-bub-lbl">Bali</div></div>
+                <div class="ws1-bubble">🌮<div class="ws1-bub-lbl">CDMX</div></div>
               </div>
-              <div class="ws2-pill done" data-en-i>DONE</div>
-              <div class="ws2-pill done" data-es-i>HECHO</div>
+              <div class="ws1-input" data-en-i>E.g.: I want to go to Rome for 5 days, I love art and food...</div>
+              <div class="ws1-input" data-es-i>Ej: Quiero ir a Roma 5 días, me gusta el arte y la gastronomía...</div>
+              <div class="ws1-form-row">
+                <div class="ws1-form-chip" data-en-i>📅 Jun 4 – Jun 9</div>
+                <div class="ws1-form-chip" data-es-i>📅 4 Jun – 9 Jun</div>
+                <div class="ws1-form-chip">👥 2</div>
+                <div class="ws1-form-chip">USD $</div>
+                <div class="ws1-create-btn" data-en-i>✦ Create my itinerary</div>
+                <div class="ws1-create-btn" data-es-i>✦ Crear mi itinerario</div>
+              </div>
             </div>
           </div>
         </div>
-        <!-- Screen 3: Itinerary detail -->
-        <div class="wb-screen ws3" id="wscreen-2">
-          <div class="wb-screen-label" data-en-i>Itinerary</div>
-          <div class="wb-screen-label" data-es-i>Itinerario</div>
-          <div class="ws3-nav">
-            <div class="ws3-back">←</div>
-            <div class="ws3-nav-title" data-en-i>Tokyo & Kyoto</div>
-            <div class="ws3-nav-title" data-es-i>Tokyo y Kyoto</div>
-          </div>
-          <div class="ws3-hero">
-            <div class="ws3-dest-ico">🇯🇵</div>
-            <div>
-              <div class="ws3-dest-name" data-en-i>Tokyo & Kyoto · 10 days</div>
-              <div class="ws3-dest-name" data-es-i>Tokyo y Kyoto · 10 días</div>
-              <div class="ws3-dest-meta" data-en-i>Jun 14 · AI-generated itinerary</div>
-              <div class="ws3-dest-meta" data-es-i>Jun 14 · Itinerario generado con IA</div>
+
+        <!-- SCREEN 2: ITINERARY — días con actividades -->
+        <div class="wb-screen ws3" id="wscreen-1">
+          <div class="wb-screen-label" data-en-i>Itinerary — Day by Day</div>
+          <div class="wb-screen-label" data-es-i>Itinerario — Día a día</div>
+          <div style="background:#f5f3ef;height:100%;overflow:hidden">
+            <div class="ws3-nav">
+              <div style="font-family:'Syne',sans-serif;font-size:.65rem;font-weight:800;color:#1e2d3d"><span style="color:#c9922a">way</span>point</div>
+              <div style="display:flex;gap:4px;align-items:center">
+                <div class="ws3-top-chip">5 <span data-en-i>days</span><span data-es-i>días</span></div>
+                <div class="ws3-top-chip">Tokyo</div>
+                <div class="ws3-top-chip">👥 2</div>
+              </div>
             </div>
-          </div>
-          <div class="ws3-body">
-            <div class="ws3-day">
-              <div class="ws3-day-head" data-en-i>Day 1 — Arrival & Shinjuku</div>
-              <div class="ws3-day-head" data-es-i>Día 1 — Llegada y Shinjuku</div>
-              <div class="ws3-item"><span class="ws3-time">09:00</span><span class="ws3-act" data-en-i>Arrive Narita, check in hotel</span><span class="ws3-act" data-es-i>Llegada a Narita, check in hotel</span></div>
-              <div class="ws3-item"><span class="ws3-time">14:00</span><span class="ws3-act" data-en-i>Shinjuku Gyoen National Garden</span><span class="ws3-act" data-es-i>Jardín Nacional Shinjuku Gyoen</span></div>
-              <div class="ws3-item"><span class="ws3-time">19:00</span><span class="ws3-act" data-en-i>Ramen dinner in Kabukicho</span><span class="ws3-act" data-es-i>Cena de ramen en Kabukicho</span></div>
+            <div class="ws3-summary-bar">
+              <div class="ws3-sum-item"><div class="ws3-sum-n">5</div><div class="ws3-sum-l" data-en-i>Days</div><div class="ws3-sum-l" data-es-i>Días</div></div>
+              <div class="ws3-sum-item"><div class="ws3-sum-n">45</div><div class="ws3-sum-l" data-en-i>Activities</div><div class="ws3-sum-l" data-es-i>Actividades</div></div>
+              <div class="ws3-sum-item"><div class="ws3-sum-n">$520</div><div class="ws3-sum-l" data-en-i>Activ./person</div><div class="ws3-sum-l" data-es-i>Activ./persona</div></div>
+              <div class="ws3-sum-item"><div class="ws3-sum-n">$2,100</div><div class="ws3-sum-l" data-en-i>Flights+Hotel</div><div class="ws3-sum-l" data-es-i>Vuelos+Hotel</div></div>
+            </div>
+            <div class="ws3-day-tabs">
+              <div class="ws3-tab active" data-en-i>Thu Jun 4</div><div class="ws3-tab active" data-es-i>Jue 4 Jun</div>
+              <div class="ws3-tab" data-en-i>Fri Jun 5</div><div class="ws3-tab" data-es-i>Vie 5 Jun</div>
+              <div class="ws3-tab" data-en-i>Sat Jun 6</div><div class="ws3-tab" data-es-i>Sáb 6 Jun</div>
+              <div class="ws3-tab" data-en-i>Sun Jun 7</div><div class="ws3-tab" data-es-i>Dom 7 Jun</div>
+              <div class="ws3-tab" data-en-i>Mon Jun 8</div><div class="ws3-tab" data-es-i>Lun 8 Jun</div>
+            </div>
+            <div style="padding:0 .75rem">
+              <div class="ws3-day-title">
+                <span data-en-i>Thursday, June 4 · ☀ 26° Partly cloudy</span>
+                <span data-es-i>Jueves, 4 de junio · ☀ 26° Parcialmente nublado</span>
+              </div>
+              <div class="ws3-day-theme" data-en-i>Art & Culture</div>
+              <div class="ws3-day-theme" data-es-i>Arte y cultura</div>
+              <div class="ws3-act-item">
+                <div class="ws3-act-num">1</div>
+                <div class="ws3-act-body">
+                  <div class="ws3-act-name">Tsukiji Outer Market</div>
+                  <div class="ws3-act-desc" data-en-i>Historic market with fresh sushi and street food</div>
+                  <div class="ws3-act-desc" data-es-i>Mercado histórico con sushi fresco y comida callejera</div>
+                  <div class="ws3-act-tags"><span class="ws3-tag ws3-tag-food" data-en-i>Gastronomy</span><span class="ws3-tag ws3-tag-food" data-es-i>Gastronomía</span><span class="ws3-tag">~$12</span><span class="ws3-tag">⭐ 4.2</span></div>
+                </div>
+                <div class="ws3-act-time">07:00 · 1.5h</div>
+              </div>
+              <div class="ws3-act-item">
+                <div class="ws3-act-num">2</div>
+                <div class="ws3-act-body">
+                  <div class="ws3-act-name">Ginza Sony Building</div>
+                  <div class="ws3-act-desc" data-en-i>11-floor tower with interactive digital art. Free.</div>
+                  <div class="ws3-act-desc" data-es-i>Torre de 11 pisos con arte digital interactivo. Gratis.</div>
+                  <div class="ws3-act-tags"><span class="ws3-tag ws3-tag-act" data-en-i>Activity</span><span class="ws3-tag ws3-tag-act" data-es-i>Actividad</span><span class="ws3-tag ws3-tag-free" data-en-i>Free</span><span class="ws3-tag ws3-tag-free" data-es-i>Gratis</span></div>
+                </div>
+                <div class="ws3-act-time">09:00 · 1h</div>
+              </div>
+              <div class="ws3-act-item">
+                <div class="ws3-act-num">3</div>
+                <div class="ws3-act-body">
+                  <div class="ws3-act-name" data-en-i>Café Almeida in Ginza</div>
+                  <div class="ws3-act-name" data-es-i>Café Almeida en Ginza</div>
+                  <div class="ws3-act-desc" data-en-i>Historic café since 1923 in Ginza</div>
+                  <div class="ws3-act-desc" data-es-i>Café histórico desde 1923 en Ginza</div>
+                  <div class="ws3-act-tags"><span class="ws3-tag ws3-tag-food" data-en-i>Gastronomy</span><span class="ws3-tag ws3-tag-food" data-es-i>Gastronomía</span><span class="ws3-tag">~$11</span></div>
+                </div>
+                <div class="ws3-act-time">11:00 · 45m</div>
+              </div>
             </div>
           </div>
         </div>
+
+        <!-- SCREEN 3: MAPA — con pins de actividades del día -->
+        <div class="wb-screen ws-map" id="wscreen-2">
+          <div class="wb-screen-label" data-en-i>Map — Real-time</div>
+          <div class="wb-screen-label" data-es-i>Mapa — Tiempo real</div>
+          <div style="height:100%;display:flex;flex-direction:column;background:#f5f3ef">
+            <div class="ws3-nav">
+              <div style="font-family:'Syne',sans-serif;font-size:.65rem;font-weight:800;color:#1e2d3d"><span style="color:#c9922a">way</span>point</div>
+              <div style="display:flex;gap:4px">
+                <div class="ws3-top-chip ws3-chip-active" data-en-i>Map</div>
+                <div class="ws3-top-chip ws3-chip-active" data-es-i>Mapa</div>
+                <div class="ws3-top-chip" data-en-i>Weather</div>
+                <div class="ws3-top-chip" data-es-i>Clima</div>
+                <div class="ws3-top-chip" data-en-i>Budget</div>
+                <div class="ws3-top-chip" data-es-i>Presupuesto</div>
+              </div>
+            </div>
+            <div class="ws-map-area">
+              <!-- SVG map placeholder — Tokyo city grid -->
+              <svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
+                <rect width="300" height="200" fill="#e8e0d8"/>
+                <!-- Streets grid -->
+                <g stroke="#d4c8b8" stroke-width="1.5" fill="none">
+                  <line x1="0" y1="60" x2="300" y2="60"/>
+                  <line x1="0" y1="100" x2="300" y2="100"/>
+                  <line x1="0" y1="140" x2="300" y2="140"/>
+                  <line x1="0" y1="170" x2="300" y2="170"/>
+                  <line x1="60" y1="0" x2="60" y2="200"/>
+                  <line x1="130" y1="0" x2="130" y2="200"/>
+                  <line x1="200" y1="0" x2="200" y2="200"/>
+                  <line x1="250" y1="0" x2="250" y2="200"/>
+                </g>
+                <!-- Water -->
+                <path d="M 250 0 L 300 0 L 300 200 L 250 200 Z" fill="#c8d8e8" opacity=".6"/>
+                <!-- Parks -->
+                <rect x="80" y="20" width="30" height="25" rx="4" fill="#b8d4b0" opacity=".8"/>
+                <rect x="10" y="110" width="35" height="22" rx="4" fill="#b8d4b0" opacity=".7"/>
+                <!-- Blocks -->
+                <rect x="65" y="5" width="20" height="12" rx="2" fill="#ccc0b4"/>
+                <rect x="90" y="5" width="15" height="12" rx="2" fill="#ccc0b4"/>
+                <rect x="140" y="5" width="25" height="18" rx="2" fill="#ccc0b4"/>
+                <rect x="65" y="65" width="22" height="14" rx="2" fill="#ccc0b4"/>
+                <rect x="92" y="65" width="18" height="14" rx="2" fill="#ccc0b4"/>
+                <rect x="135" y="65" width="22" height="14" rx="2" fill="#ccc0b4"/>
+                <rect x="162" y="65" width="20" height="14" rx="2" fill="#ccc0b4"/>
+                <rect x="10" y="65" width="28" height="14" rx="2" fill="#ccc0b4"/>
+                <rect x="42" y="65" width="16" height="14" rx="2" fill="#ccc0b4"/>
+                <rect x="10" y="25" width="22" height="16" rx="2" fill="#ccc0b4"/>
+                <rect x="36" y="25" width="18" height="16" rx="2" fill="#ccc0b4"/>
+                <rect x="205" y="20" width="26" height="18" rx="2" fill="#ccc0b4"/>
+                <rect x="205" y="65" width="22" height="14" rx="2" fill="#ccc0b4"/>
+                <rect x="10" y="105" width="20" height="14" rx="2" fill="#ccc0b4" opacity=".4"/>
+                <!-- Activity pins -->
+                <g>
+                  <circle cx="75" cy="50" r="8" fill="#c9922a" stroke="white" stroke-width="1.5"/>
+                  <text x="75" y="54" text-anchor="middle" font-size="8" fill="white" font-weight="bold">1</text>
+                </g>
+                <g>
+                  <circle cx="148" cy="80" r="8" fill="#c9922a" stroke="white" stroke-width="1.5"/>
+                  <text x="148" y="84" text-anchor="middle" font-size="8" fill="white" font-weight="bold">2</text>
+                </g>
+                <g>
+                  <circle cx="50" cy="80" r="8" fill="#c9922a" stroke="white" stroke-width="1.5"/>
+                  <text x="50" y="84" text-anchor="middle" font-size="8" fill="white" font-weight="bold">3</text>
+                </g>
+                <!-- Route line -->
+                <polyline points="75,50 148,80 50,80" stroke="#c9922a" stroke-width="1.5" stroke-dasharray="4,3" fill="none" opacity=".7"/>
+                <!-- Compass -->
+                <g transform="translate(272,15)">
+                  <circle r="10" fill="white" opacity=".9"/>
+                  <text text-anchor="middle" y="4" font-size="8" fill="#666">N</text>
+                </g>
+              </svg>
+            </div>
+            <!-- Legend bar -->
+            <div class="ws-map-legend">
+              <div class="ws-map-leg-item"><div class="ws-map-pin-dot"></div><span data-en-i>Tsukiji Outer Market</span><span data-es-i>Tsukiji Outer Market</span></div>
+              <div class="ws-map-leg-item"><div class="ws-map-pin-dot"></div><span data-en-i>Sony Building Ginza</span><span data-es-i>Sony Building Ginza</span></div>
+              <div class="ws-map-leg-item"><div class="ws-map-pin-dot"></div><span data-en-i>Café Almeida</span><span data-es-i>Café Almeida</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SCREEN 4: PRESUPUESTO -->
+        <div class="wb-screen ws-budget" id="wscreen-3">
+          <div class="wb-screen-label" data-en-i>Budget — Full Breakdown</div>
+          <div class="wb-screen-label" data-es-i>Presupuesto — Desglose</div>
+          <div style="background:#f5f3ef;height:100%;overflow:hidden">
+            <div class="ws3-nav">
+              <div style="font-family:'Syne',sans-serif;font-size:.65rem;font-weight:800;color:#1e2d3d"><span style="color:#c9922a">way</span>point</div>
+              <div style="display:flex;gap:4px">
+                <div class="ws3-top-chip" data-en-i>Map</div><div class="ws3-top-chip" data-es-i>Mapa</div>
+                <div class="ws3-top-chip" data-en-i>Weather</div><div class="ws3-top-chip" data-es-i>Clima</div>
+                <div class="ws3-top-chip ws3-chip-active" data-en-i>Budget</div><div class="ws3-top-chip ws3-chip-active" data-es-i>Presupuesto</div>
+              </div>
+            </div>
+            <div class="ws-budget-body">
+              <div class="ws-budget-title" data-en-i>Fixed trip costs · AI estimates</div>
+              <div class="ws-budget-title" data-es-i>Gastos fijos del viaje · Estimados IA</div>
+              <div class="ws-budget-row">
+                <div style="display:flex;align-items:center;gap:6px">
+                  <span style="font-size:.9rem">✈️</span>
+                  <div>
+                    <div class="ws-brow-name" data-en-i>Flights p/person</div>
+                    <div class="ws-brow-name" data-es-i>Vuelos p/persona</div>
+                    <div class="ws-brow-sub">Est. IA: $1,450 · $2,900 <span data-en-i>total</span><span data-es-i>total</span></div>
+                  </div>
+                </div>
+                <div class="ws-brow-amt">$1,450</div>
+              </div>
+              <div class="ws-budget-row">
+                <div style="display:flex;align-items:center;gap:6px">
+                  <span style="font-size:.9rem">🏨</span>
+                  <div>
+                    <div class="ws-brow-name" data-en-i>Hotel · 3★ · 5 nights</div>
+                    <div class="ws-brow-name" data-es-i>Hotel · 3★ · 5 noches</div>
+                    <div class="ws-brow-sub">Est. IA: $650 <span data-en-i>total</span><span data-es-i>total</span></div>
+                  </div>
+                </div>
+                <div class="ws-brow-amt">$650</div>
+              </div>
+              <div class="ws-budget-total">
+                <span data-en-i>Total fixed</span><span data-es-i>Total fijo</span>
+                <span class="ws-budget-total-amt">$2,100</span>
+              </div>
+              <div class="ws-budget-title" style="margin-top:.6rem" data-en-i>Activities budget · per day</div>
+              <div class="ws-budget-title" style="margin-top:.6rem" data-es-i>Presupuesto actividades · por día</div>
+              <div class="ws-bday-row">
+                <span data-en-i>Day 1 · Art & culture</span><span data-es-i>Día 1 · Arte y cultura</span>
+                <div class="ws-bday-bar"><div class="ws-bday-fill" style="width:44%"></div></div>
+                <span>$120</span>
+              </div>
+              <div class="ws-bday-row">
+                <span data-en-i>Day 2 · Local gastronomy</span><span data-es-i>Día 2 · Gastronomía local</span>
+                <div class="ws-bday-bar"><div class="ws-bday-fill" style="width:50%"></div></div>
+                <span>$136</span>
+              </div>
+              <div class="ws-bday-row">
+                <span data-en-i>Day 3 · History & arch.</span><span data-es-i>Día 3 · Historia y arq.</span>
+                <div class="ws-bday-bar"><div class="ws-bday-fill" style="width:38%"></div></div>
+                <span>$95</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SCREEN 5: CLIMA -->
+        <div class="wb-screen ws-weather" id="wscreen-4">
+          <div class="wb-screen-label" data-en-i>Weather — by Day</div>
+          <div class="wb-screen-label" data-es-i>Clima — por Día</div>
+          <div style="background:#f5f3ef;height:100%;overflow:hidden">
+            <div class="ws3-nav">
+              <div style="font-family:'Syne',sans-serif;font-size:.65rem;font-weight:800;color:#1e2d3d"><span style="color:#c9922a">way</span>point</div>
+              <div style="display:flex;gap:4px">
+                <div class="ws3-top-chip" data-en-i>Map</div><div class="ws3-top-chip" data-es-i>Mapa</div>
+                <div class="ws3-top-chip ws3-chip-active" data-en-i>Weather</div><div class="ws3-top-chip ws3-chip-active" data-es-i>Clima</div>
+                <div class="ws3-top-chip" data-en-i>Budget</div><div class="ws3-top-chip" data-es-i>Presupuesto</div>
+              </div>
+            </div>
+            <div class="ws-weather-body">
+              <div class="ws-weather-city" data-en-i>Weather — Tokyo</div>
+              <div class="ws-weather-city" data-es-i>Clima — Tokio</div>
+              <div class="ws-weather-main">
+                <div class="ws-weather-ico">☀️</div>
+                <div>
+                  <div class="ws-weather-temp">26°</div>
+                  <div class="ws-weather-feel"><span data-en-i>Feels like</span><span data-es-i>Sensación</span> 25° · 65% <span data-en-i>humidity</span><span data-es-i>humedad</span></div>
+                  <div class="ws-weather-desc" data-en-i>Partly cloudy. Tokyo in June is humid and rainy — stay hydrated.</div>
+                  <div class="ws-weather-desc" data-es-i>Parcialmente nublado. Tokio en junio es húmedo y lluvioso — mantente hidratado.</div>
+                </div>
+              </div>
+              <div class="ws-weather-days">
+                <div class="ws-wday">
+                  <div class="ws-wday-name" data-en-i>Day 1 · Art</div>
+                  <div class="ws-wday-name" data-es-i>Día 1 · Arte</div>
+                  <div class="ws-wday-ico">⛅</div>
+                  <div class="ws-wday-temp">26°/21°</div>
+                  <div class="ws-wday-note" data-en-i>Bring umbrella</div>
+                  <div class="ws-wday-note" data-es-i>Lleva paraguas</div>
+                </div>
+                <div class="ws-wday">
+                  <div class="ws-wday-name" data-en-i>Day 2 · Gastro</div>
+                  <div class="ws-wday-name" data-es-i>Día 2 · Gastro</div>
+                  <div class="ws-wday-ico">🌧</div>
+                  <div class="ws-wday-temp">27°/22°</div>
+                  <div class="ws-wday-note" data-en-i>Rainy · stay inside</div>
+                  <div class="ws-wday-note" data-es-i>Lluvia · quédate adentro</div>
+                </div>
+                <div class="ws-wday">
+                  <div class="ws-wday-name" data-en-i>Day 3 · History</div>
+                  <div class="ws-wday-name" data-es-i>Día 3 · Historia</div>
+                  <div class="ws-wday-ico">🌦</div>
+                  <div class="ws-wday-temp">25°/20°</div>
+                  <div class="ws-wday-note" data-en-i>Use waterproof coat</div>
+                  <div class="ws-wday-note" data-es-i>Usa ropa impermeable</div>
+                </div>
+                <div class="ws-wday">
+                  <div class="ws-wday-name" data-en-i>Day 4 · Nature</div>
+                  <div class="ws-wday-name" data-es-i>Día 4 · Naturaleza</div>
+                  <div class="ws-wday-ico">☁️</div>
+                  <div class="ws-wday-temp">24°/19°</div>
+                  <div class="ws-wday-note" data-en-i>Cloudy</div>
+                  <div class="ws-wday-note" data-es-i>Nublado</div>
+                </div>
+                <div class="ws-wday">
+                  <div class="ws-wday-name" data-en-i>Day 5 · Markets</div>
+                  <div class="ws-wday-name" data-es-i>Día 5 · Mercados</div>
+                  <div class="ws-wday-ico">🌤</div>
+                  <div class="ws-wday-temp">28°/23°</div>
+                  <div class="ws-wday-note" data-en-i>Clearer</div>
+                  <div class="ws-wday-note" data-es-i>Más despejado</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
-      <!-- Screen indicators -->
+      <!-- Screen indicators — now 5 -->
       <div class="wb-indicators">
         <div class="wb-ind wi-active" onclick="goToScreen(0)"></div>
         <div class="wb-ind" onclick="goToScreen(1)"></div>
         <div class="wb-ind" onclick="goToScreen(2)"></div>
+        <div class="wb-ind" onclick="goToScreen(3)"></div>
+        <div class="wb-ind" onclick="goToScreen(4)"></div>
       </div>
     </div>
   </div>
+</div>
 </div>
 </div>
 </section>
@@ -2133,7 +2427,7 @@ function goToScreen(idx) {
   inds.forEach((d,i)=>d.classList.toggle('wi-active', i===idx));
 }
 function startWaypointAuto() {
-  wAutoTimer = setInterval(()=>{ goToScreen((wCurScreen+1)%3); }, 3000);
+  wAutoTimer = setInterval(()=>{ goToScreen((wCurScreen+1)%5); }, 3500);
 }
 function stopWaypointAuto() { clearInterval(wAutoTimer); }
 // start auto when card enters view
