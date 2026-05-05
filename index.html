@@ -687,7 +687,7 @@ footer{background:#0d1f0a;padding:1.4rem 3.5rem;display:flex;justify-content:spa
   section,#svc,#ct{padding:3rem 1.5rem}
   #proc{padding:3rem 1.5rem}
   #signal{padding:2rem 1.5rem}
-  #impact{padding:5rem 3.5rem 4.5rem
+  #impact{padding:5rem 3.5rem 4.5rem}
   #tools{padding:3.5rem 1.5rem}
   .reel-header{padding:3rem 1.5rem 2rem}
   .fs-row{padding:2.5rem 1.5rem;min-height:auto}
@@ -708,10 +708,10 @@ footer{background:#0d1f0a;padding:1.4rem 3.5rem;display:flex;justify-content:spa
   .alay,.clay{grid-template-columns:1fr;gap:3rem}
   .erow{grid-template-columns:1fr;gap:.72rem}
   .pgrid,.skg{grid-template-columns:1fr 1fr}
-  .wfeat{grid-template-columns:1fr;min-height:auto}
+  .wfeat{grid-template-columns:1fr;min-height:auto;overflow:hidden}
   .wfeat::after{display:none}
   .wfeat-l{padding:2.5rem 1.5rem}
-  .wfeat-r{padding:1.5rem;background:#f2ede4}
+  .wfeat-r{padding:1.5rem;background:#f2ede4;width:100%;overflow:hidden}
   .wb-screens{height:340px}
 }
 @media(max-width:600px){
@@ -935,7 +935,7 @@ html[lang=es] .signal-label[data-es]{display:flex}
 .tool-chip.is-lit .tc-name{color:rgba(212,240,212,.9)}
 .tc-cat-label{font-family:'DM Mono',monospace;font-size:.48rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(45,122,58,.3);transition:color .25s}
 .tool-chip.is-lit .tc-cat-label{color:rgba(45,122,58,.75)}
-@media(max-width:1100px){.tools-inner{grid-template-columns:1fr;gap:3rem}}
+@media(max-width:1100px){.tools-inner{grid-template-columns:1fr;gap:3rem}}@media(max-width:700px){.tools-cats{flex-direction:row;flex-wrap:wrap;gap:4px}.tcat{flex:0 0 auto;padding:.4rem .7rem;border-radius:6px}.tcat-bar{display:none}.tcat-name{font-size:.7rem}}
 @media(max-width:1000px){#tools{padding:3.5rem 1.5rem}.tools-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:600px){.tools-grid{grid-template-columns:1fr 1fr}}
 
@@ -1207,6 +1207,42 @@ html[lang=es] .signal-label[data-es]{display:flex}
 #ct{border-top:none}
 .wfeat{margin-bottom:0}
 nav.sc{background:rgba(244,246,241,.96)!important;border-bottom-color:var(--b2)!important}
+
+/* ── MOBILE NAV HAMBURGER ── */
+.nav-ham{display:none;flex-direction:column;gap:4px;cursor:pointer;padding:.4rem;z-index:101;background:none;border:none}
+.nav-ham span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;transition:all .28s cubic-bezier(.22,1,.36,1)}
+.nav-ham.open span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.nav-ham.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.nav-ham.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.nav-drawer{
+  position:fixed;top:0;left:0;right:0;bottom:0;z-index:99;
+  background:rgba(244,246,241,.97);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2rem;
+  opacity:0;pointer-events:none;transform:translateY(-8px);
+  transition:opacity .28s,transform .28s cubic-bezier(.22,1,.36,1);
+  backdrop-filter:blur(12px);
+}
+.nav-drawer.open{opacity:1;pointer-events:auto;transform:none}
+.nav-drawer a{
+  font-family:'Syne',sans-serif;font-size:1.6rem;font-weight:800;letter-spacing:-.04em;
+  color:var(--ink);text-decoration:none;transition:color .2s;
+}
+.nav-drawer a:hover{color:var(--acc)}
+.nav-drawer .nav-drawer-wp{
+  font-family:'Syne',sans-serif;font-size:1rem;font-weight:800;
+  color:#c9922a;text-decoration:none;border:1px solid rgba(201,146,42,.3);
+  padding:.4rem 1rem;border-radius:8px;margin-top:1rem;
+}
+.nav-drawer .nav-drawer-lang{display:flex;gap:.5rem;margin-top:1rem}
+.nav-drawer .nd-lb{font-family:'DM Mono',monospace;font-size:.7rem;letter-spacing:.1em;
+  padding:.3rem .7rem;border:1px solid var(--b);border-radius:4px;cursor:pointer;color:var(--mut)}
+.nav-drawer .nd-lb.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+@media(max-width:700px){
+  .nav-ham{display:flex}
+  .nl{display:none!important}
+}
+@media(max-width:700px){.nav-wp-btn{display:none}.scroll-pct{display:none}#scroll-pct{display:none}}
+@media(max-width:700px){.fs-inner{grid-template-columns:1fr;min-height:auto}.fs-left{height:auto;position:relative;padding:2.5rem 1.5rem 1.5rem}.fs-row{min-height:auto;padding:2rem 1.5rem}.fs-stem{font-size:clamp(2.2rem,10vw,3.5rem)}}
 </style>
 </head>
 <body>
@@ -1222,6 +1258,9 @@ nav.sc{background:rgba(244,246,241,.96)!important;border-bottom-color:var(--b2)!
     <li><a href="#proj"><span data-en-i>Work</span><span data-es-i>Proyectos</span></a></li>
     <li><a href="#ct"><span data-en-i>Contact</span><span data-es-i>Contacto</span></a></li>
   </ul>
+  <button class="nav-ham" id="navHam" aria-label="Menu" onclick="toggleNav()" style="display:none">
+    <span></span><span></span><span></span>
+  </button>
   <div style="display:flex;align-items:center;gap:.6rem">
     <a href="https://waypoint-henna.vercel.app" target="_blank" class="nav-wp-btn" aria-label="Waypoint app"><span class="nav-wp-way">way</span><span class="nav-wp-pt">point</span> ↗</a>
     <div id="scroll-pct" style="font-family:'DM Mono',monospace;font-size:.58rem;font-weight:500;color:var(--mut);letter-spacing:.06em;border:1px solid var(--b);border-radius:20px;padding:.28rem .8rem;min-width:46px;text-align:center;opacity:0;transition:opacity .4s;background:transparent">0%</div>
@@ -1231,6 +1270,19 @@ nav.sc{background:rgba(244,246,241,.96)!important;border-bottom-color:var(--b2)!
     </div>
   </div>
 </nav>
+<!-- Mobile nav drawer -->
+<div class="nav-drawer" id="navDrawer">
+  <a href="#about" onclick="closeNav()"><span data-en-i>About</span><span data-es-i>Sobre mí</span></a>
+  <a href="#svc" onclick="closeNav()"><span data-en-i>Services</span><span data-es-i>Servicios</span></a>
+  <a href="#exp" onclick="closeNav()"><span data-en-i>Experience</span><span data-es-i>Experiencia</span></a>
+  <a href="#proj" onclick="closeNav()"><span data-en-i>Work</span><span data-es-i>Proyectos</span></a>
+  <a href="#wcrd" onclick="closeNav()">waypoint ↗</a>
+  <a href="#ct" onclick="closeNav()"><span data-en-i>Contact</span><span data-es-i>Contacto</span></a>
+  <div class="nav-drawer-lang">
+    <div class="nd-lb on" onclick="setLang('en');closeNav()">EN</div>
+    <div class="nd-lb" onclick="setLang('es');closeNav()">ES</div>
+  </div>
+</div>
 <section id="hero">
 <div id="hero-blob"></div>
 <div id="hero-blob2" style="position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(184,134,11,.06) 0%,transparent 70%);pointer-events:none;z-index:0;filter:blur(50px);bottom:-50px;right:10%;"></div>
@@ -2331,9 +2383,7 @@ nav.sc{background:rgba(244,246,241,.96)!important;border-bottom-color:var(--b2)!
         </div>
 
       </div>
-
-      </div>
-      <!-- Navigation bar — arrows + dots + label -->
+      <!-- Navigation bar — arrows + dots + label — INSIDE wbrowser for seamless look -->
       <div class="wb-nav" id="wbNav">
         <button class="wb-arrow" onclick="wpPrev()" aria-label="Previous screen">
           <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
@@ -2798,8 +2848,9 @@ function goToScreen(idx) {
   if(lblEn) lblEn.textContent = WP_LABELS_EN[idx] || '';
   if(lblEs) lblEs.textContent = WP_LABELS_ES[idx] || '';
 }
-function wpPrev(){ goToScreen((wCurScreen + 4) % 5); stopWaypointAuto(); setTimeout(startWaypointAuto, 6000); }
-function wpNext(){ goToScreen((wCurScreen + 1) % 5); stopWaypointAuto(); setTimeout(startWaypointAuto, 6000); }
+let wUserInteracted = false;
+function wpPrev(){ wUserInteracted = true; stopWaypointAuto(); goToScreen((wCurScreen + 4) % 5); }
+function wpNext(){ wUserInteracted = true; stopWaypointAuto(); goToScreen((wCurScreen + 1) % 5); }
 function startWaypointAuto() {
   wAutoTimer = setInterval(()=>{ goToScreen((wCurScreen+1)%5); }, 4000);
 }
@@ -3026,6 +3077,32 @@ function filterTools(cat, el) {
     if(entries[0].isIntersecting){ animateSc1(); obs.disconnect(); }
   }, {threshold:0.05, rootMargin:'0px 0px 0px 0px'});
   obs.observe(sc1);
+})();
+
+
+// Mobile nav toggle
+function toggleNav(){
+  const ham = document.getElementById('navHam');
+  const drawer = document.getElementById('navDrawer');
+  const isOpen = drawer.classList.contains('open');
+  ham.classList.toggle('open', !isOpen);
+  drawer.classList.toggle('open', !isOpen);
+  document.body.style.overflow = isOpen ? '' : 'hidden';
+}
+function closeNav(){
+  const ham = document.getElementById('navHam');
+  const drawer = document.getElementById('navDrawer');
+  ham.classList.remove('open');
+  drawer.classList.remove('open');
+  document.body.style.overflow = '';
+}
+// Show hamburger on mobile via JS
+(function(){
+  const ham = document.getElementById('navHam');
+  if(ham && window.innerWidth <= 700) ham.style.display = 'flex';
+  window.addEventListener('resize', () => {
+    if(ham) ham.style.display = window.innerWidth <= 700 ? 'flex' : 'none';
+  });
 })();
 
 // Impact number counters
