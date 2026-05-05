@@ -847,34 +847,46 @@ html[lang=es] .signal-label[data-es]{display:flex}
    MODULE 5 — TOOLS ORBIT / TECH STACK VISUAL
    Animated floating tool bubbles 
    ══════════════════════════════════════════════ */
+
 #tools{background:#0d1f0a;padding:4.5rem 3.5rem;overflow:hidden}
-.tools-inner{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;max-width:1200px;margin:0 auto}
+.tools-inner{display:grid;grid-template-columns:360px 1fr;gap:5rem;align-items:start;max-width:1200px;margin:0 auto}
 .tools-left .ov{color:rgba(212,240,212,.35)}
 .tools-left .st{color:#e8f5e4}
 .tools-left .st em{color:#7dc882}
-.tools-desc{font-size:.95rem;color:rgba(212,240,212,.5);line-height:1.88;margin-bottom:2.5rem;max-width:420px;font-weight:400}
-.tools-cats{display:flex;flex-direction:column;gap:.75rem}
-.tcat{display:flex;align-items:center;gap:.75rem;padding:.75rem 0;border-bottom:1px solid rgba(212,240,212,.06);cursor:default;transition:all .2s}
-.tcat:last-child{border-bottom:none}
-.tcat-dot{width:8px;height:8px;border-radius:50%;background:rgba(45,122,58,.3);flex-shrink:0;transition:background .3s,transform .3s}
-.tcat:hover .tcat-dot,.tcat.act .tcat-dot{background:#7dc882;transform:scale(1.4)}
-.tcat-name{font-family:'Syne',sans-serif;font-size:.88rem;font-weight:700;color:rgba(212,240,212,.4);transition:color .2s;letter-spacing:-.01em}
-.tcat:hover .tcat-name,.tcat.act .tcat-name{color:#e8f5e4}
-.tcat-count{margin-left:auto;font-family:'DM Mono',monospace;font-size:.6rem;color:rgba(212,240,212,.2);letter-spacing:.06em;transition:color .2s}
-.tcat:hover .tcat-count,.tcat.act .tcat-count{color:rgba(45,122,58,.7)}
-.tools-right{position:relative;height:400px;overflow:hidden}
-.tool-bubble{position:absolute;border-radius:16px;background:rgba(212,240,212,.04);border:1px solid rgba(45,122,58,.15);padding:.7rem 1.1rem;display:flex;align-items:center;gap:.55rem;transition:all .5s cubic-bezier(.22,1,.36,1);cursor:default;white-space:nowrap}
-.tool-bubble:hover{background:rgba(45,122,58,.1);border-color:rgba(45,122,58,.35);transform:scale(1.06)}
-.tool-bubble.dim{opacity:.15;transform:scale(.92)}
-.tool-bubble.lit{opacity:1;border-color:rgba(45,122,58,.4);background:rgba(45,122,58,.08)}
-.tb-ico{font-size:.9rem;flex-shrink:0}
-.tb-name{font-family:'DM Sans',sans-serif;font-size:.78rem;font-weight:500;color:rgba(212,240,212,.7);letter-spacing:.01em}
-.tb-name.acc{color:#7dc882}
-@media(max-width:1000px){
-  .tools-inner{grid-template-columns:1fr;gap:3rem}
-  .tools-right{height:auto;padding:2rem 0}
-  #tools{padding:5rem 1.5rem}
-}
+.tools-desc{font-size:.92rem;color:rgba(212,240,212,.45);line-height:1.9;margin-bottom:2rem;max-width:340px;font-weight:400}
+.tools-cats{display:flex;flex-direction:column;gap:2px}
+.tcat{display:flex;align-items:center;gap:.75rem;padding:.65rem 1rem;border-radius:10px;cursor:pointer;transition:background .2s;background:transparent;position:relative}
+.tcat:hover{background:rgba(212,240,212,.04)}
+.tcat.act{background:rgba(45,122,58,.12)}
+.tcat-ico{width:28px;height:28px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:.85rem;flex-shrink:0;background:rgba(212,240,212,.06);transition:background .25s}
+.tcat.act .tcat-ico{background:rgba(45,122,58,.25)}
+.tcat-bar{position:absolute;left:0;top:50%;transform:translateY(-50%) scaleY(0);width:2px;height:60%;background:#7dc882;border-radius:2px;transition:transform .25s cubic-bezier(.22,1,.36,1)}
+.tcat.act .tcat-bar{transform:translateY(-50%) scaleY(1)}
+.tcat-name{font-size:.82rem;font-weight:500;color:rgba(212,240,212,.35);transition:color .2s;flex:1;letter-spacing:-.01em}
+.tcat:hover .tcat-name,.tcat.act .tcat-name{color:rgba(212,240,212,.9)}
+.tcat-badge{font-family:'DM Mono',monospace;font-size:.52rem;padding:.18rem .5rem;background:rgba(212,240,212,.06);color:rgba(212,240,212,.3);border-radius:20px;transition:all .2s}
+.tcat.act .tcat-badge{background:rgba(45,122,58,.3);color:#7dc882}
+.tools-right{display:flex;flex-direction:column;gap:1.5rem}
+.tools-right-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:.5rem}
+.tools-active-label{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(212,240,212,.25)}
+.tools-active-count{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:800;color:#7dc882;letter-spacing:-.04em;transition:opacity .2s,transform .2s}
+.tools-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.tool-chip{display:flex;flex-direction:column;gap:.55rem;padding:1rem 1.1rem;border-radius:12px;border:1px solid rgba(45,122,58,.12);background:rgba(212,240,212,.03);cursor:default;transition:opacity .4s cubic-bezier(.22,1,.36,1),transform .4s cubic-bezier(.22,1,.36,1),background .25s,border-color .25s;position:relative;overflow:hidden}
+.tool-chip.is-dim{opacity:.14;transform:scale(.96);pointer-events:none}
+.tool-chip.is-lit{opacity:1;transform:none;border-color:rgba(45,122,58,.28);background:rgba(45,122,58,.07)}
+.tool-chip.is-lit:hover{background:rgba(45,122,58,.13);border-color:rgba(45,122,58,.5);transform:translateY(-2px)}
+.tc-top{display:flex;align-items:center;justify-content:space-between}
+.tc-ico{font-size:1.1rem;line-height:1}
+.tc-dot{width:5px;height:5px;border-radius:50%;background:rgba(45,122,58,.25);transition:background .3s,transform .3s}
+.tool-chip.is-lit .tc-dot{background:#7dc882;transform:scale(1.2)}
+.tc-name{font-size:.78rem;font-weight:600;color:rgba(212,240,212,.45);letter-spacing:-.01em;line-height:1.3;transition:color .25s}
+.tool-chip.is-lit .tc-name{color:rgba(212,240,212,.9)}
+.tc-cat-label{font-family:'DM Mono',monospace;font-size:.48rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(45,122,58,.3);transition:color .25s}
+.tool-chip.is-lit .tc-cat-label{color:rgba(45,122,58,.75)}
+@media(max-width:1100px){.tools-inner{grid-template-columns:1fr;gap:3rem}}
+@media(max-width:1000px){#tools{padding:3.5rem 1.5rem}.tools-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.tools-grid{grid-template-columns:1fr 1fr}}
+
 
 /* ══════════════════════════════════════════════
    SHARED — Lenis smooth scroll
@@ -2115,72 +2127,64 @@ html[lang=es] .signal-label[data-es]{display:flex}
     <p class="tools-desc sr-modules d2" data-en>Six capability areas. Every tool chosen because it moves a metric — not because it looks good on a resume.</p>
     <p class="tools-desc sr-modules d2" data-es>Seis áreas de capacidad. Cada herramienta elegida porque mueve una métrica — no porque se vea bien en un CV.</p>
     <div class="tools-cats sr-modules d3">
-      <div class="tcat act" onclick="filterTools('strategy')">
-        <div class="tcat-dot"></div>
+      <div class="tcat act" onclick="filterTools('strategy',this)">
+        <div class="tcat-bar"></div><div class="tcat-ico">✍️</div>
         <div class="tcat-name" data-en>Strategy & Messaging</div>
         <div class="tcat-name" data-es>Estrategia y Messaging</div>
-        <div class="tcat-count">4 tools</div>
+        <div class="tcat-badge">4</div>
       </div>
-      <div class="tcat" onclick="filterTools('web')">
-        <div class="tcat-dot"></div>
+      <div class="tcat" onclick="filterTools('web',this)">
+        <div class="tcat-bar"></div><div class="tcat-ico">🌐</div>
         <div class="tcat-name" data-en>Web & CRO</div>
         <div class="tcat-name" data-es>Web y CRO</div>
-        <div class="tcat-count">5 tools</div>
+        <div class="tcat-badge">5</div>
       </div>
-      <div class="tcat" onclick="filterTools('ai')">
-        <div class="tcat-dot"></div>
+      <div class="tcat" onclick="filterTools('ai',this)">
+        <div class="tcat-bar"></div><div class="tcat-ico">🤖</div>
         <div class="tcat-name" data-en>AI & Automation</div>
         <div class="tcat-name" data-es>IA y Automatización</div>
-        <div class="tcat-count">4 tools</div>
+        <div class="tcat-badge">4</div>
       </div>
-      <div class="tcat" onclick="filterTools('analytics')">
-        <div class="tcat-dot"></div>
+      <div class="tcat" onclick="filterTools('analytics',this)">
+        <div class="tcat-bar"></div><div class="tcat-ico">📊</div>
         <div class="tcat-name" data-en>Analytics & OKRs</div>
         <div class="tcat-name" data-es>Analítica y OKRs</div>
-        <div class="tcat-count">3 tools</div>
+        <div class="tcat-badge">3</div>
       </div>
-      <div class="tcat" onclick="filterTools('design')">
-        <div class="tcat-dot"></div>
+      <div class="tcat" onclick="filterTools('design',this)">
+        <div class="tcat-bar"></div><div class="tcat-ico">🎨</div>
         <div class="tcat-name" data-en>Branding & Design</div>
         <div class="tcat-name" data-es>Branding y Diseño</div>
-        <div class="tcat-count">3 tools</div>
+        <div class="tcat-badge">3</div>
       </div>
     </div>
   </div>
-  <div class="tools-right" id="toolsRight">
-    <!-- STRATEGY (lit by default) -->
-    <div class="tool-bubble lit" data-cat="strategy" style="top:2%;left:1%"><span class="tb-ico">✍️</span><span class="tb-name acc">Copywriting</span></div>
-    <div class="tool-bubble lit" data-cat="strategy" style="top:2%;left:38%"><span class="tb-ico">🗺️</span><span class="tb-name">GTM Strategy</span></div>
-    <div class="tool-bubble lit" data-cat="strategy" style="top:19%;left:18%"><span class="tb-ico">🔍</span><span class="tb-name">SEO EN + ES</span></div>
-    <div class="tool-bubble lit" data-cat="strategy" style="top:19%;left:58%"><span class="tb-ico">🎯</span><span class="tb-name">Messaging Arch.</span></div>
-
-    <!-- WEB -->
-    <div class="tool-bubble" data-cat="web" style="top:2%;left:67%"><span class="tb-ico">🌐</span><span class="tb-name acc">HubSpot CMS</span></div>
-    <div class="tool-bubble" data-cat="web" style="top:36%;left:1%"><span class="tb-ico">⚗️</span><span class="tb-name">A/B Testing</span></div>
-    <div class="tool-bubble" data-cat="web" style="top:36%;left:44%"><span class="tb-ico">📐</span><span class="tb-name">UX Writing</span></div>
-    <div class="tool-bubble" data-cat="web" style="top:53%;left:24%"><span class="tb-ico">💻</span><span class="tb-name">HTML · CSS · JS</span></div>
-    <div class="tool-bubble" data-cat="web" style="top:53%;left:62%"><span class="tb-ico">🔗</span><span class="tb-name">HubL Templates</span></div>
-
-    <!-- AI -->
-    <div class="tool-bubble" data-cat="ai" style="top:19%;left:1%"><span class="tb-ico">🤖</span><span class="tb-name acc">Claude Code</span></div>
-    <div class="tool-bubble" data-cat="ai" style="top:36%;left:67%"><span class="tb-ico">⚡</span><span class="tb-name">Prompt Eng.</span></div>
-    <div class="tool-bubble" data-cat="ai" style="top:53%;left:1%"><span class="tb-ico">☁️</span><span class="tb-name">Google Cloud</span></div>
-    <div class="tool-bubble" data-cat="ai" style="top:70%;left:44%"><span class="tb-ico">🚀</span><span class="tb-name">Vercel</span></div>
-
-    <!-- ANALYTICS -->
-    <div class="tool-bubble" data-cat="analytics" style="top:2%;left:22%"><span class="tb-ico">📊</span><span class="tb-name acc">Fullstory</span></div>
-    <div class="tool-bubble" data-cat="analytics" style="top:19%;left:38%"><span class="tb-ico">📈</span><span class="tb-name">GA4</span></div>
-    <div class="tool-bubble" data-cat="analytics" style="top:70%;left:1%"><span class="tb-ico">🎯</span><span class="tb-name">OKR Systems</span></div>
-
-    <!-- DESIGN -->
-    <div class="tool-bubble" data-cat="design" style="top:19%;left:76%"><span class="tb-ico">🎨</span><span class="tb-name acc">Figma</span></div>
-    <div class="tool-bubble" data-cat="design" style="top:36%;left:24%"><span class="tb-ico">🖼️</span><span class="tb-name">Brand Systems</span></div>
-    <div class="tool-bubble" data-cat="design" style="top:70%;left:24%"><span class="tb-ico">📋</span><span class="tb-name">Visual Guidelines</span></div>
-
-    <!-- ALL / MISC -->
-    <div class="tool-bubble lit" data-cat="all" style="top:53%;left:44%"><span class="tb-ico">📝</span><span class="tb-name">Case Studies</span></div>
-    <div class="tool-bubble lit" data-cat="all" style="top:70%;left:64%"><span class="tb-ico">🌍</span><span class="tb-name">LATAM Markets</span></div>
-    <div class="tool-bubble lit" data-cat="all" style="top:83%;left:18%"><span class="tb-ico">🤝</span><span class="tb-name">Sales Enablement</span></div>
+  <div class="tools-right sr-modules d2">
+    <div class="tools-right-header">
+      <span class="tools-active-label" data-en-i>Showing</span><span class="tools-active-label" data-es-i>Mostrando</span>
+      <span class="tools-active-count" id="toolsCount">4 tools</span>
+    </div>
+    <div class="tools-grid" id="toolsGrid">
+      <div class="tool-chip is-lit is-primary" data-cat="strategy"><div class="tc-top"><span class="tc-ico">✍️</span><span class="tc-dot"></span></div><span class="tc-name">Copywriting</span><span class="tc-cat-label" data-en-i>Strategy</span><span class="tc-cat-label" data-es-i>Estrategia</span></div>
+      <div class="tool-chip is-lit" data-cat="strategy"><div class="tc-top"><span class="tc-ico">🗺️</span><span class="tc-dot"></span></div><span class="tc-name">GTM Strategy</span><span class="tc-cat-label" data-en-i>Strategy</span><span class="tc-cat-label" data-es-i>Estrategia</span></div>
+      <div class="tool-chip is-lit" data-cat="strategy"><div class="tc-top"><span class="tc-ico">🔍</span><span class="tc-dot"></span></div><span class="tc-name">SEO EN + ES</span><span class="tc-cat-label" data-en-i>Strategy</span><span class="tc-cat-label" data-es-i>Estrategia</span></div>
+      <div class="tool-chip is-lit" data-cat="strategy"><div class="tc-top"><span class="tc-ico">🎯</span><span class="tc-dot"></span></div><span class="tc-name">Messaging Arch.</span><span class="tc-cat-label" data-en-i>Strategy</span><span class="tc-cat-label" data-es-i>Estrategia</span></div>
+      <div class="tool-chip is-dim" data-cat="web"><div class="tc-top"><span class="tc-ico">🌐</span><span class="tc-dot"></span></div><span class="tc-name">HubSpot CMS</span><span class="tc-cat-label" data-en-i>Web</span><span class="tc-cat-label" data-es-i>Web</span></div>
+      <div class="tool-chip is-dim" data-cat="web"><div class="tc-top"><span class="tc-ico">⚗️</span><span class="tc-dot"></span></div><span class="tc-name">A/B Testing</span><span class="tc-cat-label" data-en-i>Web</span><span class="tc-cat-label" data-es-i>Web</span></div>
+      <div class="tool-chip is-dim" data-cat="web"><div class="tc-top"><span class="tc-ico">💻</span><span class="tc-dot"></span></div><span class="tc-name">HTML · CSS · JS</span><span class="tc-cat-label" data-en-i>Web</span><span class="tc-cat-label" data-es-i>Web</span></div>
+      <div class="tool-chip is-dim" data-cat="web"><div class="tc-top"><span class="tc-ico">📐</span><span class="tc-dot"></span></div><span class="tc-name">UX Writing</span><span class="tc-cat-label" data-en-i>Web</span><span class="tc-cat-label" data-es-i>Web</span></div>
+      <div class="tool-chip is-dim" data-cat="web"><div class="tc-top"><span class="tc-ico">🔗</span><span class="tc-dot"></span></div><span class="tc-name">HubL Templates</span><span class="tc-cat-label" data-en-i>Web</span><span class="tc-cat-label" data-es-i>Web</span></div>
+      <div class="tool-chip is-dim" data-cat="ai"><div class="tc-top"><span class="tc-ico">🤖</span><span class="tc-dot"></span></div><span class="tc-name">Claude Code</span><span class="tc-cat-label" data-en-i>AI</span><span class="tc-cat-label" data-es-i>IA</span></div>
+      <div class="tool-chip is-dim" data-cat="ai"><div class="tc-top"><span class="tc-ico">⚡</span><span class="tc-dot"></span></div><span class="tc-name">Prompt Eng.</span><span class="tc-cat-label" data-en-i>AI</span><span class="tc-cat-label" data-es-i>IA</span></div>
+      <div class="tool-chip is-dim" data-cat="ai"><div class="tc-top"><span class="tc-ico">☁️</span><span class="tc-dot"></span></div><span class="tc-name">Google Cloud</span><span class="tc-cat-label" data-en-i>AI</span><span class="tc-cat-label" data-es-i>IA</span></div>
+      <div class="tool-chip is-dim" data-cat="ai"><div class="tc-top"><span class="tc-ico">🚀</span><span class="tc-dot"></span></div><span class="tc-name">Vercel</span><span class="tc-cat-label" data-en-i>AI</span><span class="tc-cat-label" data-es-i>IA</span></div>
+      <div class="tool-chip is-dim" data-cat="analytics"><div class="tc-top"><span class="tc-ico">📊</span><span class="tc-dot"></span></div><span class="tc-name">Fullstory</span><span class="tc-cat-label" data-en-i>Analytics</span><span class="tc-cat-label" data-es-i>Analítica</span></div>
+      <div class="tool-chip is-dim" data-cat="analytics"><div class="tc-top"><span class="tc-ico">📈</span><span class="tc-dot"></span></div><span class="tc-name">GA4</span><span class="tc-cat-label" data-en-i>Analytics</span><span class="tc-cat-label" data-es-i>Analítica</span></div>
+      <div class="tool-chip is-dim" data-cat="analytics"><div class="tc-top"><span class="tc-ico">🎯</span><span class="tc-dot"></span></div><span class="tc-name">OKR Systems</span><span class="tc-cat-label" data-en-i>Analytics</span><span class="tc-cat-label" data-es-i>Analítica</span></div>
+      <div class="tool-chip is-dim" data-cat="design"><div class="tc-top"><span class="tc-ico">🎨</span><span class="tc-dot"></span></div><span class="tc-name">Figma</span><span class="tc-cat-label" data-en-i>Design</span><span class="tc-cat-label" data-es-i>Diseño</span></div>
+      <div class="tool-chip is-dim" data-cat="design"><div class="tc-top"><span class="tc-ico">🖼️</span><span class="tc-dot"></span></div><span class="tc-name">Brand Systems</span><span class="tc-cat-label" data-en-i>Design</span><span class="tc-cat-label" data-es-i>Diseño</span></div>
+      <div class="tool-chip is-dim" data-cat="design"><div class="tc-top"><span class="tc-ico">📋</span><span class="tc-dot"></span></div><span class="tc-name">Visual Guidelines</span><span class="tc-cat-label" data-en-i>Design</span><span class="tc-cat-label" data-es-i>Diseño</span></div>
+    </div>
   </div>
 </div>
 </section>
@@ -2604,75 +2608,67 @@ if(rt) {
 }
 
 // Tools filter
-function filterTools(cat) {
-  document.querySelectorAll('.tcat').forEach(t=>t.classList.remove('act'));
-  event.currentTarget.classList.add('act');
-  document.querySelectorAll('.tool-bubble').forEach(b=>{
-    const bc = b.dataset.cat;
-    if(bc === cat || bc === 'all') {
-      b.classList.add('lit');
-      b.classList.remove('dim');
-    } else {
-      b.classList.remove('lit');
-      b.classList.add('dim');
-    }
+function filterTools(cat, el) {
+  document.querySelectorAll('.tcat').forEach(t => t.classList.remove('act'));
+  if (el) el.classList.add('act');
+  const chips = document.querySelectorAll('.tool-chip');
+  let count = 0;
+  chips.forEach((chip, i) => {
+    const match = chip.dataset.cat === cat;
+    chip.style.transitionDelay = match ? (i % 6) * 0.045 + 's' : '0s';
+    chip.classList.toggle('is-lit', match);
+    chip.classList.toggle('is-dim', !match);
+    if (match) count++;
   });
-}
-
-// Impact counter animation
-function animImpact(el, target, suffix='', prefix='') {
-  const duration = 1800;
-  const startTime = performance.now();
-  const easeOut = t => 1 - Math.pow(1 - t, 3);
-  function tick(now) {
-    const t = Math.min((now - startTime) / duration, 1);
-    const val = Math.floor(easeOut(t) * target);
-    el.textContent = prefix + val + suffix;
-    if(t < 1) requestAnimationFrame(tick);
-    else el.textContent = prefix + target + suffix;
+  const countEl = document.getElementById('toolsCount');
+  if (countEl) {
+    countEl.style.transform = 'translateY(-6px)';
+    countEl.style.opacity = '0';
+    setTimeout(() => {
+      const lang = document.documentElement.lang;
+      countEl.textContent = count + (lang === 'es' ? ' herramientas' : ' tools');
+      countEl.style.transform = 'none';
+      countEl.style.opacity = '1';
+    }, 180);
   }
-  requestAnimationFrame(tick);
 }
-const impObs = new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(!e.isIntersecting) return;
-    const id = e.target.id;
-    if(id==='imp-n1') animImpact(e.target.querySelector('span') ? e.target : e.target, 4, '+');
-    if(id==='imp-n2') animImpact(e.target, 32, '<span class="acc">+</span>');
-    if(id==='imp-n3') animImpact(e.target, 53, '<span class="acc">K</span>');
-    if(id==='imp-n4') animImpact(e.target, 1, '<span class="acc">M+</span>');
-    impObs.unobserve(e.target);
-  });
-}, {threshold: 0.5});
-// Signal creds counter animation
+(function(){ filterTools('strategy', document.querySelector('.tcat.act')); })();
+
+// Impact number counters
 (function(){
-  const scObs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
+  const targets = {
+    'imp-n1': {end:4, suffix:'+'},
+    'imp-n2': {end:32, suffix:'+'},
+    'imp-n3': {end:53, suffix:'K', start:0},
+    'imp-n4': {end:1, suffix:'M+'}
+  };
+  const eOut = t => 1 - Math.pow(1-t, 3);
+  const impObs = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
       if(!e.isIntersecting) return;
       const id = e.target.id;
-      if(id === 'sc-n1') {
-        let cur = 0, target = 30, steps = 40, duration = 1400;
-        const startTime = performance.now();
-        const eOut = t => 1 - Math.pow(1-t,3);
-        const tick = now => {
-          const t = Math.min((now-startTime)/duration, 1);
-          e.target.textContent = Math.floor(eOut(t)*target) + '+';
-          if(t<1) requestAnimationFrame(tick);
-          else e.target.textContent = '30+';
-        };
-        requestAnimationFrame(tick);
-      }
-      scObs.unobserve(e.target);
+      const cfg = targets[id];
+      if(!cfg) return;
+      const span = e.target.querySelector('.acc') || e.target;
+      const suffix = cfg.suffix;
+      let start = 0, dur = 1400;
+      const t0 = performance.now();
+      const tick = now => {
+        const p = Math.min((now-t0)/dur, 1);
+        const val = Math.floor(eOut(p) * cfg.end);
+        e.target.childNodes[0].textContent = val || '';
+        if(p < 1) requestAnimationFrame(tick);
+        else e.target.childNodes[0].textContent = cfg.end;
+      };
+      requestAnimationFrame(tick);
+      impObs.unobserve(e.target);
     });
-  }, {threshold: 0.5});
-  const sc1 = document.getElementById('sc-n1');
-  if(sc1) scObs.observe(sc1);
+  }, {threshold: 0.4});
+  ['imp-n1','imp-n2','imp-n3','imp-n4'].forEach(id=>{
+    const el = document.getElementById(id);
+    if(el) impObs.observe(el);
+  });
 })();
-
-['imp-n1','imp-n2','imp-n3','imp-n4'].forEach(id=>{
-  const el = document.getElementById(id);
-  if(el) impObs.observe(el);
-});
 
 // Feature strip word swap
 (function(){
@@ -2689,39 +2685,6 @@ const impObs = new IntersectionObserver(entries=>{
     },260);
   },3000);
 })();
-// Tools init — set initial filter state
-(function(){
-  const initCat = 'strategy';
-  document.querySelectorAll('.tool-bubble').forEach(b=>{
-    const bc = b.dataset.cat;
-    if(bc === initCat || bc === 'all'){b.classList.add('lit');b.classList.remove('dim');}
-    else{b.classList.remove('lit');b.classList.add('dim');}
-  });
-})();
-// Reel auto-play
-(function(){
-  const rt = document.getElementById('reelTrack');
-  if(!rt) return;
-  let timer = null, isDragging = false;
-  const cardW = 520 + 16; // card + gap
-  let curIdx = 0;
-  function autoNext() {
-    curIdx = (curIdx + 1) % 4;
-    rt.scrollTo({left: curIdx * cardW, behavior: 'smooth'});
-  }
-  function start() { if(!isDragging) timer = setInterval(autoNext, 4500); }
-  function stop() { clearInterval(timer); }
-  rt.addEventListener('mouseenter', stop);
-  rt.addEventListener('mouseleave', start);
-  rt.addEventListener('mousedown', ()=>{isDragging=true; stop();});
-  window.addEventListener('mouseup', ()=>{isDragging=false; start();});
-  // Start when reel enters viewport
-  new IntersectionObserver(entries=>{
-    entries.forEach(e=>{ if(e.isIntersecting) start(); else stop(); });
-  },{threshold:.3}).observe(rt);
-})();
-// Feature strip word swap
-(function(){var w=['ships.','converts.','measures.','delivers.'];var i=0;var el=document.getElementById('fs-swap');if(!el)return;setInterval(function(){el.style.opacity='0';el.style.transform='translateY(-6px)';el.style.transition='opacity .25s,transform .25s';setTimeout(function(){i=(i+1)%w.length;el.textContent=w[i];el.style.transform='translateY(6px)';setTimeout(function(){el.style.transform='none';el.style.opacity='1';},20);},260);},3000);})();
 
 // Reel auto-play
 (function(){var rt=document.getElementById('reelTrack');if(!rt)return;var timer=null,drag=false,idx=0;function next(){idx=(idx+1)%4;rt.scrollTo({left:idx*(520+16),behavior:'smooth'});}function start(){if(!drag)timer=setInterval(next,4500);}function stop(){clearInterval(timer);}rt.addEventListener('mouseenter',stop);rt.addEventListener('mouseleave',start);rt.addEventListener('mousedown',function(){drag=true;stop();});window.addEventListener('mouseup',function(){drag=false;start();});new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting)start();else stop();});},{threshold:.3}).observe(rt);})();
