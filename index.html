@@ -55,7 +55,7 @@ li[data-en-li],li[data-es-li]{display:none}
 html[lang=en] li[data-en-li]{display:flex}
 html[lang=es] li[data-es-li]{display:flex}
 /* nav */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1rem 3.5rem;transition:background .35s,border-color .35s;border-bottom:1px solid transparent}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:.85rem 3.5rem;transition:background .35s,border-color .35s;border-bottom:1px solid transparent;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
 /* ── CURSOR TRAIL ── */
 .ctail{position:fixed;width:5px;height:5px;border-radius:50%;background:var(--acc);pointer-events:none;z-index:9998;opacity:0;transform:translate(-50%,-50%);transition:opacity .4s ease}
 /* ── HERO SCRAMBLE ── */
@@ -149,7 +149,7 @@ nav.sc::before{opacity:1}
 .d1{transition-delay:.07s!important}.d2{transition-delay:.14s!important}.d3{transition-delay:.21s!important}
 .d4{transition-delay:.28s!important}.d5{transition-delay:.35s!important}.d6{transition-delay:.42s!important}
 /* sections */
-section{padding:5rem 3.5rem}
+section{padding:5.5rem 3.5rem;scroll-margin-top:68px}
 #about{background:var(--c1)}
 #exp{background:var(--c0)}
 #sk{background:var(--c1)}
@@ -408,10 +408,10 @@ html[lang=es] .pcard-deliverable[data-en-i]{display:none!important}
   --wp-navy:#1c2b3a; --wp-navy2:#243447; --wp-gold:#c9922a; --wp-gold2:#e0a83a;
   --wp-cream:#faf8f4; --wp-text:rgba(255,255,255,.9); --wp-muted:rgba(255,255,255,.45);
 }
-.wfeat{background:#faf8f4;border-top:1px solid var(--b2);border-bottom:1px solid var(--b2);display:grid;grid-template-columns:1fr 1fr;overflow:hidden;position:relative;min-height:680px}
+.wfeat{background:#faf8f4;border-top:1px solid var(--b2);border-bottom:1px solid var(--b2);display:grid;grid-template-columns:1fr 1fr;overflow:hidden;position:relative;min-height:680px;margin-bottom:0}
 /* subtle watermark */
 .wfeat::after{content:'waypoint';position:absolute;bottom:-1.5rem;left:-1rem;font-family:'Syne',sans-serif;font-size:14rem;font-weight:800;letter-spacing:-.06em;color:rgba(201,146,42,.06);pointer-events:none;user-select:none;line-height:1;white-space:nowrap}
-.wfeat-l{padding:3.5rem 3.5rem 3.5rem 4rem;display:flex;flex-direction:column;justify-content:space-between;position:relative;z-index:1}
+.wfeat-l{padding:3.5rem 3.5rem 3.5rem 4rem;display:flex;flex-direction:column;justify-content:center;gap:1.75rem;position:relative;z-index:1}
 .wf-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(201,146,42,.1);border:1px solid rgba(201,146,42,.3);border-radius:30px;padding:.3rem .85rem;width:fit-content;margin-bottom:1.5rem}
 .wf-badge-dot{width:6px;height:6px;border-radius:50%;background:var(--wp-gold);animation:pulse 2s ease infinite}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.6;transform:scale(.8)}}
@@ -687,7 +687,7 @@ footer{background:#0d1f0a;padding:1.4rem 3.5rem;display:flex;justify-content:spa
   section,#svc,#ct{padding:3rem 1.5rem}
   #proc{padding:3rem 1.5rem}
   #signal{padding:2rem 1.5rem}
-  #impact{padding:3rem 1.5rem 2rem}
+  #impact{padding:5rem 3.5rem 4.5rem
   #tools{padding:3.5rem 1.5rem}
   .reel-header{padding:3rem 1.5rem 2rem}
   .fs-row{padding:2.5rem 1.5rem;min-height:auto}
@@ -922,7 +922,7 @@ html[lang=es] .signal-label[data-es]{display:flex}
 .tools-right-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:.5rem}
 .tools-active-label{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(212,240,212,.25)}
 .tools-active-count{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:800;color:#7dc882;letter-spacing:-.04em;transition:opacity .2s,transform .2s}
-.tools-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.tools-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;align-items:start}.tool-chip:last-child:nth-child(3n+1){grid-column:span 3}
 .tool-chip{display:flex;flex-direction:column;gap:.55rem;padding:1rem 1.1rem;border-radius:12px;border:1px solid rgba(45,122,58,.12);background:rgba(212,240,212,.03);cursor:default;transition:opacity .4s cubic-bezier(.22,1,.36,1),transform .4s cubic-bezier(.22,1,.36,1),background .25s,border-color .25s;position:relative;overflow:hidden}
 .tool-chip.is-dim{opacity:.14;transform:scale(.96);pointer-events:none}
 .tool-chip.is-lit{opacity:1;transform:none;border-color:rgba(45,122,58,.28);background:rgba(45,122,58,.07)}
@@ -1179,6 +1179,34 @@ html[lang=es] .signal-label[data-es]{display:flex}
 .ws-wday-temp{font-size:.5rem;font-weight:700;color:#1e2d3d;margin-bottom:.15rem}
 .ws-wday-note{font-size:.4rem;color:rgba(30,45,61,.4);line-height:1.3}
 
+
+.nav-wp-btn{
+  font-family:'Syne',sans-serif;font-size:.62rem;font-weight:800;
+  letter-spacing:-.02em;text-decoration:none;
+  padding:.28rem .7rem;border-radius:7px;
+  background:rgba(201,146,42,.1);
+  border:1px solid rgba(201,146,42,.3);
+  color:#c9922a;
+  transition:background .18s,border-color .18s,transform .12s;
+  white-space:nowrap;
+}
+.nav-wp-btn:hover{background:rgba(201,146,42,.18);border-color:rgba(201,146,42,.5);transform:translateY(-1px)}
+.nav-wp-way{color:var(--fg)}
+.nav-wp-pt{color:#c9922a}
+
+/* Section transition separators */
+#signal{border-top:1px solid var(--b2)}
+#feature-strip{border-top:1px solid rgba(45,122,58,.15)}
+#about{border-top:1px solid var(--b2)}
+#svc{border-top:1px solid var(--b2)}
+#exp{border-top:1px solid var(--b2)}
+#proj{border-top:1px solid var(--b2)}
+#reel{border-top:1px solid var(--b2);margin-top:0;padding-top:3.5rem}
+#tools{border-top:none}
+#proc{border-top:none}
+#ct{border-top:none}
+.wfeat{margin-bottom:0}
+nav.sc{background:rgba(244,246,241,.96)!important;border-bottom-color:var(--b2)!important}
 </style>
 </head>
 <body>
@@ -1195,6 +1223,7 @@ html[lang=es] .signal-label[data-es]{display:flex}
     <li><a href="#ct"><span data-en-i>Contact</span><span data-es-i>Contacto</span></a></li>
   </ul>
   <div style="display:flex;align-items:center;gap:.6rem">
+    <a href="https://waypoint-henna.vercel.app" target="_blank" class="nav-wp-btn" aria-label="Waypoint app"><span class="nav-wp-way">way</span><span class="nav-wp-pt">point</span> ↗</a>
     <div id="scroll-pct" style="font-family:'DM Mono',monospace;font-size:.58rem;font-weight:500;color:var(--mut);letter-spacing:.06em;border:1px solid var(--b);border-radius:20px;padding:.28rem .8rem;min-width:46px;text-align:center;opacity:0;transition:opacity .4s;background:transparent">0%</div>
     <div class="lt">
       <button class="lb on" onclick="setLang('en')">EN</button>
@@ -2192,7 +2221,7 @@ html[lang=es] .signal-label[data-es]{display:flex}
         <div class="wb-screen ws-wthr" id="wscreen-3">
           <div class="wb-screen-label" data-en-i>Weather — by Day</div>
           <div class="wb-screen-label" data-es-i>Clima — por Día</div>
-          <div class="ws-wthr-inner">
+          <div class="ws-wthr-inner" style="display:flex;flex-direction:column;height:100%;overflow:hidden">
             <div class="ws-map-tabs">
               <div class="ws-mt" data-en-i>🗺️ Map</div>
               <div class="ws-mt" data-es-i>🗺️ Mapa</div>
@@ -2250,7 +2279,7 @@ html[lang=es] .signal-label[data-es]{display:flex}
         <div class="wb-screen ws-bdgt" id="wscreen-4">
           <div class="wb-screen-label" data-en-i>Budget — Full Breakdown</div>
           <div class="wb-screen-label" data-es-i>Presupuesto — Desglose</div>
-          <div class="ws-bdgt-inner">
+          <div class="ws-bdgt-inner" style="display:flex;flex-direction:column;height:100%;overflow:hidden">
             <div class="ws-map-tabs">
               <div class="ws-mt" data-en-i>🗺️ Map</div>
               <div class="ws-mt" data-es-i>🗺️ Mapa</div>
@@ -2727,7 +2756,7 @@ const cntObs = new IntersectionObserver(entries=>{
   entries.forEach(e=>{
     if(e.isIntersecting){ animateCounter(e.target); cntObs.unobserve(e.target); }
   });
-},{threshold:.3});
+},{threshold:.05,rootMargin:'0px 0px -20px 0px'});
 document.querySelectorAll('[data-target]').forEach(el=>{if(el.closest('#hero,footer')) return; cntObs.observe(el);});
 // scroll reveal — higher threshold for more dramatic reveal
 const io=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('v');io.unobserve(x.target)}})},{threshold:.12});
@@ -2975,6 +3004,30 @@ function filterTools(cat, el) {
 }
 (function(){ filterTools('strategy', document.querySelector('.tcat.act')); })();
 
+// Signal card counter animation
+(function(){
+  function animateSc1(){
+    const sc1 = document.getElementById('sc-n1');
+    if(!sc1) return;
+    const dur = 1400, t0 = performance.now();
+    const eOut = t => 1-Math.pow(1-t,3);
+    function tick(now){
+      const p = Math.min((now-t0)/dur, 1);
+      const n = Math.floor(eOut(p)*30);
+      sc1.textContent = n + '+';
+      if(p < 1) requestAnimationFrame(tick);
+      else sc1.textContent = '30+';
+    }
+    requestAnimationFrame(tick);
+  }
+  const sc1 = document.getElementById('sc-n1');
+  if(!sc1){ return; }
+  const obs = new IntersectionObserver(entries => {
+    if(entries[0].isIntersecting){ animateSc1(); obs.disconnect(); }
+  }, {threshold:0.05, rootMargin:'0px 0px 0px 0px'});
+  obs.observe(sc1);
+})();
+
 // Impact number counters
 (function(){
   const targets = {
@@ -3011,20 +3064,30 @@ function filterTools(cat, el) {
   });
 })();
 
-// Feature strip word swap
+// Feature strip word swap — init after load
 (function(){
   const words = ['ships.','converts.','measures.','delivers.'];
   let wi = 0;
-  const el = document.getElementById('fs-swap');
-  if(!el) return;
-  setInterval(()=>{
-    el.style.opacity='0';el.style.transform='translateY(-6px)';
-    el.style.transition='opacity .25s,transform .25s';
-    setTimeout(()=>{wi=(wi+1)%words.length;el.textContent=words[wi];
-      el.style.transform='translateY(6px)';
-      setTimeout(()=>{el.style.transform='none';el.style.opacity='1';},20);
-    },260);
-  },3000);
+  function initSwap(){
+    const el = document.getElementById('fs-swap');
+    if(!el) return;
+    setInterval(()=>{
+      el.style.opacity='0';
+      el.style.transform='translateY(-6px)';
+      el.style.transition='opacity .25s,transform .25s';
+      setTimeout(()=>{
+        wi=(wi+1)%words.length;
+        el.textContent=words[wi];
+        el.style.transform='translateY(6px)';
+        setTimeout(()=>{el.style.transform='none';el.style.opacity='1';},20);
+      },260);
+    },3000);
+  }
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded', initSwap);
+  } else {
+    setTimeout(initSwap, 100);
+  }
 })();
 
 // Reel auto-play
