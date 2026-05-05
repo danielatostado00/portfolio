@@ -1054,11 +1054,20 @@ html[lang=es] .signal-label[data-es]{display:flex}
 .ws-mdt{font-size:.44rem;padding:.18rem .5rem;border-radius:20px;border:1.5px solid rgba(30,45,61,.15);color:rgba(30,45,61,.45);cursor:default;white-space:nowrap}
 .ws-map-canvas{flex:1;overflow:hidden;position:relative}
 .ws-map-places{
-  padding:.4rem .65rem;background:white;border-top:1px solid rgba(30,45,61,.08);
-  display:flex;flex-direction:column;gap:.2rem;flex-shrink:0;
+  padding:.45rem .5rem;background:white;border-top:1px solid rgba(30,45,61,.08);
+  display:flex;flex-direction:row;flex-wrap:wrap;gap:4px;flex-shrink:0;align-items:center;
 }
-.ws-map-place{font-size:.48rem;color:rgba(30,45,61,.65);display:flex;align-items:center;gap:4px}
-.ws-mp-dot{width:8px;height:8px;border-radius:50%;background:#e07b3a;flex-shrink:0}
+.ws-map-place{
+  display:inline-flex;align-items:center;gap:4px;
+  font-size:.44rem;font-weight:500;
+  background:rgba(224,123,58,.08);
+  color:#9a4e18;
+  border:1px solid rgba(224,123,58,.25);
+  border-radius:20px;
+  padding:.18rem .5rem;
+  white-space:nowrap;
+}
+.ws-mp-dot{width:5px;height:5px;border-radius:50%;background:#e07b3a;flex-shrink:0}
 
 /* ── Screen 4: Weather ── */
 .ws-wthr{background:#f5f3ef}
@@ -1181,17 +1190,14 @@ html[lang=es] .signal-label[data-es]{display:flex}
 
 
 .nav-wp-btn{
-  font-family:'Syne',sans-serif;font-size:.62rem;font-weight:800;
-  letter-spacing:-.02em;text-decoration:none;
-  padding:.28rem .7rem;border-radius:7px;
-  background:rgba(201,146,42,.1);
-  border:1px solid rgba(201,146,42,.3);
-  color:#c9922a;
-  transition:background .18s,border-color .18s,transform .12s;
+  font-family:'Syne',sans-serif;font-size:.7rem;font-weight:700;
+  letter-spacing:-.01em;text-decoration:none;
+  color:var(--mut);
+  transition:color .2s;
   white-space:nowrap;
 }
-.nav-wp-btn:hover{background:rgba(201,146,42,.18);border-color:rgba(201,146,42,.5);transform:translateY(-1px)}
-.nav-wp-way{color:var(--fg)}
+.nav-wp-btn:hover{color:var(--ink)}
+.nav-wp-way{color:var(--mut)}
 .nav-wp-pt{color:#c9922a}
 
 /* Section transition separators */
@@ -1262,7 +1268,7 @@ nav.sc{background:rgba(244,246,241,.96)!important;border-bottom-color:var(--b2)!
     <span></span><span></span><span></span>
   </button>
   <div style="display:flex;align-items:center;gap:.6rem">
-    <a href="https://waypoint-henna.vercel.app" target="_blank" class="nav-wp-btn" aria-label="Waypoint app"><span class="nav-wp-way">way</span><span class="nav-wp-pt">point</span> ↗</a>
+    <a href="#wcrd" class="nav-wp-btn" aria-label="Waypoint section"><span class="nav-wp-way">way</span><span class="nav-wp-pt">point</span></a>
     <div id="scroll-pct" style="font-family:'DM Mono',monospace;font-size:.58rem;font-weight:500;color:var(--mut);letter-spacing:.06em;border:1px solid var(--b);border-radius:20px;padding:.28rem .8rem;min-width:46px;text-align:center;opacity:0;transition:opacity .4s;background:transparent">0%</div>
     <div class="lt">
       <button class="lb on" onclick="setLang('en')">EN</button>
