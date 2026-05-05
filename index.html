@@ -177,6 +177,21 @@ section{padding:5rem 3.5rem}
 .trait:hover{border-color:var(--acc);color:var(--acc);background:var(--acc-bg)}
 html[lang=en] .trait[data-en]{display:inline-flex!important}
 html[lang=es] .trait[data-es]{display:inline-flex!important}
+html[lang=en] .sc-item[data-es]{display:none!important}
+html[lang=es] .sc-item[data-en]{display:none!important}
+/* Block elements using inline-lang attributes */
+html[lang=en] .reel-hint[data-en-i]{display:flex}
+html[lang=es] .reel-hint[data-es-i]{display:flex}
+html[lang=en] .reel-hint[data-es-i]{display:none!important}
+html[lang=es] .reel-hint[data-en-i]{display:none!important}
+html[lang=en] .rc-m-l[data-es-i]{display:none!important}
+html[lang=es] .rc-m-l[data-en-i]{display:none!important}
+html[lang=en] .rc-m-l[data-en-i]{display:block}
+html[lang=es] .rc-m-l[data-es-i]{display:block}
+html[lang=en] .wb-screen-label[data-es-i]{display:none!important}
+html[lang=es] .wb-screen-label[data-en-i]{display:none!important}
+html[lang=en] .wf-stat .l[data-es-i]{display:none!important}
+html[lang=es] .wf-stat .l[data-en-i]{display:none!important}
 html[lang=en] .pcard-item[data-es]{display:none!important}
 html[lang=es] .pcard-item[data-en]{display:none!important}
 html[lang=en] .pcard-deliverable[data-es-i]{display:none!important}
@@ -393,10 +408,10 @@ html[lang=es] .pcard-deliverable[data-en-i]{display:none!important}
   --wp-navy:#1c2b3a; --wp-navy2:#243447; --wp-gold:#c9922a; --wp-gold2:#e0a83a;
   --wp-cream:#faf8f4; --wp-text:rgba(255,255,255,.9); --wp-muted:rgba(255,255,255,.45);
 }
-.wfeat{background:#faf8f4;border-top:1px solid var(--b2);border-bottom:1px solid var(--b2);display:grid;grid-template-columns:1fr 1fr;overflow:hidden;position:relative;min-height:600px}
+.wfeat{background:#faf8f4;border-top:1px solid var(--b2);border-bottom:1px solid var(--b2);display:grid;grid-template-columns:1fr 1fr;overflow:hidden;position:relative;min-height:680px}
 /* subtle watermark */
 .wfeat::after{content:'waypoint';position:absolute;bottom:-1.5rem;left:-1rem;font-family:'Syne',sans-serif;font-size:14rem;font-weight:800;letter-spacing:-.06em;color:rgba(201,146,42,.06);pointer-events:none;user-select:none;line-height:1;white-space:nowrap}
-.wfeat-l{padding:4rem 3.5rem;display:flex;flex-direction:column;justify-content:space-between;position:relative;z-index:1}
+.wfeat-l{padding:3.5rem 3.5rem 3.5rem 4rem;display:flex;flex-direction:column;justify-content:space-between;position:relative;z-index:1}
 .wf-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(201,146,42,.1);border:1px solid rgba(201,146,42,.3);border-radius:30px;padding:.3rem .85rem;width:fit-content;margin-bottom:1.5rem}
 .wf-badge-dot{width:6px;height:6px;border-radius:50%;background:var(--wp-gold);animation:pulse 2s ease infinite}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.6;transform:scale(.8)}}
@@ -408,7 +423,7 @@ html[lang=es] .pcard-deliverable[data-en-i]{display:none!important}
 .wf-desc{font-size:.9rem;font-weight:300;color:var(--mut);line-height:1.88;max-width:400px;margin-bottom:2rem}
 .wf-meta{display:flex;flex-direction:column;gap:1.5rem}
 .wf-stats{display:flex;gap:2rem}
-.wf-stat .n{font-family:'Syne',sans-serif;font-size:1.8rem;font-weight:800;color:var(--wp-gold);letter-spacing:-.03em;line-height:1}
+.wf-stat .n{font-family:'Syne',sans-serif;font-size:1.6rem;font-weight:800;color:var(--wp-gold);letter-spacing:-.03em;line-height:1}
 .wf-stat .l{font-size:.65rem;color:var(--mut);font-weight:400;margin-top:.15rem}
 .wf-pills{display:flex;flex-wrap:wrap;gap:.35rem}
 .wf-pill{font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.08em;padding:.22rem .6rem;border:1px solid var(--b);color:var(--mut);border-radius:2px}
@@ -416,17 +431,17 @@ html[lang=es] .pcard-deliverable[data-en-i]{display:none!important}
 .wf-link:hover{gap:.75rem;color:var(--acc2)}
 
 /* Right side — animated browser with navigating screens */
-.wfeat-r{padding:3.5rem;display:flex;align-items:center;justify-content:center;position:relative;z-index:1;background:#edf0e8}
-.wbrowser{width:100%;max-width:520px;border-radius:14px;overflow:hidden;box-shadow:0 32px 80px rgba(28,43,58,.18),0 8px 24px rgba(28,43,58,.1);border:1px solid rgba(28,43,58,.08)}
+.wfeat-r{padding:2rem 2.5rem 2rem 2rem;display:flex;align-items:center;justify-content:center;position:relative;z-index:1;background:#edf0e8}
+.wbrowser{width:100%;max-width:600px;border-radius:16px;overflow:hidden;box-shadow:0 40px 100px rgba(28,43,58,.22),0 12px 32px rgba(28,43,58,.12),0 2px 8px rgba(28,43,58,.08);border:1px solid rgba(28,43,58,.1)}
 /* Browser chrome */
-.wb-chrome{height:38px;background:#e8e2d8;border-bottom:1px solid rgba(28,43,58,.1);display:flex;align-items:center;padding:0 1rem;gap:.5rem;flex-shrink:0}
+.wb-chrome{height:36px;background:#ddd7cc;border-bottom:1px solid rgba(28,43,58,.12);display:flex;align-items:center;padding:0 .9rem;gap:.45rem;flex-shrink:0}
 .wb-dots{display:flex;gap:.35rem}
 .wb-dot{width:10px;height:10px;border-radius:50%}
 .wb-bar{flex:1;height:22px;background:rgba(28,43,58,.08);border-radius:4px;margin:0 .75rem;display:flex;align-items:center;padding:0 .6rem;gap:.4rem}
 .wb-lock{font-size:.55rem;color:rgba(28,43,58,.4)}
 .wb-url{font-family:'DM Mono',monospace;font-size:.58rem;color:rgba(28,43,58,.45)}
 /* Screen container — clips the sliding screens */
-.wb-screens{position:relative;height:360px;overflow:hidden;background:var(--wp-navy)}
+.wb-screens{position:relative;height:420px;overflow:hidden;background:var(--wp-navy)}
 .wb-screen{position:absolute;inset:0;opacity:0;transform:translateX(24px);transition:opacity .55s cubic-bezier(.22,1,.36,1),transform .55s cubic-bezier(.22,1,.36,1);pointer-events:none}
 .wb-screen.ws-active{opacity:1;transform:none;pointer-events:auto}
 .wb-screen.ws-out{opacity:0;transform:translateX(-24px)}
@@ -478,9 +493,46 @@ html[lang=es] .pcard-deliverable[data-en-i]{display:none!important}
 .ws3-time{font-family:'DM Mono',monospace;font-size:.5rem;color:rgba(255,255,255,.3);flex-shrink:0;margin-top:.15rem}
 .ws3-act{font-size:.68rem;color:rgba(255,255,255,.75);line-height:1.3}
 /* Screen nav indicators */
-.wb-indicators{height:28px;background:var(--wp-navy);display:flex;align-items:center;justify-content:center;gap:.4rem;border-top:1px solid rgba(255,255,255,.05)}
-.wb-ind{width:18px;height:3px;border-radius:2px;background:rgba(255,255,255,.15);transition:all .35s ease;cursor:pointer}
-.wb-ind.wi-active{width:28px;background:var(--wp-gold)}
+.wb-nav{height:44px;background:rgba(20,33,48,.98);display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,.05);padding:0 .6rem;gap:.4rem}
+/* Arrow buttons */
+.wb-arrow{
+  width:28px;height:28px;border-radius:7px;
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;flex-shrink:0;
+  transition:background .18s,border-color .18s,transform .12s;
+  color:rgba(255,255,255,.45);
+  user-select:none;
+}
+.wb-arrow:hover{
+  background:rgba(201,146,42,.18);
+  border-color:rgba(201,146,42,.45);
+  color:var(--wp-gold);
+  transform:scale(1.07);
+}
+.wb-arrow:active{transform:scale(.93)}
+.wb-arrow svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+/* Dots in centre */
+.wb-dots{display:flex;align-items:center;gap:4px;flex:1;justify-content:center}
+.wb-ind{
+  width:5px;height:5px;border-radius:50%;
+  background:rgba(255,255,255,.16);
+  transition:all .3s cubic-bezier(.22,1,.36,1);
+  cursor:pointer;
+}
+.wb-ind:hover{background:rgba(255,255,255,.3)}
+.wb-ind.wi-active{
+  width:20px;height:5px;border-radius:3px;
+  background:var(--wp-gold);
+}
+/* Screen label */
+.wb-nav-label{
+  font-family:'DM Mono',monospace;font-size:.44rem;
+  letter-spacing:.1em;text-transform:uppercase;
+  color:rgba(255,255,255,.25);white-space:nowrap;
+  min-width:80px;text-align:right;
+  transition:opacity .2s;
+}
 /* Screen label */
 .wb-screen-label{position:absolute;top:.6rem;right:.75rem;font-family:'DM Mono',monospace;font-size:.48rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.2);z-index:5;pointer-events:none}
 /* skills — Sage */
@@ -660,7 +712,7 @@ footer{background:#0d1f0a;padding:1.4rem 3.5rem;display:flex;justify-content:spa
   .wfeat::after{display:none}
   .wfeat-l{padding:2.5rem 1.5rem}
   .wfeat-r{padding:1.5rem;background:#f2ede4}
-  .wb-screens{height:280px}
+  .wb-screens{height:340px}
 }
 @media(max-width:600px){
   .pgrid,.skg,.fr{grid-template-columns:1fr}
@@ -894,11 +946,182 @@ html[lang=es] .signal-label[data-es]{display:flex}
 .sr-modules{opacity:1;transform:none}
 .sr-modules.v{opacity:1;transform:none}
 
-/* ── WAYPOINT SCREEN 1 additions ── */
-.ws1-btn-primary{background:var(--wp-gold);color:white!important}
-.ws1-form-row{display:flex;flex-wrap:wrap;gap:4px;margin-top:.5rem;align-items:center}
-.ws1-form-chip{font-size:.52rem;padding:.22rem .5rem;background:rgba(255,255,255,.12);color:rgba(255,255,255,.75);border-radius:4px;white-space:nowrap}
-.ws1-create-btn{font-size:.52rem;padding:.28rem .65rem;background:var(--wp-gold);color:white;border-radius:4px;font-weight:700;white-space:nowrap;margin-left:auto}
+/* ══════════════════════════════════════════
+   WAYPOINT SCREENS — faithful to the real app
+   ═══════════════════════════════════════════ */
+
+/* ── Shared: chrome font ── */
+.wh-way{color:#1e2d3d;font-weight:800}
+.wh-pt{color:#c9922a;font-weight:800}
+
+/* ── Screen 1: Home ── */
+.ws-home{background:#1c2b3a}
+.ws-home-inner{display:flex;flex-direction:column;height:100%}
+.ws-home-nav{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:.55rem .75rem;background:rgba(255,255,255,.04);
+  border-bottom:1px solid rgba(255,255,255,.06);
+  font-family:'Syne',sans-serif;font-size:.7rem;flex-shrink:0
+}
+.ws-home-logo{font-family:'Syne',sans-serif;font-size:.78rem;font-weight:800;letter-spacing:-.02em}
+.ws-home-chip{font-size:.46rem;padding:.2rem .5rem;background:rgba(255,255,255,.1);color:rgba(255,255,255,.7);border-radius:20px}
+.ws-home-cta{background:var(--wp-gold)!important;color:white!important;font-weight:600}
+.ws-home-body{flex:1;padding:.65rem .75rem;display:flex;flex-direction:column;gap:.45rem;overflow:hidden}
+.ws-home-sup{font-family:'DM Mono',monospace;font-size:.42rem;letter-spacing:.14em;color:rgba(255,255,255,.35);text-transform:uppercase}
+.ws-home-headline{font-family:'Syne',sans-serif;font-size:1.35rem;font-weight:800;color:white;letter-spacing:-.04em;line-height:1;margin:.15rem 0}
+.ws-home-headline em{color:var(--wp-gold);font-style:italic}
+.ws-home-sub{font-size:.54rem;color:rgba(255,255,255,.5);line-height:1.5}
+.ws-home-dests{display:flex;gap:.4rem;flex-wrap:nowrap;overflow:hidden}
+.ws-home-dest{display:flex;flex-direction:column;align-items:center;gap:.15rem;font-size:.44rem;color:rgba(255,255,255,.4);background:rgba(255,255,255,.06);border-radius:8px;padding:.35rem .4rem;cursor:default;min-width:36px}
+.ws-home-dest-active{background:rgba(201,146,42,.15)!important;color:var(--wp-gold)!important;border:1px solid rgba(201,146,42,.3)}
+.ws-home-dest div{font-size:.4rem;letter-spacing:.02em}
+.ws-home-input-box{
+  background:rgba(255,255,255,.08);border-radius:8px;
+  padding:.45rem .6rem;display:flex;justify-content:space-between;align-items:center;
+  border:1px solid rgba(255,255,255,.1)
+}
+.ws-home-input-text{font-size:.48rem;color:rgba(255,255,255,.3);font-style:italic;flex:1}
+.ws-home-mic{font-size:.7rem;flex-shrink:0}
+.ws-home-fields{display:grid;grid-template-columns:1fr 1fr;gap:.35rem}
+.ws-home-field{background:rgba(255,255,255,.07);border-radius:6px;padding:.35rem .5rem}
+.ws-home-field-label{font-size:.38rem;letter-spacing:.1em;color:rgba(255,255,255,.3);text-transform:uppercase;font-family:'DM Mono',monospace;margin-bottom:.15rem}
+.ws-home-field-val{font-size:.5rem;color:rgba(255,255,255,.75);font-weight:500}
+.ws-home-btn{
+  background:var(--wp-gold);color:white;border-radius:8px;
+  text-align:center;padding:.5rem;font-size:.58rem;font-weight:700;
+  letter-spacing:.02em;margin-top:auto;
+}
+
+/* ── Screen 2: Itinerary ── */
+.ws-itin{background:#f5f3ef}
+.ws-itin-inner{display:flex;flex-direction:column;height:100%;overflow:hidden}
+.ws-itin-top{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:.45rem .75rem;background:white;border-bottom:1px solid rgba(30,45,61,.08);
+  flex-shrink:0;
+}
+.ws-itin-logo{font-family:'Syne',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:-.02em}
+.ws-itin-meta{display:flex;gap:3px;align-items:center;flex-wrap:nowrap}
+.ws-it-chip{font-size:.44rem;padding:.18rem .44rem;background:rgba(30,45,61,.07);color:rgba(30,45,61,.6);border-radius:4px;white-space:nowrap}
+.ws-itin-stats{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  background:white;border-bottom:1px solid rgba(30,45,61,.08);
+  flex-shrink:0;
+}
+.ws-is-item{padding:.38rem .3rem;text-align:center;border-right:1px solid rgba(30,45,61,.06)}
+.ws-is-item:last-child{border-right:none}
+.ws-is-n{display:block;font-family:'Syne',sans-serif;font-size:.72rem;font-weight:800;color:#1e2d3d;letter-spacing:-.03em;line-height:1}
+.ws-is-l{display:block;font-size:.38rem;color:rgba(30,45,61,.4);text-transform:uppercase;letter-spacing:.06em;font-family:'DM Mono',monospace;margin-top:.1rem}
+.ws-itin-daytabs{
+  display:flex;gap:3px;padding:.35rem .6rem;overflow-x:auto;scrollbar-width:none;
+  background:white;border-bottom:1px solid rgba(30,45,61,.06);flex-shrink:0;
+}
+.ws-dt{font-size:.44rem;padding:.2rem .5rem;border-radius:20px;white-space:nowrap;color:rgba(30,45,61,.4);cursor:default}
+.ws-dt.active{background:#e07b3a;color:white;font-weight:600}
+.ws-itin-dayhead{padding:.45rem .65rem .25rem;flex-shrink:0}
+.ws-dh-title{font-size:.54rem;font-weight:600;color:#1e2d3d;letter-spacing:-.01em}
+.ws-dh-theme{font-size:.44rem;color:rgba(30,45,61,.4);text-transform:uppercase;letter-spacing:.1em;font-family:'DM Mono',monospace;margin-top:.1rem}
+.ws-itin-acts{flex:1;overflow-y:auto;padding:0 .65rem .5rem;scrollbar-width:none}
+.ws-act{display:grid;grid-template-columns:18px 1fr;gap:6px;padding:.5rem 0;border-bottom:1px solid rgba(30,45,61,.05)}
+.ws-act-num{width:18px;height:18px;border-radius:50%;background:#e07b3a;color:white;font-size:.5rem;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.ws-act-content{}
+.ws-act-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.15rem}
+.ws-act-name{font-size:.6rem;font-weight:700;color:#1e2d3d;letter-spacing:-.01em}
+.ws-act-time{font-family:'DM Mono',monospace;font-size:.48rem;color:rgba(30,45,61,.5);white-space:nowrap;margin-left:.4rem}
+.ws-act-desc{font-size:.48rem;color:rgba(30,45,61,.55);line-height:1.5;margin-bottom:.3rem}
+.ws-act-pills{display:flex;gap:3px;flex-wrap:wrap}
+.ws-ap{font-size:.42rem;padding:.1rem .36rem;border-radius:3px;white-space:nowrap}
+.ws-ap-food{background:rgba(224,123,58,.1);color:#a05020}
+.ws-ap-act{background:rgba(30,45,61,.07);color:rgba(30,45,61,.65)}
+.ws-ap-free{background:rgba(40,160,80,.12);color:#1a6e2a}
+.ws-ap-loc{background:rgba(30,45,61,.05);color:rgba(30,45,61,.5)}
+.ws-ap-price{background:rgba(30,45,61,.05);color:rgba(30,45,61,.5)}
+.ws-ap-star{background:rgba(255,180,0,.1);color:#8a6a00}
+.ws-act-transport{text-align:center;font-size:.44rem;color:rgba(30,45,61,.35);padding:.2rem 0;font-style:italic}
+
+/* ── Screen 3: Map ── */
+.ws-map-inner{display:flex;flex-direction:column;height:100%;background:#f5f3ed;overflow:hidden}
+.ws-map-tabs{
+  display:flex;gap:3px;padding:.4rem .65rem;background:white;
+  border-bottom:1px solid rgba(30,45,61,.08);flex-shrink:0;
+}
+.ws-mt{font-size:.48rem;padding:.22rem .5rem;border-radius:20px;color:rgba(30,45,61,.45);cursor:default;white-space:nowrap}
+.ws-mt.active{background:#1e2d3d;color:white}
+.ws-map-daytabs{
+  display:flex;gap:4px;padding:.3rem .65rem;background:white;
+  border-bottom:1px solid rgba(30,45,61,.06);flex-shrink:0;
+}
+.ws-mdt{font-size:.44rem;padding:.18rem .5rem;border-radius:20px;border:1.5px solid rgba(30,45,61,.15);color:rgba(30,45,61,.45);cursor:default;white-space:nowrap}
+.ws-map-canvas{flex:1;overflow:hidden;position:relative}
+.ws-map-places{
+  padding:.4rem .65rem;background:white;border-top:1px solid rgba(30,45,61,.08);
+  display:flex;flex-direction:column;gap:.2rem;flex-shrink:0;
+}
+.ws-map-place{font-size:.48rem;color:rgba(30,45,61,.65);display:flex;align-items:center;gap:4px}
+.ws-mp-dot{width:8px;height:8px;border-radius:50%;background:#e07b3a;flex-shrink:0}
+
+/* ── Screen 4: Weather ── */
+.ws-wthr{background:#f5f3ef}
+.ws-wthr-inner{display:flex;flex-direction:column;height:100%;overflow:hidden}
+.ws-wthr-body{flex:1;padding:.5rem .65rem;overflow-y:auto;scrollbar-width:none;display:flex;flex-direction:column;gap:.4rem}
+.ws-wth-hero{
+  background:linear-gradient(135deg,#dce8f8,#c8daf0);
+  border-radius:10px;padding:.65rem .75rem;
+}
+.ws-wth-hero-top{display:flex;justify-content:space-between;align-items:flex-start}
+.ws-wth-city{font-size:.62rem;font-weight:700;color:#1e3a5f;letter-spacing:-.01em;margin-bottom:.35rem}
+.ws-wth-stats{display:flex;gap:.8rem;margin-bottom:.3rem}
+.ws-wth-stat{}
+.ws-wth-big{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:800;color:#1e3a5f;letter-spacing:-.04em;line-height:1;display:block}
+.ws-wth-lbl{font-size:.38rem;color:rgba(30,58,95,.5);text-transform:uppercase;letter-spacing:.08em;font-family:'DM Mono',monospace;margin-top:.1rem}
+.ws-wth-cond{font-size:.52rem;font-weight:500;color:#1e3a5f;margin-bottom:.3rem}
+.ws-wth-tip{font-size:.48rem;color:#7a4a18;line-height:1.55;font-style:italic;border-top:1px solid rgba(30,58,95,.12);padding-top:.3rem;margin-top:.1rem}
+.ws-wth-day{
+  background:white;border-radius:9px;padding:.55rem .65rem;
+  border:1px solid rgba(30,45,61,.06);
+}
+.ws-wth-day-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:.25rem}
+.ws-wth-day-name{font-size:.55rem;font-weight:600;color:#1e2d3d;letter-spacing:-.01em}
+.ws-wth-day-temps{font-family:'Syne',sans-serif;font-size:.85rem;font-weight:700;color:#1e2d3d;letter-spacing:-.03em;margin-bottom:.2rem}
+.ws-wth-min{font-size:.65rem;color:rgba(30,45,61,.45);font-weight:400}
+.ws-wth-day-note{font-size:.46rem;color:#c9922a;font-style:italic;line-height:1.5}
+
+/* ── Screen 5: Budget ── */
+.ws-bdgt{background:#f5f3ef}
+.ws-bdgt-inner{display:flex;flex-direction:column;height:100%;overflow:hidden}
+.ws-bdgt-body{flex:1;overflow-y:auto;scrollbar-width:none;padding:.5rem .65rem;display:flex;flex-direction:column;gap:.35rem}
+.ws-bdgt-section{background:rgba(224,123,58,.06);border:1px solid rgba(224,123,58,.15);border-radius:10px;padding:.55rem .65rem}
+.ws-bdgt-section-title{font-size:.62rem;font-weight:700;color:#c9611a;letter-spacing:-.01em;margin-bottom:.15rem}
+.ws-bdgt-sub{font-size:.44rem;color:#c9611a;font-style:italic;margin-bottom:.4rem}
+.ws-bdgt-row{
+  display:grid;grid-template-columns:auto 1fr auto;gap:.5rem;
+  align-items:center;background:white;border-radius:7px;
+  padding:.45rem .5rem;margin-bottom:.3rem;
+}
+.ws-bdgt-ico{font-size:.9rem;flex-shrink:0}
+.ws-bdgt-info{}
+.ws-bdgt-label{font-size:.54rem;font-weight:600;color:#1e2d3d;line-height:1.2}
+.ws-bdgt-sub2{font-size:.42rem;color:rgba(30,45,61,.4);margin-top:.1rem}
+.ws-bdgt-input{
+  font-family:'Syne',sans-serif;font-size:.78rem;font-weight:700;
+  color:#1e2d3d;background:rgba(30,45,61,.05);
+  border-radius:5px;padding:.25rem .4rem;text-align:right;letter-spacing:-.02em;
+}
+.ws-bdgt-total{
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:.52rem;color:rgba(30,45,61,.5);
+  border-top:1px solid rgba(224,123,58,.15);padding-top:.3rem;margin-top:.1rem;
+}
+.ws-bdgt-total-n{font-family:'Syne',sans-serif;font-size:.9rem;font-weight:800;color:#c9611a;letter-spacing:-.03em}
+.ws-bdgt-bar-row{
+  display:flex;align-items:center;gap:.35rem;margin-bottom:.3rem;
+  font-size:.46rem;color:rgba(30,45,61,.6);
+}
+.ws-bdgt-bar-row>span:first-child{min-width:64px;white-space:nowrap}
+.ws-bdgt-bar{flex:1;height:4px;background:rgba(30,45,61,.08);border-radius:2px}
+.ws-bdgt-fill{height:100%;background:var(--wp-gold);border-radius:2px}
+.ws-bdgt-bar-row>span:last-child{font-weight:700;color:#1e2d3d;min-width:30px;text-align:right}
+
 /* ── WAYPOINT SCREEN 2/3 additions ── */
 .ws3-summary-bar{display:grid;grid-template-columns:repeat(4,1fr);background:white;border-bottom:1px solid rgba(30,45,61,.08)}
 .ws3-sum-item{padding:.5rem .4rem;text-align:center;border-right:1px solid rgba(30,45,61,.06)}
@@ -910,7 +1133,7 @@ html[lang=es] .signal-label[data-es]{display:flex}
 .ws3-tab.active{background:var(--wp-navy);color:white}
 .ws3-day-title{font-size:.58rem;font-weight:600;color:#1e2d3d;padding:.5rem 0 .1rem;letter-spacing:-.01em}
 .ws3-day-theme{font-size:.5rem;color:rgba(30,45,61,.4);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.4rem}
-.ws3-act-item{display:grid;grid-template-columns:16px 1fr auto;gap:5px;align-items:start;padding:.45rem 0;border-bottom:1px solid rgba(30,45,61,.05)}
+.ws3-act-item{display:grid;grid-template-columns:18px 1fr auto;gap:6px;align-items:start;padding:.55rem 0;border-bottom:1px solid rgba(30,45,61,.05)}
 .ws3-act-num{width:16px;height:16px;border-radius:50%;background:var(--wp-gold);color:white;font-size:.5rem;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
 .ws3-act-name{font-size:.6rem;font-weight:700;color:#1e2d3d;margin-bottom:.15rem;letter-spacing:-.01em}
 .ws3-act-desc{font-size:.5rem;color:rgba(30,45,61,.5);line-height:1.4;margin-bottom:.2rem}
@@ -928,21 +1151,21 @@ html[lang=es] .signal-label[data-es]{display:flex}
 .ws-map-leg-item{display:flex;align-items:center;gap:4px;font-size:.48rem;color:rgba(30,45,61,.65)}
 .ws-map-pin-dot{width:7px;height:7px;border-radius:50%;background:var(--wp-gold);flex-shrink:0}
 /* ── WAYPOINT BUDGET screen ── */
-.ws-budget-body{padding:.5rem .75rem}
+.ws-budget-body{padding:.65rem .85rem;display:flex;flex-direction:column;flex:1;overflow-y:auto}
 .ws-budget-title{font-size:.52rem;font-weight:700;color:rgba(30,45,61,.45);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem}
-.ws-budget-row{display:flex;align-items:center;justify-content:space-between;background:white;border-radius:6px;padding:.5rem .6rem;margin-bottom:.35rem}
+.ws-budget-row{display:flex;align-items:center;justify-content:space-between;background:white;border-radius:8px;padding:.65rem .75rem;margin-bottom:.4rem}
 .ws-brow-name{font-size:.58rem;font-weight:600;color:#1e2d3d}
 .ws-brow-sub{font-size:.46rem;color:rgba(30,45,61,.4);margin-top:.1rem}
 .ws-brow-amt{font-family:'Syne',sans-serif;font-size:.8rem;font-weight:800;color:#1e2d3d;letter-spacing:-.03em}
 .ws-budget-total{display:flex;justify-content:space-between;align-items:center;padding:.4rem .6rem;border-top:1px solid rgba(30,45,61,.1);font-size:.56rem;font-weight:600;color:rgba(30,45,61,.6);margin-top:.2rem}
 .ws-budget-total-amt{font-family:'Syne',sans-serif;font-size:.9rem;font-weight:800;color:var(--wp-gold);letter-spacing:-.03em}
-.ws-bday-row{display:flex;align-items:center;gap:.4rem;margin-bottom:.3rem;font-size:.5rem;color:rgba(30,45,61,.6)}
+.ws-bday-row{display:flex;align-items:center;gap:.4rem;margin-bottom:.4rem;font-size:.5rem;color:rgba(30,45,61,.6)}
 .ws-bday-row>span:first-child{min-width:70px;white-space:nowrap}
 .ws-bday-bar{flex:1;height:4px;background:rgba(30,45,61,.1);border-radius:2px;overflow:hidden}
 .ws-bday-fill{height:100%;background:var(--wp-gold);border-radius:2px}
 .ws-bday-row>span:last-child{font-weight:700;color:#1e2d3d;min-width:28px;text-align:right}
 /* ── WAYPOINT WEATHER screen ── */
-.ws-weather-body{padding:.5rem .75rem}
+.ws-weather-body{padding:.65rem .85rem;display:flex;flex-direction:column}
 .ws-weather-city{font-size:.58rem;font-weight:700;color:#1e2d3d;letter-spacing:-.01em;margin-bottom:.5rem}
 .ws-weather-main{display:flex;gap:.6rem;align-items:flex-start;background:white;border-radius:8px;padding:.6rem;margin-bottom:.5rem}
 .ws-weather-ico{font-size:1.5rem;flex-shrink:0}
@@ -984,7 +1207,7 @@ html[lang=es] .signal-label[data-es]{display:flex}
 <div id="hero-blob2" style="position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(184,134,11,.06) 0%,transparent 70%);pointer-events:none;z-index:0;filter:blur(50px);bottom:-50px;right:10%;"></div>
   <div class="hg"></div>
   <div class="horb" id="orb"></div>
-  <div style="display:inline-flex;align-items:center;gap:.5rem;margin-bottom:1.5rem;opacity:0;animation:fup .6s .05s ease forwards"><span style="font-family:'DM Mono',monospace;font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;color:var(--acc);background:rgba(45,122,58,.07);border:1px solid rgba(45,122,58,.18);border-radius:20px;padding:.25rem .75rem">Guadalajara · MX</span><span style="font-family:'DM Mono',monospace;font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)">Open to work globally</span></div>
+  <div style="display:inline-flex;align-items:center;gap:.5rem;margin-bottom:1.5rem;opacity:0;animation:fup .6s .05s ease forwards"><span style="font-family:'DM Mono',monospace;font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;color:var(--acc);background:rgba(45,122,58,.07);border:1px solid rgba(45,122,58,.18);border-radius:20px;padding:.25rem .75rem">Guadalajara · MX</span><span style="font-family:'DM Mono',monospace;font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)" data-en-i>Open to work globally</span><span style="font-family:'DM Mono',monospace;font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)" data-es-i>Disponible globalmente</span></div>
   <div class="h-ey"><span data-en-i>Marketing · Web · Content · Branding</span><span data-es-i>Marketing · Web · Contenido · Branding</span></div>
   <div class="hn">
     <div class="hn-w"><span class="h-name">DANIELA</span></div>
@@ -1668,345 +1891,436 @@ html[lang=es] .signal-label[data-es]{display:flex}
       </div>
       <div class="wb-screens">
 
-        <!-- SCREEN 1: HOME — formulario de creación -->
-        <div class="wb-screen ws1 ws-active" id="wscreen-0">
+        <!-- SCREEN 1: HOME — Trip builder -->
+        <div class="wb-screen ws-home ws-active" id="wscreen-0">
           <div class="wb-screen-label" data-en-i>Home — Trip Builder</div>
           <div class="wb-screen-label" data-es-i>Inicio — Crear viaje</div>
-          <div style="background:#1e2d3d;height:100%;display:flex;flex-direction:column">
-            <div class="ws1-nav">
-              <div class="ws1-logo"><span class="way">way</span><span class="pt">point</span></div>
-              <div style="display:flex;gap:6px">
-                <div class="ws1-btn" data-en-i>My trips</div>
-                <div class="ws1-btn" data-es-i>Mis viajes</div>
-                <div class="ws1-btn ws1-btn-primary" data-en-i>Sign in</div>
-                <div class="ws1-btn ws1-btn-primary" data-es-i>Iniciar sesión</div>
+          <div class="ws-home-inner">
+            <div class="ws-home-nav">
+              <div class="ws-home-logo"><span class="wh-way">way</span><span class="wh-pt">point</span></div>
+              <div style="display:flex;gap:4px;align-items:center">
+                <div class="ws-home-chip" data-en-i>My trips</div>
+                <div class="ws-home-chip" data-es-i>Mis viajes</div>
+                <div class="ws-home-chip ws-home-cta" data-en-i>Sign in</div>
+                <div class="ws-home-chip ws-home-cta" data-es-i>Entrar</div>
               </div>
             </div>
-            <div class="ws1-body">
-              <div class="ws1-label" data-en-i>Your AI travel assistant</div>
-              <div class="ws1-label" data-es-i>Tu asistente de viajes con IA</div>
-              <div class="ws1-h">
-                <span data-en-i>Plan your next</span>
-                <span data-es-i>Planea tu próxima</span>
-                <em class="ws1-italic" data-en-i>adventure.</em>
-                <em class="ws1-italic" data-es-i>aventura.</em>
+            <div class="ws-home-body">
+              <div class="ws-home-sup" data-en-i>YOUR AI TRAVEL ASSISTANT</div>
+              <div class="ws-home-sup" data-es-i>TU ASISTENTE DE VIAJES CON IA</div>
+              <div class="ws-home-headline" data-en-i>Plan your next<br><em>adventure.</em></div>
+              <div class="ws-home-headline" data-es-i>Planea tu próxima<br><em>aventura.</em></div>
+              <div class="ws-home-sub" data-en-i>Waypoint builds your full itinerary in seconds.</div>
+              <div class="ws-home-sub" data-es-i>Waypoint construye tu itinerario completo al instante.</div>
+              <div class="ws-home-dests">
+                <div class="ws-home-dest">🗼<div>París</div></div>
+                <div class="ws-home-dest">⛩<div>Tokio</div></div>
+                <div class="ws-home-dest">🏛<div>Roma</div></div>
+                <div class="ws-home-dest ws-home-dest-active">🌮<div>CDMX</div></div>
+                <div class="ws-home-dest">🌴<div>Bali</div></div>
+                <div class="ws-home-dest">🗽<div>NY</div></div>
               </div>
-              <div class="ws1-sub" data-en-i>Waypoint builds your complete itinerary instantly.</div>
-              <div class="ws1-sub" data-es-i>Waypoint construye tu itinerario completo al instante.</div>
-              <div class="ws1-bubbles">
-                <div class="ws1-bubble">🗼<div class="ws1-bub-lbl">París</div></div>
-                <div class="ws1-bubble">⛩<div class="ws1-bub-lbl">Tokio</div></div>
-                <div class="ws1-bubble">🏛<div class="ws1-bub-lbl">Roma</div></div>
-                <div class="ws1-bubble">🗽<div class="ws1-bub-lbl">NY</div></div>
-                <div class="ws1-bubble">🌴<div class="ws1-bub-lbl">Bali</div></div>
-                <div class="ws1-bubble">🌮<div class="ws1-bub-lbl">CDMX</div></div>
+              <div class="ws-home-input-box">
+                <span class="ws-home-input-text" data-en-i>E.g.: I want to go to Tokyo 5 days, I love food and art...</span>
+                <span class="ws-home-input-text" data-es-i>Ej: Quiero ir a Tokyo 5 días, me gusta la comida y el arte...</span>
+                <div class="ws-home-mic">🎤</div>
               </div>
-              <div class="ws1-input" data-en-i>E.g.: I want to go to Rome for 5 days, I love art and food...</div>
-              <div class="ws1-input" data-es-i>Ej: Quiero ir a Roma 5 días, me gusta el arte y la gastronomía...</div>
-              <div class="ws1-form-row">
-                <div class="ws1-form-chip" data-en-i>📅 Jun 4 – Jun 9</div>
-                <div class="ws1-form-chip" data-es-i>📅 4 Jun – 9 Jun</div>
-                <div class="ws1-form-chip">👥 2</div>
-                <div class="ws1-form-chip">USD $</div>
-                <div class="ws1-create-btn" data-en-i>✦ Create my itinerary</div>
-                <div class="ws1-create-btn" data-es-i>✦ Crear mi itinerario</div>
+              <div class="ws-home-fields">
+                <div class="ws-home-field">
+                  <div class="ws-home-field-label" data-en-i>START DATE</div>
+                  <div class="ws-home-field-label" data-es-i>FECHA INICIO</div>
+                  <div class="ws-home-field-val">4 Jun 2026 📅</div>
+                </div>
+                <div class="ws-home-field">
+                  <div class="ws-home-field-label" data-en-i>END DATE</div>
+                  <div class="ws-home-field-label" data-es-i>FECHA FIN</div>
+                  <div class="ws-home-field-val">9 Jun 2026 📅</div>
+                </div>
+                <div class="ws-home-field">
+                  <div class="ws-home-field-label" data-en-i>PEOPLE</div>
+                  <div class="ws-home-field-label" data-es-i>PERSONAS</div>
+                  <div class="ws-home-field-val">2 personas ▾</div>
+                </div>
+                <div class="ws-home-field">
+                  <div class="ws-home-field-label">CURRENCY</div>
+                  <div class="ws-home-field-val">USD $ ▾</div>
+                </div>
               </div>
+              <div class="ws-home-btn" data-en-i>✦ Create my itinerary</div>
+              <div class="ws-home-btn" data-es-i>✦ Crear mi itinerario</div>
             </div>
           </div>
         </div>
 
-        <!-- SCREEN 2: ITINERARY — días con actividades -->
-        <div class="wb-screen ws3" id="wscreen-1">
+        <!-- SCREEN 2: ITINERARY — Day view -->
+        <div class="wb-screen ws-itin" id="wscreen-1">
           <div class="wb-screen-label" data-en-i>Itinerary — Day by Day</div>
           <div class="wb-screen-label" data-es-i>Itinerario — Día a día</div>
-          <div style="background:#f5f3ef;height:100%;overflow:hidden">
-            <div class="ws3-nav">
-              <div style="font-family:'Syne',sans-serif;font-size:.65rem;font-weight:800;color:#1e2d3d"><span style="color:#c9922a">way</span>point</div>
-              <div style="display:flex;gap:4px;align-items:center">
-                <div class="ws3-top-chip">5 <span data-en-i>days</span><span data-es-i>días</span></div>
-                <div class="ws3-top-chip">Tokyo</div>
-                <div class="ws3-top-chip">👥 2</div>
+          <div class="ws-itin-inner">
+            <div class="ws-itin-top">
+              <div class="ws-itin-logo"><span class="wh-way">way</span><span class="wh-pt">point</span></div>
+              <div class="ws-itin-meta">
+                <div class="ws-it-chip">Tokyo</div>
+                <div class="ws-it-chip">5 <span data-en-i>days</span><span data-es-i>días</span></div>
+                <div class="ws-it-chip">👥 2</div>
+                <div class="ws-it-chip">☀ 26°</div>
               </div>
             </div>
-            <div class="ws3-summary-bar">
-              <div class="ws3-sum-item"><div class="ws3-sum-n">5</div><div class="ws3-sum-l" data-en-i>Days</div><div class="ws3-sum-l" data-es-i>Días</div></div>
-              <div class="ws3-sum-item"><div class="ws3-sum-n">45</div><div class="ws3-sum-l" data-en-i>Activities</div><div class="ws3-sum-l" data-es-i>Actividades</div></div>
-              <div class="ws3-sum-item"><div class="ws3-sum-n">$520</div><div class="ws3-sum-l" data-en-i>Activ./person</div><div class="ws3-sum-l" data-es-i>Activ./persona</div></div>
-              <div class="ws3-sum-item"><div class="ws3-sum-n">$2,100</div><div class="ws3-sum-l" data-en-i>Flights+Hotel</div><div class="ws3-sum-l" data-es-i>Vuelos+Hotel</div></div>
+            <!-- Stats bar -->
+            <div class="ws-itin-stats">
+              <div class="ws-is-item"><span class="ws-is-n">5</span><span class="ws-is-l" data-en-i>DAYS</span><span class="ws-is-l" data-es-i>DÍAS</span></div>
+              <div class="ws-is-item"><span class="ws-is-n">45</span><span class="ws-is-l" data-en-i>ACTIVITIES</span><span class="ws-is-l" data-es-i>ACTIV.</span></div>
+              <div class="ws-is-item"><span class="ws-is-n">$520</span><span class="ws-is-l" data-en-i>P/PERSON</span><span class="ws-is-l" data-es-i>P/PERSONA</span></div>
+              <div class="ws-is-item"><span class="ws-is-n">$2,100</span><span class="ws-is-l" data-en-i>FLIGHTS+HTL</span><span class="ws-is-l" data-es-i>VUELOS+HTL</span></div>
             </div>
-            <div class="ws3-day-tabs">
-              <div class="ws3-tab active" data-en-i>Thu Jun 4</div><div class="ws3-tab active" data-es-i>Jue 4 Jun</div>
-              <div class="ws3-tab" data-en-i>Fri Jun 5</div><div class="ws3-tab" data-es-i>Vie 5 Jun</div>
-              <div class="ws3-tab" data-en-i>Sat Jun 6</div><div class="ws3-tab" data-es-i>Sáb 6 Jun</div>
-              <div class="ws3-tab" data-en-i>Sun Jun 7</div><div class="ws3-tab" data-es-i>Dom 7 Jun</div>
-              <div class="ws3-tab" data-en-i>Mon Jun 8</div><div class="ws3-tab" data-es-i>Lun 8 Jun</div>
+            <!-- Day tabs -->
+            <div class="ws-itin-daytabs">
+              <div class="ws-dt active" data-en-i>1 · Thu Jun 4</div>
+              <div class="ws-dt active" data-es-i>1 · Jue 4 Jun</div>
+              <div class="ws-dt" data-en-i>2 · Fri Jun 5</div>
+              <div class="ws-dt" data-es-i>2 · Vie 5 Jun</div>
+              <div class="ws-dt" data-en-i>3 · Sat</div>
+              <div class="ws-dt" data-es-i>3 · Sáb</div>
+              <div class="ws-dt" data-en-i>4 · Sun</div>
+              <div class="ws-dt" data-es-i>4 · Dom</div>
+              <div class="ws-dt" data-en-i>5 · Mon</div>
+              <div class="ws-dt" data-es-i>5 · Lun</div>
             </div>
-            <div style="padding:0 .75rem">
-              <div class="ws3-day-title">
-                <span data-en-i>Thursday, June 4 · ☀ 26° Partly cloudy</span>
-                <span data-es-i>Jueves, 4 de junio · ☀ 26° Parcialmente nublado</span>
-              </div>
-              <div class="ws3-day-theme" data-en-i>Art & Culture</div>
-              <div class="ws3-day-theme" data-es-i>Arte y cultura</div>
-              <div class="ws3-act-item">
-                <div class="ws3-act-num">1</div>
-                <div class="ws3-act-body">
-                  <div class="ws3-act-name">Tsukiji Outer Market</div>
-                  <div class="ws3-act-desc" data-en-i>Historic market with fresh sushi and street food</div>
-                  <div class="ws3-act-desc" data-es-i>Mercado histórico con sushi fresco y comida callejera</div>
-                  <div class="ws3-act-tags"><span class="ws3-tag ws3-tag-food" data-en-i>Gastronomy</span><span class="ws3-tag ws3-tag-food" data-es-i>Gastronomía</span><span class="ws3-tag">~$12</span><span class="ws3-tag">⭐ 4.2</span></div>
+            <!-- Day header -->
+            <div class="ws-itin-dayhead">
+              <div class="ws-dh-title" data-en-i>Thursday, June 4 · ⛅ 26° Partly cloudy</div>
+              <div class="ws-dh-title" data-es-i>Jueves, 4 de junio · ⛅ 26° Parcialmente nublado</div>
+              <div class="ws-dh-theme" data-en-i>Art & culture</div>
+              <div class="ws-dh-theme" data-es-i>Arte y cultura</div>
+            </div>
+            <!-- Activity cards -->
+            <div class="ws-itin-acts">
+              <div class="ws-act">
+                <div class="ws-act-num">1</div>
+                <div class="ws-act-content">
+                  <div class="ws-act-top">
+                    <div class="ws-act-name">Tsukiji Outer Market</div>
+                    <div class="ws-act-time">07:00 · 1.5h</div>
+                  </div>
+                  <div class="ws-act-desc" data-en-i>Historic market with fresh sushi & street food. Best tamagoyaki in Tokyo.</div>
+                  <div class="ws-act-desc" data-es-i>Mercado histórico con sushi fresco y comida callejera. El mejor tamagoyaki de Tokyo.</div>
+                  <div class="ws-act-pills">
+                    <span class="ws-ap ws-ap-food" data-en-i>Gastronomy</span>
+                    <span class="ws-ap ws-ap-food" data-es-i>Gastronomía</span>
+                    <span class="ws-ap ws-ap-loc">📍 Tsukiji</span>
+                    <span class="ws-ap ws-ap-price">~$12</span>
+                    <span class="ws-ap ws-ap-star">⭐ 4.2 (55.6k)</span>
+                  </div>
                 </div>
-                <div class="ws3-act-time">07:00 · 1.5h</div>
               </div>
-              <div class="ws3-act-item">
-                <div class="ws3-act-num">2</div>
-                <div class="ws3-act-body">
-                  <div class="ws3-act-name">Ginza Sony Building</div>
-                  <div class="ws3-act-desc" data-en-i>11-floor tower with interactive digital art. Free.</div>
-                  <div class="ws3-act-desc" data-es-i>Torre de 11 pisos con arte digital interactivo. Gratis.</div>
-                  <div class="ws3-act-tags"><span class="ws3-tag ws3-tag-act" data-en-i>Activity</span><span class="ws3-tag ws3-tag-act" data-es-i>Actividad</span><span class="ws3-tag ws3-tag-free" data-en-i>Free</span><span class="ws3-tag ws3-tag-free" data-es-i>Gratis</span></div>
+              <div class="ws-act-transport" data-en-i>~13 min walking</div>
+              <div class="ws-act-transport" data-es-i>~13 min caminando</div>
+              <div class="ws-act">
+                <div class="ws-act-num">2</div>
+                <div class="ws-act-content">
+                  <div class="ws-act-top">
+                    <div class="ws-act-name">Ginza Sony Building</div>
+                    <div class="ws-act-time">09:00 · 1h</div>
+                  </div>
+                  <div class="ws-act-desc" data-en-i>11-floor tower with immersive digital art installations. Completely free.</div>
+                  <div class="ws-act-desc" data-es-i>Torre de 11 pisos con arte digital interactivo. Completamente gratis.</div>
+                  <div class="ws-act-pills">
+                    <span class="ws-ap ws-ap-act" data-en-i>Activity</span>
+                    <span class="ws-ap ws-ap-act" data-es-i>Actividad</span>
+                    <span class="ws-ap ws-ap-loc">📍 Ginza</span>
+                    <span class="ws-ap ws-ap-free" data-en-i>Free</span>
+                    <span class="ws-ap ws-ap-free" data-es-i>Gratis</span>
+                    <span class="ws-ap ws-ap-star">⭐ 4.1 (2.4k)</span>
+                  </div>
                 </div>
-                <div class="ws3-act-time">09:00 · 1h</div>
-              </div>
-              <div class="ws3-act-item">
-                <div class="ws3-act-num">3</div>
-                <div class="ws3-act-body">
-                  <div class="ws3-act-name" data-en-i>Café Almeida in Ginza</div>
-                  <div class="ws3-act-name" data-es-i>Café Almeida en Ginza</div>
-                  <div class="ws3-act-desc" data-en-i>Historic café since 1923 in Ginza</div>
-                  <div class="ws3-act-desc" data-es-i>Café histórico desde 1923 en Ginza</div>
-                  <div class="ws3-act-tags"><span class="ws3-tag ws3-tag-food" data-en-i>Gastronomy</span><span class="ws3-tag ws3-tag-food" data-es-i>Gastronomía</span><span class="ws3-tag">~$11</span></div>
-                </div>
-                <div class="ws3-act-time">11:00 · 45m</div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- SCREEN 3: MAPA — con pins de actividades del día -->
+        <!-- SCREEN 3: MAP — Carto style -->
         <div class="wb-screen ws-map" id="wscreen-2">
-          <div class="wb-screen-label" data-en-i>Map — Real-time</div>
-          <div class="wb-screen-label" data-es-i>Mapa — Tiempo real</div>
-          <div style="height:100%;display:flex;flex-direction:column;background:#f5f3ef">
-            <div class="ws3-nav">
-              <div style="font-family:'Syne',sans-serif;font-size:.65rem;font-weight:800;color:#1e2d3d"><span style="color:#c9922a">way</span>point</div>
-              <div style="display:flex;gap:4px">
-                <div class="ws3-top-chip ws3-chip-active" data-en-i>Map</div>
-                <div class="ws3-top-chip ws3-chip-active" data-es-i>Mapa</div>
-                <div class="ws3-top-chip" data-en-i>Weather</div>
-                <div class="ws3-top-chip" data-es-i>Clima</div>
-                <div class="ws3-top-chip" data-en-i>Budget</div>
-                <div class="ws3-top-chip" data-es-i>Presupuesto</div>
-              </div>
+          <div class="wb-screen-label" data-en-i>Map — Real-time Routes</div>
+          <div class="wb-screen-label" data-es-i>Mapa — Rutas en tiempo real</div>
+          <div class="ws-map-inner">
+            <div class="ws-map-tabs">
+              <div class="ws-mt active" data-en-i>🗺️ Map</div>
+              <div class="ws-mt active" data-es-i>🗺️ Mapa</div>
+              <div class="ws-mt" data-en-i>🌤 Weather</div>
+              <div class="ws-mt" data-es-i>🌤 Clima</div>
+              <div class="ws-mt" data-en-i>💰 Budget</div>
+              <div class="ws-mt" data-es-i>💰 Presupuesto</div>
             </div>
-            <div class="ws-map-area">
-              <!-- SVG map placeholder — Tokyo city grid -->
-              <svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
-                <rect width="300" height="200" fill="#e8e0d8"/>
-                <!-- Streets grid -->
-                <g stroke="#d4c8b8" stroke-width="1.5" fill="none">
-                  <line x1="0" y1="60" x2="300" y2="60"/>
-                  <line x1="0" y1="100" x2="300" y2="100"/>
-                  <line x1="0" y1="140" x2="300" y2="140"/>
-                  <line x1="0" y1="170" x2="300" y2="170"/>
-                  <line x1="60" y1="0" x2="60" y2="200"/>
-                  <line x1="130" y1="0" x2="130" y2="200"/>
-                  <line x1="200" y1="0" x2="200" y2="200"/>
-                  <line x1="250" y1="0" x2="250" y2="200"/>
+            <div class="ws-map-daytabs">
+              <div class="ws-mdt active" style="border-color:#e07b3a;color:#e07b3a" data-en-i>Day 1</div>
+              <div class="ws-mdt active" style="border-color:#e07b3a;color:#e07b3a" data-es-i>Día 1</div>
+              <div class="ws-mdt" data-en-i>Day 2</div>
+              <div class="ws-mdt" data-es-i>Día 2</div>
+              <div class="ws-mdt" data-en-i>Day 3</div>
+              <div class="ws-mdt" data-es-i>Día 3</div>
+              <div class="ws-mdt" data-en-i>Day 4</div>
+              <div class="ws-mdt" data-es-i>Día 4</div>
+              <div class="ws-mdt" data-en-i>Day 5</div>
+              <div class="ws-mdt" data-es-i>Día 5</div>
+            </div>
+            <!-- Map area — Carto-style faithful recreation -->
+            <div class="ws-map-canvas">
+              <svg viewBox="0 0 340 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block">
+                <!-- Background -->
+                <rect width="340" height="260" fill="#f5f3ed"/>
+                <!-- Water bodies - Tokyo Bay area -->
+                <path d="M270,140 L340,120 L340,260 L220,260 L200,230 L230,200 L255,180 Z" fill="#cce0f0" opacity=".7"/>
+                <path d="M290,0 L340,0 L340,110 L300,130 L270,120 L275,80 L285,40 Z" fill="#cce0f0" opacity=".5"/>
+                <!-- Major parks - Imperial Palace area -->
+                <ellipse cx="168" cy="118" rx="28" ry="22" fill="#c8ddb8" opacity=".8"/>
+                <ellipse cx="60" cy="95" rx="18" ry="14" fill="#c8ddb8" opacity=".6"/>
+                <rect x="88" y="190" width="22" height="16" rx="5" fill="#c8ddb8" opacity=".6"/>
+                <!-- Major roads grid -->
+                <g stroke="#e2ddd6" stroke-width="3" fill="none" opacity=".9">
+                  <!-- Horizontal arteries -->
+                  <line x1="0" y1="70" x2="340" y2="70"/>
+                  <line x1="0" y1="115" x2="340" y2="115"/>
+                  <line x1="0" y1="160" x2="340" y2="160"/>
+                  <line x1="0" y1="205" x2="340" y2="205"/>
+                  <!-- Vertical arteries -->
+                  <line x1="55" y1="0" x2="55" y2="260"/>
+                  <line x1="110" y1="0" x2="110" y2="260"/>
+                  <line x1="175" y1="0" x2="175" y2="260"/>
+                  <line x1="230" y1="0" x2="230" y2="260"/>
+                  <line x1="268" y1="0" x2="268" y2="260"/>
                 </g>
-                <!-- Water -->
-                <path d="M 250 0 L 300 0 L 300 200 L 250 200 Z" fill="#c8d8e8" opacity=".6"/>
-                <!-- Parks -->
-                <rect x="80" y="20" width="30" height="25" rx="4" fill="#b8d4b0" opacity=".8"/>
-                <rect x="10" y="110" width="35" height="22" rx="4" fill="#b8d4b0" opacity=".7"/>
-                <!-- Blocks -->
-                <rect x="65" y="5" width="20" height="12" rx="2" fill="#ccc0b4"/>
-                <rect x="90" y="5" width="15" height="12" rx="2" fill="#ccc0b4"/>
-                <rect x="140" y="5" width="25" height="18" rx="2" fill="#ccc0b4"/>
-                <rect x="65" y="65" width="22" height="14" rx="2" fill="#ccc0b4"/>
-                <rect x="92" y="65" width="18" height="14" rx="2" fill="#ccc0b4"/>
-                <rect x="135" y="65" width="22" height="14" rx="2" fill="#ccc0b4"/>
-                <rect x="162" y="65" width="20" height="14" rx="2" fill="#ccc0b4"/>
-                <rect x="10" y="65" width="28" height="14" rx="2" fill="#ccc0b4"/>
-                <rect x="42" y="65" width="16" height="14" rx="2" fill="#ccc0b4"/>
-                <rect x="10" y="25" width="22" height="16" rx="2" fill="#ccc0b4"/>
-                <rect x="36" y="25" width="18" height="16" rx="2" fill="#ccc0b4"/>
-                <rect x="205" y="20" width="26" height="18" rx="2" fill="#ccc0b4"/>
-                <rect x="205" y="65" width="22" height="14" rx="2" fill="#ccc0b4"/>
-                <rect x="10" y="105" width="20" height="14" rx="2" fill="#ccc0b4" opacity=".4"/>
-                <!-- Activity pins -->
+                <!-- Secondary roads -->
+                <g stroke="#e8e4dc" stroke-width="1.5" fill="none" opacity=".7">
+                  <line x1="0" y1="42" x2="340" y2="42"/>
+                  <line x1="0" y1="88" x2="340" y2="88"/>
+                  <line x1="0" y1="136" x2="340" y2="136"/>
+                  <line x1="0" y1="182" x2="340" y2="182"/>
+                  <line x1="0" y1="228" x2="340" y2="228"/>
+                  <line x1="28" y1="0" x2="28" y2="260"/>
+                  <line x1="83" y1="0" x2="83" y2="260"/>
+                  <line x1="143" y1="0" x2="143" y2="260"/>
+                  <line x1="200" y1="0" x2="200" y2="260"/>
+                  <line x1="248" y1="0" x2="248" y2="260"/>
+                  <line x1="300" y1="0" x2="300" y2="260"/>
+                </g>
+                <!-- City blocks -->
+                <g fill="#ede9e1" opacity=".85">
+                  <rect x="4" y="4" width="22" height="14" rx="2"/>
+                  <rect x="32" y="4" width="18" height="14" rx="2"/>
+                  <rect x="60" y="4" width="24" height="32" rx="2"/>
+                  <rect x="116" y="4" width="20" height="32" rx="2"/>
+                  <rect x="180" y="4" width="14" height="14" rx="2"/>
+                  <rect x="234" y="4" width="28" height="32" rx="2"/>
+                  <rect x="274" y="4" width="18" height="14" rx="2"/>
+                  <rect x="304" y="4" width="16" height="32" rx="2"/>
+                  <rect x="4" y="46" width="18" height="20" rx="2"/>
+                  <rect x="32" y="46" width="14" height="20" rx="2"/>
+                  <rect x="60" y="46" width="22" height="20" rx="2"/>
+                  <rect x="116" y="46" width="20" height="18" rx="2"/>
+                  <rect x="148" y="46" width="18" height="18" rx="2"/>
+                  <rect x="180" y="46" width="14" height="18" rx="2"/>
+                  <rect x="234" y="46" width="26" height="18" rx="2"/>
+                  <rect x="4" y="74" width="22" height="14" rx="2"/>
+                  <rect x="60" y="74" width="20" height="14" rx="2"/>
+                  <rect x="116" y="74" width="18" height="18" rx="2"/>
+                  <rect x="234" y="74" width="24" height="18" rx="2"/>
+                  <rect x="274" y="74" width="18" height="18" rx="2"/>
+                  <rect x="4" y="118" width="22" height="16" rx="2"/>
+                  <rect x="32" y="118" width="14" height="16" rx="2"/>
+                  <rect x="214" y="118" width="12" height="16" rx="2"/>
+                  <rect x="234" y="118" width="28" height="28" rx="2"/>
+                  <rect x="274" y="118" width="18" height="22" rx="2"/>
+                  <rect x="4" y="164" width="26" height="18" rx="2"/>
+                  <rect x="60" y="164" width="22" height="14" rx="2"/>
+                  <rect x="116" y="164" width="20" height="14" rx="2"/>
+                  <rect x="148" y="164" width="16" height="14" rx="2"/>
+                  <rect x="180" y="164" width="14" height="18" rx="2"/>
+                  <rect x="234" y="164" width="28" height="18" rx="2"/>
+                  <rect x="4" y="210" width="20" height="18" rx="2"/>
+                  <rect x="60" y="210" width="24" height="18" rx="2"/>
+                  <rect x="116" y="210" width="20" height="18" rx="2"/>
+                  <rect x="148" y="210" width="18" height="14" rx="2"/>
+                </g>
+                <!-- District labels -->
+                <g font-family="'DM Sans',sans-serif" font-size="7" fill="#999087" font-weight="500" text-anchor="middle">
+                  <text x="28" y="105">SHINJUKU</text>
+                  <text x="92" y="40">BUNKYO</text>
+                  <text x="155" y="15">CHIYODA</text>
+                  <text x="252" y="25">TAITŌ</text>
+                  <text x="200" y="155">CHŪŌ</text>
+                  <text x="36" y="195">SHIBUYA</text>
+                  <text x="152" y="200">MINATO</text>
+                  <text x="240" y="195">KŌTŌ</text>
+                  <text x="300" y="105">SUMIDA</text>
+                </g>
+                <!-- Route line: pin 1 → 2 (solid), 2 → 3 (dashed) -->
+                <line x1="215" y1="148" x2="208" y2="135" stroke="#e07b3a" stroke-width="2" opacity=".8"/>
+                <line x1="208" y1="135" x2="196" y2="128" stroke="#e07b3a" stroke-width="2" stroke-dasharray="4,3" opacity=".6"/>
+                <line x1="196" y1="128" x2="178" y2="122" stroke="#e07b3a" stroke-width="2" stroke-dasharray="4,3" opacity=".6"/>
+                <!-- Activity pins - orange circles with numbers, faithful to the real app -->
                 <g>
-                  <circle cx="75" cy="50" r="8" fill="#c9922a" stroke="white" stroke-width="1.5"/>
-                  <text x="75" y="54" text-anchor="middle" font-size="8" fill="white" font-weight="bold">1</text>
+                  <circle cx="215" cy="152" r="9" fill="#e07b3a" stroke="white" stroke-width="1.5"/>
+                  <text x="215" y="156" text-anchor="middle" font-size="8" fill="white" font-weight="700" font-family="sans-serif">1</text>
                 </g>
                 <g>
-                  <circle cx="148" cy="80" r="8" fill="#c9922a" stroke="white" stroke-width="1.5"/>
-                  <text x="148" y="84" text-anchor="middle" font-size="8" fill="white" font-weight="bold">2</text>
+                  <circle cx="202" cy="130" r="9" fill="#e07b3a" stroke="white" stroke-width="1.5"/>
+                  <text x="202" y="134" text-anchor="middle" font-size="8" fill="white" font-weight="700" font-family="sans-serif">2</text>
                 </g>
                 <g>
-                  <circle cx="50" cy="80" r="8" fill="#c9922a" stroke="white" stroke-width="1.5"/>
-                  <text x="50" y="84" text-anchor="middle" font-size="8" fill="white" font-weight="bold">3</text>
+                  <circle cx="175" cy="120" r="9" fill="#e07b3a" stroke="white" stroke-width="1.5"/>
+                  <text x="175" y="124" text-anchor="middle" font-size="8" fill="white" font-weight="700" font-family="sans-serif">3</text>
                 </g>
-                <!-- Route line -->
-                <polyline points="75,50 148,80 50,80" stroke="#c9922a" stroke-width="1.5" stroke-dasharray="4,3" fill="none" opacity=".7"/>
-                <!-- Compass -->
-                <g transform="translate(272,15)">
-                  <circle r="10" fill="white" opacity=".9"/>
-                  <text text-anchor="middle" y="4" font-size="8" fill="#666">N</text>
-                </g>
+                <!-- Zoom controls -->
+                <rect x="313" y="8" width="20" height="20" rx="4" fill="white" stroke="#ddd" stroke-width=".5"/>
+                <text x="323" y="21" text-anchor="middle" font-size="12" fill="#555">+</text>
+                <rect x="313" y="32" width="20" height="20" rx="4" fill="white" stroke="#ddd" stroke-width=".5"/>
+                <text x="323" y="45" text-anchor="middle" font-size="14" fill="#555">−</text>
+                <!-- Carto credit -->
+                <text x="6" y="255" font-size="5" fill="#aaa" font-family="sans-serif">© CARTO</text>
               </svg>
             </div>
-            <!-- Legend bar -->
-            <div class="ws-map-legend">
-              <div class="ws-map-leg-item"><div class="ws-map-pin-dot"></div><span data-en-i>Tsukiji Outer Market</span><span data-es-i>Tsukiji Outer Market</span></div>
-              <div class="ws-map-leg-item"><div class="ws-map-pin-dot"></div><span data-en-i>Sony Building Ginza</span><span data-es-i>Sony Building Ginza</span></div>
-              <div class="ws-map-leg-item"><div class="ws-map-pin-dot"></div><span data-en-i>Café Almeida</span><span data-es-i>Café Almeida</span></div>
+            <!-- Bottom bar: place list -->
+            <div class="ws-map-places">
+              <div class="ws-map-place"><span class="ws-mp-dot"></span>Tsukiji Outer Market</div>
+              <div class="ws-map-place"><span class="ws-mp-dot"></span>Ginza Sony Building</div>
+              <div class="ws-map-place"><span class="ws-mp-dot"></span>Café Almeida</div>
             </div>
           </div>
         </div>
 
-        <!-- SCREEN 4: PRESUPUESTO -->
-        <div class="wb-screen ws-budget" id="wscreen-3">
-          <div class="wb-screen-label" data-en-i>Budget — Full Breakdown</div>
-          <div class="wb-screen-label" data-es-i>Presupuesto — Desglose</div>
-          <div style="background:#f5f3ef;height:100%;overflow:hidden">
-            <div class="ws3-nav">
-              <div style="font-family:'Syne',sans-serif;font-size:.65rem;font-weight:800;color:#1e2d3d"><span style="color:#c9922a">way</span>point</div>
-              <div style="display:flex;gap:4px">
-                <div class="ws3-top-chip" data-en-i>Map</div><div class="ws3-top-chip" data-es-i>Mapa</div>
-                <div class="ws3-top-chip" data-en-i>Weather</div><div class="ws3-top-chip" data-es-i>Clima</div>
-                <div class="ws3-top-chip ws3-chip-active" data-en-i>Budget</div><div class="ws3-top-chip ws3-chip-active" data-es-i>Presupuesto</div>
-              </div>
-            </div>
-            <div class="ws-budget-body">
-              <div class="ws-budget-title" data-en-i>Fixed trip costs · AI estimates</div>
-              <div class="ws-budget-title" data-es-i>Gastos fijos del viaje · Estimados IA</div>
-              <div class="ws-budget-row">
-                <div style="display:flex;align-items:center;gap:6px">
-                  <span style="font-size:.9rem">✈️</span>
-                  <div>
-                    <div class="ws-brow-name" data-en-i>Flights p/person</div>
-                    <div class="ws-brow-name" data-es-i>Vuelos p/persona</div>
-                    <div class="ws-brow-sub">Est. IA: $1,450 · $2,900 <span data-en-i>total</span><span data-es-i>total</span></div>
-                  </div>
-                </div>
-                <div class="ws-brow-amt">$1,450</div>
-              </div>
-              <div class="ws-budget-row">
-                <div style="display:flex;align-items:center;gap:6px">
-                  <span style="font-size:.9rem">🏨</span>
-                  <div>
-                    <div class="ws-brow-name" data-en-i>Hotel · 3★ · 5 nights</div>
-                    <div class="ws-brow-name" data-es-i>Hotel · 3★ · 5 noches</div>
-                    <div class="ws-brow-sub">Est. IA: $650 <span data-en-i>total</span><span data-es-i>total</span></div>
-                  </div>
-                </div>
-                <div class="ws-brow-amt">$650</div>
-              </div>
-              <div class="ws-budget-total">
-                <span data-en-i>Total fixed</span><span data-es-i>Total fijo</span>
-                <span class="ws-budget-total-amt">$2,100</span>
-              </div>
-              <div class="ws-budget-title" style="margin-top:.6rem" data-en-i>Activities budget · per day</div>
-              <div class="ws-budget-title" style="margin-top:.6rem" data-es-i>Presupuesto actividades · por día</div>
-              <div class="ws-bday-row">
-                <span data-en-i>Day 1 · Art & culture</span><span data-es-i>Día 1 · Arte y cultura</span>
-                <div class="ws-bday-bar"><div class="ws-bday-fill" style="width:44%"></div></div>
-                <span>$120</span>
-              </div>
-              <div class="ws-bday-row">
-                <span data-en-i>Day 2 · Local gastronomy</span><span data-es-i>Día 2 · Gastronomía local</span>
-                <div class="ws-bday-bar"><div class="ws-bday-fill" style="width:50%"></div></div>
-                <span>$136</span>
-              </div>
-              <div class="ws-bday-row">
-                <span data-en-i>Day 3 · History & arch.</span><span data-es-i>Día 3 · Historia y arq.</span>
-                <div class="ws-bday-bar"><div class="ws-bday-fill" style="width:38%"></div></div>
-                <span>$95</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- SCREEN 5: CLIMA -->
-        <div class="wb-screen ws-weather" id="wscreen-4">
+        <!-- SCREEN 4: WEATHER -->
+        <div class="wb-screen ws-wthr" id="wscreen-3">
           <div class="wb-screen-label" data-en-i>Weather — by Day</div>
           <div class="wb-screen-label" data-es-i>Clima — por Día</div>
-          <div style="background:#f5f3ef;height:100%;overflow:hidden">
-            <div class="ws3-nav">
-              <div style="font-family:'Syne',sans-serif;font-size:.65rem;font-weight:800;color:#1e2d3d"><span style="color:#c9922a">way</span>point</div>
-              <div style="display:flex;gap:4px">
-                <div class="ws3-top-chip" data-en-i>Map</div><div class="ws3-top-chip" data-es-i>Mapa</div>
-                <div class="ws3-top-chip ws3-chip-active" data-en-i>Weather</div><div class="ws3-top-chip ws3-chip-active" data-es-i>Clima</div>
-                <div class="ws3-top-chip" data-en-i>Budget</div><div class="ws3-top-chip" data-es-i>Presupuesto</div>
+          <div class="ws-wthr-inner">
+            <div class="ws-map-tabs">
+              <div class="ws-mt" data-en-i>🗺️ Map</div>
+              <div class="ws-mt" data-es-i>🗺️ Mapa</div>
+              <div class="ws-mt active" data-en-i>🌤 Weather</div>
+              <div class="ws-mt active" data-es-i>🌤 Clima</div>
+              <div class="ws-mt" data-en-i>💰 Budget</div>
+              <div class="ws-mt" data-es-i>💰 Presupuesto</div>
+            </div>
+            <div class="ws-wthr-body">
+              <!-- Hero weather card — blue background like the real app -->
+              <div class="ws-wth-hero">
+                <div class="ws-wth-hero-top">
+                  <div>
+                    <div class="ws-wth-city" data-en-i>Weather — Tokyo</div>
+                    <div class="ws-wth-city" data-es-i>Clima — Tokio</div>
+                    <div class="ws-wth-stats">
+                      <div class="ws-wth-stat"><span class="ws-wth-big">26°</span><div class="ws-wth-lbl">TEMP</div></div>
+                      <div class="ws-wth-stat"><span class="ws-wth-big">25°</span><div class="ws-wth-lbl" data-en-i>FEELS</div><div class="ws-wth-lbl" data-es-i>SENS.</div></div>
+                      <div class="ws-wth-stat"><span class="ws-wth-big">65%</span><div class="ws-wth-lbl" data-en-i>HUMID.</div><div class="ws-wth-lbl" data-es-i>HUMEDAD</div></div>
+                    </div>
+                    <div class="ws-wth-cond" data-en-i>⛅ Partly cloudy</div>
+                    <div class="ws-wth-cond" data-es-i>⛅ Parcialmente nublado</div>
+                  </div>
+                  <div style="font-size:2rem">⛅</div>
+                </div>
+                <div class="ws-wth-tip" data-en-i>✦ Tokyo in June is humid and rainy. Pack an umbrella and stay hydrated.</div>
+                <div class="ws-wth-tip" data-es-i>✦ Tokyo en junio es húmedo y lluvioso. Lleva paraguas y mantenerte hidratado.</div>
+              </div>
+              <!-- Day cards — white background -->
+              <div class="ws-wth-day">
+                <div class="ws-wth-day-head">
+                  <span class="ws-wth-day-name" data-en-i>Day 1 · Art & culture</span>
+                  <span class="ws-wth-day-name" data-es-i>Día 1 · Arte y cultura</span>
+                  <span style="font-size:.9rem;float:right">⛅</span>
+                </div>
+                <div class="ws-wth-day-temps">26° <span class="ws-wth-min">/ 21° <span data-en-i>min</span><span data-es-i>mín</span></span></div>
+                <div class="ws-wth-day-note" data-en-i>✦ Bring umbrella, possible showers</div>
+                <div class="ws-wth-day-note" data-es-i>✦ Lleva paraguas, posibles lluvias</div>
+              </div>
+              <div class="ws-wth-day">
+                <div class="ws-wth-day-head">
+                  <span class="ws-wth-day-name" data-en-i>Day 2 · Local gastronomy</span>
+                  <span class="ws-wth-day-name" data-es-i>Día 2 · Gastronomía local</span>
+                  <span style="font-size:.9rem;float:right">🌧</span>
+                </div>
+                <div class="ws-wth-day-temps">27° <span class="ws-wth-min">/ 22°</span></div>
+                <div class="ws-wth-day-note" data-en-i>✦ Rainy day — stay in covered areas</div>
+                <div class="ws-wth-day-note" data-es-i>✦ Día lluvioso — permanece en interior si es posible</div>
               </div>
             </div>
-            <div class="ws-weather-body">
-              <div class="ws-weather-city" data-en-i>Weather — Tokyo</div>
-              <div class="ws-weather-city" data-es-i>Clima — Tokio</div>
-              <div class="ws-weather-main">
-                <div class="ws-weather-ico">☀️</div>
-                <div>
-                  <div class="ws-weather-temp">26°</div>
-                  <div class="ws-weather-feel"><span data-en-i>Feels like</span><span data-es-i>Sensación</span> 25° · 65% <span data-en-i>humidity</span><span data-es-i>humedad</span></div>
-                  <div class="ws-weather-desc" data-en-i>Partly cloudy. Tokyo in June is humid and rainy — stay hydrated.</div>
-                  <div class="ws-weather-desc" data-es-i>Parcialmente nublado. Tokio en junio es húmedo y lluvioso — mantente hidratado.</div>
+          </div>
+        </div>
+
+        <!-- SCREEN 5: BUDGET -->
+        <div class="wb-screen ws-bdgt" id="wscreen-4">
+          <div class="wb-screen-label" data-en-i>Budget — Full Breakdown</div>
+          <div class="wb-screen-label" data-es-i>Presupuesto — Desglose</div>
+          <div class="ws-bdgt-inner">
+            <div class="ws-map-tabs">
+              <div class="ws-mt" data-en-i>🗺️ Map</div>
+              <div class="ws-mt" data-es-i>🗺️ Mapa</div>
+              <div class="ws-mt" data-en-i>🌤 Weather</div>
+              <div class="ws-mt" data-es-i>🌤 Clima</div>
+              <div class="ws-mt active" data-en-i>💰 Budget</div>
+              <div class="ws-mt active" data-es-i>💰 Presupuesto</div>
+            </div>
+            <div class="ws-bdgt-body">
+              <div class="ws-bdgt-section">
+                <div class="ws-bdgt-section-title" data-en-i>Fixed trip costs</div>
+                <div class="ws-bdgt-section-title" data-es-i>Gastos fijos del viaje</div>
+                <div class="ws-bdgt-sub" data-en-i>✦ Pre-filled with AI estimates · editable</div>
+                <div class="ws-bdgt-sub" data-es-i>✦ Pre-rellenado con estimados IA · editable</div>
+                <div class="ws-bdgt-row">
+                  <span class="ws-bdgt-ico">✈️</span>
+                  <div class="ws-bdgt-info">
+                    <div class="ws-bdgt-label" data-en-i>Flights p/person</div>
+                    <div class="ws-bdgt-label" data-es-i>Vuelos p/persona</div>
+                    <div class="ws-bdgt-sub2" data-en-i>Est. IA: $1,450 · $2,900 total</div>
+                    <div class="ws-bdgt-sub2" data-es-i>Est. IA: $1,450 · $2,900 total</div>
+                  </div>
+                  <div class="ws-bdgt-input">1450</div>
+                </div>
+                <div class="ws-bdgt-row">
+                  <span class="ws-bdgt-ico">🏨</span>
+                  <div class="ws-bdgt-info">
+                    <div class="ws-bdgt-label" data-en-i>Hotel · 3★ · 5 nights</div>
+                    <div class="ws-bdgt-label" data-es-i>Hotel · 3★ · 5 noches</div>
+                    <div class="ws-bdgt-sub2" data-en-i>Est. IA: $650 total</div>
+                    <div class="ws-bdgt-sub2" data-es-i>Est. IA: $650 total</div>
+                  </div>
+                  <div class="ws-bdgt-input">650</div>
+                </div>
+                <div class="ws-bdgt-total">
+                  <span data-en-i>Total fixed costs</span><span data-es-i>Total gastos fijos</span>
+                  <span class="ws-bdgt-total-n">$2,100</span>
                 </div>
               </div>
-              <div class="ws-weather-days">
-                <div class="ws-wday">
-                  <div class="ws-wday-name" data-en-i>Day 1 · Art</div>
-                  <div class="ws-wday-name" data-es-i>Día 1 · Arte</div>
-                  <div class="ws-wday-ico">⛅</div>
-                  <div class="ws-wday-temp">26°/21°</div>
-                  <div class="ws-wday-note" data-en-i>Bring umbrella</div>
-                  <div class="ws-wday-note" data-es-i>Lleva paraguas</div>
-                </div>
-                <div class="ws-wday">
-                  <div class="ws-wday-name" data-en-i>Day 2 · Gastro</div>
-                  <div class="ws-wday-name" data-es-i>Día 2 · Gastro</div>
-                  <div class="ws-wday-ico">🌧</div>
-                  <div class="ws-wday-temp">27°/22°</div>
-                  <div class="ws-wday-note" data-en-i>Rainy · stay inside</div>
-                  <div class="ws-wday-note" data-es-i>Lluvia · quédate adentro</div>
-                </div>
-                <div class="ws-wday">
-                  <div class="ws-wday-name" data-en-i>Day 3 · History</div>
-                  <div class="ws-wday-name" data-es-i>Día 3 · Historia</div>
-                  <div class="ws-wday-ico">🌦</div>
-                  <div class="ws-wday-temp">25°/20°</div>
-                  <div class="ws-wday-note" data-en-i>Use waterproof coat</div>
-                  <div class="ws-wday-note" data-es-i>Usa ropa impermeable</div>
-                </div>
-                <div class="ws-wday">
-                  <div class="ws-wday-name" data-en-i>Day 4 · Nature</div>
-                  <div class="ws-wday-name" data-es-i>Día 4 · Naturaleza</div>
-                  <div class="ws-wday-ico">☁️</div>
-                  <div class="ws-wday-temp">24°/19°</div>
-                  <div class="ws-wday-note" data-en-i>Cloudy</div>
-                  <div class="ws-wday-note" data-es-i>Nublado</div>
-                </div>
-                <div class="ws-wday">
-                  <div class="ws-wday-name" data-en-i>Day 5 · Markets</div>
-                  <div class="ws-wday-name" data-es-i>Día 5 · Mercados</div>
-                  <div class="ws-wday-ico">🌤</div>
-                  <div class="ws-wday-temp">28°/23°</div>
-                  <div class="ws-wday-note" data-en-i>Clearer</div>
-                  <div class="ws-wday-note" data-es-i>Más despejado</div>
-                </div>
+              <div class="ws-bdgt-section" style="margin-top:.5rem">
+                <div class="ws-bdgt-section-title" data-en-i>Activities budget · per day</div>
+                <div class="ws-bdgt-section-title" data-es-i>Presupuesto actividades · por día</div>
+                <div class="ws-bdgt-bar-row"><span data-en-i>Day 1 · Art</span><span data-es-i>Día 1 · Arte</span><div class="ws-bdgt-bar"><div class="ws-bdgt-fill" style="width:44%"></div></div><span>$120</span></div>
+                <div class="ws-bdgt-bar-row"><span data-en-i>Day 2 · Gastro</span><span data-es-i>Día 2 · Gastro</span><div class="ws-bdgt-bar"><div class="ws-bdgt-fill" style="width:52%"></div></div><span>$136</span></div>
+                <div class="ws-bdgt-bar-row"><span data-en-i>Day 3 · History</span><span data-es-i>Día 3 · Historia</span><div class="ws-bdgt-bar"><div class="ws-bdgt-fill" style="width:36%"></div></div><span>$95</span></div>
               </div>
             </div>
           </div>
         </div>
 
       </div>
-      <!-- Screen indicators — now 5 -->
-      <div class="wb-indicators">
-        <div class="wb-ind wi-active" onclick="goToScreen(0)"></div>
-        <div class="wb-ind" onclick="goToScreen(1)"></div>
-        <div class="wb-ind" onclick="goToScreen(2)"></div>
-        <div class="wb-ind" onclick="goToScreen(3)"></div>
-        <div class="wb-ind" onclick="goToScreen(4)"></div>
+
+      </div>
+      <!-- Navigation bar — arrows + dots + label -->
+      <div class="wb-nav" id="wbNav">
+        <button class="wb-arrow" onclick="wpPrev()" aria-label="Previous screen">
+          <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <div class="wb-dots">
+          <div class="wb-ind wi-active" onclick="goToScreen(0)"></div>
+          <div class="wb-ind" onclick="goToScreen(1)"></div>
+          <div class="wb-ind" onclick="goToScreen(2)"></div>
+          <div class="wb-ind" onclick="goToScreen(3)"></div>
+          <div class="wb-ind" onclick="goToScreen(4)"></div>
+        </div>
+        <div class="wb-nav-label" id="wbNavLabel" data-en-i>Home</div>
+        <div class="wb-nav-label" id="wbNavLabelEs" data-es-i>Inicio</div>
+        <button class="wb-arrow" onclick="wpNext()" aria-label="Next screen">
+          <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
       </div>
     </div>
   </div>
@@ -2421,18 +2735,44 @@ document.querySelectorAll('.sr,.sr-l,.sr-r,.sr-s').forEach(el=>io.observe(el));
 // waypoint screen navigator
 let wCurScreen = 0;
 let wAutoTimer = null;
+const WP_LABELS_EN = ['Home','Itinerary','Map','Budget','Weather'];
+const WP_LABELS_ES = ['Inicio','Itinerario','Mapa','Presupuesto','Clima'];
 function goToScreen(idx) {
   const screens = document.querySelectorAll('.wb-screen');
   const inds = document.querySelectorAll('.wb-ind');
   if(!screens.length) return;
-  screens[wCurScreen].classList.remove('ws-active');
-  screens[wCurScreen].classList.add('ws-out');
-  setTimeout(()=>{ screens[wCurScreen].classList.remove('ws-out'); wCurScreen=idx; screens[wCurScreen].classList.add('ws-active'); },60);
-  wCurScreen = idx;
+  const prev = wCurScreen;
+  const dir = idx > prev ? 1 : -1;
+  screens[prev].classList.remove('ws-active');
+  screens[prev].style.transform = `translateX(${-dir*24}px)`;
+  screens[prev].style.opacity = '0';
+  screens[prev].style.transition = 'opacity .45s,transform .45s';
+  setTimeout(()=>{
+    screens[prev].classList.remove('ws-out');
+    screens[prev].style.transform='';screens[prev].style.opacity='';screens[prev].style.transition='';
+    wCurScreen = idx;
+    screens[wCurScreen].style.transform = `translateX(${dir*24}px)`;
+    screens[wCurScreen].style.opacity = '0';
+    screens[wCurScreen].style.transition = 'none';
+    screens[wCurScreen].classList.add('ws-active');
+    requestAnimationFrame(()=>requestAnimationFrame(()=>{
+      screens[wCurScreen].style.transition = 'opacity .45s,transform .45s';
+      screens[wCurScreen].style.transform = 'none';
+      screens[wCurScreen].style.opacity = '1';
+    }));
+  }, 60);
   inds.forEach((d,i)=>d.classList.toggle('wi-active', i===idx));
+  // Update label
+  const lang = document.documentElement.lang;
+  const lblEn = document.getElementById('wbNavLabel');
+  const lblEs = document.getElementById('wbNavLabelEs');
+  if(lblEn) lblEn.textContent = WP_LABELS_EN[idx] || '';
+  if(lblEs) lblEs.textContent = WP_LABELS_ES[idx] || '';
 }
+function wpPrev(){ goToScreen((wCurScreen + 4) % 5); stopWaypointAuto(); setTimeout(startWaypointAuto, 6000); }
+function wpNext(){ goToScreen((wCurScreen + 1) % 5); stopWaypointAuto(); setTimeout(startWaypointAuto, 6000); }
 function startWaypointAuto() {
-  wAutoTimer = setInterval(()=>{ goToScreen((wCurScreen+1)%5); }, 3500);
+  wAutoTimer = setInterval(()=>{ goToScreen((wCurScreen+1)%5); }, 4000);
 }
 function stopWaypointAuto() { clearInterval(wAutoTimer); }
 // start auto when card enters view
