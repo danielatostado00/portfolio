@@ -94,7 +94,7 @@ li[data-en-li],li[data-es-li]{display:none}
 html[lang=en] li[data-en-li]{display:flex}
 html[lang=es] li[data-es-li]{display:flex}
 /* nav */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:.85rem 3.5rem;transition:background .35s,border-color .35s;border-bottom:1px solid transparent;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+nav{position:fixed!important;top:0!important;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:.85rem 3.5rem;transition:background .35s,border-color .35s;border-bottom:1px solid transparent;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);will-change:auto;contain:layout style}
 /* ── CURSOR TRAIL ── */
 .ctail{position:fixed;width:5px;height:5px;border-radius:50%;background:var(--acc);pointer-events:none;z-index:9998;opacity:0;transform:translate(-50%,-50%);transition:opacity .4s ease}
 /* ── HERO SCRAMBLE ── */
@@ -313,12 +313,19 @@ html[lang=es] .pcard-deliverable[data-en-i]{display:none!important}
 }
 .pc:nth-child(even) .pc-body{border-right:none;border-left:1px solid var(--b2)}
 .pc-meta{display:flex;align-items:center;gap:1rem;margin-bottom:.5rem}
+/* Ghost project number — positioned over the visualization panel of the card,
+   never over the body text. Lives as a direct child of .pc (moved by JS at runtime
+   from inside .pc-body so it escapes pc-body's position:relative offset parent). */
 .pc-n{
   font-family:'Syne',sans-serif;font-size:5.5rem;font-weight:800;
-  letter-spacing:-.06em;line-height:1;opacity:.04;position:absolute;top:2rem;right:2rem;
-  pointer-events:none;transition:opacity .4s;color:var(--acc)
+  letter-spacing:-.06em;line-height:1;opacity:.04;
+  position:absolute;top:1.25rem;right:2rem;
+  pointer-events:none;transition:opacity .4s;color:var(--acc);
+  z-index:0;user-select:none
 }
 .pc:hover .pc-n{opacity:.08}
+/* Even cards have the body on the visual right (direction:rtl), so the vis panel
+   sits on the LEFT — anchor the ghost number there instead. */
 .pc:nth-child(even) .pc-n{right:auto;left:2rem}
 .pc-tag{
   font-family:'DM Mono',monospace;font-size:.54rem;letter-spacing:.1em;text-transform:uppercase;
@@ -1268,7 +1275,7 @@ nav.sc{background:rgba(244,246,241,.96)!important;border-bottom-color:var(--b2)!
 .nav-ham.open span:nth-child(2){opacity:0;transform:scaleX(0)}
 .nav-ham.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
 .nav-drawer{
-  position:fixed;top:0;left:0;right:0;bottom:0;z-index:99;
+  position:fixed;top:0;left:0;right:0;bottom:0;z-index:999;
   background:rgba(244,246,241,.97);
   display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2rem;
   opacity:0;pointer-events:none;transform:translateY(-8px);
@@ -3790,6 +3797,15 @@ if(form) form.addEventListener('submit',async e=>{
     else{btn.disabled=false;btn.style.opacity='1';}}
   catch{btn.disabled=false;btn.style.opacity='1';}
 });
+
+/* ── Move .pc-n out of .pc-body so the ghost number positions relative to
+   the entire .pc card (over the visual panel), not over the body text. ── */
+(function rehomeProjectNumbers(){
+  document.querySelectorAll('.pc').forEach(card => {
+    const num = card.querySelector('.pc-body > .pc-n');
+    if (num) card.insertBefore(num, card.firstChild);
+  });
+})();
 
 /* ── SECTION-AWARE REVEAL — adds [data-in="1"] when section enters viewport ── */
 (function sectionReveal(){
